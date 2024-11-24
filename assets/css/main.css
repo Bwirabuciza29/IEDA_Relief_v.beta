@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 2rem;
+  background: #000;
+}
+
+/* Gestion Contenu */
+.rm-wrapper {
+  @apply relative flex items-center justify-start space-x-4;
+}
+
+.mj-container {
+  @apply mx-auto w-full max-w-6xl px-4 md:px-8;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s forwards;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
