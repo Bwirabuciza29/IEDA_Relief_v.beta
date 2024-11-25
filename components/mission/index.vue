@@ -1,4 +1,3 @@
-import { NuxtLink } from '../../.nuxt/components';
 <template>
   <div class="mj-container mx-auto px-4 py-8">
     <!-- Boutons alignés horizontalement -->
@@ -126,13 +125,14 @@ import { NuxtLink } from '../../.nuxt/components';
           :key="index"
           class="card bg-white shadow-md p-6 rounded-lg text-center transition-transform duration-300 hover:scale-105"
         >
-          <div class="w-10 h-10 mx-auto mb-4 bg-custom-green rounded-full p-2">
+          <div class="flex justify-center items-center mb-4">
             <img
               :src="card.image"
-              alt="Card icon"
-              class="w-full h-full object-contain"
+              alt="Icône"
+              class="w-10 h-10 transition-all duration-300 hover:z-10 hover:scale-110"
             />
           </div>
+
           <h3 class="text-lg font-medium text-gray-800">{{ card.title }}</h3>
           <p
             class="text-sm text-gray-600 mt-2 hover:underline hover:text-green-400"
@@ -194,17 +194,17 @@ const cards = [
   {
     title: ct1,
     description: cd1,
-    image: "/img/solidarity.png",
+    image: "/img/lo.svg",
   },
   {
     title: ct2,
     description: cd2,
-    image: "/img/compassion.png",
+    image: "/img/lol.svg",
   },
   {
     title: ct3,
     description: cd3,
-    image: "/img/sponsorship.png",
+    image: "/img/lolo.svg",
   },
 ];
 
