@@ -155,7 +155,6 @@ const title_3 = ref(t("mission.title_3"));
 const desc_1 = ref(t("mission.desc_1"));
 const desc_2 = ref(t("mission.desc_2"));
 const desc_3 = ref(t("mission.desc_3"));
-const desc_4 = ref(t("mission.desc_4"));
 const tit_1 = ref(t("mission.tit_1"));
 const tit_2 = ref(t("mission.tit_2"));
 const tit_3 = ref(t("mission.tit_3"));
