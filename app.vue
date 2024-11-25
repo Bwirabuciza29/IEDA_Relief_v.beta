@@ -16,8 +16,6 @@
     </NuxtLayout>
   </div>
 </template>
-
-
 <script setup>
 const config = useAppConfig();
 useSeoMeta({

@@ -3,13 +3,20 @@
     class="fixed left-0 right-0 top-0 z-50 flex w-full items-center justify-cente text-black bg-white"
   >
     <header class="mj-container z-50 flex w-full items-center justify-between">
-      <NuxtLink to="/">
-        <img
-          src="/img/logo.png"
-          alt="Maajabu Logo"
-          class="h-12 sm:h-12 py-2 my-2"
-        />
-      </NuxtLink>
+      <div class="relative flex items-center">
+        <NuxtLink to="/">
+          <img
+            src="/img/logo.png"
+            alt="Maajabu Logo"
+            class="h-12 sm:h-12 py-2 my-2 mr-4"
+          />
+        </NuxtLink>
+        <div
+          v-show="isLoading"
+          class="loader absolute inset-0 z-0 flex items-center justify-center bg-white"
+        ></div>
+      </div>
+
       <!-- Menu Desktop -->
       <div class="flex-grow">
         <nav class="hidden justify-center space-x-6 font-semibold md:flex">
@@ -147,17 +154,81 @@ const localPath = (item) => {
 
 // Vérification si le lien est actif
 const isActiveLink = (path) => route.path === path;
-const isScrolled = ref(false);
-
-// const handleScroll = () => {
-//   isScrolled.value = window.scrollY > 50;
-// };
-
-// onMounted(() => {
-//   window.addEventListener("scroll", handleScroll);
-// });
-
-// onUnmounted(() => {
-//   window.removeEventListener("scroll", handleScroll);
-// });
+const isLoading = ref(false);
+watch(
+  route,
+  () => {
+    isLoading.value = true;
+    setTimeout(() => {
+      isLoading.value = false;
+    }, 1000);
+  },
+  { immediate: true }
+);
 </script>
+<style scoped>
+/* Loader Styles */
+.loader {
+  z-index: 99 !important;
+  width: 36px;
+  height: 36px;
+  display: block;
+  margin: 10px auto;
+  position: relative;
+  color: #f0efef;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  -webkit-animation: rotation 1s linear infinite;
+}
+
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  transform: scale(0.5) translate(0, 0);
+  background-color: #055fc5;
+  border-radius: 50%;
+  animation: animloader 1s infinite ease-in-out;
+  -webkit-transform: scale(0.5) translate(0, 0);
+  -moz-transform: scale(0.5) translate(0, 0);
+  -ms-transform: scale(0.5) translate(0, 0);
+  -o-transform: scale(0.5) translate(0, 0);
+}
+
+.loader::before {
+  background-color: #02ab4b;
+  transform: scale(0.5) translate(-36px, -36px);
+  -webkit-transform: scale(0.5) translate(-36px, -36px);
+  -moz-transform: scale(0.5) translate(-36px, -36px);
+  -ms-transform: scale(0.5) translate(-36px, -36px);
+  -o-transform: scale(0.5) translate(-36px, -36px);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes animloader {
+  50% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+</style>
