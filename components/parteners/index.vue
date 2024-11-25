@@ -125,7 +125,7 @@ const tabs = [
   {
     title: title_1,
     description: desc_1,
-    image: "/img/part.jpg",
+    image: "/img/partener.jpg",
   },
   {
     title: title_2,

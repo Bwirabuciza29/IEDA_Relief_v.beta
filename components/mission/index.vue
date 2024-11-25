@@ -152,7 +152,6 @@ const imageSrc = ref("/img/rectori.png");
 const title_1 = ref(t("mission.title_1"));
 const title_2 = ref(t("mission.title_2"));
 const title_3 = ref(t("mission.title_3"));
-const title_4 = ref(t("mission.title_4"));
 const desc_1 = ref(t("mission.desc_1"));
 const desc_2 = ref(t("mission.desc_2"));
 const desc_3 = ref(t("mission.desc_3"));
@@ -183,11 +182,6 @@ const tabs = [
     title: title_3,
     description: desc_3,
     image: "/img/v2.jpeg",
-  },
-  {
-    title: title_4,
-    description: desc_4,
-    image: "/img/v1.jpeg",
   },
 ];
 const cards = [
