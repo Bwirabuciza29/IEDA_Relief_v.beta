@@ -209,7 +209,7 @@
         >
           <div class="mx-auto mb-4">
             <img
-              src="/img/icon.png"
+              src="/img/mik.svg"
               alt="Icône"
               class="w-12 h-12 transition-all duration-300 hover:z-10 hover:scale-110"
             />
