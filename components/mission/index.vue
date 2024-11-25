@@ -1,3 +1,4 @@
+import { NuxtLink } from '../../.nuxt/components';
 <template>
   <div class="mj-container mx-auto px-4 py-8">
     <!-- Boutons alignés horizontalement -->
@@ -31,11 +32,13 @@
         <p class="text-gray-600 mt-4">
           {{ tab.description }}
         </p>
-        <button
-          class="mt-6 px-6 py-3 text-sm bg-custom-green text-white rounded-lg hover:bg-green-600 transition"
-        >
-          {{ $t("mission.btn", "View More") }}
-        </button>
+        <NuxtLink to="/about">
+          <button
+            class="mt-6 px-6 py-3 text-sm bg-custom-green text-white rounded-lg hover:bg-green-600 transition"
+          >
+            {{ $t("mission.btn", "View More") }}
+          </button>
+        </NuxtLink>
       </div>
 
       <!-- Image à droite -->
