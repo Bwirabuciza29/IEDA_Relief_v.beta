@@ -56,7 +56,7 @@
         <!-- Card 1 -->
         <div class="flex flex-col items-start p-4 border rounded-lg shadow-md">
           <div class="flex items-center mb-4">
-            <img src="/img/icon_1.png" alt="Icon" class="w-10 h-10 mr-2" />
+            <img src="/img/icons.png" alt="icon" class="w-10 h-10 mr-2" />
             <h3 class="text-xl font-semibold">{{ t("about.card_1_title") }}</h3>
           </div>
           <p class="text-gray-600 hover:underline">
