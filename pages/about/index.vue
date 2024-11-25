@@ -246,10 +246,10 @@
         >
           <button
             @click="toggleFAQ(index)"
-            class="w-full text-left flex justify-between items-center px-4 py-4 bg-white hover:scale-105 transition-transform duration-300 ease-in-out"
+            class="w-full text-left flex justify-between rounded-lg items-center px-4 py-4 bg-white hover:scale-105 transition-transform duration-300 ease-in-out"
           >
             <span
-              :class="{ 'text-green-500 font-medium': activeFAQ === index }"
+              :class="{ 'text-custom-green font-medium': activeFAQ === index }"
               class="text-gray-800 text-lg"
             >
               {{ faq.question }}
