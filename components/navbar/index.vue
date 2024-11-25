@@ -31,38 +31,43 @@
       <LangSwitcher class="hidden md:block" />
 
       <!-- Bouton Toggle Menu Mobile toujours visible -->
-      <button
-        @click="toggleMenu"
-        class="fixed right-4 top-6 z-50 text-green-500 md:hidden p-2 -mt-4 bg-green-100"
-      >
-        <!-- SVG pour le bouton du menu -->
-        <svg
-          v-if="!menuOpen"
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8"
-          viewBox="0 0 20 20"
-          fill="currentColor"
+      <div class="flex items-center justify-between">
+        <!-- LangSwitcher aligné à gauche -->
+        <LangSwitcher class="block lg:hidden ml-8" />
+        <!-- Bouton de menu -->
+        <button
+          @click="toggleMenu"
+          class="fixed right-4 top-6 z-50 text-green-500 md:hidden p-2 -mt-4 bg-green-100"
         >
-          <path
-            fill-rule="evenodd"
-            d="M3 5h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 110 2H3a1 1 0 110-2zm0 4h14a1 1 0 110 2H3a1 1 0 110-2z"
-            clip-rule="evenodd"
-          />
-        </svg>
-        <svg
-          v-else
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-            clip-rule="evenodd"
-          />
-        </svg>
-      </button>
+          <!-- SVG pour le bouton du menu -->
+          <svg
+            v-if="!menuOpen"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 110 2H3a1 1 0 110-2zm0 4h14a1 1 0 110 2H3a1 1 0 110-2z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <svg
+            v-else
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
 
       <!-- Menu Mobile -->
       <transition name="fade">
@@ -85,8 +90,6 @@
           >
             {{ item }}
           </NuxtLink>
-
-          <LangSwitcher class="mt-4 block md:hidden" />
         </nav>
       </transition>
     </header>
@@ -108,7 +111,7 @@ const closeMenu = () => {
   menuOpen.value = false;
 };
 
-// Les éléments de menu, calculés en fonction de la langue actuelle
+// Les éléments du menu
 const menuItems = computed(() => [
   t("menu.home"),
   t("menu.about"),
@@ -146,15 +149,15 @@ const localPath = (item) => {
 const isActiveLink = (path) => route.path === path;
 const isScrolled = ref(false);
 
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50;
-};
+// const handleScroll = () => {
+//   isScrolled.value = window.scrollY > 50;
+// };
 
-onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
-});
+// onMounted(() => {
+//   window.addEventListener("scroll", handleScroll);
+// });
 
-onUnmounted(() => {
-  window.removeEventListener("scroll", handleScroll);
-});
+// onUnmounted(() => {
+//   window.removeEventListener("scroll", handleScroll);
+// });
 </script>

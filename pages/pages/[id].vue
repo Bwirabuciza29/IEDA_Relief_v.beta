@@ -332,7 +332,7 @@ const { t } = useI18n();
 const route = useRoute();
 const card = ref(null);
 const frm_name = ref(t("operation.frm_name"));
-const frm_email = ref(t("operation.frm_email"));
+const frm_email = ref(t("operation.frm_emai"));
 const frm_t = ref(t("operation.frm_t"));
 
 const cards = [
@@ -371,7 +371,7 @@ const cards = [
   },
   {
     id: 4,
-    title: t("operation.c1_4"),
+    title: t("operation.c4_t"),
     description: t("operation.c4_de"),
     descriptions: t("operation.c4_des"),
     image: "/img/o6.png",

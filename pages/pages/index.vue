@@ -175,7 +175,7 @@ const cards = [
     id: 7,
     title: t("operation.c7_t"),
     description: t("operation.c7_de"),
-    descriptions: t("operation.c7_des"),
+    descriptions: t("operation.c7_de"),
     image: "/img/o9.png",
     image_2: "/img/ed1.jpg",
     image_3: "/img/ed2.jpg",
