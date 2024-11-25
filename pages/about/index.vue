@@ -42,14 +42,19 @@
     </div>
     <!-- Fin Top Title -->
     <div class="mj-container my-16">
-      <div class="my-16 p-4 bg-white rounded-lg">
-        <h2 class="text-3xl text-black md:text-4xl font-bold text-left mb-4">
-          <span class=""> {{ t("about.ab_1") }} </span>
+      <div class="my-16 p-4 bg-white rounded-lg md:p-6 lg:p-8">
+        <h2
+          class="text-2xl text-black font-bold text-left mb-4 sm:text-3xl md:text-4xl lg:text-5xl"
+        >
+          <span> {{ t("about.ab_1") }} </span>
           <span class="text-custom-green">({{ t("about.ab_2") }}</span>
           <span class="text-custom-blue"> {{ t("about.ab_3") }})</span>
         </h2>
-        {{ t("about.ab_4") }}
+        <p class="text-sm md:text-base lg:text-lg">
+          {{ t("about.ab_4") }}
+        </p>
       </div>
+
       <div
         class="grid grid-cols-1 bg-white sm:grid-cols-2 lg:grid-cols-3 gap-4"
       >
