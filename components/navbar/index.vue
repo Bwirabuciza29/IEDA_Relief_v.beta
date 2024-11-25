@@ -94,10 +94,6 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
-import { useRoute } from "vue-router";
-import { useI18n } from "vue-i18n";
-
 const { t, locale } = useI18n();
 const route = useRoute();
 const menuOpen = ref(false);
