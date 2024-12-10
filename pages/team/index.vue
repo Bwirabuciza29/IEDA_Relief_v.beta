@@ -96,7 +96,7 @@
           >
             <!-- Effet de Hover -->
             <div
-              class="absolute inset-0 bg-custom-green opacity-0 group-hover:opacity-90 transition"
+              class="absolute inset-0 bg-custom-green hover:border-white opacity-0 group-hover:opacity-90 transition"
             ></div>
 
             <!-- Contenu des cartes -->
@@ -104,7 +104,7 @@
               <img
                 :src="member.image"
                 :alt="member.name"
-                class="w-16 h-16 mx-auto rounded-full mb-4 border-2 border-custom-green"
+                class="w-16 h-16 mx-auto rounded-full mb-4 border-2 border-custom-green hover:border-white"
               />
               <h2 class="text-lg font-semibold">{{ member.name }}</h2>
               <p class="text-sm">{{ member.role }}</p>
@@ -159,7 +159,7 @@
                 <img
                   :src="member.image"
                   :alt="member.name"
-                  class="w-16 h-16 mx-auto rounded-full mb-4 border-2 border-custom-green"
+                  class="w-16 h-16 mx-auto rounded-full mb-4 border-2 border-custom-green hover:borger-white"
                 />
                 <h2 class="text-lg font-semibold">{{ member.name }}</h2>
                 <p class="text-sm">{{ member.role }}</p>
@@ -329,11 +329,21 @@ const team = [
   {
     name: "Phil MAANULWA",
     role: t("team.lead_1"),
-    image: "/img/av1.jpg",
+    image: "/img/coach.jpg",
     social: {
       linkedin: "https://linkedin.com/in/johndoe",
       twitter: "https://twitter.com/johndoe",
       facebook: "https://facebook.com/johndoe",
+    },
+  },
+  {
+    name: "Valentin TAPSOPA",
+    role: t("team.lead_4"),
+    image: "/img/valantin.jpg",
+    social: {
+      linkedin: "https://linkedin.com/in/shafinaadjani",
+      twitter: "https://twitter.com/shafinaadjani",
+      facebook: "https://facebook.com/shafinaadjani",
     },
   },
   {
@@ -354,16 +364,6 @@ const team = [
       linkedin: "https://linkedin.com/in/alexberil",
       twitter: "https://twitter.com/alexberil",
       facebook: "https://facebook.com/alexberil",
-    },
-  },
-  {
-    name: "Another ONE",
-    role: t("team.lead_4"),
-    image: "/img/av4.jpg",
-    social: {
-      linkedin: "https://linkedin.com/in/shafinaadjani",
-      twitter: "https://twitter.com/shafinaadjani",
-      facebook: "https://facebook.com/shafinaadjani",
     },
   },
 ];

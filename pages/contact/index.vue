@@ -125,12 +125,13 @@
       <!-- Carte Google Maps -->
       <div class="mt-8">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3151.8354345094977!2d144.95592831538247!3d-37.8172099797517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1668644382983!5m2!1sen!2s"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3466.7037927839347!2d-95.51045092526454!3d29.670368636198827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640e9d9eb4b3b05%3A0x7a44581073dfcd6b!2sIEDA%20Relief!5e0!3m2!1sfr!2scd!4v1733840736414!5m2!1sfr!2scd"
           width="100%"
-          height="300"
-          class="rounded-lg shadow-lg"
+          height="450"
+          style="border: 0"
           allowfullscreen=""
           loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
       <div class="mj-container mt-16">
@@ -148,11 +149,11 @@
           <div
             v-for="(faq, index) in faqs"
             :key="index"
-            class="overflow-hidden shadow-lg"
+            class="overflow-hidden shadow-lg rounded-lg"
           >
             <button
               @click="toggleFAQ(index)"
-              class="w-full text-left flex justify-between items-center px-4 py-4 bg-white hover:scale-105 transition-transform duration-300 ease-in-out"
+              class="w-full text-left flex justify-between items-center p-4 bg-white hover:scale-105 transition-transform duration-300 ease-in-out"
             >
               <span
                 :class="{ 'text-green-500 font-medium': activeFAQ === index }"
