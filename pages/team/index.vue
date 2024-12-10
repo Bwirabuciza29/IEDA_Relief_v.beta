@@ -257,11 +257,43 @@
               class="w-full h-auto object-cover rounded-lg"
             />
           </div>
+          <h2 class="text-lg font-bold text-center mb-4">Head of Mission</h2>
+          <div class="w-full flex items-start mb-6 border-b-2">
+            <!-- Photo du Chef de Mission -->
+            <div class="flex-shrink-0 mr-4 mb-4">
+              <img
+                :src="countries[activeCountry].chief.image"
+                alt="Photo du chef de mission"
+                class="w-24 h-24 object-container rounded-full border border-gray-300"
+              />
+            </div>
+
+            <!-- Informations du Chef de Mission -->
+            <div class="flex-grow">
+              <!-- Nom et Postnom -->
+              <h3 class="text-lg font-bold">
+                {{ countries[activeCountry].chief.name }}
+              </h3>
+
+              <!-- Détails -->
+
+              <p class="text-sm text-gray-700">
+                <span class="font-semibold">Sexe:</span>
+                {{ countries[activeCountry].chief.gender }}
+              </p>
+              <p class="text-sm text-gray-700">
+                <span class="font-semibold">Description:</span>
+                {{ countries[activeCountry].chief.description }}
+              </p>
+            </div>
+          </div>
           <h2 class="text-lg font-bold text-center mb-4">
             {{ t("team.p_3") }}
           </h2>
+          <!-- Section Chef de Mission -->
+
           <!-- Détails de contact -->
-          <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="w-full grid grid-cols-1 text-sm sm:grid-cols-2 gap-4">
             <!-- Adresse -->
             <div class="flex items-center space-x-4">
               <i
@@ -401,7 +433,7 @@ const board = [
   {
     name: "Phil Maanulwa",
     role: t("team.lead_8"),
-    image: "/img/avatar4.jpg",
+    image: "/img/coach.jpg",
     social: {
       linkedin: "https://linkedin.com/in/shafinaadjani",
       twitter: "https://twitter.com/shafinaadjani",
@@ -439,6 +471,12 @@ const countries = [
     name: "USA",
     flag: "https://flagcdn.com/us.svg",
     image: "/img/pa1.jpg",
+    chief: {
+      image: "https://via.placeholder.com/150?text=Chef+USA",
+      name: "John Doe",
+      gender: "Masculin",
+      description: "Chef de mission expérimenté avec 10 ans d'expérience.",
+    },
     details: {
       address: "10103 Foundren Road, Houston, TX",
       tel: "+1 555 1234",
@@ -450,6 +488,12 @@ const countries = [
     name: "Belgique",
     flag: "https://flagcdn.com/be.svg",
     image: "https://via.placeholder.com/300x200?text=Belgium",
+    chief: {
+      image: "https://via.placeholder.com/150?text=Chef+Belgique",
+      name: "Jean Dupont",
+      gender: "Masculin",
+      description: "Expert en relations internationales et gestion de projet.",
+    },
     details: {
       address: "Rue des Hirondelles, 1 1000 Bruxelles / BELGIQUE",
       tel: "+32(0) 497 15 92 98",
@@ -461,11 +505,17 @@ const countries = [
     name: "Burkina Faso",
     flag: "https://flagcdn.com/bf.svg",
     image: "https://via.placeholder.com/300x200?text=Burkina+Faso",
+    chief: {
+      image: "/img/bintu.jpg",
+      name: "Micka BINTU",
+      gender: "Féminin",
+      description: "Spécialiste des programmes de développement rural.",
+    },
     details: {
       address:
         "05 BP 6402 Ouaga 05, Boulevard Muammar Kadhafi, secteur 53, Section PLot 17, Parcelle No 6 Ouaga2000",
       tel: "+226 25374622",
-      gsm: "+226  65584909",
+      gsm: "+226 65584909",
       email: "burkinafasooffice@iedarelief.org",
     },
   },
@@ -473,6 +523,14 @@ const countries = [
     name: "Rép. Centrafricaine",
     flag: "https://flagcdn.com/cf.svg",
     image: "https://via.placeholder.com/300x200?text=Central+African+Republic",
+    chief: {
+      image: "https://via.placeholder.com/150?text=Chef+Centrafrique",
+      name: "Marie-Claire Zanga",
+      postnom: "Bokassa",
+      gender: "Féminin",
+      description:
+        "Experte en gestion humanitaire et opérations sur le terrain.",
+    },
     details: {
       address:
         "Av. Barthélemy BOGANDA, Quartier SICA III, 3ème Arrondissement Bangui, Centrafrique, BP 1774 Bangui",
@@ -485,6 +543,14 @@ const countries = [
     name: "Cameroun",
     flag: "https://flagcdn.com/cm.svg",
     image: "https://via.placeholder.com/300x200?text=Cameroun",
+    chief: {
+      image: "https://via.placeholder.com/150?text=Chef+Cameroun",
+      name: "Joseph Nkou",
+      postnom: "Mbala",
+      gender: "Masculin",
+      description:
+        "Coordinateur de programmes avec expertise en santé publique.",
+    },
     details: {
       address: "BP 7694 Yaoundé, Bastos, Derrière Laboratoire Meka",
       tel: "+237 682315370",
@@ -496,9 +562,16 @@ const countries = [
     name: "Rép. Dém. du Congo",
     flag: "https://flagcdn.com/cd.svg",
     image: "https://via.placeholder.com/300x200?text=DR+Congo",
+    chief: {
+      image: "/img/francois.jpg",
+      name: "François OMENDE",
+      gender: "Masculin",
+      description:
+        "Responsable humanitaire avec une expertise en gestion des crises.",
+    },
     details: {
       address:
-        "Avenue O.U.A, N°17, Quartier Basoko/GB, Commune de Ngaliema, ville de Kinshasa, RDC ",
+        "Avenue O.U.A, N°17, Quartier Basoko/GB, Commune de Ngaliema, ville de Kinshasa, RDC",
       tel: "+243 980375904",
       gsm: "+243 995614803 ",
       email: "drcmission@iedarelief.org, drcoffice@iedarelief.org",
@@ -508,6 +581,15 @@ const countries = [
     name: "Niger",
     flag: "https://flagcdn.com/ne.svg",
     image: "https://via.placeholder.com/300x200?text=Niger",
+    chief: {
+      image: "https://via.placeholder.com/150?text=Chef+Niger",
+      name: "Hamadou Amadou",
+      postnom: "Diop",
+      nationality: "Nigérien",
+      gender: "Masculin",
+      description:
+        "Gestionnaire de programmes spécialisés dans les projets d'accès à l'eau.",
+    },
     details: {
       address:
         "Quartier Koubia/Route Tillabérie, Parcelle N° F de l'Ilot 8099 Commune I,Ville de Niamey",
@@ -520,6 +602,15 @@ const countries = [
     name: "Mali",
     flag: "https://flagcdn.com/ml.svg",
     image: "https://via.placeholder.com/300x200?text=Mali",
+    chief: {
+      image: "https://via.placeholder.com/150?text=Chef+Mali",
+      name: "Aïssata Keita",
+      postnom: "Traoré",
+      nationality: "Malienne",
+      gender: "Féminin",
+      description:
+        "Spécialiste en développement communautaire avec 15 ans d'expérience.",
+    },
     details: {
       address: "BP 3113 Bamako, Hamdallay, ACI 2000, 5eme Arrondissement",
       tel: "+223 74613901",
