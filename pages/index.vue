@@ -12,8 +12,7 @@
               {{ title_1 }}
               <span class="text-custom-green font-sri"> {{ title_2 }} </span>
               {{ title_3 }}
-              <span class="text-custom-green font-sri"> {{ title_4 }} </span
-              >....
+              <span class="text-custom-green font-sri"> {{ title_4 }} </span>...
             </h1>
             <p class="text-gray-700 text-lg">
               {{ desc }}
