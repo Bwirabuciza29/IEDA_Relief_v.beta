@@ -401,7 +401,7 @@ const team = [
 ];
 const board = [
   {
-    name: "Alex Anderson",
+    name: "Dulacha WARIO",
     role: t("team.lead_5"),
     image: "/img/avatar6.jpg",
     social: {
@@ -411,7 +411,7 @@ const board = [
     },
   },
   {
-    name: "Floresa S. Hervey ",
+    name: "Stanis WEMBONYAMA",
     role: t("team.lead_6"),
     image: "/img/avatar5.jpg",
     social: {
@@ -421,7 +421,7 @@ const board = [
     },
   },
   {
-    name: "Blaise B. Lolika",
+    name: "Alain MAHESHE",
     role: t("team.lead_7"),
     image: "/img/avatar3.jpg",
     social: {
@@ -431,7 +431,7 @@ const board = [
     },
   },
   {
-    name: "Phil Maanulwa",
+    name: "Phil MAANULWA",
     role: t("team.lead_8"),
     image: "/img/coach.jpg",
     social: {
@@ -441,7 +441,7 @@ const board = [
     },
   },
   {
-    name: "Richard Ngombe",
+    name: "Hassan KHATER",
     role: t("team.lead_9"),
     image: "/img/avatar9.jpg",
     social: {
@@ -451,7 +451,7 @@ const board = [
     },
   },
   {
-    name: "Dr. Edouard Kabazimya",
+    name: "Kelly BROOME",
     role: t("team.lead_10"),
     image: "/img/avatar2.jpg",
     social: {
