@@ -522,12 +522,11 @@ const countries = [
   {
     name: "Rép. Centrafricaine",
     flag: "https://flagcdn.com/cf.svg",
-    image: "https://via.placeholder.com/300x200?text=Central+African+Republic",
+    image: "/img/r.jpg",
     chief: {
-      image: "https://via.placeholder.com/150?text=Chef+Centrafrique",
-      name: "Marie-Claire Zanga",
-      postnom: "Bokassa",
-      gender: "Féminin",
+      image: "/img/francois.jpg",
+      name: "François DE PAUL",
+      gender: "Masculin",
       description:
         "Experte en gestion humanitaire et opérations sur le terrain.",
     },
@@ -601,15 +600,12 @@ const countries = [
   {
     name: "Mali",
     flag: "https://flagcdn.com/ml.svg",
-    image: "https://via.placeholder.com/300x200?text=Mali",
+    image: "img/mali.jpg",
     chief: {
-      image: "https://via.placeholder.com/150?text=Chef+Mali",
-      name: "Aïssata Keita",
-      postnom: "Traoré",
-      nationality: "Malienne",
-      gender: "Féminin",
-      description:
-        "Spécialiste en développement communautaire avec 15 ans d'expérience.",
+      image: "/img/audacieux.jpg",
+      name: "Audacieux KITSA",
+      gender: "Masculin",
+      description: "Spécialiste en développement communautaire.",
     },
     details: {
       address: "BP 3113 Bamako, Hamdallay, ACI 2000, 5eme Arrondissement",
