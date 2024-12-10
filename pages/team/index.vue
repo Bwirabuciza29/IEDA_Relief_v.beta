@@ -543,17 +543,17 @@ const countries = [
     flag: "https://flagcdn.com/cm.svg",
     image: "https://via.placeholder.com/300x200?text=Cameroun",
     chief: {
-      image: "https://via.placeholder.com/150?text=Chef+Cameroun",
-      name: "Joseph Nkou",
-      postnom: "Mbala",
+      image: "/img/david.jpg",
+      name: "David KISUBA",
       gender: "Masculin",
       description:
         "Coordinateur de programmes avec expertise en santé publique.",
     },
     details: {
-      address: "BP 7694 Yaoundé, Bastos, Derrière Laboratoire Meka",
-      tel: "+237 682315370",
-      gsm: "+237 682315370",
+      address:
+        " Yaoundé, derrière la sous-préfecture de Tshinga, montée Palais des congrès m. ",
+      tel: " +237  82315311",
+      gsm: "+236 74125446",
       email: "cameroonoffice@iedarelief.org",
     },
   },
@@ -581,8 +581,8 @@ const countries = [
     flag: "https://flagcdn.com/ne.svg",
     image: "https://via.placeholder.com/300x200?text=Niger",
     chief: {
-      image: "https://via.placeholder.com/150?text=Chef+Niger",
-      name: "Hamadou Amadou",
+      image: "/img/cisse.jpg",
+      name: "Bakary CISSE",
       postnom: "Diop",
       nationality: "Nigérien",
       gender: "Masculin",
@@ -591,10 +591,10 @@ const countries = [
     },
     details: {
       address:
-        "Quartier Koubia/Route Tillabérie, Parcelle N° F de l'Ilot 8099 Commune I,Ville de Niamey",
-      tel: "+227 94702963",
-      gsm: "+227 94702963",
-      email: "nigeroffice@iedarelief.org",
+        "Quartier Bobiel vers école Galaxy plus premier virage à gauche après le siège National de ADN FUSHA, Commune I,Ville de Niamey ",
+      tel: "+227 89 97 04 60 ",
+      gsm: "+227 89 97 04 60 ",
+      email: "nigermission@iedarelief.org",
     },
   },
   {
