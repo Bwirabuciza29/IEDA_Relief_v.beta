@@ -202,17 +202,19 @@
       </div>
     </div>
     <!-- gallerie ici -->
-    <div class="mj-container">
-      <h1 class="text-3xl font-bold text-center mb-6">
-        Notre galerie complète d'images
+    <div class="mj-container -mt-14">
+      <h1 class="text-4xl font-bold text-center mb-6">
+        {{ t("img.title_3") }}
       </h1>
       <div class="flex justify-center space-x-4 mb-8">
         <div
           v-for="country in countries"
           :key="country.name"
           :class="
-            'flex items-center space-x-2 cursor-pointer px-4 py-2 rounded-lg ' +
-            (activeCountry === country.name ? 'bg-gray-200' : 'bg-white')
+            'flex items-center space-x-2 cursor-pointer px-4 py-2 ' +
+            (activeCountry === country.name
+              ? 'bg-custom-green text-white'
+              : 'bg-white')
           "
           @click="selectCountry(country.name)"
         >
@@ -237,11 +239,11 @@
             class="absolute bottom-20 right-0 bg-green-50 p-1 flex items-center justify-center"
           >
             <div class="relative w-8 h-8">
-              <img
-                src="/img/ar.svg"
-                alt="icon"
-                class="h-full w-full bg-gray-700 text-white p-4 absolute -bottom-1 -right-1"
-              />
+              <p
+                class="h-full w-full bg-custom-green text-white p-4 absolute -bottom-1 -right-1"
+              >
+                ieda
+              </p>
             </div>
           </div>
 
@@ -283,22 +285,22 @@ const images = [
   {
     id: 1,
     url: "/img/gal.jpg",
-    title: "Image 1",
-    author: "Auteur USA",
+    title: "IEDA Relief",
+    author: "Team USA",
     country: "USA",
   },
   {
     id: 2,
     url: "/img/cm.jpg",
-    title: "Image 2",
-    author: "Auteur USA",
+    title: "IEDA Relief",
+    author: "Team USA",
     country: "USA",
   },
   {
     id: 3,
     url: "/img/gal.jpg",
-    title: "Image 3",
-    author: "Auteur USA",
+    title: "IEDA Relief",
+    author: "Team USA",
     country: "USA",
   },
   {
