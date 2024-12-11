@@ -206,22 +206,24 @@
       <h1 class="text-4xl font-bold text-center mb-6">
         {{ t("img.title_3") }}
       </h1>
-      <div class="flex justify-center space-x-4 mb-8">
+      <div
+        class="grid grid-cols-2 gap-4 md:flex md:justify-center md:space-x-4 mb-8"
+      >
         <div
           v-for="country in countries"
           :key="country.name"
-          :class="
-            'flex items-center space-x-2 cursor-pointer px-4 py-2 ' +
-            (activeCountry === country.name
-              ? 'bg-custom-green text-white'
-              : 'bg-white')
-          "
+          :class="{
+            'flex items-center justify-center space-x-2 cursor-pointer px-4 py-2 w-full md:w-auto': true,
+            'bg-custom-green text-white': activeCountry === country.name,
+            'bg-white border border-gray-300': activeCountry !== country.name,
+          }"
           @click="selectCountry(country.name)"
         >
           <NuxtImg :src="country.flag" :alt="country.name" class="w-6 h-4" />
           <span class="font-medium">{{ country.name }}</span>
         </div>
       </div>
+
       <!-- img debut -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div
@@ -252,7 +254,7 @@
           <!-- Texte avec animation de soulignement et apparition au hover -->
           <div class="p-4">
             <p class="font-bold text-lg relative inline-block">
-              {{ image.title }}
+              {{ image.country }}
               <span
                 class="absolute left-0 bottom-0 h-[2px] bg-custom-green w-0 transition-all duration-300 ease-in-out group-hover:w-full"
               ></span>
@@ -260,7 +262,7 @@
             <p
               class="text-sm text-gray-600 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
             >
-              Par : {{ image.country }}
+              Par : {{ image.author }}
             </p>
           </div>
         </div>
@@ -286,10 +288,10 @@ const { t } = useI18n();
 const countries = [
   { name: "USA", flag: " https://flagcdn.com/48x36/us.png" },
   { name: "Belgique", flag: "https://flagcdn.com/48x36/be.png" },
-  { name: "Burkina Faso", flag: "https://flagcdn.com/48x36/bf.png" },
+  { name: "BurkinaFaso", flag: "https://flagcdn.com/48x36/bf.png" },
   { name: "RCA", flag: "https://flagcdn.com/48x36/cf.png" },
   { name: "Cameroun", flag: "https://flagcdn.com/48x36/cm.png" },
-  { name: "RD Congo", flag: "https://flagcdn.com/48x36/cd.png" },
+  { name: "RD.Congo", flag: "https://flagcdn.com/48x36/cd.png" },
   { name: "Niger", flag: "https://flagcdn.com/48x36/ne.png" },
   { name: "Mali", flag: "https://flagcdn.com/48x36/ml.png" },
 ];
@@ -342,39 +344,60 @@ const images = [
     url: "/images/burkina1.jpg",
     title: "Image 1",
     author: "Auteur Burkina Faso",
-    country: "Burkina Faso",
+    country: "BurkinaFaso",
   },
   {
     id: 8,
     url: "/images/burkina2.jpg",
     title: "Image 2",
     author: "Auteur Burkina Faso",
-    country: "Burkina Faso",
+    country: "BurkinaFaso",
   },
   {
     id: 9,
     url: "/images/burkina3.jpg",
     title: "Image 3",
     author: "Auteur Burkina Faso",
-    country: "Burkina Faso",
+    country: "BurkinaFaso",
   },
   {
     id: 10,
-    url: "/images/rca1.jpg",
+    url: "https://ik.imagekit.io/cameroun/RCA/img_1%20(12).jpg?updatedAt=1733926680923",
     title: "Image 1",
     author: "Auteur RCA",
     country: "RCA",
   },
   {
     id: 11,
-    url: "/images/rca2.jpg",
+    url: "https://ik.imagekit.io/cameroun/RCA/img_1%20(15).jpg?updatedAt=1733926682394",
     title: "Image 2",
     author: "Auteur RCA",
     country: "RCA",
   },
   {
     id: 12,
-    url: "/images/rca3.jpg",
+    url: "https://ik.imagekit.io/cameroun/RCA/rca%20(2).jpg?updatedAt=1733926690828",
+    title: "Image 3",
+    author: "Auteur RCA",
+    country: "RCA",
+  },
+  {
+    id: 12,
+    url: "https://ik.imagekit.io/cameroun/RCA/img_1%20(9).jpg?updatedAt=1733926690089",
+    title: "Image 3",
+    author: "Auteur RCA",
+    country: "RCA",
+  },
+  {
+    id: 12,
+    url: "https://ik.imagekit.io/cameroun/RCA/img_1%20(7).jpg?updatedAt=1733926688492",
+    title: "Image 3",
+    author: "Auteur RCA",
+    country: "RCA",
+  },
+  {
+    id: 12,
+    url: "https://ik.imagekit.io/cameroun/RCA/img_1%20(16).jpg?updatedAt=1733926682081",
     title: "Image 3",
     author: "Auteur RCA",
     country: "RCA",
@@ -423,63 +446,99 @@ const images = [
   },
   {
     id: 16,
-    url: "/images/rdcongo1.jpg",
+    url: "https://ik.imagekit.io/cameroun/RDC/IMG-20241210-WA0093.jpg?updatedAt=1733926192528",
     title: "Image 1",
     author: "Auteur RD Congo",
-    country: "RD Congo",
+    country: "RD.Congo",
   },
   {
     id: 17,
-    url: "/images/rdcongo2.jpg",
+    url: "https://ik.imagekit.io/cameroun/RDC/IMG-20241210-WA0056.jpg?updatedAt=1733926160489",
     title: "Image 2",
     author: "Auteur RD Congo",
-    country: "RD Congo",
+    country: "RD.Congo",
   },
   {
     id: 18,
-    url: "/images/rdcongo3.jpg",
+    url: "https://ik.imagekit.io/cameroun/RDC/IMG-20241210-WA0051.jpg?updatedAt=1733926162100",
     title: "Image 3",
     author: "Auteur RD Congo",
-    country: "RD Congo",
+    country: "RD.Congo",
+  },
+  {
+    id: 18,
+    url: "https://ik.imagekit.io/cameroun/RDC/IMG-20241210-WA0067.jpg?updatedAt=1733926172229",
+    title: "Image 3",
+    author: "Auteur RD Congo",
+    country: "RD.Congo",
+  },
+  {
+    id: 18,
+    url: "https://ik.imagekit.io/cameroun/RDC/IMG-20241210-WA0070.jpg?updatedAt=1733926174375",
+    title: "Image 3",
+    author: "Auteur RD Congo",
+    country: "RD.Congo",
+  },
+  {
+    id: 18,
+    url: "https://ik.imagekit.io/cameroun/RDC/IMG-20241210-WA0076.jpg?updatedAt=1733926180800",
+    title: "Image 3",
+    author: "Auteur RD Congo",
+    country: "RD.Congo",
   },
   {
     id: 19,
-    url: "/images/niger1.jpg",
+    url: "https://ik.imagekit.io/cameroun/NIGER/IMG-20241210-WA0065.jpg?updatedAt=1733925526552",
     title: "Image 1",
     author: "Auteur Niger",
     country: "Niger",
   },
   {
     id: 20,
-    url: "/images/niger2.jpg",
+    url: "https://ik.imagekit.io/cameroun/NIGER/IMG-20241210-WA0048.jpg?updatedAt=1733925519859",
     title: "Image 2",
     author: "Auteur Niger",
     country: "Niger",
   },
   {
     id: 21,
-    url: "/images/niger3.jpg",
+    url: "https://ik.imagekit.io/cameroun/NIGER/IMG-20241210-WA0053.jpg?updatedAt=1733925519431",
     title: "Image 3",
     author: "Auteur Niger",
     country: "Niger",
   },
   {
+    id: 21,
+    url: "https://ik.imagekit.io/cameroun/NIGER/IMG-20241210-WA0056.jpg?updatedAt=1733925519249",
+    title: "Image 3",
+    author: "Auteur Niger",
+    country: "Niger",
+  },
+  {
+    id: 21,
+    url: "https://ik.imagekit.io/cameroun/NIGER/IMG-20241210-WA0052.jpg?updatedAt=1733925519237",
+    title: "Image 3",
+    author: "Auteur Niger",
+    country: "Niger",
+  },
+
+  {
     id: 22,
-    url: "/images/mali1.jpg",
+    url: "https://ik.imagekit.io/cameroun/mali/IMG-20241210-WA0104.jpg?updatedAt=1733926515829",
     title: "Image 1",
     author: "Auteur Mali",
     country: "Mali",
   },
   {
     id: 23,
-    url: "/images/mali2.jpg",
+    url: "https://ik.imagekit.io/cameroun/mali/IMG-20241210-WA0102.jpg?updatedAt=1733926514840",
     title: "Image 2",
     author: "Auteur Mali",
     country: "Mali",
   },
   {
     id: 24,
-    url: "/images/mali3.jpg",
+    url: "https://ik.imagekit.io/cameroun/mali/IMG-20241210-WA0095.jpg?updatedAt=1733926512373",
     title: "Image 3",
     author: "Auteur Mali",
     country: "Mali",
