@@ -75,7 +75,8 @@ export default defineNuxtConfig({
   },
 
   // Pour la traduction
-  modules: ["@nuxtjs/i18n"],
+  modules: ["@nuxtjs/i18n", "@nuxt/image"],
+
   i18n: {
     lazy: true,
     langDir: "locales",

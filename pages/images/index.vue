@@ -218,7 +218,7 @@
           "
           @click="selectCountry(country.name)"
         >
-          <img :src="country.flag" :alt="country.name" class="w-6 h-4" />
+          <NuxtImg :src="country.flag" :alt="country.name" class="w-6 h-4" />
           <span class="font-medium">{{ country.name }}</span>
         </div>
       </div>
@@ -368,23 +368,44 @@ const images = [
   },
   {
     id: 13,
-    url: "/images/cameroun1.jpg",
+    url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0040.jpg?updatedAt=1733921917137",
     title: "Image 1",
-    author: "Auteur Cameroun",
+    author: "Team IEDA Cameroun Cameroun",
     country: "Cameroun",
   },
   {
     id: 14,
-    url: "/images/cameroun2.jpg",
+    url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0044.jpg?updatedAt=1733921921849",
     title: "Image 2",
-    author: "Auteur Cameroun",
+    author: "Team IEDA Cameroun Cameroun",
     country: "Cameroun",
   },
   {
     id: 15,
-    url: "/images/cameroun3.jpg",
+    url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0029.jpg?updatedAt=1733921914578",
     title: "Image 3",
-    author: "Auteur Cameroun",
+    author: "Team IEDA Cameroun Cameroun",
+    country: "Cameroun",
+  },
+  {
+    id: 25,
+    url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0034.jpg?updatedAt=1733921915474",
+    title: "Image 3",
+    author: "Team IEDA Cameroun Cameroun",
+    country: "Cameroun",
+  },
+  {
+    id: 26,
+    url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0027.jpg?updatedAt=1733921910607",
+    title: "Image 3",
+    author: "Team IEDA Cameroun Cameroun",
+    country: "Cameroun",
+  },
+  {
+    id: 27,
+    url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0049.jpg?updatedAt=1733921924669",
+    title: "Image 3",
+    author: "Team IEDA Cameroun Cameroun",
     country: "Cameroun",
   },
   {
