@@ -229,11 +229,15 @@
           :key="image.id"
           class="relative group overflow-hidden"
         >
-          <img
-            :src="image.url"
-            :alt="image.title"
-            class="w-full h-64 object-cover"
-          />
+          <!-- Image avec hover avancée et transition -->
+          <div class="relative overflow-hidden">
+            <img
+              :src="image.url"
+              :alt="image.title"
+              class="w-full h-64 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:translate-y-[-10px]"
+            />
+          </div>
+
           <!-- Icône en bas à droite -->
           <div
             class="absolute bottom-20 right-0 bg-green-50 p-1 flex items-center justify-center"
@@ -241,18 +245,27 @@
             <div class="relative w-8 h-8">
               <p
                 class="h-full w-full bg-custom-green text-white p-4 absolute -bottom-1 -right-1"
-              >
-                ieda
-              </p>
+              ></p>
             </div>
           </div>
 
+          <!-- Texte avec animation de soulignement et apparition au hover -->
           <div class="p-4">
-            <p class="font-bold text-lg">{{ image.title }}</p>
-            <p class="text-sm text-gray-600">Par : {{ image.author }}</p>
+            <p class="font-bold text-lg relative inline-block">
+              {{ image.title }}
+              <span
+                class="absolute left-0 bottom-0 h-[2px] bg-custom-green w-0 transition-all duration-300 ease-in-out group-hover:w-full"
+              ></span>
+            </p>
+            <p
+              class="text-sm text-gray-600 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+            >
+              Par : {{ image.country }}
+            </p>
           </div>
         </div>
       </div>
+
       <!-- img end -->
     </div>
     <hr class="mj-container mt-8" />
@@ -369,42 +382,42 @@ const images = [
   {
     id: 13,
     url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0040.jpg?updatedAt=1733921917137",
-    title: "Image 1",
+    title: "Cameroun",
     author: "Team IEDA Cameroun Cameroun",
     country: "Cameroun",
   },
   {
     id: 14,
     url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0044.jpg?updatedAt=1733921921849",
-    title: "Image 2",
+    title: "Cameroun",
     author: "Team IEDA Cameroun Cameroun",
     country: "Cameroun",
   },
   {
     id: 15,
     url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0029.jpg?updatedAt=1733921914578",
-    title: "Image 3",
+    title: "Cameroun",
     author: "Team IEDA Cameroun Cameroun",
     country: "Cameroun",
   },
   {
     id: 25,
     url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0034.jpg?updatedAt=1733921915474",
-    title: "Image 3",
+    title: "Cameroun",
     author: "Team IEDA Cameroun Cameroun",
     country: "Cameroun",
   },
   {
     id: 26,
     url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0027.jpg?updatedAt=1733921910607",
-    title: "Image 3",
+    title: "Cameroun",
     author: "Team IEDA Cameroun Cameroun",
     country: "Cameroun",
   },
   {
     id: 27,
     url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0049.jpg?updatedAt=1733921924669",
-    title: "Image 3",
+    title: "Cameroun",
     author: "Team IEDA Cameroun Cameroun",
     country: "Cameroun",
   },
