@@ -38,9 +38,9 @@
             <!-- Image (à droite sur grand écran) -->
             <div class="flex-1 hidden md:flex">
               <img
-                src="/img/t.jpg"
+                src="/img/gal.jpg"
                 alt="About Us Section"
-                class="w-full h-full object-cover rounded-lg transition-all duration-300 hover:scale-105"
+                class="w-full h-48 object-cover rounded-lg transition-all duration-300 hover:scale-105"
               />
             </div>
           </div>
@@ -220,29 +220,38 @@
           <span class="font-medium">{{ country.name }}</span>
         </div>
       </div>
-
+      <!-- img debut -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div
           v-for="image in filteredImages"
           :key="image.id"
-          class="relative group border rounded-lg overflow-hidden"
+          class="relative group overflow-hidden"
         >
           <img
             :src="image.url"
             :alt="image.title"
             class="w-full h-64 object-cover"
           />
+          <!-- Icône en bas à droite -->
           <div
-            class="absolute bottom-0 right-0 m-2 bg-white p-1 rounded shadow"
+            class="absolute bottom-20 right-0 bg-green-50 p-1 flex items-center justify-center"
           >
-            <i class="fa-solid fa-expand"></i>
+            <div class="relative w-8 h-8">
+              <img
+                src="/img/ar.svg"
+                alt="icon"
+                class="h-full w-full bg-gray-700 text-white p-4 absolute -bottom-1 -right-1"
+              />
+            </div>
           </div>
+
           <div class="p-4">
             <p class="font-bold text-lg">{{ image.title }}</p>
             <p class="text-sm text-gray-600">Par : {{ image.author }}</p>
           </div>
         </div>
       </div>
+      <!-- img end -->
     </div>
     <hr class="mj-container mt-8" />
     <!-- Parteners -->
@@ -273,21 +282,21 @@ const countries = [
 const images = [
   {
     id: 1,
-    url: "/images/usa1.jpg",
+    url: "/img/gal.jpg",
     title: "Image 1",
     author: "Auteur USA",
     country: "USA",
   },
   {
     id: 2,
-    url: "/images/usa2.jpg",
+    url: "/img/cm.jpg",
     title: "Image 2",
     author: "Auteur USA",
     country: "USA",
   },
   {
     id: 3,
-    url: "/images/usa3.jpg",
+    url: "/img/gal.jpg",
     title: "Image 3",
     author: "Auteur USA",
     country: "USA",
@@ -441,15 +450,24 @@ const images = [
   },
 ];
 
-const activeCountry = ref(localStorage.getItem("activeCountry") || "USA");
+// Vérifiez si localStorage est disponible
+const activeCountry = ref("USA"); // Valeur par défaut
 
+if (typeof window !== "undefined" && window.localStorage) {
+  activeCountry.value = localStorage.getItem("activeCountry") || "USA";
+}
+
+// Filtrer les images par pays
 const filteredImages = computed(() => {
   return images.filter((image) => image.country === activeCountry.value);
 });
 
+// Fonction pour changer de pays
 const selectCountry = (country) => {
   activeCountry.value = country;
-  localStorage.setItem("activeCountry", country);
+  if (typeof window !== "undefined" && window.localStorage) {
+    localStorage.setItem("activeCountry", country);
+  }
 };
 </script>
 
