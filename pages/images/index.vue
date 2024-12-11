@@ -202,12 +202,12 @@
       </div>
     </div>
     <!-- gallerie ici -->
-    <div class="mj-container -mt-14">
+    <div class="mj-container -mt-20">
       <h1 class="text-4xl font-bold text-center mb-6">
         {{ t("img.title_3") }}
       </h1>
       <div
-        class="grid grid-cols-2 gap-4 md:flex md:justify-center md:space-x-4 mb-8"
+        class="grid grid-cols-2 gap-4 md:flex md:justify-center md:space-x-4 mb-8 mt-8"
       >
         <div
           v-for="country in countries"
