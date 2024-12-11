@@ -202,8 +202,49 @@
       </div>
     </div>
     <!-- gallerie ici -->
-    <div class="mj-container"></div>
-    <hr class="mj-container" />
+    <div class="mj-container">
+      <h1 class="text-3xl font-bold text-center mb-6">
+        Notre galerie complète d'images
+      </h1>
+      <div class="flex justify-center space-x-4 mb-8">
+        <div
+          v-for="country in countries"
+          :key="country.name"
+          :class="
+            'flex items-center space-x-2 cursor-pointer px-4 py-2 rounded-lg ' +
+            (activeCountry === country.name ? 'bg-gray-200' : 'bg-white')
+          "
+          @click="selectCountry(country.name)"
+        >
+          <img :src="country.flag" :alt="country.name" class="w-6 h-4" />
+          <span class="font-medium">{{ country.name }}</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div
+          v-for="image in filteredImages"
+          :key="image.id"
+          class="relative group border rounded-lg overflow-hidden"
+        >
+          <img
+            :src="image.url"
+            :alt="image.title"
+            class="w-full h-64 object-cover"
+          />
+          <div
+            class="absolute bottom-0 right-0 m-2 bg-white p-1 rounded shadow"
+          >
+            <i class="fa-solid fa-expand"></i>
+          </div>
+          <div class="p-4">
+            <p class="font-bold text-lg">{{ image.title }}</p>
+            <p class="text-sm text-gray-600">Par : {{ image.author }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="mj-container mt-8" />
     <!-- Parteners -->
     <div class="my-16">
       <LogOurs />
@@ -215,6 +256,200 @@
   </section>
 </template>
 <script setup>
+// Les catégori
+import { ref, computed, onMounted } from "vue";
 const { t } = useI18n();
-// Les catégories
+const countries = [
+  { name: "USA", flag: " https://flagcdn.com/48x36/us.png" },
+  { name: "Belgique", flag: "https://flagcdn.com/48x36/be.png" },
+  { name: "Burkina Faso", flag: "https://flagcdn.com/48x36/bf.png" },
+  { name: "RCA", flag: "https://flagcdn.com/48x36/cf.png" },
+  { name: "Cameroun", flag: "https://flagcdn.com/48x36/cm.png" },
+  { name: "RD Congo", flag: "https://flagcdn.com/48x36/cd.png" },
+  { name: "Niger", flag: "https://flagcdn.com/48x36/ne.png" },
+  { name: "Mali", flag: "https://flagcdn.com/48x36/ml.png" },
+];
+
+const images = [
+  {
+    id: 1,
+    url: "/images/usa1.jpg",
+    title: "Image 1",
+    author: "Auteur USA",
+    country: "USA",
+  },
+  {
+    id: 2,
+    url: "/images/usa2.jpg",
+    title: "Image 2",
+    author: "Auteur USA",
+    country: "USA",
+  },
+  {
+    id: 3,
+    url: "/images/usa3.jpg",
+    title: "Image 3",
+    author: "Auteur USA",
+    country: "USA",
+  },
+  {
+    id: 4,
+    url: "/images/belgique1.jpg",
+    title: "Image 1",
+    author: "Auteur Belgique",
+    country: "Belgique",
+  },
+  {
+    id: 5,
+    url: "/images/belgique2.jpg",
+    title: "Image 2",
+    author: "Auteur Belgique",
+    country: "Belgique",
+  },
+  {
+    id: 6,
+    url: "/images/belgique3.jpg",
+    title: "Image 3",
+    author: "Auteur Belgique",
+    country: "Belgique",
+  },
+  {
+    id: 7,
+    url: "/images/burkina1.jpg",
+    title: "Image 1",
+    author: "Auteur Burkina Faso",
+    country: "Burkina Faso",
+  },
+  {
+    id: 8,
+    url: "/images/burkina2.jpg",
+    title: "Image 2",
+    author: "Auteur Burkina Faso",
+    country: "Burkina Faso",
+  },
+  {
+    id: 9,
+    url: "/images/burkina3.jpg",
+    title: "Image 3",
+    author: "Auteur Burkina Faso",
+    country: "Burkina Faso",
+  },
+  {
+    id: 10,
+    url: "/images/rca1.jpg",
+    title: "Image 1",
+    author: "Auteur RCA",
+    country: "RCA",
+  },
+  {
+    id: 11,
+    url: "/images/rca2.jpg",
+    title: "Image 2",
+    author: "Auteur RCA",
+    country: "RCA",
+  },
+  {
+    id: 12,
+    url: "/images/rca3.jpg",
+    title: "Image 3",
+    author: "Auteur RCA",
+    country: "RCA",
+  },
+  {
+    id: 13,
+    url: "/images/cameroun1.jpg",
+    title: "Image 1",
+    author: "Auteur Cameroun",
+    country: "Cameroun",
+  },
+  {
+    id: 14,
+    url: "/images/cameroun2.jpg",
+    title: "Image 2",
+    author: "Auteur Cameroun",
+    country: "Cameroun",
+  },
+  {
+    id: 15,
+    url: "/images/cameroun3.jpg",
+    title: "Image 3",
+    author: "Auteur Cameroun",
+    country: "Cameroun",
+  },
+  {
+    id: 16,
+    url: "/images/rdcongo1.jpg",
+    title: "Image 1",
+    author: "Auteur RD Congo",
+    country: "RD Congo",
+  },
+  {
+    id: 17,
+    url: "/images/rdcongo2.jpg",
+    title: "Image 2",
+    author: "Auteur RD Congo",
+    country: "RD Congo",
+  },
+  {
+    id: 18,
+    url: "/images/rdcongo3.jpg",
+    title: "Image 3",
+    author: "Auteur RD Congo",
+    country: "RD Congo",
+  },
+  {
+    id: 19,
+    url: "/images/niger1.jpg",
+    title: "Image 1",
+    author: "Auteur Niger",
+    country: "Niger",
+  },
+  {
+    id: 20,
+    url: "/images/niger2.jpg",
+    title: "Image 2",
+    author: "Auteur Niger",
+    country: "Niger",
+  },
+  {
+    id: 21,
+    url: "/images/niger3.jpg",
+    title: "Image 3",
+    author: "Auteur Niger",
+    country: "Niger",
+  },
+  {
+    id: 22,
+    url: "/images/mali1.jpg",
+    title: "Image 1",
+    author: "Auteur Mali",
+    country: "Mali",
+  },
+  {
+    id: 23,
+    url: "/images/mali2.jpg",
+    title: "Image 2",
+    author: "Auteur Mali",
+    country: "Mali",
+  },
+  {
+    id: 24,
+    url: "/images/mali3.jpg",
+    title: "Image 3",
+    author: "Auteur Mali",
+    country: "Mali",
+  },
+];
+
+const activeCountry = ref(localStorage.getItem("activeCountry") || "USA");
+
+const filteredImages = computed(() => {
+  return images.filter((image) => image.country === activeCountry.value);
+});
+
+const selectCountry = (country) => {
+  activeCountry.value = country;
+  localStorage.setItem("activeCountry", country);
+};
 </script>
+
