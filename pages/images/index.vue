@@ -286,14 +286,38 @@
 import { ref, computed, onMounted } from "vue";
 const { t } = useI18n();
 const countries = [
-  { name: "USA", flag: " https://flagcdn.com/48x36/us.png" },
-  { name: "Belgique", flag: "https://flagcdn.com/48x36/be.png" },
-  { name: "BurkinaFaso", flag: "https://flagcdn.com/48x36/bf.png" },
-  { name: "RCA", flag: "https://flagcdn.com/48x36/cf.png" },
-  { name: "Cameroun", flag: "https://flagcdn.com/48x36/cm.png" },
-  { name: "RD.Congo", flag: "https://flagcdn.com/48x36/cd.png" },
-  { name: "Niger", flag: "https://flagcdn.com/48x36/ne.png" },
-  { name: "Mali", flag: "https://flagcdn.com/48x36/ml.png" },
+  {
+    name: "USA",
+    flag: "https://www.countryflags.com/wp-content/uploads/united-states-of-america-flag-png-large.png",
+  },
+  {
+    name: "Belgique",
+    flag: "https://www.countryflags.com/wp-content/uploads/belgium-belgian-flag-png-square-large.png",
+  },
+  {
+    name: "BurkinaFaso",
+    flag: "https://www.countryflags.com/wp-content/uploads/burkina-faso-flag-png-large.png",
+  },
+  {
+    name: "RCA",
+    flag: "https://www.countryflags.com/wp-content/uploads/central-african-republic-flag-png-large.png",
+  },
+  {
+    name: "Cameroun",
+    flag: "https://www.countryflags.com/wp-content/uploads/cameroon-flag-png-large.png",
+  },
+  {
+    name: "RD.Congo",
+    flag: "https://www.countryflags.com/wp-content/uploads/congo-democratic-republic-of-the-flag-png-large.png",
+  },
+  {
+    name: "Niger",
+    flag: "https://www.countryflags.com/wp-content/uploads/niger-flag-png-large.png",
+  },
+  {
+    name: "Mali",
+    flag: "https://www.countryflags.com/wp-content/uploads/mali-flag-png-large.png",
+  },
 ];
 
 const images = [
