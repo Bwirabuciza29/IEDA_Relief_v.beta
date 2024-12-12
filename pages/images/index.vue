@@ -133,7 +133,7 @@
                 <p
                   class="text-sm text-gray-600 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
                 >
-                  Par Equipe IEDA Relief
+                  Par Equipe IEDA Relief {{ activeCountry }}
                 </p>
               </div>
             </div>
@@ -172,7 +172,6 @@ const countries = [
     id: "1",
     name: "RCA",
     flag: "https://www.countryflags.com/wp-content/uploads/central-african-republic-flag-png-large.png",
-    desc: "Equipe IEDA Relief RCA",
   },
   {
     id: "2",
