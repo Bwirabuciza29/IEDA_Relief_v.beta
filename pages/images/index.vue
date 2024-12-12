@@ -193,6 +193,11 @@ const countries = [
     name: "mali",
     flag: "https://www.countryflags.com/wp-content/uploads/mali-flag-png-large.png",
   },
+  {
+    id: "6",
+    name: "BurkinaFaso",
+    flag: "https://www.countryflags.com/wp-content/uploads/burkina-faso-flag-png-large.png",
+  },
 ];
 
 // Données des images
@@ -231,7 +236,7 @@ const fetchImages = async () => {
 const selectCountry = (country) => {
   activeCountry.value = country;
   localStorage.setItem("activeCountry", country);
-  fetchImages(); // Recharger les images pour le pays actif
+  fetchImages();
 };
 
 // Filtrer les images en fonction du pays actif
