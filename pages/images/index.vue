@@ -140,7 +140,9 @@
           </div>
           <div v-else class="text-center text-xl font-semibold">
             Veuillez patienter pendant que le chargement de la gallerie
-            <span class="text-green-500 font-bold">{{ activeCountry }} </span>
+            <span class="text-custom-green font-bold"
+              >{{ activeCountry }}
+            </span>
             finisse.
           </div>
         </div>
@@ -249,10 +251,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.bg-custom-green {
-  background-color: #4caf50;
-}
-
 /* Loader Styles */
 .loader {
   z-index: 99 !important;
