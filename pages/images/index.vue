@@ -139,8 +139,9 @@
             </div>
           </div>
           <div v-else class="text-center text-xl font-semibold">
-            Veuillez patienter pour le chargement de la gallerie
-            <span class="text-green-500 font-bold">{{ activeCountry }}...</span>
+            Veuillez patienter pendant que le chargement de la gallerie
+            <span class="text-green-500 font-bold">{{ activeCountry }} </span>
+            finisse.
           </div>
         </div>
         <!-- Liste des images -->
