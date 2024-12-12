@@ -60,169 +60,30 @@
             <span class="font-sri"> {{ t("img.title_1") }}</span>
           </h1>
         </div>
-
-        <!-- Navigation des catégories -->
-        <div
-          class="flex justify-center space-x-4 mb-8 flex-wrap md:flex-nowrap"
-        >
-          <button
-            v-for="(category, index) in categories"
-            :key="index"
-            :class="[
-              'px-4 py-2 text-lg font-medium border-b-2',
-              activeCategory === category
-                ? 'border-custom-green text-custom-green'
-                : 'border-transparent text-gray-600 hover:text-gray-800',
-              // Taille et espacement adaptatifs
-              'sm:text-base sm:px-3 sm:py-1 md:text-lg md:px-4 md:py-2',
-            ]"
-            @click="setActiveCategory(category)"
-          >
-            {{ category }}
-          </button>
-        </div>
-
-        <!-- Section : Management -->
-        <div
-          v-show="activeCategory === t('team.btn_1')"
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
-          <div
-            v-for="(member, index) in team"
-            :key="index"
-            class="relative group bg-white shadow-md rounded-lg overflow-hidden hover:bg-custom-green transition"
-          >
-            <!-- Effet de Hover -->
-            <div
-              class="absolute inset-0 bg-custom-green hover:border-white opacity-0 group-hover:opacity-90 transition"
-            ></div>
-
-            <!-- Contenu des cartes -->
-            <div class="relative p-4 text-center group-hover:text-white z-10">
-              <img
-                :src="member.image"
-                :alt="member.name"
-                class="w-16 h-16 mx-auto rounded-full mb-4 border-2 border-custom-green hover:border-white"
-              />
-              <h2 class="text-lg font-semibold">{{ member.name }}</h2>
-              <p class="text-sm">{{ member.role }}</p>
-
-              <!-- Icônes -->
-              <!-- Icônes -->
-              <div class="flex justify-center space-x-2 mt-4">
-                <a
-                  :href="member.social.linkedin"
-                  target="_blank"
-                  class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center text-custom-green hover:bg-white hover:text-custom-green transition"
-                >
-                  <i class="fab fa-linkedin"></i>
-                </a>
-                <a
-                  :href="member.social.twitter"
-                  target="_blank"
-                  class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center text-custom-green hover:bg-white hover:text-custom-green transition"
-                >
-                  <i class="fab fa-x-twitter"></i>
-                </a>
-                <a
-                  :href="member.social.facebook"
-                  target="_blank"
-                  class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center text-custom-green hover:bg-white hover:text-custom-green transition"
-                >
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Section : Board of Direction -->
-        <div
-          v-show="activeCategory === t('team.btn_2')"
-          class="text-center text-gray-600"
-        >
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div
-              v-for="(member, index) in board"
-              :key="index"
-              class="relative group bg-white shadow-md rounded-lg overflow-hidden hover:bg-custom-green transition"
-            >
-              <!-- Effet de Hover -->
-              <div
-                class="absolute inset-0 bg-custom-green opacity-0 group-hover:opacity-90 transition"
-              ></div>
-
-              <!-- Contenu des cartes -->
-              <div class="relative p-4 text-center group-hover:text-white z-10">
-                <img
-                  :src="member.image"
-                  :alt="member.name"
-                  class="w-16 h-16 mx-auto rounded-full mb-4 border-2 border-custom-green hover:borger-white"
-                />
-                <h2 class="text-lg font-semibold">{{ member.name }}</h2>
-                <p class="text-sm">{{ member.role }}</p>
-
-                <!-- Icônes -->
-                <!-- Icônes -->
-                <div class="flex justify-center space-x-2 mt-4">
-                  <a
-                    :href="member.social.linkedin"
-                    target="_blank"
-                    class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center text-custom-green hover:bg-white hover:text-custom-green transition"
-                  >
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                  <a
-                    :href="member.social.twitter"
-                    target="_blank"
-                    class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center text-custom-green hover:bg-white hover:text-custom-green transition"
-                  >
-                    <i class="fab fa-x-twitter"></i>
-                  </a>
-                  <a
-                    :href="member.social.facebook"
-                    target="_blank"
-                    class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center text-custom-green hover:bg-white hover:text-custom-green transition"
-                  >
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Section : Financial Repport -->
-        <div
-          v-show="activeCategory === t('team.btn_3')"
-          class="text-center text-gray-600"
-        >
-          <all />
-        </div>
       </div>
     </div>
     <!-- gallerie ici -->
-    <div class="mj-container -mt-20">
+    <div class="mj-container -mt-10">
       <h1 class="text-4xl font-bold text-center mb-6">
         {{ t("img.title_3") }}
       </h1>
+      <div
+        class="grid grid-cols-2 gap-4 md:flex md:justify-center md:space-x-4 mb-8 mt-8"
+      >
         <div
-          class="grid grid-cols-2 gap-4 md:flex md:justify-center md:space-x-4 mb-8 mt-8"
+          v-for="country in countries"
+          :key="country.name"
+          :class="{
+            'flex items-center justify-center space-x-2 cursor-pointer px-4 py-2 w-full md:w-auto': true,
+            'bg-custom-green text-white': activeCountry === country.name,
+            'bg-white border border-gray-300': activeCountry !== country.name,
+          }"
+          @click="selectCountry(country.name)"
         >
-          <div
-            v-for="country in countries"
-            :key="country.name"
-            :class="{
-              'flex items-center justify-center space-x-2 cursor-pointer px-4 py-2 w-full md:w-auto': true,
-              'bg-custom-green text-white': activeCountry === country.name,
-              'bg-white border border-gray-300': activeCountry !== country.name,
-            }"
-            @click="selectCountry(country.name)"
-          >
-            <NuxtImg :src="country.flag" :alt="country.name" class="w-6 h-4" />
-            <span class="font-medium">{{ country.name }}</span>
-          </div>
+          <NuxtImg :src="country.flag" :alt="country.name" class="w-6 h-4" />
+          <span class="font-medium">{{ country.name }}</span>
         </div>
+      </div>
 
       <!-- img debut -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
