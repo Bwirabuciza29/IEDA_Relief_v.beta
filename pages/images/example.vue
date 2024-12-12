@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="mj-container my-4">
+    <!-- Liste des pays -->
     <div
       class="grid grid-cols-2 gap-4 md:flex md:justify-center md:space-x-4 mb-8 mt-8"
     >
@@ -13,69 +14,184 @@
         }"
         @click="selectCountry(country.name)"
       >
-        <NuxtImg :src="country.flag" :alt="country.name" class="w-6 h-4" />
+        <img :src="country.flag" :alt="country.name" class="w-6 h-4" />
         <span class="font-medium">{{ country.name }}</span>
       </div>
     </div>
+
+    <!-- Loader -->
+    <div v-show="isLoading" class="loader"></div>
+
+    <!-- Liste des images -->
+    <div
+      v-if="filteredImages.length"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+    >
+      <div v-for="image in filteredImages" :key="image.id">
+        <IKImage
+          :url-endpoint="urlEndpoint"
+          :path="image.path"
+          width="400"
+          class="w-full h-64 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:translate-y-[-10px]"
+        />
+      </div>
+    </div>
+    <p v-else class="text-center text-xl font-semibold">
+      Veuillez patienter pour le chargement de la gallerie
+      <span class="text-green-500 font-bold">{{ activeCountry }}...</span>
+    </p>
   </div>
 </template>
+
 <script setup>
-// Les catégori
-import { ref, computed } from "vue";
-const { t } = useI18n();
+import { ref, onMounted, computed } from "vue";
+import { IKImage } from "imagekitio-vue";
+
+// Liste des pays
 const countries = [
-  {
-    name: "USA",
-    flag: "https://www.countryflags.com/wp-content/uploads/united-states-of-america-flag-png-large.png",
-  },
-  {
-    name: "Belgique",
-    flag: "https://www.countryflags.com/wp-content/uploads/belgium-belgian-flag-png-square-large.png",
-  },
-  {
-    name: "BurkinaFaso",
-    flag: "https://www.countryflags.com/wp-content/uploads/burkina-faso-flag-png-large.png",
-  },
   {
     name: "RCA",
     flag: "https://www.countryflags.com/wp-content/uploads/central-african-republic-flag-png-large.png",
   },
   {
-    name: "Cameroun",
+    name: "cameroun",
     flag: "https://www.countryflags.com/wp-content/uploads/cameroon-flag-png-large.png",
   },
   {
-    name: "RD.Congo",
+    name: "RDC",
     flag: "https://www.countryflags.com/wp-content/uploads/congo-democratic-republic-of-the-flag-png-large.png",
   },
   {
-    name: "Niger",
+    name: "NIGER",
     flag: "https://www.countryflags.com/wp-content/uploads/niger-flag-png-large.png",
   },
   {
-    name: "Mali",
+    name: "mali",
     flag: "https://www.countryflags.com/wp-content/uploads/mali-flag-png-large.png",
   },
 ];
 
-// Vérifiez si localStorage est disponible
-const activeCountry = ref("USA"); // Valeur par défaut
+// Données des images
+const images = ref([]);
+const urlEndpoint = "https://ik.imagekit.io/cameroun";
+const activeCountry = ref(countries[0].name); // RCA est par défaut actif
+const isLoading = ref(false);
 
-if (typeof window !== "undefined" && window.localStorage) {
-  activeCountry.value = localStorage.getItem("activeCountry") || "USA";
-}
+// Charger les images depuis l'API
+const fetchImages = async () => {
+  isLoading.value = true;
+  const apiKey = "private_bcy6iVTNSQCxz2EkywMUDSnAAsw=";
+  const folderPath = `/${activeCountry.value}`;
+  const url = `https://api.imagekit.io/v1/files?path=${folderPath}&includeFolder=false`;
 
-// Filtrer les images par pays
-const filteredImages = computed(() => {
-  return images.filter((image) => image.country === activeCountry.value);
-});
+  try {
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `Basic ${btoa(apiKey + ":")}`,
+      },
+    });
+    const data = await response.json();
+    images.value = data.map((file) => ({
+      id: file.fileId,
+      path: file.filePath,
+      country: activeCountry.value,
+    }));
+  } catch (error) {
+    console.error("Erreur lors de la récupération des images :", error);
+  } finally {
+    isLoading.value = false;
+  }
+};
 
 // Fonction pour changer de pays
 const selectCountry = (country) => {
   activeCountry.value = country;
-  if (typeof window !== "undefined" && window.localStorage) {
-    localStorage.setItem("activeCountry", country);
-  }
+  localStorage.setItem("activeCountry", country);
+  fetchImages(); // Recharger les images pour le pays actif
 };
+
+// Filtrer les images en fonction du pays actif
+const filteredImages = computed(() => {
+  return images.value.filter((image) => image.country === activeCountry.value);
+});
+
+// Initialisation
+onMounted(() => {
+  const storedCountry = localStorage.getItem("activeCountry");
+  if (storedCountry && countries.some((c) => c.name === storedCountry)) {
+    activeCountry.value = storedCountry;
+  }
+  fetchImages();
+});
 </script>
 
+<style scoped>
+.bg-custom-green {
+  background-color: #4caf50;
+}
+
+/* Loader Styles */
+.loader {
+  z-index: 99 !important;
+  width: 36px;
+  height: 36px;
+  display: block;
+  margin: 10px auto;
+  position: relative;
+  color: #f0efef;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  -webkit-animation: rotation 1s linear infinite;
+}
+
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  transform: scale(0.5) translate(0, 0);
+  background-color: #055fc5;
+  border-radius: 50%;
+  animation: animloader 1s infinite ease-in-out;
+  -webkit-transform: scale(0.5) translate(0, 0);
+  -moz-transform: scale(0.5) translate(0, 0);
+  -ms-transform: scale(0.5) translate(0, 0);
+  -o-transform: scale(0.5) translate(0, 0);
+}
+
+.loader::before {
+  background-color: #02ab4b;
+  transform: scale(0.5) translate(-36px, -36px);
+  -webkit-transform: scale(0.5) translate(-36px, -36px);
+  -moz-transform: scale(0.5) translate(-36px, -36px);
+  -ms-transform: scale(0.5) translate(-36px, -36px);
+  -o-transform: scale(0.5) translate(-36px, -36px);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes animloader {
+  50% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+</style>
