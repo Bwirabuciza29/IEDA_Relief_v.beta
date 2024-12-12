@@ -67,66 +67,83 @@
       <h1 class="text-4xl font-bold text-center mb-6">
         {{ t("img.title_3") }}
       </h1>
-      <div
-        class="grid grid-cols-2 gap-4 md:flex md:justify-center md:space-x-4 mb-8 mt-8"
-      >
-        <div
-          v-for="country in countries"
-          :key="country.name"
-          :class="{
-            'flex items-center justify-center space-x-2 cursor-pointer px-4 py-2 w-full md:w-auto': true,
-            'bg-custom-green text-white': activeCountry === country.name,
-            'bg-white border border-gray-300': activeCountry !== country.name,
-          }"
-          @click="selectCountry(country.name)"
-        >
-          <NuxtImg :src="country.flag" :alt="country.name" class="w-6 h-4" />
-          <span class="font-medium">{{ country.name }}</span>
-        </div>
-      </div>
 
       <!-- img debut -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="mj-container my-4">
+        <!-- Liste des pays -->
         <div
-          v-for="image in filteredImages"
-          :key="image.id"
-          class="relative group overflow-hidden"
+          class="grid grid-cols-2 gap-4 md:flex md:justify-center md:space-x-4 mb-8 mt-8"
         >
-          <!-- Image avec hover avancée et transition -->
-          <div class="relative overflow-hidden">
-            <img
-              :src="image.url"
-              :alt="image.title"
-              class="w-full h-64 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:translate-y-[-10px]"
-            />
-          </div>
-
-          <!-- Icône en bas à droite -->
           <div
-            class="absolute bottom-20 right-0 bg-green-50 p-1 flex items-center justify-center"
+            v-for="country in countries"
+            :key="country.name"
+            :class="{
+              'flex items-center justify-center space-x-2 cursor-pointer px-4 py-2 w-full md:w-auto': true,
+              'bg-custom-green text-white': activeCountry === country.name,
+              'bg-white border border-gray-300': activeCountry !== country.name,
+            }"
+            @click="selectCountry(country.name)"
           >
-            <div class="relative w-8 h-8">
-              <p
-                class="h-full w-full bg-custom-green text-white p-4 absolute -bottom-1 -right-1"
-              ></p>
-            </div>
-          </div>
-
-          <!-- Texte avec animation de soulignement et apparition au hover -->
-          <div class="p-4">
-            <p class="font-bold text-lg relative inline-block">
-              {{ image.country }}
-              <span
-                class="absolute left-0 bottom-0 h-[2px] bg-custom-green w-0 transition-all duration-300 ease-in-out group-hover:w-full"
-              ></span>
-            </p>
-            <p
-              class="text-sm text-gray-600 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
-            >
-              Par : {{ image.author }}
-            </p>
+            <img :src="country.flag" :alt="country.name" class="w-6 h-4" />
+            <span class="font-medium">{{ country.name }}</span>
           </div>
         </div>
+
+        <!-- Loader -->
+        <div v-show="isLoading" class="loader"></div>
+        <div>
+          <div
+            v-if="filteredImages.length"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+          >
+            <div
+              v-for="image in filteredImages"
+              :key="image.id"
+              class="relative group overflow-hidden"
+            >
+              <!-- Image avec hover avancée et transition -->
+              <div class="relative overflow-hidden">
+                <IKImage
+                  :url-endpoint="urlEndpoint"
+                  :path="image.path"
+                  width="400"
+                  class="w-full h-64 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:translate-y-[-10px]"
+                />
+              </div>
+
+              <!-- Icône en bas à droite -->
+              <div
+                class="absolute bottom-20 right-0 bg-green-50 p-1 flex items-center justify-center"
+              >
+                <div class="relative w-8 h-8">
+                  <p
+                    class="h-full w-full bg-custom-green text-white p-4 absolute -bottom-1 -right-1"
+                  ></p>
+                </div>
+              </div>
+
+              <!-- Texte avec animation de soulignement et apparition au hover -->
+              <div class="p-4">
+                <p class="font-bold text-lg relative inline-block">
+                  {{ activeCountry }}
+                  <span
+                    class="absolute left-0 bottom-0 h-[2px] bg-custom-green w-0 transition-all duration-300 ease-in-out group-hover:w-full"
+                  ></span>
+                </p>
+                <p
+                  class="text-sm text-gray-600 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+                >
+                  Par Equipe IEDA Relief
+                </p>
+              </div>
+            </div>
+          </div>
+          <div v-else class="text-center text-xl font-semibold">
+            Veuillez patienter pour le chargement de la gallerie
+            <span class="text-green-500 font-bold">{{ activeCountry }}...</span>
+          </div>
+        </div>
+        <!-- Liste des images -->
       </div>
 
       <!-- img end -->
@@ -143,311 +160,160 @@
   </section>
 </template>
 <script setup>
-// Les catégori
-import { ref, computed, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
+import { IKImage } from "imagekitio-vue";
 const { t } = useI18n();
+// Liste des pays
 const countries = [
   {
-    name: "USA",
-    flag: "https://www.countryflags.com/wp-content/uploads/united-states-of-america-flag-png-large.png",
-  },
-  {
-    name: "Belgique",
-    flag: "https://www.countryflags.com/wp-content/uploads/belgium-belgian-flag-png-square-large.png",
-  },
-  {
-    name: "BurkinaFaso",
-    flag: "https://www.countryflags.com/wp-content/uploads/burkina-faso-flag-png-large.png",
-  },
-  {
+    id: "1",
     name: "RCA",
     flag: "https://www.countryflags.com/wp-content/uploads/central-african-republic-flag-png-large.png",
+    desc: "Equipe IEDA Relief RCA",
   },
   {
-    name: "Cameroun",
+    id: "2",
+    name: "cameroun",
     flag: "https://www.countryflags.com/wp-content/uploads/cameroon-flag-png-large.png",
   },
   {
-    name: "RD.Congo",
+    id: "3",
+    name: "RDC",
     flag: "https://www.countryflags.com/wp-content/uploads/congo-democratic-republic-of-the-flag-png-large.png",
   },
   {
-    name: "Niger",
+    id: "4",
+    name: "NIGER",
     flag: "https://www.countryflags.com/wp-content/uploads/niger-flag-png-large.png",
   },
   {
-    name: "Mali",
+    id: "5",
+    name: "mali",
     flag: "https://www.countryflags.com/wp-content/uploads/mali-flag-png-large.png",
   },
 ];
 
-const images = [
-  {
-    id: 1,
-    url: "/img/gal.jpg",
-    title: "IEDA Relief",
-    author: "Team USA",
-    country: "USA",
-  },
-  {
-    id: 2,
-    url: "/img/cm.jpg",
-    title: "IEDA Relief",
-    author: "Team USA",
-    country: "USA",
-  },
-  {
-    id: 3,
-    url: "/img/gal.jpg",
-    title: "IEDA Relief",
-    author: "Team USA",
-    country: "USA",
-  },
-  {
-    id: 4,
-    url: "/images/belgique1.jpg",
-    title: "Image 1",
-    author: "Auteur Belgique",
-    country: "Belgique",
-  },
-  {
-    id: 5,
-    url: "/images/belgique2.jpg",
-    title: "Image 2",
-    author: "Auteur Belgique",
-    country: "Belgique",
-  },
-  {
-    id: 6,
-    url: "/images/belgique3.jpg",
-    title: "Image 3",
-    author: "Auteur Belgique",
-    country: "Belgique",
-  },
-  {
-    id: 7,
-    url: "/images/burkina1.jpg",
-    title: "Image 1",
-    author: "Auteur Burkina Faso",
-    country: "BurkinaFaso",
-  },
-  {
-    id: 8,
-    url: "/images/burkina2.jpg",
-    title: "Image 2",
-    author: "Auteur Burkina Faso",
-    country: "BurkinaFaso",
-  },
-  {
-    id: 9,
-    url: "/images/burkina3.jpg",
-    title: "Image 3",
-    author: "Auteur Burkina Faso",
-    country: "BurkinaFaso",
-  },
-  {
-    id: 10,
-    url: "https://ik.imagekit.io/cameroun/RCA/img_1%20(12).jpg?updatedAt=1733926680923",
-    title: "Image 1",
-    author: "Auteur RCA",
-    country: "RCA",
-  },
-  {
-    id: 11,
-    url: "https://ik.imagekit.io/cameroun/RCA/img_1%20(15).jpg?updatedAt=1733926682394",
-    title: "Image 2",
-    author: "Auteur RCA",
-    country: "RCA",
-  },
-  {
-    id: 12,
-    url: "https://ik.imagekit.io/cameroun/RCA/rca%20(2).jpg?updatedAt=1733926690828",
-    title: "Image 3",
-    author: "Auteur RCA",
-    country: "RCA",
-  },
-  {
-    id: 12,
-    url: "https://ik.imagekit.io/cameroun/RCA/img_1%20(9).jpg?updatedAt=1733926690089",
-    title: "Image 3",
-    author: "Auteur RCA",
-    country: "RCA",
-  },
-  {
-    id: 12,
-    url: "https://ik.imagekit.io/cameroun/RCA/img_1%20(7).jpg?updatedAt=1733926688492",
-    title: "Image 3",
-    author: "Auteur RCA",
-    country: "RCA",
-  },
-  {
-    id: 12,
-    url: "https://ik.imagekit.io/cameroun/RCA/img_1%20(16).jpg?updatedAt=1733926682081",
-    title: "Image 3",
-    author: "Auteur RCA",
-    country: "RCA",
-  },
-  {
-    id: 13,
-    url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0040.jpg?updatedAt=1733921917137",
-    title: "Cameroun",
-    author: "Team IEDA Cameroun Cameroun",
-    country: "Cameroun",
-  },
-  {
-    id: 14,
-    url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0044.jpg?updatedAt=1733921921849",
-    title: "Cameroun",
-    author: "Team IEDA Cameroun Cameroun",
-    country: "Cameroun",
-  },
-  {
-    id: 15,
-    url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0029.jpg?updatedAt=1733921914578",
-    title: "Cameroun",
-    author: "Team IEDA Cameroun Cameroun",
-    country: "Cameroun",
-  },
-  {
-    id: 25,
-    url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0034.jpg?updatedAt=1733921915474",
-    title: "Cameroun",
-    author: "Team IEDA Cameroun Cameroun",
-    country: "Cameroun",
-  },
-  {
-    id: 26,
-    url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0027.jpg?updatedAt=1733921910607",
-    title: "Cameroun",
-    author: "Team IEDA Cameroun Cameroun",
-    country: "Cameroun",
-  },
-  {
-    id: 27,
-    url: "https://ik.imagekit.io/cameroun/cameroun/IMG-20241210-WA0049.jpg?updatedAt=1733921924669",
-    title: "Cameroun",
-    author: "Team IEDA Cameroun Cameroun",
-    country: "Cameroun",
-  },
-  {
-    id: 16,
-    url: "https://ik.imagekit.io/cameroun/RDC/IMG-20241210-WA0093.jpg?updatedAt=1733926192528",
-    title: "Image 1",
-    author: "Auteur RD Congo",
-    country: "RD.Congo",
-  },
-  {
-    id: 17,
-    url: "https://ik.imagekit.io/cameroun/RDC/IMG-20241210-WA0056.jpg?updatedAt=1733926160489",
-    title: "Image 2",
-    author: "Auteur RD Congo",
-    country: "RD.Congo",
-  },
-  {
-    id: 18,
-    url: "https://ik.imagekit.io/cameroun/RDC/IMG-20241210-WA0051.jpg?updatedAt=1733926162100",
-    title: "Image 3",
-    author: "Auteur RD Congo",
-    country: "RD.Congo",
-  },
-  {
-    id: 18,
-    url: "https://ik.imagekit.io/cameroun/RDC/IMG-20241210-WA0067.jpg?updatedAt=1733926172229",
-    title: "Image 3",
-    author: "Auteur RD Congo",
-    country: "RD.Congo",
-  },
-  {
-    id: 18,
-    url: "https://ik.imagekit.io/cameroun/RDC/IMG-20241210-WA0070.jpg?updatedAt=1733926174375",
-    title: "Image 3",
-    author: "Auteur RD Congo",
-    country: "RD.Congo",
-  },
-  {
-    id: 18,
-    url: "https://ik.imagekit.io/cameroun/RDC/IMG-20241210-WA0076.jpg?updatedAt=1733926180800",
-    title: "Image 3",
-    author: "Auteur RD Congo",
-    country: "RD.Congo",
-  },
-  {
-    id: 19,
-    url: "https://ik.imagekit.io/cameroun/NIGER/IMG-20241210-WA0065.jpg?updatedAt=1733925526552",
-    title: "Image 1",
-    author: "Auteur Niger",
-    country: "Niger",
-  },
-  {
-    id: 20,
-    url: "https://ik.imagekit.io/cameroun/NIGER/IMG-20241210-WA0048.jpg?updatedAt=1733925519859",
-    title: "Image 2",
-    author: "Auteur Niger",
-    country: "Niger",
-  },
-  {
-    id: 21,
-    url: "https://ik.imagekit.io/cameroun/NIGER/IMG-20241210-WA0053.jpg?updatedAt=1733925519431",
-    title: "Image 3",
-    author: "Auteur Niger",
-    country: "Niger",
-  },
-  {
-    id: 21,
-    url: "https://ik.imagekit.io/cameroun/NIGER/IMG-20241210-WA0056.jpg?updatedAt=1733925519249",
-    title: "Image 3",
-    author: "Auteur Niger",
-    country: "Niger",
-  },
-  {
-    id: 21,
-    url: "https://ik.imagekit.io/cameroun/NIGER/IMG-20241210-WA0052.jpg?updatedAt=1733925519237",
-    title: "Image 3",
-    author: "Auteur Niger",
-    country: "Niger",
-  },
+// Données des images
+const images = ref([]);
+const urlEndpoint = "https://ik.imagekit.io/cameroun";
+const activeCountry = ref(countries[0].name);
+const isLoading = ref(false);
 
-  {
-    id: 22,
-    url: "https://ik.imagekit.io/cameroun/mali/IMG-20241210-WA0104.jpg?updatedAt=1733926515829",
-    title: "Image 1",
-    author: "Auteur Mali",
-    country: "Mali",
-  },
-  {
-    id: 23,
-    url: "https://ik.imagekit.io/cameroun/mali/IMG-20241210-WA0102.jpg?updatedAt=1733926514840",
-    title: "Image 2",
-    author: "Auteur Mali",
-    country: "Mali",
-  },
-  {
-    id: 24,
-    url: "https://ik.imagekit.io/cameroun/mali/IMG-20241210-WA0095.jpg?updatedAt=1733926512373",
-    title: "Image 3",
-    author: "Auteur Mali",
-    country: "Mali",
-  },
-];
+// Charger les images depuis l'API
+const fetchImages = async () => {
+  isLoading.value = true;
+  const apiKey = "private_bcy6iVTNSQCxz2EkywMUDSnAAsw=";
+  const folderPath = `/${activeCountry.value}`;
+  const url = `https://api.imagekit.io/v1/files?path=${folderPath}&includeFolder=false`;
 
-// Vérifiez si localStorage est disponible
-const activeCountry = ref("USA"); // Valeur par défaut
-
-if (typeof window !== "undefined" && window.localStorage) {
-  activeCountry.value = localStorage.getItem("activeCountry") || "USA";
-}
-
-// Filtrer les images par pays
-const filteredImages = computed(() => {
-  return images.filter((image) => image.country === activeCountry.value);
-});
+  try {
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `Basic ${btoa(apiKey + ":")}`,
+      },
+    });
+    const data = await response.json();
+    images.value = data.map((file) => ({
+      id: file.fileId,
+      path: file.filePath,
+      country: activeCountry.value,
+    }));
+  } catch (error) {
+    console.error("Erreur lors de la récupération des images :", error);
+  } finally {
+    isLoading.value = false;
+  }
+};
 
 // Fonction pour changer de pays
 const selectCountry = (country) => {
   activeCountry.value = country;
-  if (typeof window !== "undefined" && window.localStorage) {
-    localStorage.setItem("activeCountry", country);
-  }
+  localStorage.setItem("activeCountry", country);
+  fetchImages(); // Recharger les images pour le pays actif
 };
+
+// Filtrer les images en fonction du pays actif
+const filteredImages = computed(() => {
+  return images.value.filter((image) => image.country === activeCountry.value);
+});
+
+// Initialisation
+onMounted(() => {
+  const storedCountry = localStorage.getItem("activeCountry");
+  if (storedCountry && countries.some((c) => c.name === storedCountry)) {
+    activeCountry.value = storedCountry;
+  }
+  fetchImages();
+});
 </script>
 
+<style scoped>
+.bg-custom-green {
+  background-color: #4caf50;
+}
+
+/* Loader Styles */
+.loader {
+  z-index: 99 !important;
+  width: 36px;
+  height: 36px;
+  display: block;
+  margin: 10px auto;
+  position: relative;
+  color: #f0efef;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  -webkit-animation: rotation 1s linear infinite;
+}
+
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  transform: scale(0.5) translate(0, 0);
+  background-color: #055fc5;
+  border-radius: 50%;
+  animation: animloader 1s infinite ease-in-out;
+  -webkit-transform: scale(0.5) translate(0, 0);
+  -moz-transform: scale(0.5) translate(0, 0);
+  -ms-transform: scale(0.5) translate(0, 0);
+  -o-transform: scale(0.5) translate(0, 0);
+}
+
+.loader::before {
+  background-color: #02ab4b;
+  transform: scale(0.5) translate(-36px, -36px);
+  -webkit-transform: scale(0.5) translate(-36px, -36px);
+  -moz-transform: scale(0.5) translate(-36px, -36px);
+  -ms-transform: scale(0.5) translate(-36px, -36px);
+  -o-transform: scale(0.5) translate(-36px, -36px);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes animloader {
+  50% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+</style>
