@@ -35,11 +35,12 @@ const t3 = ref(t("logo.t3"));
 const partners = [
   { id: 1, logo: "/img/hc.jpeg", alt: "Partner 1" },
   { id: 2, logo: "/img/unicef.png", alt: "Partner 2" },
-  { id: 3, logo: "/img/wfp.png", alt: "Partner 3" },
-  { id: 4, logo: "/img/oim.png", alt: "Partner 4" },
-  { id: 5, logo: "/img/fa.gif", alt: "Partner 5" },
-  { id: 6, logo: "/img/tx.jpeg", alt: "Partner 6" },
-  { id: 7, logo: "/img/undpi.png", alt: "Partner 7" },
-  { id: 8, logo: "/img/shelter.jpg", alt: "Partner 8" },
+  { id: 3, logo: "/img/undpi.png", alt: "Partner 7" },
+  { id: 4, logo: "/img/wfp.png", alt: "Partner 9" },
+  { id: 5, logo: "/img/oim.png", alt: "Partner 4" },
+  { id: 6, logo: "/img/fa.gif", alt: "Partner 5" },
+  { id: 7, logo: "/img/tx.jpeg", alt: "Partner 3" },
+  { id: 8, logo: "/img/uu.png", alt: "Partner 9" },
+  { id: 9, logo: "/img/shelter.jpg", alt: "Partner 8" },
 ];
 </script>
