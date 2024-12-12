@@ -267,5 +267,9 @@
     "title_1": "Galerie",
     "title_2": "Notre",
     "title_3": "Notre galerie complète d'images"
+  },
+  "dialogue": {
+    "title_1": "Veuillez patienter pendant que le chargement de la galerie",
+    "title_2": " finisse."
   }
 }

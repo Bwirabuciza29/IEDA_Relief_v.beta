@@ -139,11 +139,11 @@
             </div>
           </div>
           <div v-else class="text-center text-xl font-semibold">
-            Veuillez patienter pendant que le chargement de la gallerie
+            {{ t("dialogue.title_1") }}
             <span class="text-custom-green font-bold"
               >{{ activeCountry }}
             </span>
-            finisse.
+            {{ t("dialogue.title_2") }}
           </div>
         </div>
         <!-- Liste des images -->

@@ -266,5 +266,9 @@
     "title_1": "Maktaba",
     "title_2": "Yetu",
     "title_3": "Maktaba yetu kamili ya picha"
+  },
+  "dialogue": {
+    "title_1": "Tafadhali subiri wakati maktaba",
+    "title_2": "ya picha inachaji."
   }
 }
