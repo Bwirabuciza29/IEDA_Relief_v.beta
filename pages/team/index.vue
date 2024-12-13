@@ -257,7 +257,9 @@
               class="w-full h-auto object-cover rounded-lg"
             />
           </div>
-          <h2 class="text-lg font-bold text-center mb-4">Head of Mission</h2>
+          <h2 class="text-lg font-bold text-center mb-4">
+            {{ countries[activeCountry].chief.title }}
+          </h2>
           <div class="w-full flex items-start mb-6 border-b-2">
             <!-- Photo du Chef de Mission -->
             <div class="flex-shrink-0 mr-4 mb-4">
@@ -282,7 +284,7 @@
                 {{ countries[activeCountry].chief.gender }}
               </p>
               <p class="text-sm text-gray-700">
-                <span class="font-semibold">Description:</span>
+                <span class="font-semibold">Bio:</span>
                 {{ countries[activeCountry].chief.description }}
               </p>
             </div>
@@ -472,6 +474,7 @@ const countries = [
     flag: "https://flagcdn.com/us.svg",
     image: "/img/pa1.jpg",
     chief: {
+      title: "Founder, President CEO",
       image: "/img/coach.jpg",
       name: "Phil MAANULWA",
       gender: "Masculin",
@@ -485,10 +488,11 @@ const countries = [
     },
   },
   {
-    name: "Belgique",
+    name: "Belgium",
     flag: "https://flagcdn.com/be.svg",
     image: "https://via.placeholder.com/300x200?text=Belgium",
     chief: {
+      title: "Regional Program Coordinator & Head of Mission",
       image: "https://via.placeholder.com/150?text=Chef+Belgique",
       name: "Jean Dupont",
       gender: "Masculin",
@@ -506,6 +510,7 @@ const countries = [
     flag: "https://flagcdn.com/bf.svg",
     image: "https://via.placeholder.com/300x200?text=Burkina+Faso",
     chief: {
+      title: "Regional Program Coordinator & Head of Mission",
       image: "/img/bintu.jpg",
       name: "Micka BINTU",
       gender: "Féminin",
@@ -520,10 +525,11 @@ const countries = [
     },
   },
   {
-    name: "Rép. Centrafricaine",
+    name: "C.A.R",
     flag: "https://flagcdn.com/cf.svg",
     image: "/img/r.jpg",
     chief: {
+      title: "Regional Program Coordinator & Head of Mission",
       image: "/img/francois.jpg",
       name: "François DE PAUL",
       gender: "Masculin",
@@ -543,6 +549,7 @@ const countries = [
     flag: "https://flagcdn.com/cm.svg",
     image: "https://via.placeholder.com/300x200?text=Cameroun",
     chief: {
+      title: "Regional Program Coordinator & Head of Mission",
       image: "/img/david.jpg",
       name: "David KISUBA",
       gender: "Masculin",
@@ -558,10 +565,11 @@ const countries = [
     },
   },
   {
-    name: "Rép. Dém. du Congo",
+    name: "DRC",
     flag: "https://flagcdn.com/cd.svg",
     image: "https://via.placeholder.com/300x200?text=DR+Congo",
     chief: {
+      title: "Regional Program Coordinator & Head of Mission",
       image: "/img/francois.jpg",
       name: "François OMENDE",
       gender: "Masculin",
@@ -581,6 +589,7 @@ const countries = [
     flag: "https://flagcdn.com/ne.svg",
     image: "/img/niamey.jpg",
     chief: {
+      title: "Regional Program Coordinator & Head of Mission",
       image: "/img/cisse.jpg",
       name: "Bakary CISSE",
       postnom: "Diop",
@@ -602,6 +611,7 @@ const countries = [
     flag: "https://flagcdn.com/ml.svg",
     image: "img/mali.jpg",
     chief: {
+      title: "Regional Program Coordinator & Head of Mission",
       image: "/img/audacieux.jpg",
       name: "Audacieux KITSA",
       gender: "Masculin",

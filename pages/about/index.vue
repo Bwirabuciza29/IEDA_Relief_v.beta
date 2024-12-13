@@ -381,10 +381,10 @@ const count3 = ref(0);
 
 onMounted(() => {
   // Durée de 2s
-  animateValue(count1, 0, 72, 2000);
+  animateValue(count1, 0, 20, 2000);
   // Durée de 3s
   animateValue(count2, 0, 2200000, 3000);
   // Durée de 1.5s
-  animateValue(count3, 0, 1999, 1500);
+  animateValue(count3, 0, 2008, 1500);
 });
 </script>
