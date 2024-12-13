@@ -293,7 +293,9 @@
           </div>
         </div>
       </div>
-      <hr class="my-4" />
+    </div>
+    <div>
+      <LogLogger />
     </div>
     <!-- Footer -->
     <div class="mt-16">

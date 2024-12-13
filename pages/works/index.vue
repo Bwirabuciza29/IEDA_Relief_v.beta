@@ -121,6 +121,9 @@
     <div class="my-16">
       <LogOurs />
     </div>
+     <div>
+      <LogLogger />
+    </div>
     <!-- Footer -->
     <div class="mt-16">
       <laster />
