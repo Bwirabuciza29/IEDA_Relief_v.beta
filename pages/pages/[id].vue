@@ -105,63 +105,75 @@
         </div>
         <!-- Contenu supplémentaire sous les images -->
         <div class="mt-12">
+          <div class="justify mb-8">
+            <p class="text-gray-700 leading-relaxed text-justify">
+              Since 2008, we have worked in
+              <span class="font-semibold text-blue-600">12 countries</span> with
+              a
+              <span class="font-semibold text-blue-600">$250M</span> investment
+              in over
+              <span class="font-semibold text-blue-600">350 projects</span>,
+              helping people transition to longer-term development. Our
+              <span class="font-semibold text-blue-600">830+ staff</span> focus
+              on marginalized people, internally displaced persons, host
+              communities, and refugees. We have delivered key support
+              components, building community capacity to foster local ownership
+              and technical capability, ensuring a sustainable transition to
+              long-term development.
+            </p>
+          </div>
+
           <!-- Listes alignées -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-700">
+          <div class="grid grid-cols-1 sm:grid-cols-1 gap-6 text-gray-700">
             <!-- Liste à puces -->
+
             <ul class="space-y-2">
-              <li class="flex items-start">
-                <span class="text-blue-500 mr-2">•</span>
-                Leo a diam sollicitudin tempor. Mauris pellentesque pulvinar
-                pellentesque habitant.
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-500 mr-2">•</span>
-                Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo.
-                Lorem ipsum dolor sit amet.
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-500 mr-2">•</span>
-                Lacus vel facilisis volutpat est velit egestas dui ornare.
-                Mauris rhoncus aenean vel elit.
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-500 mr-2">•</span>
-                Sed blandit libero volutpat sed cras ornare arcu dui. Non enim
-                praesent elementum facilisis leo vel.
+              <li
+                v-for="(item, index) in content"
+                :key="index"
+                class="flex items-start space-x-4"
+              >
+                <svg
+                  class="w-6 h-6 text-blue-500 flex-shrink-0"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900">
+                    {{ item.title }}
+                  </h3>
+                  <p class="text-gray-600 text-justify">
+                    {{ item.description }}
+                  </p>
+                </div>
               </li>
             </ul>
 
             <!-- Liste ordonnée -->
-            <ol class="space-y-2 list-decimal list-inside">
-              <li>
-                Facilisis volutpat est velit egestas dui id ornare arcu odio.
-                Risus commodo viverra maecenas.
-              </li>
-              <li>
-                Nisl rhoncus mattis rhoncus urna neque viverra justo nec. Dolor
-                morbi non arcu risus quis.
-              </li>
-              <li>
-                Vulputate ut pharetra sit amet aliquam id diam. Purus non enim
-                praesent elementum.
-              </li>
-              <li>
-                Fames ac turpis egestas integer eget aliquet nibh. Maecenas
-                pharetra convallis posuere morbi.
-              </li>
-            </ol>
           </div>
 
           <!-- Titre supplémentaire -->
           <h2 class="text-2xl font-bold mt-8">
-            Defending Nature for Generations to Come
+            CVE: Engaging Negative Influencers to Provide Clean Water
           </h2>
-          <p class="text-gray-600 mt-4">
-            Iaculis eu non diam phasellus vestibulum lorem. Id consectetur purus
-            ut faucibus pulvinar elementum integer enim. Netus et malesuada
-            fames ac turpis egestas. Et tortor at risus viverra adipiscing at in
-            tellus. Turpis in eu mi bibendum neque egestas congue quisque
-            egestas.
+          <p class="text-gray-600 mt-4 text-justify">
+            In Kidal, Mali, the reality on the ground is that you cannot access
+            some key areas if you do not address negative influencers and actors
+            in communities. With our experience and approach, we listened to
+            grievances and shared the independent nature of our mission. Through
+            engagement, we found a way to gain access to support communities
+            with clean water. Our project not only operated without incident,
+            but we were able to motivate peaceful reintegration with
+            community-based CVE.
           </p>
 
           <!-- Citation -->
@@ -179,10 +191,7 @@
 
           <!-- Texte final -->
           <p class="text-gray-600 mt-6">
-            Urna duis convallis convallis tellus id interdum velit laoreet. Amet
-            consectetur adipiscing elit pellentesque. Consectetur adipiscing
-            elit pellentesque habitant morbi. Nec nam aliquam sem et tortor.
-            Penatibus et magnis dis parturient montes nascetur ridiculus mus.
+            We Work No Matter What, So Let Us Work Together
           </p>
 
           <!-- Hashtags et icônes -->
@@ -485,6 +494,35 @@ const cards = [
     image_4: "/img/ed3.jpg",
   },
 ];
+
+const content = [
+  {
+    title: "Why IEDA Relief",
+    description:
+      "We know communities – we do not just say it, we practice it. We are working intimately with communities from Day One. For us, it does not make sense to work in communities without understanding them and learning from them – their people, their needs, what drives them, social structures, cultural practices, and interactions. When the situation calls, we work quickly so that we do not lose time further down the road when problems arise.",
+  },
+  {
+    title: "We build trust",
+    description:
+      "Fundamental in any community anywhere in the world – we value humans and what each person brings to their community. Focusing on community, we naturally build strong local ties, especially with delivery of health activities and small-scale infrastructure. Communities value these fundamental lifelines and automatic trust is built.",
+  },
+  {
+    title: "We Have the Networks and Access",
+    description:
+      "Our engagement process gives us an immediate footing to understand and listen to communities – what they need, what they do not want, and what impacts them. We have become known for this approach which helps to widen our network. Our office structure allows us to be in the middle of communities. When others do not have the ability to gain entrance into a community, we have access. While we do not work with individuals or entities that are listed, or are not supported by the communities, we understand their perspective to understand their impact.",
+  },
+  {
+    title: "We Incorporate Sustainability",
+    description:
+      "This is fundamental to the way we do business. The way we engage, design, and implement an intervention is framed with sustainability in mind. We build meaningful community ownership to ensure our projects are responsive and generate a positive impact that lasts.",
+  },
+  {
+    title: "Our Model Works",
+    description:
+      'Our direct implementation approach is management-intensive, but it works. We understand that it requires up-front costs that over a period, generate a return on the investment. With this, we ensure a low-cost, simple, achievable approach that makes sense. Our technical skill, thinking, and understanding of the local situation – are part of our risk management and project processes that support our management. We keep operations’ costs down because we have local resources – staff, materials, and supply chain – to the extent possible – we reduce the "middleman," a heavy security apparatus, and rework. We can do things right the first time because we have the right people and the right resources working together to deliver, which ultimately creates cost savings.',
+  },
+];
+
 onMounted(() => {
   const id = parseInt(route.params.id);
   card.value = cards.find((c) => c.id === id);
