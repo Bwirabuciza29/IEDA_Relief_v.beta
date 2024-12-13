@@ -138,12 +138,12 @@ const targetCardNum = 2.2;
 onMounted(() => {
   let currentValue = 0;
   const interval = setInterval(() => {
-    currentValue += 0.01; // Incrémente de 0.01 pour animer
+    currentValue += 0.01; 
     if (currentValue >= targetCardNum) {
-      clearInterval(interval); // Arrête l'intervalle quand la valeur cible est atteinte
-      currentValue = targetCardNum; // Assure que la valeur finale soit exacte
+      clearInterval(interval); 
+      currentValue = targetCardNum; 
     }
-    animatedCardNum.value = currentValue.toFixed(2); // Met à jour la valeur affichée
-  }, 50); // Toutes les 50ms, ce qui donne une animation fluide
+    animatedCardNum.value = currentValue.toFixed(2);
+  }, 50);
 });
 </script>

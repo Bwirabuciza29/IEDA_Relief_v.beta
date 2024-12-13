@@ -20,6 +20,7 @@ const logos = [
   "/img/uhncr.png",
   "/img/oim.png",
   "/img/guide-star.png",
+  "/img/uu.png",
   "/img/central-emergency.png",
   "/img/donor-houston.png",
 ];
