@@ -472,10 +472,10 @@ const countries = [
     flag: "https://flagcdn.com/us.svg",
     image: "/img/pa1.jpg",
     chief: {
-      image: "https://via.placeholder.com/150?text=Chef+USA",
-      name: "John Doe",
+      image: "/img/coach.jpg",
+      name: "Phil MAANULWA",
       gender: "Masculin",
-      description: "Chef de mission expérimenté avec 10 ans d'expérience.",
+      description: "Founder, President & CEO.",
     },
     details: {
       address: "10103 Foundren Road, Houston, TX",

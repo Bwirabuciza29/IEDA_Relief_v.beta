@@ -2,7 +2,7 @@
   <section class="bg-green-50">
     <div v-if="card">
       <div
-        class="relative bg-[url('/img/bby.png')] bg-cover bg-center bg-no-repeat py-8 mx-4 md:mx-8 lg:mx-16 rounded-lg mt-20 shadow-lg"
+        class="relative bg-[url('/img/r.jpg')] bg-cover bg-center bg-no-repeat py-8 mx-4 md:mx-8 lg:mx-16 rounded-lg mt-20 shadow-lg"
       >
         <img
           src="/img/Vectoria.png"
@@ -34,11 +34,14 @@
         <div class="flex items-center space-x-4 text-gray-600 text-sm">
           <div class="relative group inline-block">
             <!-- Texte principal -->
-            <div
-              class="bg-custom-green text-white px-3 py-1 rounded-full font-medium"
+            <nuxt-link
+              to="/pages"
+              class="relative inline-block bg-custom-green text-white px-3 py-1 rounded-full font-medium group transition duration-300"
             >
-              {{ t("operation.op") }}
-            </div>
+              retour
+
+              <!-- Animation de soulignement -->
+            </nuxt-link>
           </div>
 
           <div class="flex items-center space-x-1 relative group">
@@ -69,10 +72,10 @@
         </h2> -->
 
         <!-- Description -->
-        <p class="text-gray-600 mt-4 leading-relaxed">
+        <p class="text-gray-600 mt-4 leading-relaxed text-justify">
           {{ card.description }}
         </p>
-        <p class="text-gray-600 mt-4 leading-relaxed">
+        <p class="text-gray-600 mt-4 leading-relaxed text-justify">
           {{ card.descriptions }}
         </p>
 

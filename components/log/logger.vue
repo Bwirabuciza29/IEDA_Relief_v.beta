@@ -15,14 +15,27 @@
             <li
               v-for="country in current"
               :key="country.name"
-              class="flex items-center space-x-2"
+              class="flex items-center space-x-2 group"
             >
+              <!-- Image du drapeau -->
               <img
                 :src="getFlag(country.code)"
                 :alt="`${country.name} flag`"
                 class="w-6 h-6 rounded"
               />
-              <span>{{ country.name }}</span>
+
+              <!-- Texte avec animation et NuxtLink -->
+              <nuxt-link
+                :to="`/country/${country.code}`"
+                class="relative text-black group-hover:text-custom-green transition duration-300"
+              >
+                {{ country.name }}
+
+                <!-- Animation de soulignement -->
+                <span
+                  class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+                ></span>
+              </nuxt-link>
             </li>
           </ul>
         </div>
@@ -95,10 +108,18 @@
             <li
               v-for="service in communityServices"
               :key="service"
-              class="flex items-center space-x-2"
+              class="flex items-center space-x-2 group"
             >
               <span class="text-blue-500"><i class="fas fa-users"></i></span>
-              <span>{{ service }}</span>
+              <nuxt-link
+                to="/team"
+                class="relative text-black group-hover:text-custom-green transition duration-300"
+              >
+                {{ service }}
+                <span
+                  class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+                ></span>
+              </nuxt-link>
             </li>
           </ul>
         </div>
