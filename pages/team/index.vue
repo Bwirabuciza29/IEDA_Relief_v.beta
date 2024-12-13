@@ -474,7 +474,7 @@ const countries = [
     flag: "https://flagcdn.com/us.svg",
     image: "/img/pa1.jpg",
     chief: {
-      title: "Founder, President CEO",
+      title: "Founder, President & CEO",
       image: "/img/coach.jpg",
       name: "Phil MAANULWA",
       gender: "Masculin",
