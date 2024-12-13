@@ -120,27 +120,58 @@
       </div>
     </div>
     <div class="mj-container my-16">
-      <!-- Image principale avec le texte en arrière-plan -->
-      <div class="relative">
-        <!-- <img
-          src="/img/vid.png"
-          alt="Groupe de personnes"
-          class="w-full rounded-lg shadow-lg"
-        />
-        <div class="absolute inset-0 flex items-center justify-center">
-          <button class="text-white">
-            <img
-              src="/img/Play.png"
-              alt="Play"
-              class="w-20 h-20 transition-all duration-300 hover:z-10 hover:scale-110"
-            />
-          </button>
-        </div> -->
-        <video ref="video" class="plyr w-full rounded-lg" controls>
-          <source src="/video/tr.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <!-- Vidéo avec plyr -->
+      <div
+        class="w-full mx-auto overflow-hidden rounded-lg shadow-lg bg-custom-green"
+      >
+        <!-- Header -->
+        <div
+          class="top-0 z-20 w-full bg-custom-green bg-opacity-70 px-4 py-2 backdrop-blur-lg"
+        >
+          <div class="-m-2 flex flex-wrap items-center justify-between">
+            <!-- Circles -->
+            <div class="w-auto p-2">
+              <div class="flex flex-row">
+                <div class="w-auto p-1">
+                  <div
+                    class="h-2 w-2 rounded-full border border-red-500 bg-red-400"
+                  ></div>
+                </div>
+                <div class="w-auto p-1">
+                  <div
+                    class="h-2 w-2 rounded-full border border-yellow-500 bg-yellow-400"
+                  ></div>
+                </div>
+                <div class="w-auto p-1">
+                  <div
+                    class="h-2 w-2 rounded-full border border-green-500 bg-green-400"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <!-- Text -->
+            <div class="p-2">
+              <div
+                class="mx-auto max-w-xs rounded bg-white px-4 py-0.5 text-center text-xs font-medium tracking-tight text-custom-green"
+              >
+                <span>IEDA Relief</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="relative">
+          <video ref="video" class="plyr w-full rounded-lg shadow-lg" controls>
+            <source src="/video/tr.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
+      <!-- Fin Vidéo avec plyr -->
+      <!-- try -->
+
+      <!-- try -->
 
       <!-- Section d'informations -->
       <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
