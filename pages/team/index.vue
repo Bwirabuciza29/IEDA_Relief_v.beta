@@ -481,10 +481,10 @@ const countries = [
       description: "Founder, President & CEO.",
     },
     details: {
-      address: "10103 Foundren Road, Houston, TX",
-      tel: "+1 555 1234",
-      gsm: "+1 555 6789",
-      email: "hustonsoffice@iedarelief.org",
+      address: "10103 Foundren Rd, Suite 435 Houston, Texas 77096",
+      tel: "+1 713-774-2522",
+      gsm: "+1 713-774-2529",
+      email: "philma@iedarelief.org",
     },
   },
   {
