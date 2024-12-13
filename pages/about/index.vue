@@ -169,10 +169,6 @@
         </div>
       </div>
       <!-- Fin Vidéo avec plyr -->
-      <!-- try -->
-
-      <!-- try -->
-
       <!-- Section d'informations -->
       <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
         <!-- Élément 1 -->
