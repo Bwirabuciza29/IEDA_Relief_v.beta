@@ -280,7 +280,7 @@
               <!-- Détails -->
 
               <p class="text-sm text-gray-700">
-                <span class="font-semibold">Sexe:</span>
+                <span class="font-semibold">Gender:</span>
                 {{ countries[activeCountry].chief.gender }}
               </p>
               <p class="text-sm text-gray-700">
@@ -477,7 +477,7 @@ const countries = [
       title: "Founder, President & CEO",
       image: "/img/coach.jpg",
       name: "Phil MAANULWA",
-      gender: "Masculin",
+      gender: "Male",
       description: "Founder, President & CEO.",
     },
     details: {
@@ -495,7 +495,7 @@ const countries = [
       title: "Regional Program Coordinator & Head of Mission",
       image: "https://via.placeholder.com/150?text=Chef+Belgique",
       name: "Jean Dupont",
-      gender: "Masculin",
+      gender: "Male",
       description: "Expert en relations internationales et gestion de projet.",
     },
     details: {
@@ -513,7 +513,7 @@ const countries = [
       title: "Regional Program Coordinator & Head of Mission",
       image: "/img/bintu.jpg",
       name: "Micka BINTU",
-      gender: "Féminin",
+      gender: "Female",
       description: "Spécialiste des programmes de développement rural.",
     },
     details: {
@@ -532,7 +532,7 @@ const countries = [
       title: "Regional Program Coordinator & Head of Mission",
       image: "/img/francois.jpg",
       name: "François DE PAUL",
-      gender: "Masculin",
+      gender: "Male",
       description:
         "Experte en gestion humanitaire et opérations sur le terrain.",
     },
@@ -552,7 +552,7 @@ const countries = [
       title: "Regional Program Coordinator & Head of Mission",
       image: "/img/david.jpg",
       name: "David KISUBA",
-      gender: "Masculin",
+      gender: "Male",
       description:
         "Coordinateur de programmes avec expertise en santé publique.",
     },
@@ -572,7 +572,7 @@ const countries = [
       title: "Regional Program Coordinator & Head of Mission",
       image: "/img/francois.jpg",
       name: "François OMENDE",
-      gender: "Masculin",
+      gender: "Male",
       description:
         "Responsable humanitaire avec une expertise en gestion des crises.",
     },
@@ -594,7 +594,7 @@ const countries = [
       name: "Bakary CISSE",
       postnom: "Diop",
       nationality: "Nigérien",
-      gender: "Masculin",
+      gender: "Male",
       description:
         "Gestionnaire de programmes spécialisés dans les projets d'accès à l'eau.",
     },
@@ -614,7 +614,7 @@ const countries = [
       title: "Regional Program Coordinator & Head of Mission",
       image: "/img/audacieux.jpg",
       name: "Audacieux KITSA",
-      gender: "Masculin",
+      gender: "Male",
       description: "Spécialiste en développement communautaire.",
     },
     details: {
