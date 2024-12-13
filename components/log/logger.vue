@@ -26,7 +26,7 @@
 
               <!-- Texte avec animation et NuxtLink -->
               <nuxt-link
-                :to="`/country/${country.code}`"
+                to="/team"
                 class="relative text-black group-hover:text-custom-green transition duration-300"
               >
                 {{ country.name }}
