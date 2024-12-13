@@ -122,7 +122,7 @@
     <div class="mj-container my-16">
       <!-- Image principale avec le texte en arrière-plan -->
       <div class="relative">
-        <img
+        <!-- <img
           src="/img/vid.png"
           alt="Groupe de personnes"
           class="w-full rounded-lg shadow-lg"
@@ -135,7 +135,11 @@
               class="w-20 h-20 transition-all duration-300 hover:z-10 hover:scale-110"
             />
           </button>
-        </div>
+        </div> -->
+        <video ref="video" class="plyr w-full rounded-lg" controls>
+          <source src="/video/tr.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       <!-- Section d'informations -->
@@ -305,6 +309,8 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from "vue";
+const video = ref(null);
 const { t } = useI18n();
 const teamMembers = [
   {
@@ -386,5 +392,17 @@ onMounted(() => {
   animateValue(count2, 0, 2200000, 3000);
   // Durée de 1.5s
   animateValue(count3, 0, 2008, 1500);
+  const player = new (useNuxtApp().$plyr)(video.value);
 });
 </script>
+<style scoped>
+/* Personnaliser les couleurs des contrôles Plyr */
+.plyr {
+  --plyr-main-color: #ff6347; /* Couleur principale */
+  --plyr-controls-bg: rgba(0, 0, 0, 0.7); /* Fond des contrôles */
+  --plyr-progress-color: #ff6347; /* Couleur de la barre de progression */
+  --plyr-buffered-color: #ffb6c1; /* Couleur du tampon */
+  --plyr-volume-color: #ff6347; /* Couleur du contrôle du volume */
+  --plyr-scrub-color: #ff6347; /* Couleur de la barre de défilement */
+}
+</style>
