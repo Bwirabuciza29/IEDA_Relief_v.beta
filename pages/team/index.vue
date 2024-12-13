@@ -579,7 +579,7 @@ const countries = [
   {
     name: "Niger",
     flag: "https://flagcdn.com/ne.svg",
-    image: "https://via.placeholder.com/300x200?text=Niger",
+    image: "/img/niamey.jpg",
     chief: {
       image: "/img/cisse.jpg",
       name: "Bakary CISSE",
