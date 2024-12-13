@@ -111,14 +111,14 @@
           <div class="justify mb-8">
             <p class="text-gray-700 leading-relaxed text-justify">
               Since 2008, we have worked in
-              <span class="font-semibold text-blue-600">12 countries</span> with
-              a
-              <span class="font-semibold text-blue-600">$250M</span> investment
-              in over
-              <span class="font-semibold text-blue-600">350 projects</span>,
+              <span class="font-semibold text-custom-blue">12 countries</span>
+              with a
+              <span class="font-semibold text-custom-blue">$250M</span>
+              investment in over
+              <span class="font-semibold text-custom-blue">350 projects</span>,
               helping people transition to longer-term development. Our
-              <span class="font-semibold text-blue-600">830+ staff</span> focus
-              on marginalized people, internally displaced persons, host
+              <span class="font-semibold text-custom-blue">830+ staff</span>
+              focus on marginalized people, internally displaced persons, host
               communities, and refugees. We have delivered key support
               components, building community capacity to foster local ownership
               and technical capability, ensuring a sustainable transition to
