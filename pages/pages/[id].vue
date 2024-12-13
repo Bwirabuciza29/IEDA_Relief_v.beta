@@ -78,15 +78,6 @@
 
         <!-- Section des images -->
         <div class="mt-8 space-y-6">
-          <!-- Grande Image -->
-          <div class="w-full h-64 overflow-hidden rounded-lg">
-            <img
-              :src="card.image"
-              alt="Main camp scene"
-              class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105"
-            />
-          </div>
-
           <!-- Petites Images -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div class="h-40 overflow-hidden rounded-lg">
@@ -341,7 +332,7 @@ const cards = [
     title: t("operation.c1_t"),
     description: t("operation.c1_de"),
     descriptions: t("operation.c1_des"),
-    image: "/img/o3.png",
+    image: "/img/camps.jpg",
     image_2: "/img/p2.png",
     image_3: "/img/p3.png",
     image_4: "/img/p4.png",
