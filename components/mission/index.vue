@@ -148,7 +148,6 @@
 <script setup>
 const { t } = useI18n();
 const imageSrc = ref("/img/rectori.png");
-// Initialiser les variables avant de les utiliser
 const title_1 = ref(t("mission.title_1"));
 const title_2 = ref(t("mission.title_2"));
 const title_3 = ref(t("mission.title_3"));
