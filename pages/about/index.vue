@@ -343,19 +343,19 @@ const teamMembers = [
   {
     image: "/img/s.png",
     alt: t("about.support_desc_1"),
-    title: "unknown name",
+    title: "Germaine",
     role: t("about.support_desc_1"),
   },
   {
-    image: "/img/ss.png",
+    image: "/img/s.jpg",
     alt: t("about.support_desc_2"),
-    title: "unknown name",
+    title: "Richard",
     role: t("about.support_desc_2"),
   },
   {
-    image: "/img/sss.png",
+    image: "/img/ss.jpg",
     alt: t("about.support_desc_3"),
-    title: "unknown name",
+    title: "Ghislain",
     role: t("about.support_desc_3"),
   },
 ];

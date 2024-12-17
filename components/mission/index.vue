@@ -165,7 +165,6 @@ const cd1 = ref(t("mission.cd1"));
 const cd2 = ref(t("mission.cd2"));
 const cd3 = ref(t("mission.cd3"));
 
-// Ensuite, vous pouvez utiliser ces variables dans le tableau
 const tabs = [
   {
     title: title_1,

@@ -317,7 +317,7 @@ const card = ref(null);
 const cards = [
   {
     id: 1,
-    image: "/img/w1.png",
+    image: "/img/w.jpg",
     tag: t("works.title"),
     title: "Burkina Faso",
     capital: "Ouagadougou",
@@ -330,7 +330,7 @@ const cards = [
   },
   {
     id: 2,
-    image: "/img/w2.png",
+    image: "/img/w2.jpg",
     tag: t("works.title"),
     title: "Cameroun",
     capital: "Younde",
@@ -342,7 +342,7 @@ const cards = [
   },
   {
     id: 3,
-    image: "/img/w3.png",
+    image: "/img/w3.jpg",
     tag: t("works.title"),
     title: "Central Africa Republic",
     capital: "Bangui",
@@ -354,7 +354,7 @@ const cards = [
   },
   {
     id: 4,
-    image: "/img/w4.png",
+    image: "/img/w4.jpg",
     tag: t("works.title"),
     title: "Mali",
     capital: "Bamako",
@@ -367,7 +367,7 @@ const cards = [
   },
   {
     id: 5,
-    image: "/img/w5.png",
+    image: "/img/w5.jpg",
     tag: t("works.title"),
     title: "Niger",
     capital: "Niamey",
@@ -380,7 +380,7 @@ const cards = [
   },
   {
     id: 6,
-    image: "/img/w6.png",
+    image: "/img/w6.jpg",
     tag: t("works.title"),
     title: "Philippines",
     capital: "Manille",
@@ -393,7 +393,7 @@ const cards = [
   },
   {
     id: 7,
-    image: "/img/w7.png",
+    image: "/img/w7.jpg",
     tag: t("works.title"),
     title: "Haiti",
     capital: "Port-au-Prince",
@@ -405,7 +405,7 @@ const cards = [
   },
   {
     id: 8,
-    image: "/img/w8.png",
+    image: "/img/w8.jpg",
     tag: t("works.title"),
     title: "Democratic Rep. of the Congo",
     capital: "Kinshasa",
@@ -417,7 +417,7 @@ const cards = [
   },
   {
     id: 9,
-    image: "/img/w9.png",
+    image: "/img/w9.jpg",
     tag: t("works.title"),
     title: "Get Involved",
     description:
