@@ -1,9 +1,8 @@
 script<template>
   <div class="relative">
     <h1 class="text-3xl lg:text-4xl font-bold -mt-16 mb-4 text-center">
-      Carte
-      <span class="font-sri text-green-600">Dynamique</span>
-      en Temps Réel
+      Real-Time Dynamic
+      <span class="font-sri text-green-600">Map</span>
     </h1>
 
     <!-- Carte -->
