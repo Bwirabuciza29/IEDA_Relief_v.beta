@@ -1,5 +1,5 @@
 script<template>
-  <div class="mj-container relative">
+  <div class="relative">
     <h1 class="text-3xl lg:text-4xl font-bold -mt-16 mb-4 text-center">
       Carte
       <span class="font-sri text-green-600">Dynamique</span>
