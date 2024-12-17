@@ -38,7 +38,7 @@
           >
             <div class="relative md:w-3/4">
               <img
-                src="/img/img_principal.png"
+                src="/img/hero.jpg"
                 alt="Community support"
                 class="shadow-lg transform rounded-lg"
               />
@@ -138,10 +138,10 @@ const targetCardNum = 2.2;
 onMounted(() => {
   let currentValue = 0;
   const interval = setInterval(() => {
-    currentValue += 0.01; 
+    currentValue += 0.01;
     if (currentValue >= targetCardNum) {
-      clearInterval(interval); 
-      currentValue = targetCardNum; 
+      clearInterval(interval);
+      currentValue = targetCardNum;
     }
     animatedCardNum.value = currentValue.toFixed(2);
   }, 50);

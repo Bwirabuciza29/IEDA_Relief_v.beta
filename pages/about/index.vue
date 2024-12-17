@@ -422,14 +422,4 @@ onMounted(() => {
   const player = new (useNuxtApp().$plyr)(video.value);
 });
 </script>
-<style scoped>
-/* Personnaliser les couleurs des contrôles Plyr */
-.plyr {
-  --plyr-main-color: #ff6347; /* Couleur principale */
-  --plyr-controls-bg: rgba(0, 0, 0, 0.7); /* Fond des contrôles */
-  --plyr-progress-color: #ff6347; /* Couleur de la barre de progression */
-  --plyr-buffered-color: #ffb6c1; /* Couleur du tampon */
-  --plyr-volume-color: #ff6347; /* Couleur du contrôle du volume */
-  --plyr-scrub-color: #ff6347; /* Couleur de la barre de défilement */
-}
-</style>
+

@@ -19,7 +19,7 @@
         <!-- Image avec une image superposée -->
         <div class="relative">
           <img
-            src="/img/mum.png"
+            src="/img/mum.jpg"
             alt="Main Image"
             class="rounded-lg object-cover w-46 h-46 transition-all duration-300 hover:z-10 hover:scale-110"
           />
