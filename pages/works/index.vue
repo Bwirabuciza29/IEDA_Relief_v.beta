@@ -132,11 +132,7 @@
 </template>
 <script setup>
 const { t } = useI18n();
-const tabs = [
-  // t("works.btn_1_title"),
-  // t("works.btn_2_title"),
-  // t("works.btn_3_title"),
-];
+
 const activeTab = ref(t("works.btn_1_title"));
 
 const cards = [

@@ -14,6 +14,7 @@
     "feather-icons": "^4.29.2",
     "gsap": "^3.12.5",
     "imagekitio-vue": "^3.1.0",
+    "leaflet": "^1.9.4",
     "nuxt": "^3.14.159",
     "plyr": "^3.7.8",
     "vue": "latest",

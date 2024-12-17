@@ -98,15 +98,6 @@
             </div>
 
             <div class="mt-4">
-              <!-- Barre de progression -->
-              <div
-                class="relative w-full h-2 bg-gray-200 rounded-full overflow-hidden"
-              >
-                <div
-                  class="absolute h-full bg-custom-green transition-all duration-500 ease-in-out"
-                  :style="{ width: card.progress + '%' }"
-                ></div>
-              </div>
               <!-- Bouton -->
               <nuxt-link
                 :to="`/pages/${card.id}`"
