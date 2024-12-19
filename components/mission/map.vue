@@ -1,4 +1,4 @@
-script<template>
+<template>
   <div class="relative">
     <h1 class="text-3xl lg:text-4xl font-bold -mt-16 mb-4 text-center">
       Real-Time Dynamic
