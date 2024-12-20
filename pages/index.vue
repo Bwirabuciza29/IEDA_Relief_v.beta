@@ -84,31 +84,31 @@
       />
     </div>
     <!-- Fin Page d'accueil -->
-    <div class="my-16">
+    <div class="my-16" data-aos="fade-up">
       <log />
     </div>
-    <div class="my-16">
+    <div class="my-16" data-aos="fade-up">
       <mission />
     </div>
-    <div class="my-16">
+    <div class="my-16" data-aos="zoom-in">
       <help />
     </div>
-    <div class="my-16">
+    <div class="my-16" data-aos="fade-up">
       <parteners />
     </div>
-    <div class="my-16">
+    <div class="my-16" data-aos="zoom-in">
       <LogOurs />
     </div>
-    <div class="my-16">
+    <div class="my-16" data-aos="zoom-in">
       <PartenersSupport />
     </div>
-    <div class="my-16">
+    <div class="my-16" data-aos="zoom-in">
       <LogTestimonials />
     </div>
-    <div class="my-16">
+    <div class="my-16" data-aos="zoom-in">
       <HelpSubscribe />
     </div>
-    <div class="mt-16">
+    <div class="mt-16" data-aos="zoom-in">
       <laster />
     </div>
   </div>

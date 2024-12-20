@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.css", "~/assets/css/global.css"],
   plugins: [
+    "~/plugins/aos.client.js",
     "~/plugins/plyr.client.js",
     { src: "~/plugins/leaflet.js", mode: "client" },
   ],

@@ -21,9 +21,13 @@ const config = useAppConfig();
 useSeoMeta({
   title: config.title,
 });
+onMounted(() => {
+  useNuxtApp().$aos();
+});
 </script>
 
 <style>
+@import "aos/dist/aos.css";
 .page-enter-active,
 .page-leave-active {
   transition: opacity 0.4s ease;
