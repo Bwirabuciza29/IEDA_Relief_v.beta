@@ -110,19 +110,7 @@
         <div class="mt-12">
           <div class="justify mb-8">
             <p class="text-gray-700 leading-relaxed text-justify">
-              Since 2008, we have worked in
-              <span class="font-semibold text-custom-blue">12 countries</span>
-              with a
-              <span class="font-semibold text-custom-blue">$250M</span>
-              investment in over
-              <span class="font-semibold text-custom-blue">350 projects</span>,
-              helping people transition to longer-term development. Our
-              <span class="font-semibold text-custom-blue">830+ staff</span>
-              focus on marginalized people, internally displaced persons, host
-              communities, and refugees. We have delivered key support
-              components, building community capacity to foster local ownership
-              and technical capability, ensuring a sustainable transition to
-              long-term development.
+              {{ t("ope.desc") }}
             </p>
           </div>
 
@@ -166,17 +154,10 @@
 
           <!-- Titre supplémentaire -->
           <h2 class="text-2xl font-bold mt-8">
-            CVE: Engaging Negative Influencers to Provide Clean Water
+            {{ t("ope.t_6") }}
           </h2>
           <p class="text-gray-600 mt-4 text-justify">
-            In Kidal, Mali, the reality on the ground is that you cannot access
-            some key areas if you do not address negative influencers and actors
-            in communities. With our experience and approach, we listened to
-            grievances and shared the independent nature of our mission. Through
-            engagement, we found a way to gain access to support communities
-            with clean water. Our project not only operated without incident,
-            but we were able to motivate peaceful reintegration with
-            community-based CVE.
+            {{ t("ope.t6_d") }}
           </p>
 
           <!-- Citation -->
@@ -500,29 +481,24 @@ const cards = [
 
 const content = [
   {
-    title: "Why IEDA Relief",
-    description:
-      "We know communities – we do not just say it, we practice it. We are working intimately with communities from Day One. For us, it does not make sense to work in communities without understanding them and learning from them – their people, their needs, what drives them, social structures, cultural practices, and interactions. When the situation calls, we work quickly so that we do not lose time further down the road when problems arise.",
+    title: t("ope.t_1"),
+    description: t("ope.t1_d"),
   },
   {
-    title: "We build trust",
-    description:
-      "Fundamental in any community anywhere in the world – we value humans and what each person brings to their community. Focusing on community, we naturally build strong local ties, especially with delivery of health activities and small-scale infrastructure. Communities value these fundamental lifelines and automatic trust is built.",
+    title: t("ope.t_2"),
+    description: t("ope.t2_d"),
   },
   {
-    title: "We Have the Networks and Access",
-    description:
-      "Our engagement process gives us an immediate footing to understand and listen to communities – what they need, what they do not want, and what impacts them. We have become known for this approach which helps to widen our network. Our office structure allows us to be in the middle of communities. When others do not have the ability to gain entrance into a community, we have access. While we do not work with individuals or entities that are listed, or are not supported by the communities, we understand their perspective to understand their impact.",
+    title: t("ope.t_3"),
+    description: t("ope.t3_d"),
   },
   {
-    title: "We Incorporate Sustainability",
-    description:
-      "This is fundamental to the way we do business. The way we engage, design, and implement an intervention is framed with sustainability in mind. We build meaningful community ownership to ensure our projects are responsive and generate a positive impact that lasts.",
+    title: t("ope.t_4"),
+    description: t("ope.t4_d"),
   },
   {
-    title: "Our Model Works",
-    description:
-      'Our direct implementation approach is management-intensive, but it works. We understand that it requires up-front costs that over a period, generate a return on the investment. With this, we ensure a low-cost, simple, achievable approach that makes sense. Our technical skill, thinking, and understanding of the local situation – are part of our risk management and project processes that support our management. We keep operations’ costs down because we have local resources – staff, materials, and supply chain – to the extent possible – we reduce the "middleman," a heavy security apparatus, and rework. We can do things right the first time because we have the right people and the right resources working together to deliver, which ultimately creates cost savings.',
+    title: t("ope.t_5"),
+    description: t("ope.t5_d"),
   },
 ];
 

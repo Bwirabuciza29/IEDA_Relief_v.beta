@@ -339,6 +339,7 @@
 import { ref, onMounted } from "vue";
 const video = ref(null);
 const { t } = useI18n();
+
 const teamMembers = [
   {
     image: "/img/s.png",

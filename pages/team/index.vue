@@ -474,7 +474,7 @@ const countries = [
     flag: "https://flagcdn.com/us.svg",
     image: "/img/pa1.jpg",
     chief: {
-      title: "Founder, President & CEO",
+      title: t("leader.title_1"),
       image: "/img/coach.jpg",
       name: "Phil MAANULWA",
       gender: "Male",
@@ -492,7 +492,7 @@ const countries = [
     flag: "https://flagcdn.com/be.svg",
     image: "https://via.placeholder.com/300x200?text=Belgium",
     chief: {
-      title: "Regional Program Coordinator & Head of Mission",
+      title: t("leader.title_2"),
       image: "https://via.placeholder.com/150?text=Chef+Belgique",
       name: "Jean Dupont",
       gender: "Male",
@@ -510,7 +510,7 @@ const countries = [
     flag: "https://flagcdn.com/bf.svg",
     image: "https://via.placeholder.com/300x200?text=Burkina+Faso",
     chief: {
-      title: "Regional Program Coordinator & Head of Mission",
+      title: t("leader.title_2"),
       image: "/img/bintu.jpg",
       name: "Micka BINTU",
       gender: "Female",
@@ -529,7 +529,7 @@ const countries = [
     flag: "https://flagcdn.com/cf.svg",
     image: "/img/r.jpg",
     chief: {
-      title: "Regional Program Coordinator & Head of Mission",
+      title: t("leader.title_2"),
       image: "/img/francois.jpg",
       name: "François DE PAUL",
       gender: "Male",
@@ -549,7 +549,7 @@ const countries = [
     flag: "https://flagcdn.com/cm.svg",
     image: "https://via.placeholder.com/300x200?text=Cameroun",
     chief: {
-      title: "Regional Program Coordinator & Head of Mission",
+      title: t("leader.title_2"),
       image: "/img/david.jpg",
       name: "David KISUBA",
       gender: "Male",
@@ -569,7 +569,7 @@ const countries = [
     flag: "https://flagcdn.com/cd.svg",
     image: "https://via.placeholder.com/300x200?text=DR+Congo",
     chief: {
-      title: "Regional Program Coordinator & Head of Mission",
+      title: t("leader.title_2"),
       image: "/img/francois.jpg",
       name: "François OMENDE",
       gender: "Male",
@@ -589,7 +589,7 @@ const countries = [
     flag: "https://flagcdn.com/ne.svg",
     image: "/img/niamey.jpg",
     chief: {
-      title: "Regional Program Coordinator & Head of Mission",
+      title: t("leader.title_2"),
       image: "/img/cisse.jpg",
       name: "Bakary CISSE",
       postnom: "Diop",
@@ -611,7 +611,7 @@ const countries = [
     flag: "https://flagcdn.com/ml.svg",
     image: "img/mali.jpg",
     chief: {
-      title: "Regional Program Coordinator & Head of Mission",
+      title: t("leader.title_2"),
       image: "/img/audacieux.jpg",
       name: "Audacieux KITSA",
       gender: "Male",
