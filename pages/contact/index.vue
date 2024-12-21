@@ -53,7 +53,7 @@
               >
                 <i class="fas fa-envelope"></i>
               </span>
-              <span>name@domain.com</span>
+              <span>philma@iedarelief.org</span>
             </p>
             <p class="flex items-center space-x-3">
               <span
@@ -61,7 +61,7 @@
               >
                 <i class="fas fa-phone-alt"></i>
               </span>
-              <span>+123 45 67 123</span>
+              <span> +1 713-774-2529</span>
             </p>
             <p class="flex items-center space-x-3">
               <span
@@ -69,7 +69,7 @@
               >
                 <i class="fas fa-map-marker-alt"></i>
               </span>
-              <span>123 Main Street, Anytown, USA</span>
+              <span>10103 Foundren Rd, Suite 435 Houston, Texas 77096</span>
             </p>
           </div>
         </div>
