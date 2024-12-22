@@ -90,7 +90,7 @@
     <div class="my-16" data-aos="fade-up">
       <mission />
     </div>
-    <div class="my-16" data-aos="zoom-in">
+    <div class="my-16" data-aos="fade-up">
       <help />
     </div>
     <div class="my-16" data-aos="fade-up">
@@ -102,13 +102,13 @@
     <div class="my-16" data-aos="zoom-in">
       <PartenersSupport />
     </div>
-    <div class="my-16" data-aos="zoom-in">
+    <div class="my-16">
       <LogTestimonials />
     </div>
-    <div class="my-16" data-aos="zoom-in">
+    <div class="my-16">
       <HelpSubscribe />
     </div>
-    <div class="mt-16" data-aos="zoom-in">
+    <div class="mt-16">
       <laster />
     </div>
   </div>
