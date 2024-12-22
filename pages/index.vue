@@ -14,7 +14,7 @@
               {{ title_3 }}
               <span class="text-custom-green font-sri"> {{ title_4 }} </span>...
             </h1>
-            <p class="text-gray-700 text-lg">
+            <p class="text-gray-700 text-lg text-justify">
               {{ desc }}
             </p>
             <NuxtLink

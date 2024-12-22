@@ -28,7 +28,7 @@
       <!-- Texte au centre -->
       <div class="md:w-1/2 mb-6">
         <h2 class="text-5xl font-bold text-gray-800">{{ tab.title }}</h2>
-        <p class="text-gray-600 mt-4">
+        <p class="text-gray-600 mt-4 text-justify">
           {{ tab.description }}
         </p>
         <NuxtLink :to="localPagePath('about')">

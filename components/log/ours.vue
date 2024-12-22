@@ -15,16 +15,19 @@
           :key="partner.id"
           class="group flex justify-center items-center bg-white p-4 shadow rounded transform transition-transform duration-300 hover:scale-105"
         >
-          <img
-            :src="partner.logo"
-            :alt="partner.alt"
-            class="max-w-20 h-auto filter grayscale transition-all duration-300 group-hover:grayscale-0"
-          />
+          <a :href="partner.link" target="_blank" class="block">
+            <img
+              :src="partner.logo"
+              :alt="partner.alt"
+              class="max-w-20 h-auto filter grayscale transition-all duration-300 group-hover:grayscale-0"
+            />
+          </a>
         </div>
       </div>
     </div>
   </section>
 </template>
+
 <script setup>
 const { t } = useI18n();
 // Initialiser les variables avant de les utiliser
@@ -33,14 +36,59 @@ const t2 = ref(t("logo.t2"));
 const t3 = ref(t("logo.t3"));
 
 const partners = [
-  { id: 1, logo: "/img/hc.jpeg", alt: "Partner 1" },
-  { id: 2, logo: "/img/unicef.png", alt: "Partner 2" },
-  { id: 3, logo: "/img/undpi.png", alt: "Partner 7" },
-  { id: 4, logo: "/img/wfp.png", alt: "Partner 9" },
-  { id: 5, logo: "/img/oim.png", alt: "Partner 4" },
-  { id: 6, logo: "/img/fa.gif", alt: "Partner 5" },
-  { id: 7, logo: "/img/tx.jpeg", alt: "Partner 3" },
-  { id: 8, logo: "/img/uu.png", alt: "Partner 9" },
-  { id: 9, logo: "/img/shelter.jpg", alt: "Partner 8" },
+  {
+    id: 1,
+    logo: "/img/hc.jpeg",
+    alt: "Partner 1",
+    link: "https://www.unhcr.org",
+  },
+  {
+    id: 2,
+    logo: "/img/unicef.png",
+    alt: "Partner 2",
+    link: "https://www.unicef.org/",
+  },
+  {
+    id: 3,
+    logo: "/img/undpi.png",
+    alt: "Partner 7",
+    link: "https://www.undp.org/",
+  },
+  {
+    id: 4,
+    logo: "/img/wfp.png",
+    alt: "Partner 9",
+    link: "https://www.wfp.org/",
+  },
+  {
+    id: 5,
+    logo: "/img/oim.png",
+    alt: "Partner 4",
+    link: "https://www.iom.int/",
+  },
+  {
+    id: 6,
+    logo: "/img/fa.gif",
+    alt: "Partner 5",
+    link: "https://www.fao.org/home/en/",
+  },
+  {
+    id: 7,
+    logo: "/img/tx.jpeg",
+    alt: "Partner 3",
+    link: "https://www.co.houston.tx.us/",
+  },
+  {
+    id: 8,
+    logo: "/img/uu.png",
+    alt: "Partner 9",
+    link: "https://www.unfpa.org/",
+  },
+  {
+    id: 9,
+    logo: "/img/shelter.jpg",
+    alt: "Partner 8",
+    link: "https://www.shelterboxusa.org/",
+  },
 ];
 </script>
