@@ -1,11 +1,11 @@
 {
   "menu": {
     "home": "Home",
-    "about": "About",
+    "about": "About Us",
     "works": "Works",
     "pages": "Operations",
     "team": "Team",
-    "images": "Galleries",
+    "images": "Gallery",
     "contact": "Contacts",
     "donation": "Donation"
   },
@@ -304,8 +304,8 @@
     "t_6": "CVE: Engaging Negative Influencers to Provide Clean Water",
     "t6_d": "In Kidal, Mali, the reality on the ground is that you cannot access some key areas if you do not address negative influencers and actors in communities. With our experience and approach, we listened to grievances and shared the independent nature of our mission. Through engagement, we found a way to gain access to support communities with clean water. Our project not only operated without incident, but we were able to motivate peaceful reintegration with community-based CVE."
   },
-  "leader":{
-    "title_1":"Founder, President & CEO",
-    "title_2":"Regional Program Coordinator & Head of Mission"
+  "leader": {
+    "title_1": "Founder, President & CEO",
+    "title_2": "Regional Program Coordinator & Head of Mission"
   }
 }

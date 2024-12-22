@@ -18,7 +18,7 @@
               {{ desc }}
             </p>
             <NuxtLink
-              :to="localePath('donation')"
+              :to="localPagePath('donation')"
               class="group relative inline-block overflow-hidden rounded-lg border-2 border-green-100 bg-custom-green px-6 py-4 text-sm font-semibold text-white sm:px-6 sm:py-3 sm:text-base"
             >
               <span
@@ -116,9 +116,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-
-const localePath = useLocalePath();
-const { t } = useI18n();
+const { t, locale } = useI18n();
 const title_1 = ref(t("hero.title_1"));
 const title_2 = ref(t("hero.title_2"));
 const title_3 = ref(t("hero.title_3"));
@@ -146,4 +144,9 @@ onMounted(() => {
     animatedCardNum.value = currentValue.toFixed(2);
   }, 50);
 });
+// Fonction pour générer un chemin localisé
+const localPagePath = (route) => {
+  const prefix = locale.value === "en-UK" ? "" : `/${locale.value}`;
+  return `${prefix}/${route}`;
+};
 </script>

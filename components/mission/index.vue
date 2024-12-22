@@ -31,11 +31,11 @@
         <p class="text-gray-600 mt-4">
           {{ tab.description }}
         </p>
-        <NuxtLink to="/about">
+        <NuxtLink :to="localPagePath('about')">
           <button
             class="mt-6 px-6 py-3 text-sm bg-custom-green text-white rounded-lg hover:bg-green-600 transition"
           >
-            {{ $t("mission.btn", "View More") }}
+            {{ t("mission.btn", "View More") }}
           </button>
         </NuxtLink>
       </div>
@@ -146,7 +146,7 @@
 </template>
 
 <script setup>
-const { t } = useI18n();
+const { t, locale } = useI18n();
 const imageSrc = ref("/img/rectori.png");
 const title_1 = ref(t("mission.title_1"));
 const title_2 = ref(t("mission.title_2"));
@@ -200,6 +200,11 @@ const cards = [
 ];
 
 const activeTab = ref(0);
+// Fonction pour générer un chemin localisé
+const localPagePath = (route) => {
+  const prefix = locale.value === "en-UK" ? "" : `/${locale.value}`;
+  return `${prefix}/${route}`;
+};
 </script>
 
 <style>
