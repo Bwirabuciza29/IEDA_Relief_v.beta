@@ -100,7 +100,7 @@
             <div class="mt-4">
               <!-- Bouton -->
               <nuxt-link
-                :to="`/pages/${card.id}`"
+                :to="localPagePath(card.id)"
                 class="mt-4 inline-block text-custom-green text-sm font-medium overflow-hidden group relative"
               >
                 <span
@@ -134,7 +134,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 // Filtres disponibles
 const filters = [
@@ -284,4 +284,10 @@ function truncateText(text, limit) {
   if (!text) return "";
   return text.length > limit ? text.substring(0, limit) + "..." : text;
 }
+
+// Fonction pour générer un chemin localisé pour `/pages/{id}`
+const localPagePath = (id) => {
+  const prefix = locale.value === "en-UK" ? "" : `/${locale.value}`;
+  return `${prefix}/pages/${id}`;
+};
 </script>

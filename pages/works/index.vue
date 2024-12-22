@@ -131,7 +131,7 @@
   </section>
 </template>
 <script setup>
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const activeTab = ref(t("works.btn_1_title"));
 
@@ -285,9 +285,18 @@ const cards = [
 
 const router = useRouter();
 
-const goToDetails = (id) => {
-  router.push(`/works/${id}`);
+// Fonction pour générer un chemin local dynamique
+const localPath = (id) => {
+  const prefix = locale.value === "en-UK" ? "" : `/${locale.value}`;
+  return `${prefix}/works/${id}`;
 };
+
+// Fonction pour rediriger vers la page des détails
+const goToDetails = (id) => {
+  router.push(localPath(id));
+};
+
+// Fonction pour tronquer le texte
 function truncateText(text, limit) {
   if (!text) return "";
   return text.length > limit ? text.substring(0, limit) + "..." : text;
