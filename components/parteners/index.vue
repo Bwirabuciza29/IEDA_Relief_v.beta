@@ -35,7 +35,7 @@
       <!-- Texte au centre -->
       <div class="md:w-1/2 mb-6">
         <h2 class="text-5xl font-bold text-gray-800">{{ tab.title }}</h2>
-        <p class="text-gray-600 mt-4">
+        <p class="text-gray-600 mt-4 text-justify">
           {{ tab.description }}
         </p>
         <h2 class="text-xl font-semibold text-custom-green mb-4">
@@ -48,30 +48,48 @@
         </p>
 
         <!-- Liste des postes -->
-        <ul class="list-disc pl-5 space-y-2">
-          <ul>
+        <ul class="space-y-2 pl-5" v-show="activeTab === 1">
+          <li class="flex items-center">
+            <!-- Icône Heroicon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-custom-green mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
             <a href="#" class="text-custom-green hover:underline">
               {{ tab.desc_list_1 }}
             </a>
-          </ul>
-          <ul>
+          </li>
+          <li class="flex items-center">
+            <!-- Icône Heroicon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-custom-green mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
             <a href="#" class="text-custom-green hover:underline">
               {{ tab.desc_list_2 }}
             </a>
-          </ul>
+          </li>
         </ul>
-        <div class="flex flex-col sm:flex-row gap-4 my-4">
-          <button
-            class="bg-gray-800 text-white font-semibold px-6 py-2 rounded-md hover:bg-gray-700 transition"
-          >
-            {{ tab.desc_btn_1 }}
-          </button>
-          <button
-            class="bg-custom-green text-white font-semibold px-6 py-2 rounded-md hover:bg-custom-green transition"
-          >
-            {{ tab.desc_btn_2 }}
-          </button>
-        </div>
       </div>
 
       <!-- Image à droite -->
