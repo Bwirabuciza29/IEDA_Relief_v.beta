@@ -70,7 +70,7 @@
         <!-- Card 2 -->
         <div class="overflow-hidden border rounded-lg shadow-md">
           <img
-            src="/img/c1.png"
+            src="/img/c3.jpg"
             alt="Image 1"
             class="w-full h-48 object-cover transition-all duration-300 hover:z-10 hover:scale-105"
           />
@@ -92,7 +92,7 @@
         <!-- Card 4 -->
         <div class="overflow-hidden border rounded-lg shadow-md">
           <img
-            src="/img/c2.png"
+            src="/img/c4.jpg"
             alt="Image 2"
             class="w-full h-48 object-cover transition-all duration-300 hover:z-10 hover:scale-105"
           />
@@ -114,7 +114,7 @@
         <!-- Card 6 -->
         <div class="overflow-hidden border rounded-lg shadow-md">
           <img
-            src="/img/c3.png"
+            src="/img/c5.jpg"
             alt="Image 3"
             class="w-full h-48 object-cover transition-all duration-300 hover:z-10 hover:scale-105"
           />
