@@ -22,88 +22,119 @@
             <li>
               <nuxtLink
                 to="/"
-                class="text-gray-600 hover:text-custom-green font-semibold text-sm"
+                class="group text-gray-600 hover:text-custom-green font-semibold text-sm relative"
               >
                 {{ home }}
+                <span
+                  class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+                ></span>
               </nuxtLink>
             </li>
             <li>
               <nuxtLink
                 to="/about"
-                class="text-gray-600 hover:text-custom-green font-semibold text-sm"
+                class="group text-gray-600 hover:text-custom-green font-semibold text-sm relative"
               >
-                {{ about }}</nuxtLink
-              >
+                {{ about }}
+                <span
+                  class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+                ></span>
+              </nuxtLink>
             </li>
             <li>
               <nuxtLink
                 to="/works"
-                class="text-gray-600 hover:text-custom-green font-semibold text-sm"
+                class="group text-gray-600 hover:text-custom-green font-semibold text-sm relative"
               >
-                {{ works }}</nuxtLink
-              >
+                {{ works }}
+                <span
+                  class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+                ></span>
+              </nuxtLink>
             </li>
             <li>
               <nuxtLink
                 to="/pages"
-                class="text-gray-600 hover:text-custom-green font-semibold text-sm"
+                class="group text-gray-600 hover:text-custom-green font-semibold text-sm relative"
               >
                 {{ pages }}
+                <span
+                  class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+                ></span>
               </nuxtLink>
             </li>
             <li>
               <nuxtLink
                 to="/contact"
-                class="text-gray-600 hover:text-custom-green font-semibold text-sm"
+                class="group text-gray-600 hover:text-custom-green font-semibold text-sm relative"
               >
-                {{ contact }}</nuxtLink
-              >
+                {{ contact }}
+                <span
+                  class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+                ></span>
+              </nuxtLink>
             </li>
           </ul>
         </div>
 
+        <!-- Section suivante -->
         <div>
           <h4 class="font-semibold text-gray-700 mb-2">{{ title }}</h4>
           <ul class="space-y-1">
             <li>
               <nuxtLink
                 to="/"
-                class="text-gray-600 hover:text-custom-green font-semibold text-sm"
+                class="group text-gray-600 hover:text-custom-green font-semibold text-sm relative"
               >
                 {{ home }}
+                <span
+                  class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+                ></span>
               </nuxtLink>
             </li>
             <li>
               <nuxtLink
                 to="/about"
-                class="text-gray-600 hover:text-custom-green font-semibold text-sm"
+                class="group text-gray-600 hover:text-custom-green font-semibold text-sm relative"
               >
-                {{ about }}</nuxtLink
-              >
+                {{ about }}
+                <span
+                  class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+                ></span>
+              </nuxtLink>
             </li>
             <li>
               <nuxtLink
                 to="/works"
-                class="text-gray-600 hover:text-custom-green font-semibold text-sm"
+                class="group text-gray-600 hover:text-custom-green font-semibold text-sm relative"
               >
-                {{ works }}</nuxtLink
-              >
+                {{ works }}
+                <span
+                  class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+                ></span>
+              </nuxtLink>
             </li>
             <li>
               <nuxtLink
                 to="/pages"
-                class="text-gray-600 hover:text-custom-green font-semibold text-sm"
+                class="group text-gray-600 hover:text-custom-green font-semibold text-sm relative"
               >
                 {{ pages }}
+                <span
+                  class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+                ></span>
               </nuxtLink>
             </li>
             <li>
               <nuxtLink
                 to="/contact"
-                class="text-gray-600 hover:text-custom-green font-semibold text-sm"
+                class="group text-gray-600 hover:text-custom-green font-semibold text-sm relative"
               >
-                {{ contact }}</nuxtLink
-              >
+                {{ contact }}
+                <span
+                  class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+                ></span>
+              </nuxtLink>
             </li>
           </ul>
         </div>
@@ -133,26 +164,49 @@
       </div>
       <hr class="my-4" />
       <div
-        class="flex flex-cols-3 sm:flex-row items-start sm:items-center py-4 justify-between"
+        class="flex flex-col sm:flex-row items-start sm:items-center py-4 justify-between space-y-4 sm:space-y-0 sm:space-x-6"
       >
-        <div
-          class="font-semibold text-gray-600 hover:underline hover:text-custom-green text-sm"
+        <!-- Site Web -->
+        <a
+          href="https://www.iedarelief.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center space-x-2 text-sm font-semibold text-gray-600"
         >
-          www.iedarelief.org
-        </div>
-        <div>
-          <p
-            class="text-xs sm:text-sm text-gray-600 sm:mt-0 font-semibold hover:underline hover:text-custom-green"
-          >
+          <i class="fas fa-globe text-custom-green"></i>
+          <span class="relative">
+            www.iedarelief.org
+            <span
+              class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+            ></span>
+          </span>
+        </a>
+
+        <!-- Téléphone -->
+        <a
+          href="tel:+17137742522"
+          class="group flex items-center space-x-2 text-sm font-semibold text-gray-600"
+        >
+          <i class="fas fa-phone-alt text-custom-green"></i>
+          <span class="relative">
             Tel: +1 713 774 2522
-          </p>
-        </div>
-        <div>
-          <p
-            class="text-xs sm:text-sm text-gray-600 sm:mt-0 font-semibold hover:underline hover:text-custom-green"
-          >
+            <span
+              class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+            ></span>
+          </span>
+        </a>
+
+        <!-- Fax -->
+        <div
+          class="group flex items-center space-x-2 text-sm font-semibold text-gray-600"
+        >
+          <i class="fas fa-fax text-custom-green"></i>
+          <span class="relative">
             Fax: +1 713 774 2529
-          </p>
+            <span
+              class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+            ></span>
+          </span>
         </div>
       </div>
     </div>

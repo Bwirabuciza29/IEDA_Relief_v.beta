@@ -381,9 +381,9 @@ const team = [
     },
   },
   {
-    name: "Christine MAMBO",
+    name: "Christine ANGELANI",
     role: t("team.lead_2"),
-    image: "/img/av2.jpg",
+    image: "/img/christine.jpg",
     social: {
       linkedin: "https://linkedin.com/in/emmarussel",
       twitter: "https://twitter.com/emmarussel",
