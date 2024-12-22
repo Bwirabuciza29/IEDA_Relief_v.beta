@@ -306,5 +306,32 @@
   "leader": {
     "title_1": "Fondateur, Président et PDG",
     "title_2": "Coordinateur du programme régional et Chef de mission"
+  },
+  "logger": {
+    "title_1": "Opérationnelle",
+    "title_2": "Empreinte",
+    "title_3": "Secteurs",
+    "title_4": "Clients",
+    "title_5": "Donateurs",
+    "sub_1": "Actuel",
+    "sub_2": "Précédent",
+    "sub_3": "Enregistrement en attente",
+    "sub_4": "Communauté",
+    "sub_5": "Santé et Environnement",
+    "sub_6": "Éducation et Finance",
+    "c1": "Réseautage et engagement communautaire",
+    "c2": "Surveillance tierce / Protection sociale",
+    "c3": "Recherche",
+    "c4": "Leadership des femmes et des jeunes",
+    "h1": "Eau, hygiène et assainissement",
+    "h2": "Santé et nutrition",
+    "h3": "Changement climatique",
+    "h4": "Sensibilisation environnementale",
+    "e1": "Éducation et surveillance de la protection / VBG",
+    "e2": "Inclusion financière et entrepreneuriat",
+    "d1": "Agences des Nations Unies",
+    "d2": "Département d'État des États-Unis",
+    "d3": "Gouvernement des Philippines",
+    "d4": "Groupes religieux et donateurs individuels"
   }
 }

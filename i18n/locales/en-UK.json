@@ -307,5 +307,32 @@
   "leader": {
     "title_1": "Founder, President & CEO",
     "title_2": "Regional Program Coordinator & Head of Mission"
+  },
+  "logger": {
+    "title_1": "Operational",
+    "title_2": "Footprint",
+    "title_3": "Sectors",
+    "title_4": "Clients",
+    "title_5": "Donors",
+    "sub_1": "Current",
+    "sub_2": "Previous",
+    "sub_3": "Pending Registration",
+    "sub_4": "Community",
+    "sub_5": "Health & Environment",
+    "sub_6": "Education & Finance",
+    "c1": "Community Networking and Engagement",
+    "c2": "Third Party Monitoring / Social Protection",
+    "c3": "Research",
+    "c4": "Women & Youth Leadership",
+    "h1": "Water, Hygiene, and Sanitation",
+    "h2": "Health & Nutrition",
+    "h3": "Climate Change",
+    "h4": "Environmental Awareness",
+    "e1": "Education & Protection Monitoring / SGBV",
+    "e2": "Financial Inclusion and Entrepreneurship",
+    "d1": "UN Agencies",
+    "d2": "US States Department",
+    "d3": "Government of Philippines",
+    "d4": "Religious Groups and Individual Donors"
   }
 }

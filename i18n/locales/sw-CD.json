@@ -305,5 +305,32 @@
   "leader": {
     "title_1": "Mwanzilishi, Rais na Mkurugenzi Mtendaji",
     "title_2": "Mratibu wa Mpango wa Kanda na Mkuu wa Ujumbe"
+  },
+  "logger": {
+    "title_1": "Kazi",
+    "title_2": "Mikakati",
+    "title_3": "Sekta",
+    "title_4": "Wateja",
+    "title_5": "Wafadhili",
+    "sub_1": "Sasa",
+    "sub_2": "Iliyopita",
+    "sub_3": "Usajili unaosubiri",
+    "sub_4": "Jumuiya",
+    "sub_5": "Afya na Mazingira",
+    "sub_6": "Elimu na Fedha",
+    "c1": "Mitandao ya Jumuiya na Ushirikiano",
+    "c2": "Ufuatiliaji wa Chama cha Tatu / Ulinzi wa Jamii",
+    "c3": "Utafiti",
+    "c4": "Uongozi wa Wanawake na Vijana",
+    "h1": "Maji, Usafi wa Mazingira na Usafi",
+    "h2": "Afya na Lishe",
+    "h3": "Mabadiliko ya Tabianchi",
+    "h4": "Uhamasishaji wa Mazingira",
+    "e1": "Ufuatiliaji wa Elimu na Ulinzi / VBG",
+    "e2": "Ujumuishaji wa Kifedha na Ujasiriamali",
+    "d1": "Mashirika ya Umoja wa Mataifa",
+    "d2": "Idara ya Jimbo la Marekani",
+    "d3": "Serikali ya Ufilipino",
+    "d4": "Vikundi vya Kidini na Wafadhili Binafsi"
   }
 }

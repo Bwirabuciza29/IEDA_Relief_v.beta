@@ -5,12 +5,12 @@
       <h2
         class="text-3xl font-bold text-gray-800 text-center border-b pb-2 mb-8"
       >
-        Operational
-        <span class="text-green-500 font-sri"> Footprint</span>
+        {{ t("logger.title_2") }}
+        <span class="text-green-500 font-sri">{{ t("logger.title_1") }}</span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div>
-          <h3 class="text-xl font-semibold mb-2">Current</h3>
+          <h3 class="text-xl font-semibold mb-2">{{ t("logger.sub_1") }}</h3>
           <ul class="space-y-2">
             <li
               v-for="country in current"
@@ -40,7 +40,7 @@
           </ul>
         </div>
         <div>
-          <h3 class="text-xl font-semibold mb-2">Previous</h3>
+          <h3 class="text-xl font-semibold mb-2">{{ t("logger.sub_2") }}</h3>
           <ul class="space-y-2">
             <li
               v-for="country in previous"
@@ -57,7 +57,7 @@
           </ul>
         </div>
         <div>
-          <h3 class="text-xl font-semibold mb-2">Pending Registration</h3>
+          <h3 class="text-xl font-semibold mb-2">{{ t("logger.sub_3") }}</h3>
           <ul class="space-y-2">
             <li
               v-for="country in pendingRegistration"
@@ -98,12 +98,12 @@
       <h2
         class="text-3xl font-bold text-gray-800 text-center border-b pb-2 mb-8"
       >
-        Sectors &
-        <span class="text-green-500 font-sri"> Services</span>
+        {{ t("logger.title_3") }} &
+        <span class="text-green-500 font-sri"> {{ t("logger.title_5") }}</span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
-          <h3 class="text-xl font-semibold mb-2">Community</h3>
+          <h3 class="text-xl font-semibold mb-2">{{ t("logger.sub_4") }}</h3>
           <ul class="space-y-2">
             <li
               v-for="service in communityServices"
@@ -124,7 +124,7 @@
           </ul>
         </div>
         <div>
-          <h3 class="text-xl font-semibold mb-2">Health & Environment</h3>
+          <h3 class="text-xl font-semibold mb-2">{{ t("logger.sub_5") }}</h3>
           <ul class="space-y-2">
             <li
               v-for="service in healthServices"
@@ -137,7 +137,7 @@
           </ul>
         </div>
         <div>
-          <h3 class="text-xl font-semibold mb-2">Education & Finance</h3>
+          <h3 class="text-xl font-semibold mb-2">{{ t("logger.sub_6") }}</h3>
           <ul class="space-y-2">
             <li
               v-for="service in educationServices"
@@ -159,8 +159,8 @@
       <h2
         class="text-3xl font-bold text-gray-800 text-center border-b pb-2 mb-8"
       >
-        Clients &
-        <span class="text-green-500 font-sri">Donors</span>
+        {{ t("logger.title_4") }} &
+        <span class="text-green-500 font-sri"> {{ t("logger.title_5") }}</span>
       </h2>
       <ul class="space-y-2">
         <li
@@ -176,6 +176,7 @@
   </div>
 </template>
 <script setup>
+const { t } = useI18n();
 const current = [
   { name: "Burkina Faso", code: "bf" },
   { name: "Cameroon", code: "cm" },
@@ -208,29 +209,26 @@ const horizon = [
 ];
 
 const communityServices = [
-  "Community Networking and Engagement",
-  "Third Party Monitoring / Social Protection",
-  "Research",
-  "Women & Youth Leadership",
+  t("logger.c1"),
+  t("logger.c2"),
+  t("logger.c3"),
+  t("logger.c4"),
 ];
 
 const healthServices = [
-  "Health & Nutrition",
-  "Water, Hygiene, and Sanitation",
-  "Climate Change",
-  "Environmental Awareness",
+  t("logger.h1"),
+  t("logger.h2"),
+  t("logger.h3"),
+  t("logger.h4"),
 ];
 
-const educationServices = [
-  "Education & Protection Monitoring / SGBV",
-  "Financial Inclusion and Entrepreneurship",
-];
+const educationServices = [t("logger.e1"), t("logger.e2")];
 
 const clientsAndDonors = [
-  "UN Agencies",
-  "US States Department",
-  "Government of Philippines",
-  "Religious Groups and Individual Donors",
+  t("logger.d1"),
+  t("logger.d2"),
+  t("logger.d3"),
+  t("logger.d4"),
 ];
 
 const getFlag = (code) => `https://flagcdn.com/w40/${code}.png`;

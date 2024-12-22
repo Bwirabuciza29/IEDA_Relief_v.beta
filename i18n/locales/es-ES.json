@@ -308,5 +308,32 @@
   "leader": {
     "title_1": "Fundador, Presidente y CEO",
     "title_2": "Coordinador Regional de Programas y Jefe de Misión"
+  },
+  "logger": {
+    "title_1": "Operacional",
+    "title_2": "Huella",
+    "title_3": "Sectores",
+    "title_4": "Clientes",
+    "title_5": "Donantes",
+    "sub_1": "Actual",
+    "sub_2": "Anterior",
+    "sub_3": "Registro pendiente",
+    "sub_4": "Comunidad",
+    "sub_5": "Salud y Medio Ambiente",
+    "sub_6": "Educación y Finanzas",
+    "c1": "Redes comunitarias y participación",
+    "c2": "Monitoreo externo / Protección social",
+    "c3": "Investigación",
+    "c4": "Liderazgo de mujeres y jóvenes",
+    "h1": "Agua, higiene y saneamiento",
+    "h2": "Salud y nutrición",
+    "h3": "Cambio climático",
+    "h4": "Conciencia ambiental",
+    "e1": "Monitoreo de educación y protección / VBG",
+    "e2": "Inclusión financiera y emprendimiento",
+    "d1": "Agencias de la ONU",
+    "d2": "Departamento de Estado de los EE. UU.",
+    "d3": "Gobierno de Filipinas",
+    "d4": "Grupos religiosos y donantes individuales"
   }
 }
