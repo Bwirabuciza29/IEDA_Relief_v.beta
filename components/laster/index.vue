@@ -162,7 +162,10 @@
       <div class="mj-container flex items-center justify-between py-4 px-6">
         <!-- Texte -->
         <div class="text-sm text-white hover:text-custom-green hover:underline">
-          © 2024 IEDA Relief All rights reserved.
+          © {{ currentYear }} IEDA Relief All rights reserved.
+        </div>
+        <div class="text-sm text-white hover:text-custom-green hover:underline">
+          Made with ❤️ and ☕
         </div>
         <!-- Liens des réseaux sociaux -->
         <div class="flex space-x-4">
@@ -216,6 +219,7 @@ const works = ref(t("footer.works"));
 const pages = ref(t("footer.pages"));
 const contact = ref(t("footer.contact"));
 const mail = ref(t("footer.mail"));
+const currentYear = new Date().getFullYear();
 </script>
 <style scoped>
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
