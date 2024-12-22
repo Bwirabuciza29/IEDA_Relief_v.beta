@@ -164,10 +164,17 @@
 
         <!-- Video Section -->
         <div class="relative">
-          <video ref="video" class="plyr w-full rounded-lg shadow-lg" controls>
+          <!-- <video ref="video" class="plyr w-full rounded-lg shadow-lg" controls>
             <source src="/video/tr.mp4" type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </video> -->
+          <div
+            ref="youtube"
+            class="plyr w-full rounded-lg shadow-lg"
+            controls
+            data-plyr-provider="youtube"
+            data-plyr-embed-id="https://www.youtube.com/watch?v=ob7yQHX25GA"
+          ></div>
         </div>
       </div>
       <!-- Fin Vidéo avec plyr -->
@@ -412,8 +419,14 @@ function animateValue(target, start, end, duration) {
 const count1 = ref(0);
 const count2 = ref(0);
 const count3 = ref(0);
-
+const youtube = ref(null);
 onMounted(() => {
+  const { $plyr } = useNuxtApp();
+  // Initialisation du lecteur Plyr pour la vidéo YouTube
+  const youtubePlayer = new $plyr(youtube.value, {
+    autoplay: false,
+    muted: false,
+  });
   // Durée de 2s
   animateValue(count1, 0, 20, 2000);
   // Durée de 3s
