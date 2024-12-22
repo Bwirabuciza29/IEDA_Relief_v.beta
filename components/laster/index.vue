@@ -203,6 +203,21 @@
           </a>
         </div>
       </div>
+      <!-- <div class="flex justify-center items-center text-white p-4">
+        <div class="text-center text-xs max-w-lg">
+          <p class="mb-4">
+            Les cookies sont importants pour le bon fonctionnement d'un site
+            web. Pour améliorer votre expérience, nous utilisons des cookies
+            pour collecter des statistiques afin d'optimiser les
+            fonctionnalités.
+          </p>
+          <button
+            class="bg-custom-green hover:bg-green-700 text-white font-semibold px-4 py-2 rounded"
+          >
+            Accepter les cookies
+          </button>
+        </div>
+      </div> -->
     </div>
   </div>
 </template>
