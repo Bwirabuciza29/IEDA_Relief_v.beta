@@ -331,6 +331,11 @@
     "d1": "Mashirika ya Umoja wa Mataifa",
     "d2": "Idara ya Jimbo la Marekani",
     "d3": "Serikali ya Ufilipino",
-    "d4": "Vikundi vya Kidini na Wafadhili Binafsi"
+    "d4": "Vikundi vya Kidini na Wafadhili Binafsi",
+    "of": "Ofisi Kuu"
+  },
+  "map": {
+    "title_1": "Mabadiliko ya Wakati Halisi",
+    "title_2": "Ramani"
   }
 }

@@ -1,8 +1,8 @@
 <template>
   <div class="relative">
     <h1 class="text-3xl lg:text-4xl font-bold -mt-16 mb-4 text-center">
-      Real-Time Dynamic
-      <span class="font-sri text-green-600">Map</span>
+      {{ t("map.title_1") }}
+      <span class="font-sri text-green-600"> {{ t("map.title_2") }}</span>
     </h1>
 
     <!-- Carte -->

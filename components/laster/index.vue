@@ -111,7 +111,7 @@
         <!-- Social and Contact -->
         <div>
           <div class="space-y-2">
-            <h4 class="font-semibold text-black">Head Office</h4>
+            <h4 class="font-semibold text-black">{{ t("logger.of") }}</h4>
             <p class="text-xs sm:text-sm text-gray-600">
               {{ desc_1 }}
             </p>
@@ -187,7 +187,6 @@
 <script setup>
 const { t } = useI18n();
 const title = ref(t("footer.title"));
-const title_1 = ref(t("footer.title_1"));
 const desc_1 = ref(t("footer.desc_1"));
 const desc_2 = ref(t("footer.desc_2"));
 const desc_3 = ref(t("footer.desc_3"));

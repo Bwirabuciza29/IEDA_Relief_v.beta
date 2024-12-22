@@ -331,6 +331,11 @@
     "d1": "Agências da ONU",
     "d2": "Departamento de Estado dos EUA",
     "d3": "Governo das Filipinas",
-    "d4": "Grupos Religiosos e Doadores Individuais"
+    "d4": "Grupos Religiosos e Doadores Individuais",
+    "of": "Sede"
+  },
+  "map": {
+    "title_1": "Dinâmico em Tempo Real",
+    "title_2": "Mapa"
   }
 }

@@ -333,6 +333,11 @@
     "d1": "UN Agencies",
     "d2": "US States Department",
     "d3": "Government of Philippines",
-    "d4": "Religious Groups and Individual Donors"
+    "d4": "Religious Groups and Individual Donors",
+    "of": "Head Office"
+  },
+  "map": {
+    "title_1": "Real-Time Dynamic",
+    "title_2": "Map"
   }
 }
