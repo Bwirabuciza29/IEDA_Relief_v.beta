@@ -20,7 +20,7 @@
       <!-- Menu Desktop -->
       <div class="flex-grow">
         <nav class="hidden justify-center space-x-6 font-semibold md:flex">
-          <NuxtLink
+          <!-- <NuxtLink
             v-for="(item, index) in menuItems"
             :key="index"
             :to="localPath(item)"
@@ -30,6 +30,20 @@
             }"
           >
             {{ item }}
+          </NuxtLink> -->
+          <NuxtLink
+            v-for="(item, index) in menuItems"
+            :key="index"
+            :to="localPath(item)"
+            class="relative group duration-400 transform transition hover:scale-105 hover:text-green-400"
+            :class="{
+              'text-green-500': isActiveLink(localPath(item)),
+            }"
+          >
+            {{ item }}
+            <span
+              class="absolute left-0 bottom-0 h-[2px] w-0 bg-green-400 transition-all duration-500 group-hover:w-full"
+            ></span>
           </NuxtLink>
         </nav>
       </div>
