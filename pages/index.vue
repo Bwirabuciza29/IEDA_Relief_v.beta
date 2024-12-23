@@ -27,7 +27,7 @@
                 {{ btn }}
               </span>
               <div
-                class="absolute inset-0 h-full w-full translate-x-full transform bg-blue-100 transition-transform duration-300 ease-in-out group-hover:translate-x-0"
+                class="absolute inset-0 h-full w-full translate-x-full transform bg-green-100 transition-transform duration-300 ease-in-out group-hover:translate-x-0"
               ></div>
             </NuxtLink>
           </div>
