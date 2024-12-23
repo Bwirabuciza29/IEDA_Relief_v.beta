@@ -50,7 +50,7 @@
 
         <!-- Carte avec éléments -->
         <div
-          class="bg-white rounded-lg shadow-lg p-4 sm:p-6 space-y-4 sm:space-y-5 w-full"
+          class="bg-white text-center rounded-lg shadow-lg p-4 sm:p-6 space-y-4 sm:space-y-5 w-full"
         >
           <div
             class="flex items-center space-x-2 sm:space-x-4 border rounded-full border-custom-green p-1 sm:p-2"

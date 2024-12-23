@@ -164,14 +164,14 @@
       </div>
       <hr class="my-4" />
       <div
-        class="flex flex-col sm:flex-row items-start sm:items-center py-4 justify-between space-y-4 sm:space-y-0 sm:space-x-6"
+        class="grid grid-cols-1 sm:justify-items-center sm:grid-cols-3 gap-4 py-4"
       >
         <!-- Site Web -->
         <a
           href="https://www.iedarelief.org"
           target="_blank"
           rel="noopener noreferrer"
-          class="group flex items-center space-x-2 text-sm font-semibold text-gray-600"
+          class="group flex items-center gap-2 text-sm font-semibold text-gray-600"
         >
           <i class="fas fa-globe text-custom-green"></i>
           <span class="relative">
@@ -185,7 +185,7 @@
         <!-- Téléphone -->
         <a
           href="tel:+17137742522"
-          class="group flex items-center space-x-2 text-sm font-semibold text-gray-600"
+          class="group flex items-center gap-2 text-sm font-semibold text-gray-600"
         >
           <i class="fas fa-phone-alt text-custom-green"></i>
           <span class="relative">
@@ -197,22 +197,18 @@
         </a>
 
         <!-- Fax -->
-        <div
-          class="group flex items-center space-x-2 text-sm font-semibold text-gray-600"
+        <a
+          href="tel:+17137742522"
+          class="group flex items-center gap-2 text-sm font-semibold text-gray-600"
         >
-          <a
-            href="tel:+17137742522"
-            class="group flex items-center space-x-2 text-sm font-semibold text-gray-600"
-          >
-            <i class="fas fa-fax text-custom-green"></i>
-            <span class="relative">
-              Fax: +1 713 774 2529
-              <span
-                class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
-              ></span>
-            </span>
-          </a>
-        </div>
+          <i class="fas fa-fax text-custom-green"></i>
+          <span class="relative">
+            Fax: +1 713 774 2529
+            <span
+              class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+            ></span>
+          </span>
+        </a>
       </div>
     </div>
 
