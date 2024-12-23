@@ -90,5 +90,17 @@ const partners = [
     alt: "Partner 8",
     link: "https://www.shelterboxusa.org/",
   },
+  {
+    id: 10,
+    logo: "/img/ch.png",
+    alt: "Partner 10",
+    link: "https://www.churchofjesuschrist.org/?lang=fra",
+  },
+  {
+    id: 11,
+    logo: "/img/who.png",
+    alt: "Partner 10",
+    link: "https://www.who.int/",
+  },
 ];
 </script>
