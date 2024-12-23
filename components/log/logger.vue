@@ -178,18 +178,21 @@
 <script setup>
 const { t } = useI18n();
 const current = [
+  { name: "U.S.A", code: "us" },
+  { name: "Belgium", code: "be" },
   { name: "Burkina Faso", code: "bf" },
   { name: "Cameroon", code: "cm" },
   { name: "CAR", code: "cf" },
   { name: "DRC", code: "cd" },
   { name: "Mali", code: "ml" },
+  { name: "Niger", code: "ne" },
 ];
 
 const previous = [
   { name: "Haiti", code: "ht" },
-  { name: "Niger", code: "ne" },
-  { name: "Belgium", code: "be" },
-  { name: "U.S.", code: "us" },
+  { name: "Philippines", code: "ph" },
+  { name: "Nigeria", code: "ng" },
+  { name: "Sierra Leone", code: "sl" },
   { name: "Senegal", code: "sn" },
 ];
 
