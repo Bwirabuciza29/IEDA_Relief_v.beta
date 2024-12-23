@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css", "~/assets/css/global.css"],
   plugins: [
     "~/plugins/aos.client.js",
-    "~/plugins/plyr.client.js",
+    { src: "~/plugins/particles.client.js", mode: "client" },
     { src: "~/plugins/leaflet.js", mode: "client" },
   ],
   app: {

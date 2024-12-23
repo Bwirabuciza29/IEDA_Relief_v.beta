@@ -1,5 +1,6 @@
 <template>
-  <section class="bg-custom-green p-8 mx-4 rounded-lg">
+  <section class="relative bg-custom-green p-8 mx-4 rounded-lg">
+    <HelpParticles />
     <!-- Titre -->
     <div class="mj-container relative z-10">
       <h2 class="text-3xl text-white md:text-4xl font-bold text-left mb-8">

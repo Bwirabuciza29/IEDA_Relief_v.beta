@@ -1,6 +1,7 @@
 <template>
-  <section class="bg-custom-blue p-8 mx-4 rounded-lg relative z-10 bg-left">
-    <div class="mj-container text-center">
+  <section class="relative bg-custom-blue p-8 mx-4 rounded-lg bg-left">
+    <HelpParticles />
+    <div class="mj-container text-center relative z-10">
       <div class="w-full text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
           {{ t1 }}
