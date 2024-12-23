@@ -1,5 +1,5 @@
 <template>
-  <div class="mj-container">
+  <div class="mj-container bg-white rounded-lg py-4">
     <div class="text-center my-6">
       <p class="text-custom-green uppercase tracking-widest text-xs">
         {{ t1 }}
@@ -17,7 +17,7 @@
           'px-4 py-3 font-medium rounded-lg transition-colors duration-300',
           activeTab === index
             ? 'bg-custom-green text-white'
-            : 'bg-gray-200 text-gray-700 hover:bg-gray-300',
+            : 'bg-gray-100 text-gray-700 hover:bg-gray-300',
         ]"
       >
         {{ tab.title }}

@@ -1,5 +1,5 @@
 <template>
-  <div class="mj-container">
+  <div class="mj-container bg-white rounded-lg py-4">
     <!-- Operational Footprint Section -->
     <section>
       <h2

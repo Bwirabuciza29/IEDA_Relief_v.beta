@@ -25,7 +25,7 @@ const logos = [
   { src: "/img/uni.png", href: "https://www.unicef.org/" },
   { src: "/img/uhncr.png", href: "https://www.unhcr.org/" },
   { src: "/img/oim.png", href: "https://www.iom.int/" },
-  { src: "/img/guide-star.png", href: "https://www.guide-star.com/" },
+  { src: "/img/guide-star.png", href: "https://www.guidestar.org/" },
   { src: "/img/uu.png", href: "https://www.unfpa.org/" },
   {
     src: "/img/central-emergency.png",

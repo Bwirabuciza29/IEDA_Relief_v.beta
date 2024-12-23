@@ -233,7 +233,7 @@
             <i class="fab fa-youtube"></i>
           </a>
           <a
-            href="#"
+            href="https://x.com/iedarelief1"
             target="_blank"
             rel="noopener noreferrer"
             class="text-white hover:text-gray-500"
@@ -241,7 +241,7 @@
             <i class="fa-brands fa-x-twitter"></i>
           </a>
           <a
-            href="#"
+            href="https://web.facebook.com/iedarelief/timeline/"
             target="_blank"
             rel="noopener noreferrer"
             class="text-white hover:text-red-500"
@@ -249,7 +249,7 @@
             <i class="fab fa-facebook-f"></i>
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/company/international-emergency-and-development-aide-ieda-relief/"
             target="_blank"
             rel="noopener noreferrer"
             class="text-white hover:text-blue-700"

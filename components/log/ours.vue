@@ -43,6 +43,12 @@ const partners = [
     link: "https://www.unhcr.org",
   },
   {
+    id: 11,
+    logo: "/img/who.png",
+    alt: "Partner 10",
+    link: "https://www.who.int/",
+  },
+  {
     id: 2,
     logo: "/img/unicef.png",
     alt: "Partner 2",
@@ -73,17 +79,18 @@ const partners = [
     link: "https://www.fao.org/home/en/",
   },
   {
-    id: 7,
-    logo: "/img/tx.jpeg",
-    alt: "Partner 3",
-    link: "https://www.co.houston.tx.us/",
-  },
-  {
     id: 8,
     logo: "/img/uu.png",
     alt: "Partner 9",
     link: "https://www.unfpa.org/",
   },
+  {
+    id: 7,
+    logo: "/img/tx.jpeg",
+    alt: "Partner 3",
+    link: "https://www.co.houston.tx.us/",
+  },
+
   {
     id: 9,
     logo: "/img/shelter.jpg",
@@ -91,16 +98,16 @@ const partners = [
     link: "https://www.shelterboxusa.org/",
   },
   {
+    id: 12,
+    logo: "/img/act.png",
+    alt: "Partner 12",
+    link: "https://www.interaction.org/",
+  },
+  {
     id: 10,
     logo: "/img/ch.png",
     alt: "Partner 10",
     link: "https://www.churchofjesuschrist.org/?lang=fra",
-  },
-  {
-    id: 11,
-    logo: "/img/who.png",
-    alt: "Partner 10",
-    link: "https://www.who.int/",
   },
 ];
 </script>
