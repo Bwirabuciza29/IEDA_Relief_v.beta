@@ -13,7 +13,7 @@
         <div
           v-for="partner in partners"
           :key="partner.id"
-          class="group flex justify-center items-center bg-white p-4 shadow rounded transform transition-transform duration-300 hover:scale-105"
+          class="group flex justify-center items-center bg-white p-4 rounded transform transition-transform duration-300 hover:scale-105"
         >
           <a :href="partner.link" target="_blank" class="block">
             <img

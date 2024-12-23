@@ -55,9 +55,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- Card 1 -->
-        <div
-          class="bg-white flex flex-col items-start p-4 border rounded-lg shadow-md"
-        >
+        <div class="bg-white flex flex-col items-start p-4 rounded-lg">
           <div class="flex items-center mb-4">
             <img src="/img/lo.svg" alt="icon" class="w-10 h-10 mr-2" />
             <h3 class="text-xl font-semibold">{{ t("about.card_1_title") }}</h3>
@@ -68,7 +66,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="overflow-hidden border rounded-lg shadow-md">
+        <div class="overflow-hidden rounded-lg">
           <img
             src="/img/c3.jpg"
             alt="Image 1"
@@ -77,9 +75,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div
-          class="bg-white flex flex-col items-start p-4 border rounded-lg shadow-md"
-        >
+        <div class="bg-white flex flex-col items-start p-4 rounded-lg">
           <div class="flex items-center mb-4">
             <img src="/img/lol.svg" alt="Icon" class="w-10 h-10 mr-2" />
             <h3 class="text-xl font-semibold">{{ t("about.card_2_title") }}</h3>
@@ -90,7 +86,7 @@
         </div>
 
         <!-- Card 4 -->
-        <div class="overflow-hidden border rounded-lg shadow-md">
+        <div class="overflow-hidden rounded-lg">
           <img
             src="/img/c4.jpg"
             alt="Image 2"
@@ -99,9 +95,7 @@
         </div>
 
         <!-- Card 5 -->
-        <div
-          class="bg-white flex flex-col items-start p-4 border rounded-lg shadow-md"
-        >
+        <div class="bg-white flex flex-col items-start p-4 rounded-lg">
           <div class="flex items-center mb-4">
             <img src="/img/lolo.svg" alt="Icon" class="w-10 h-10 mr-2" />
             <h3 class="text-xl font-semibold">{{ t("about.card_3_title") }}</h3>
@@ -112,7 +106,7 @@
         </div>
 
         <!-- Card 6 -->
-        <div class="overflow-hidden border rounded-lg shadow-md">
+        <div class="overflow-hidden rounded-lg">
           <img
             src="/img/c5.jpg"
             alt="Image 3"

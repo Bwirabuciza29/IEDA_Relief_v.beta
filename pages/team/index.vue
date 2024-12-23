@@ -92,7 +92,7 @@
           <div
             v-for="(member, index) in team"
             :key="index"
-            class="relative group bg-white shadow-md rounded-lg overflow-hidden hover:bg-custom-green transition"
+            class="relative group bg-white rounded-lg overflow-hidden hover:bg-custom-green transition"
           >
             <!-- Effet de Hover -->
             <div
@@ -147,7 +147,7 @@
             <div
               v-for="(member, index) in board"
               :key="index"
-              class="relative group bg-white shadow-md rounded-lg overflow-hidden hover:bg-custom-green transition"
+              class="relative group bg-white rounded-lg overflow-hidden hover:bg-custom-green transition"
             >
               <!-- Effet de Hover -->
               <div

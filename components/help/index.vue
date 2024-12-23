@@ -15,18 +15,21 @@
       />
 
       <!-- Grille principale -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 relative z-10">
         <!-- Image avec une image superposée -->
         <div class="relative">
+          <!-- Première image -->
           <img
             src="/img/mum.jpg"
             alt="Main Image"
-            class="rounded-lg object-cover w-46 h-46 transition-all duration-300 hover:z-10 hover:scale-110"
+            class="rounded-lg object-cover w-full sm:w-46 h-46 transition-all duration-300 hover:z-10 hover:scale-110"
           />
+
+          <!-- Deuxième image -->
           <img
             src="/img/bf.jpg"
             alt="Overlay Image"
-            class="absolute bottom-4 -right-16 w-40 h-40 rounded-lg transition-all duration-300 hover:z-10 hover:scale-110"
+            class="absolute bottom-4 -right-16 w-40 h-40 rounded-lg transition-all duration-300 hover:z-10 hover:scale-110 hidden sm:block"
           />
         </div>
 
@@ -46,9 +49,11 @@
         </div>
 
         <!-- Carte avec éléments -->
-        <div class="bg-white rounded-lg shadow-lg p-6 space-y-5">
+        <div
+          class="bg-white rounded-lg shadow-lg p-4 sm:p-6 space-y-4 sm:space-y-5 w-full"
+        >
           <div
-            class="flex items-center space-x-4 border rounded-full border-custom-green p-2"
+            class="flex items-center space-x-2 sm:space-x-4 border rounded-full border-custom-green p-1 sm:p-2"
           >
             <img
               src="/img/food.png"
@@ -62,7 +67,7 @@
           </p>
 
           <div
-            class="flex items-center space-x-4 border rounded-full border-custom-green p-2"
+            class="flex items-center space-x-2 sm:space-x-4 border rounded-full border-custom-green p-1 sm:p-2"
           >
             <img
               src="/img/teach.png"
@@ -76,7 +81,7 @@
           </p>
 
           <div
-            class="flex items-center space-x-4 border rounded-full border-custom-green p-2"
+            class="flex items-center space-x-2 sm:space-x-4 border rounded-full border-custom-green p-1 sm:p-2"
           >
             <img
               src="/img/seedling.png"

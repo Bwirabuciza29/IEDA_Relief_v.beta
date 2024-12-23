@@ -4,7 +4,7 @@
       <div class="w-full text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
           {{ t1 }}
-          <span class="font-sri text-custom-green">{{ t2 }}</span>
+          <span class="font-sri text-green-200">{{ t2 }}</span>
           <br />
           <span>{{ t3 }}</span>
         </h2>

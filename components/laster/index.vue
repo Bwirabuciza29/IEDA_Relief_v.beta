@@ -200,13 +200,18 @@
         <div
           class="group flex items-center space-x-2 text-sm font-semibold text-gray-600"
         >
-          <i class="fas fa-fax text-custom-green"></i>
-          <span class="relative">
-            Fax: +1 713 774 2529
-            <span
-              class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
-            ></span>
-          </span>
+          <a
+            href="tel:+17137742522"
+            class="group flex items-center space-x-2 text-sm font-semibold text-gray-600"
+          >
+            <i class="fas fa-fax text-custom-green"></i>
+            <span class="relative">
+              Fax: +1 713 774 2529
+              <span
+                class="absolute left-0 bottom-0 h-[2px] w-0 bg-custom-green transition-all duration-300 group-hover:w-full"
+              ></span>
+            </span>
+          </a>
         </div>
       </div>
     </div>

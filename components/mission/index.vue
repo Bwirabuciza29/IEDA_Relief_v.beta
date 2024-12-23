@@ -123,7 +123,7 @@
         <div
           v-for="(card, index) in cards"
           :key="index"
-          class="card bg-white shadow-md p-6 rounded-lg text-center transition-transform duration-300 hover:scale-105"
+          class="card bg-white p-6 rounded-lg text-center transition-transform duration-300 hover:scale-105"
         >
           <div class="flex justify-center items-center mb-4">
             <img

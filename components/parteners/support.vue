@@ -15,13 +15,13 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- Card 1 -->
       <div
-        class="flex flex-col md:flex-row bg-white shadow-md rounded-lg overflow-hidden max-w-lg mx-auto"
+        class="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden max-w-lg mx-auto"
       >
         <div class="w-full md:w-1/2 h-40 md:h-auto">
           <img
             src="/img/enf.png"
             alt="Empowering Lives"
-            class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105"
+            class="w-full h-full object-cover transform transition-transform"
           />
         </div>
         <div class="p-4 w-full md:w-1/2 flex flex-col justify-center">
@@ -33,13 +33,13 @@
 
       <!-- Card 2 -->
       <div
-        class="flex flex-col md:flex-row bg-white shadow-md rounded-lg overflow-hidden max-w-lg mx-auto"
+        class="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden max-w-lg mx-auto"
       >
         <div class="w-full md:w-1/2 h-40 md:h-auto">
           <img
             src="/img/po.png"
             alt="Overcoming Adversity"
-            class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105"
+            class="w-full h-full object-cover transform transition-transform duration-300"
           />
         </div>
         <div class="p-4 w-full md:w-1/2 flex flex-col justify-center">
