@@ -143,13 +143,9 @@ const cards = [
     title: "Burkina Faso",
     capital: "Ouagadougou",
     mean: "Burkina Faso, which means land of honest men",
-    contacts: [
-      {
-        email: "name@domain.com",
-        phone: "+226 000 000 000",
-        li_2: "123 Main Street, town name",
-      },
-    ],
+    email: "burkinafasooffice@iedarelief.org",
+    phone: "+226 25374622",
+    li_2: "05 BP 6402 Ouaga 05, Boulevard Muammar Kadhafi, secteur 53, Section PLot 17, Parcelle No 6 Ouaga2000",
     description:
       "Empowering communities with essential knowledge and practices to promote health and prevent",
   },
@@ -161,13 +157,9 @@ const cards = [
     capital: "Younde",
     description:
       "Providing Harper with the freedom and independence to navigate the world with ease",
-    contacts: [
-      {
-        email: "name@domain.com",
-        phone: "+237 000 000 000",
-        li_2: "123 Main Street, town name",
-      },
-    ],
+    email: "cameroonoffice@iedarelief.org",
+    phone: "+236 74125446",
+    li_2: "Yaoundé, derrière la sous-préfecture de Tshinga, montée Palais des congrès m.",
   },
   {
     id: 3,
@@ -177,15 +169,10 @@ const cards = [
     capital: "Bangui",
     description:
       "Join us in providing compassionate support and resources for Daniel as he embarks on his",
-    contacts: [
-      {
-        email: "name@domain.com",
-        phone: "+236 000 000 000",
-        li_2: "123 Main Street, town name",
-      },
-    ],
+    email: "caroffice@iedarelief.org",
+    phone: "+236 72510065",
+    li_2: "Av. Barthélemy BOGANDA, Quartier SICA III, 3ème Arrondissement Bangui, Centrafrique, BP 1774 Bangui",
   },
-
   {
     id: 4,
     image: "/img/w4.jpg",
@@ -194,13 +181,10 @@ const cards = [
     capital: "Bamako",
     description:
       "Cancer Battle Fund provides critical financial support for Olivia's medical treatment, offering hope and …",
-    contacts: [
-      {
-        email: "name@domain.com",
-        phone: "+223 000 000 000",
-        li_2: "123 Main Street, town name",
-      },
-    ],
+
+    email: "malioffice@iedarelief.org",
+    phone: "+223 74613901",
+    li_2: "BP 3113 Bamako, Hamdallay, ACI 2000, 5eme Arrondissement",
   },
   {
     id: 5,
@@ -210,46 +194,36 @@ const cards = [
     capital: "Niamey",
     description:
       "Response teams delivering lifesaving aid for children impacted by any major humanitarian ..",
-    contacts: [
-      {
-        email: "name@domain.com",
-        phone: "+227 000 000 000",
-        li_2: "123 Main Street, town name",
-      },
-    ],
+
+    email: "nigermission@iedarelief.org",
+    phone: "+227 89 97 04 60",
+    li_2: "Quartier Bobiel vers école Galaxy plus premier virage à gauche après le siège National de ADN FUSHA, Commune I,Ville de Niamey",
   },
-  {
-    id: 6,
-    image: "/img/w6.jpg",
-    tag: t("works.title"),
-    title: "Philippines",
-    capital: "Manille",
-    description:
-      "Safe havens where children receive nurturing care, education, and support for their holistic …",
-    contacts: [
-      {
-        email: "name@domain.com",
-        phone: "+65 000 000 000",
-        li_2: "123 Main Street, town name",
-      },
-    ],
-  },
-  {
-    id: 7,
-    image: "/img/w7.jpg",
-    tag: t("works.title"),
-    title: "Haiti",
-    capital: "Port-au-Prince",
-    description:
-      "Supporting access to schooling, tutoring and educational resources for children …",
-    contacts: [
-      {
-        email: "name@domain.com",
-        phone: "+509 000 000 000",
-        li_2: "123 Main Street, town name",
-      },
-    ],
-  },
+  // {
+  //   id: 6,
+  //   image: "/img/w6.jpg",
+  //   tag: t("works.title"),
+  //   title: "Philippines",
+  //   capital: "Manille",
+  //   description:
+  //     "Safe havens where children receive nurturing care, education, and support for their holistic …",
+
+  //   email: "name@domain.com",
+  //   phone: "+65 000 000 000",
+  //   li_2: "123 Main Street, town name",
+  // },
+  // {
+  //   id: 7,
+  //   image: "/img/w7.jpg",
+  //   tag: t("works.title"),
+  //   title: "Haiti",
+  //   capital: "Port-au-Prince",
+  //   description:
+  //     "Supporting access to schooling, tutoring and educational resources for children …",
+  //   email: "name@domain.com",
+  //   phone: "+509 000 000 000",
+  //   li_2: "123 Main Street, town name",
+  // },
   {
     id: 8,
     image: "/img/w8.jpg",
@@ -258,29 +232,21 @@ const cards = [
     capital: "Kinshasa",
     description:
       "Providing specialized medical care and rehabilitation to children affected by war, offering hope and …",
-    contacts: [
-      {
-        email: "name@domain.com",
-        phone: "+243 000 000 000",
-        li_2: "123 Main Street, town name",
-      },
-    ],
+    email: "drcoffice@iedarelief.org",
+    phone: "+243 995614803",
+    li_2: "Avenue O.U.A, N°17, Quartier Basoko/GB, Commune de Ngaliema, ville de Kinshasa, RDC",
   },
-  {
-    id: 9,
-    image: "/img/w9.jpg",
-    tag: t("works.title"),
-    title: "Get Involved",
-    description:
-      "Bringing essential healthcare services directly to underserved communities, ensuring access …",
-    contacts: [
-      {
-        email: "name@domain.com",
-        phone: "000 000 000",
-        li_2: "123 Main Street, town name",
-      },
-    ],
-  },
+  // {
+  //   id: 9,
+  //   image: "/img/w9.jpg",
+  //   tag: t("works.title"),
+  //   title: "Get Involved",
+  //   description:
+  //     "Bringing essential healthcare services directly to underserved communities, ensuring access …",
+  //   email: "name@domain.com",
+  //   phone: "000 000 000",
+  //   li_2: "123 Main Street, town name",
+  // },
 ];
 
 const router = useRouter();

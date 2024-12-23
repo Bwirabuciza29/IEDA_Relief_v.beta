@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="bg-green-50">
     <div v-if="card">
       <div class="relative bg-custom-green p-8 mx-4 rounded-lg mt-20">
         <img
@@ -38,7 +38,7 @@
       </div>
       <div class="mj-container mt-8">
         <div
-          class="flex flex-col md:flex-row p-6 rounded-lg space-y-6 md:space-y-0 md:space-x-8"
+          class="bg-white flex flex-col md:flex-row p-6 rounded-lg space-y-6 md:space-y-0 md:space-x-8"
         >
           <!-- Section Gauche -->
           <div class="flex-1">
@@ -56,139 +56,160 @@
               tonnes monthly) through UNHCR, which pays for the operational
               costs at around 180,000 USD.
             </p>
+
+            <!-- Liste des activités avec icônes -->
+            <div v-if="card" class="mb-16">
+              <!-- Affichage du contenu spécifique pour id === 1 -->
+              <div v-if="card.id === 1">
+                <h2 class="text-2xl font-bold text-black mb-4">
+                  IEDA Relief organizes the following activities:
+                </h2>
+                <ul class="list-none space-y-4">
+                  <li class="flex items-center text-gray-600">
+                    <i class="fas fa-calendar-alt text-blue-500 mr-3"></i>
+                    Monthly distribution plans (MDP)
+                  </li>
+                  <li class="flex items-center text-gray-600">
+                    <i class="fas fa-utensils text-green-500 mr-3"></i>
+                    Evaluate the Refugee feeding situation, specifically those
+                    in specific needs
+                  </li>
+                  <li class="flex items-center text-gray-600">
+                    <i class="fas fa-child text-yellow-500 mr-3"></i>
+                    Avail Blanket supplementary Feeding to young girls and boys
+                  </li>
+                  <li class="flex items-center text-gray-600">
+                    <i class="fas fa-handshake text-purple-500 mr-3"></i>
+                    Organizing joint meeting prior and after distribution with
+                    all the stakeholders to ensure accountability in the process
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           <!-- Section Droite -->
-          <div class="w-full md:w-1/3 bg-gray-100 rounded-lg p-2">
+          <div class="w-full h-72 mb-12 md:w-1/3 bg-green-50 rounded-lg p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center">
+              Have Additional Questions?
+            </h3>
             <ul class="space-y-4">
-              <!-- Item 1 -->
-              <li class="flex items-center space-x-3">
-                <span
-                  class="flex items-center justify-center w-8 h-8 bg-custom-green text-white rounded-full"
-                >
-                  <i class="fa-solid fa-calendar-days"></i>
-                </span>
-                <p class="text-gray-800 text-sm font-medium">November, 1</p>
+              <li class="flex items-center">
+                <i
+                  class="fas fa-envelope text-white text-xs mr-3 rounded-full p-2 bg-green-500"
+                ></i>
+                <span class="text-gray-600 hover:underline">{{
+                  card.email
+                }}</span>
               </li>
-
-              <!-- Item 2 -->
-              <li class="flex items-center space-x-3">
-                <span
-                  class="flex items-center justify-center w-8 h-8 bg-custom-green text-white rounded-full"
-                >
-                  <i class="fa-solid fa-city"></i>
-                </span>
-                <p class="text-gray-800 text-sm font-medium">
-                  {{ card.capital }}
-                </p>
+              <li class="flex items-center">
+                <i
+                  class="fas fa-phone-alt text-white text-xs mr-3 rounded-full p-2 bg-green-500"
+                ></i>
+                <span class="text-gray-600 hover:underline">{{
+                  card.phone
+                }}</span>
               </li>
-
-              <!-- Item 3 -->
-              <li class="flex items-center space-x-3">
-                <span
-                  class="flex items-center justify-center w-8 h-8 bg-custom-green text-white rounded-full"
+              <li class="flex items-center">
+                <i
+                  class="fas fa-map-marker-alt text-white text-xs mr-3 rounded-full p-2 bg-green-500"
+                ></i>
+                <span class="text-gray-600 hover:underline mb-4"
+                  >{{ card.li_2 }} {{ card.capital }}</span
                 >
-                  <i class="fa-solid fa-tents"></i>
-                </span>
-                <p class="text-gray-800 text-sm font-medium">Welcome City</p>
-              </li>
-
-              <!-- Item 4 -->
-              <li class="flex items-center space-x-3">
-                <span
-                  class="flex items-center justify-center w-8 h-8 bg-custom-green text-white rounded-full"
-                >
-                  <i class="fa-solid fa-car"></i>
-                </span>
-                <p class="text-gray-800 text-sm font-medium">10km or 2.5kr</p>
               </li>
             </ul>
-
-            <p class="text-gray-800 font-bold border-t border-b py-2 mt-4">
-              Potential: $500 - $5,000
-            </p>
-            <button
-              class="mt-2 w-full bg-custom-green text-white py-2 px-4 rounded-lg hover:bg-green-600 transition"
-            >
-              REGISTER NOW
-            </button>
           </div>
         </div>
       </div>
       <div class="mj-container mb-8">
         <div
-          class="flex flex-col md:flex-row p-6 rounded-lg space-y-6 md:space-y-0 md:space-x-8"
+          class="bg-white mt-4 flex flex-col md:flex-row p-6 rounded-lg space-y-6 md:space-y-0 md:space-x-8"
         >
           <!-- Section Gauche -->
           <div class="flex-1">
-            <div class="relative mb-6">
-              <img
-                :src="card.image"
-                alt="IEDA Relief Activities"
-                class="w-full h-64 object-cover rounded-lg"
-              />
+            <div class="relative">
+              <!-- Début video -->
               <div
-                class="absolute inset-0 flex items-center justify-center"
-                aria-label="Play Video"
+                class="w-full h-full overflow-hidden rounded-lg shadow-lg bg-custom-green"
               >
-                <img
-                  src="/img/Play.png"
-                  alt="Play"
-                  class="w-20 h-20 transition-all duration-300 hover:z-10 hover:scale-105"
-                />
+                <!-- Header -->
+                <div
+                  class="z-20 w-full bg-custom-green bg-opacity-70 px-4 py-2 backdrop-blur-lg"
+                >
+                  <div class="-m-2 flex flex-wrap items-center justify-between">
+                    <!-- Circles -->
+                    <div class="w-auto p-2">
+                      <div class="flex flex-row">
+                        <div class="w-auto p-1">
+                          <div
+                            class="h-2 w-2 rounded-full border border-red-500 bg-red-400"
+                          ></div>
+                        </div>
+                        <div class="w-auto p-1">
+                          <div
+                            class="h-2 w-2 rounded-full border border-yellow-500 bg-yellow-400"
+                          ></div>
+                        </div>
+                        <div class="w-auto p-1">
+                          <div
+                            class="h-2 w-2 rounded-full border border-green-500 bg-green-400"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Text -->
+                    <div class="p-2">
+                      <div
+                        class="mx-auto max-w-xs rounded bg-white px-4 py-0.5 text-center text-xs font-medium tracking-tight text-custom-green"
+                      >
+                        <span>IEDA Relief</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Video Section -->
+                <div class="relative">
+                  <div
+                    ref="youtube"
+                    class="plyr w-full rounded-lg shadow-lg"
+                    controls
+                    :data-plyr-provider="'youtube'"
+                    :data-plyr-embed-id="card.videoId"
+                  ></div>
+                </div>
               </div>
             </div>
-
+            <!-- Fin video -->
             <!-- Description principale -->
             <div>
-              <h2 class="text-xl font-bold text-gray-800 mb-4">
-                IEDA Relief organizes the following activities:
-              </h2>
-              <p class="text-gray-600 mb-4">
-                Mattis vulputate enim nulla aliquet porttitor lacus luctus
-                accumsan tortor. Sed nisi lacus sed viverra tellus.
-              </p>
-
-              <!-- Activités listées -->
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h3 class="text-lg font-semibold text-gray-800">
+              <div v-show="card && card.id === 1" class="mt-6">
+                <h2 class="text-2xl font-bold text-black mb-4">
+                  IEDA Relief organizes the following activities:
+                </h2>
+                <ul class="list-none space-y-4">
+                  <li class="flex items-center text-gray-600">
+                    <i class="fas fa-calendar-alt text-blue-500 mr-3"></i>
                     Monthly distribution plans (MDP)
-                  </h3>
-                  <p class="text-gray-600">
-                    Facilisis volutpat est velit egestas dui id ornare arcu
-                    pretium aenean pharetra odio.
-                  </p>
-                </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-gray-800">
-                    Evaluate the Refugee
-                  </h3>
-                  <p class="text-gray-600">
-                    Evaluate the refugee feeding situation, specifically those
-                    in specific needs.
-                  </p>
-                </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-gray-800">
-                    Avail Blanket supplementary
-                  </h3>
-                  <p class="text-gray-600">
-                    Avail Blanket supplementary Feeding to young girls and boys.
-                  </p>
-                </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-gray-800">
-                    Organizing joint meeting prior
-                  </h3>
-                  <p class="text-gray-600">
-                    Organizing joint meeting prior and after distribution to
-                    ensure accountability.
-                  </p>
-                </div>
+                  </li>
+                  <li class="flex items-center text-gray-600">
+                    <i class="fas fa-utensils text-green-500 mr-3"></i>
+                    Evaluate the Refugee feeding situation, specifically those
+                    in specific needs
+                  </li>
+                  <li class="flex items-center text-gray-600">
+                    <i class="fas fa-child text-yellow-500 mr-3"></i>
+                    Avail Blanket supplementary Feeding to young girls and boys
+                  </li>
+                  <li class="flex items-center text-gray-600">
+                    <i class="fas fa-handshake text-purple-500 mr-3"></i>
+                    Organizing joint meeting prior and after distribution with
+                    all the stakeholders to ensure accountability in the process
+                  </li>
+                </ul>
               </div>
             </div>
-
             <!-- Section Volunteer -->
             <div class="mt-6">
               <h2 class="text-xl font-bold text-gray-800 mb-2">
@@ -227,70 +248,8 @@
                 </span>
               </div>
               <!-- Social Icons -->
-              <div
-                class="flex items-center gap-3 justify-center w-full sm:w-auto sm:justify-end"
-              >
-                <a
-                  href="https://facebook.com"
-                  class="bg-gray-200 flex items-center justify-center p-2 rounded-full text-black hover:bg-blue-800 hover:text-white transition"
-                >
-                  <i class="fab fa-facebook-f text-lg"></i>
-                </a>
-                <a
-                  href="https://instagram.com"
-                  class="bg-gray-200 flex items-center justify-center p-2 rounded-full text-black hover:bg-pink-800 hover:text-white transition"
-                >
-                  <i class="fab fa-instagram text-lg"></i>
-                </a>
-                <a
-                  href="https://twitter.com"
-                  class="bg-gray-200 flex items-center justify-center p-2 rounded-full text-black hover:bg-gray-600 hover:text-white transition"
-                >
-                  <i class="fa-brands fa-x-twitter text-lg"></i>
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  class="bg-gray-200 flex items-center justify-center p-2 rounded-full text-black hover:bg-blue-900 hover:text-white transition"
-                >
-                  <i class="fab fa-linkedin-in text-lg"></i>
-                </a>
-              </div>
             </div>
-          </div>
-
-          <!-- Section Droite -->
-          <div
-            class="w-full h-48 md:w-1/3 bg-gray-100 rounded-lg p-4 transition-all duration-300 hover:z-10 hover:scale-105"
-          >
-            <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">
-              Have Additional Questions?
-            </h3>
-            <ul class="space-y-3">
-              <li class="flex items-center">
-                <i
-                  class="fas fa-envelope text-white text-xs mr-3 rounded-full p-2 bg-custom-green"
-                ></i>
-                <span class="text-gray-600 hover:underline">{{
-                  card.email
-                }}</span>
-              </li>
-              <li class="flex items-center">
-                <i
-                  class="fas fa-phone-alt text-white text-xs mr-3 rounded-full p-2 bg-custom-green"
-                ></i>
-                <span class="text-gray-600 hover:underline">{{
-                  card.phone
-                }}</span>
-              </li>
-              <li class="flex items-center">
-                <i
-                  class="fas fa-map-marker-alt text-white text-xs mr-3 rounded-full p-2 bg-custom-green"
-                ></i>
-                <span class="text-gray-600 hover:underline"
-                  >{{ card.li_2 }} {{ card.capital }}</span
-                >
-              </li>
-            </ul>
+            <!-- Fin Social Icons -->
           </div>
         </div>
       </div>
@@ -310,9 +269,33 @@
 </template>
 
 <script setup>
+import { onMounted, ref, nextTick } from "vue";
 const { t } = useI18n();
 const route = useRoute();
 const card = ref(null);
+const video = ref(null);
+const youtube = ref(null);
+
+function animateValue(target, start, end, duration) {
+  const range = end - start;
+  let current = start;
+  const increment = range / (duration / 10);
+  const interval = setInterval(() => {
+    current += increment;
+    if (
+      (increment > 0 && current >= end) ||
+      (increment < 0 && current <= end)
+    ) {
+      current = end;
+      clearInterval(interval);
+    }
+    target.value = Math.round(current);
+  }, 10);
+}
+// Déclaration des données
+const count1 = ref(0);
+const count2 = ref(0);
+const count3 = ref(0);
 
 const cards = [
   {
@@ -322,11 +305,12 @@ const cards = [
     title: "Burkina Faso",
     capital: "Ouagadougou",
     mean: "Burkina Faso, which means land of honest men",
-    email: "name@domain.com",
-    phone: "+226 000 000 000",
-    li_2: "123 Main Street, town name",
+    email: "burkinafasooffice@iedarelief.org",
+    phone: "+226 25374622",
+    li_2: "05 BP 6402 Ouaga 05, Boulevard Muammar Kadhafi, secteur 53, Section PLot 17, Parcelle No 6 Ouaga2000",
     description:
       "Empowering communities with essential knowledge and practices to promote health and prevent",
+    videoId: "https://www.youtube.com/watch?v=OwEpDNF55dY",
   },
   {
     id: 2,
@@ -336,9 +320,10 @@ const cards = [
     capital: "Younde",
     description:
       "Providing Harper with the freedom and independence to navigate the world with ease",
-    email: "name@domain.com",
-    phone: "+237 000 000 000",
-    li_2: "123 Main Street, town name",
+    email: "cameroonoffice@iedarelief.org",
+    phone: "+236 74125446",
+    li_2: "Yaoundé, derrière la sous-préfecture de Tshinga, montée Palais des congrès m.",
+    videoId: "https://youtu.be/a_mBE32q0m4",
   },
   {
     id: 3,
@@ -348,10 +333,12 @@ const cards = [
     capital: "Bangui",
     description:
       "Join us in providing compassionate support and resources for Daniel as he embarks on his",
-    email: "name@domain.com",
-    phone: "+236 000 000 000",
-    li_2: "123 Main Street, town name",
+    email: "caroffice@iedarelief.org",
+    phone: "+236 72510065",
+    li_2: "Av. Barthélemy BOGANDA, Quartier SICA III, 3ème Arrondissement Bangui, Centrafrique, BP 1774 Bangui",
+    videoId: "https://youtu.be/Ue1RvItha5A",
   },
+
   {
     id: 4,
     image: "/img/w4.jpg",
@@ -361,9 +348,10 @@ const cards = [
     description:
       "Cancer Battle Fund provides critical financial support for Olivia's medical treatment, offering hope and …",
 
-    email: "name@domain.com",
-    phone: "+223 000 000 000",
-    li_2: "123 Main Street, town name",
+    email: "malioffice@iedarelief.org",
+    phone: "+223 74613901",
+    li_2: "BP 3113 Bamako, Hamdallay, ACI 2000, 5eme Arrondissement",
+    videoId: "https://youtu.be/JgFih2x1jFA",
   },
   {
     id: 5,
@@ -374,34 +362,10 @@ const cards = [
     description:
       "Response teams delivering lifesaving aid for children impacted by any major humanitarian ..",
 
-    email: "name@domain.com",
-    phone: "+227 000 000 000",
-    li_2: "123 Main Street, town name",
-  },
-  {
-    id: 6,
-    image: "/img/w6.jpg",
-    tag: t("works.title"),
-    title: "Philippines",
-    capital: "Manille",
-    description:
-      "Safe havens where children receive nurturing care, education, and support for their holistic …",
-
-    email: "name@domain.com",
-    phone: "+65 000 000 000",
-    li_2: "123 Main Street, town name",
-  },
-  {
-    id: 7,
-    image: "/img/w7.jpg",
-    tag: t("works.title"),
-    title: "Haiti",
-    capital: "Port-au-Prince",
-    description:
-      "Supporting access to schooling, tutoring and educational resources for children …",
-    email: "name@domain.com",
-    phone: "+509 000 000 000",
-    li_2: "123 Main Street, town name",
+    email: "nigermission@iedarelief.org",
+    phone: "+227 89 97 04 60",
+    li_2: "Quartier Bobiel vers école Galaxy plus premier virage à gauche après le siège National de ADN FUSHA, Commune I,Ville de Niamey",
+    videoId: "https://youtu.be/ogGFt45uu28",
   },
   {
     id: 8,
@@ -411,30 +375,56 @@ const cards = [
     capital: "Kinshasa",
     description:
       "Providing specialized medical care and rehabilitation to children affected by war, offering hope and …",
-    email: "name@domain.com",
-    phone: "+243 000 000 000",
-    li_2: "123 Main Street, town name",
-  },
-  {
-    id: 9,
-    image: "/img/w9.jpg",
-    tag: t("works.title"),
-    title: "Get Involved",
-    description:
-      "Bringing essential healthcare services directly to underserved communities, ensuring access …",
-    email: "name@domain.com",
-    phone: "000 000 000",
-    li_2: "123 Main Street, town name",
+    email: "drcoffice@iedarelief.org",
+    phone: "+243 995614803",
+    li_2: "Avenue O.U.A, N°17, Quartier Basoko/GB, Commune de Ngaliema, ville de Kinshasa, RDC",
+    videoId: "https://youtu.be/4N1xCpN5EeM",
   },
 ];
 
-onMounted(() => {
+onMounted(async () => {
   const id = parseInt(route.params.id);
   card.value = cards.find((c) => c.id === id);
 
   if (!card.value) {
     console.error("Card not found");
+    return;
   }
+
+  const { $plyr } = useNuxtApp();
+
+  // Assurez-vous que le DOM est prêt avant d'initialiser Plyr
+  await nextTick();
+
+  // Initialiser Plyr pour YouTube
+  if (youtube.value) {
+    try {
+      const youtubePlayer = new $plyr(youtube.value, {
+        autoplay: false,
+        muted: false,
+      });
+    } catch (error) {
+      console.error("Failed to initialize YouTube player:", error);
+    }
+  } else {
+    console.warn("YouTube element is not available");
+  }
+
+  // Initialiser Plyr pour une vidéo locale
+  if (video.value) {
+    try {
+      const player = new $plyr(video.value);
+    } catch (error) {
+      console.error("Failed to initialize video player:", error);
+    }
+  } else {
+    console.warn("Video element is not available");
+  }
+
+  // Animation des compteurs
+  animateValue(count1, 0, 20, 2000);
+  animateValue(count2, 0, 2200000, 3000);
+  animateValue(count3, 0, 2008, 1500);
 });
 </script>
 
