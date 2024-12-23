@@ -77,7 +77,7 @@
               <img
                 :src="card.image"
                 alt="Card Image"
-                class="w-full h-44 object-cover rounded-lg transform transition-all duration-300 hover:z-10 hover:scale-110"
+                class="w-full h-44 object-cover rounded-t-lg transform transition-all duration-300 hover:z-10 hover:scale-110"
               />
               <span
                 class="absolute top-2 right-2 bg-white border border-custom-green text-black text-xs px-2 py-1 rounded-md"
@@ -85,17 +85,26 @@
                 {{ card.tag }}
               </span>
             </div>
+
             <div class="p-2">
               <h2 class="font-bold text-xl mb-2">{{ card.title }}</h2>
               <p class="text-gray-600 mb-2">
                 {{ truncateText(card.description, 50) }}
               </p>
-              <button
-                class="bg-custom-green text-white px-6 py-2 rounded-lg hover:underline"
-                @click="goToDetails(card.id)"
+
+              <nuxt-link
+                :to="localPagePath(card.id)"
+                class="mt-4 inline-block text-custom-green text-xl font-medium overflow-hidden group relative"
               >
-                {{ t("works.btn") }}
-              </button>
+                <span
+                  class="relative z-10 group-hover:text-custom-green-dark duration-300 ease-in-out"
+                >
+                  {{ t("operation.btn") }}
+                </span>
+                <span
+                  class="absolute bottom-0 left-0 h-[3px] w-0 bg-custom-green group-hover:w-full transition-all duration-500 ease-in-out"
+                ></span>
+              </nuxt-link>
             </div>
           </div>
         </div>
@@ -199,31 +208,6 @@ const cards = [
     phone: "+227 89 97 04 60",
     li_2: "Quartier Bobiel vers école Galaxy plus premier virage à gauche après le siège National de ADN FUSHA, Commune I,Ville de Niamey",
   },
-  // {
-  //   id: 6,
-  //   image: "/img/w6.jpg",
-  //   tag: t("works.title"),
-  //   title: "Philippines",
-  //   capital: "Manille",
-  //   description:
-  //     "Safe havens where children receive nurturing care, education, and support for their holistic …",
-
-  //   email: "name@domain.com",
-  //   phone: "+65 000 000 000",
-  //   li_2: "123 Main Street, town name",
-  // },
-  // {
-  //   id: 7,
-  //   image: "/img/w7.jpg",
-  //   tag: t("works.title"),
-  //   title: "Haiti",
-  //   capital: "Port-au-Prince",
-  //   description:
-  //     "Supporting access to schooling, tutoring and educational resources for children …",
-  //   email: "name@domain.com",
-  //   phone: "+509 000 000 000",
-  //   li_2: "123 Main Street, town name",
-  // },
   {
     id: 8,
     image: "/img/w8.jpg",
@@ -236,26 +220,9 @@ const cards = [
     phone: "+243 995614803",
     li_2: "Avenue O.U.A, N°17, Quartier Basoko/GB, Commune de Ngaliema, ville de Kinshasa, RDC",
   },
-  // {
-  //   id: 9,
-  //   image: "/img/w9.jpg",
-  //   tag: t("works.title"),
-  //   title: "Get Involved",
-  //   description:
-  //     "Bringing essential healthcare services directly to underserved communities, ensuring access …",
-  //   email: "name@domain.com",
-  //   phone: "000 000 000",
-  //   li_2: "123 Main Street, town name",
-  // },
 ];
 
 const router = useRouter();
-
-// Fonction pour générer un chemin local dynamique
-const localPath = (id) => {
-  const prefix = locale.value === "en-UK" ? "" : `/${locale.value}`;
-  return `${prefix}/works/${id}`;
-};
 
 // Fonction pour rediriger vers la page des détails
 const goToDetails = (id) => {
@@ -267,4 +234,8 @@ function truncateText(text, limit) {
   if (!text) return "";
   return text.length > limit ? text.substring(0, limit) + "..." : text;
 }
+const localPagePath = (id) => {
+  const prefix = locale.value === "en-UK" ? "" : `/${locale.value}`;
+  return `${prefix}/works/${id}`;
+};
 </script>
