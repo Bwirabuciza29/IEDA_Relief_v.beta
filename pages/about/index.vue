@@ -265,7 +265,7 @@
       </div>
     </div>
 
-    <div class="mj-container my-16">
+    <div class="relative mj-container my-16">
       <h2 class="text-3xl font-bold text-gray-800 text-center">
         {{ t("about.question_title_1") }}
         <span class="text-green-500 font-sri">
@@ -326,6 +326,7 @@
         </div>
       </div>
     </div>
+
     <div>
       <LogLogger />
     </div>

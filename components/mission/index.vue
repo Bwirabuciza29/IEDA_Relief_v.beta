@@ -1,5 +1,5 @@
 <template>
-  <div class="mj-container mx-auto px-4 py-8">
+  <div class="relative mj-container mx-auto px-4 py-8">
     <!-- Boutons alignés horizontalement -->
     <div class="flex justify-center space-x-4 mb-8">
       <button
@@ -15,6 +15,18 @@
       >
         {{ tab.title }}
       </button>
+    </div>
+    <div class="absolute inset-0 flex justify-center items-center z-0 top-20">
+      <span
+        class="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold text-gray-500 opacity-10"
+      >
+        IEDA
+      </span>
+      <span
+        class="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold text-gray-500 opacity-10 ml-4"
+      >
+        Relief
+      </span>
     </div>
 
     <!-- Contenu dynamique -->

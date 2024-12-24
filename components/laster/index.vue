@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mj-container px-4 sm:px-6 lg:px-8">
+    <div class="relative mj-container px-4 sm:px-6 lg:px-8">
       <!-- Grid layout -->
       <div
         class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 border-gray-300"
@@ -161,6 +161,20 @@
             />
           </div>
         </div>
+      </div>
+      <div
+        class="absolute inset-0 flex justify-center items-center z-0 -left-72"
+      >
+        <span
+          class="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold text-gray-500 opacity-10"
+        >
+          IEDA
+        </span>
+        <span
+          class="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold text-gray-500 opacity-10 ml-4"
+        >
+          Relief
+        </span>
       </div>
       <hr class="my-4" />
       <div
