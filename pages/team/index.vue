@@ -393,7 +393,7 @@ const team = [
   {
     name: "Timothy MUKULE",
     role: t("team.lead_3"),
-    image: "/img/av3.jpg",
+    image: "/img/tim.jpg",
     social: {
       linkedin: "https://linkedin.com/in/alexberil",
       twitter: "https://twitter.com/alexberil",
