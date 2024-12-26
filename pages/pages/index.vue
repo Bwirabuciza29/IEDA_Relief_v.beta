@@ -68,7 +68,7 @@
         <div
           v-for="(card, index) in filteredCards"
           :key="index"
-          class="flex bg-white shadow-lg rounded-lg overflow-hidden group transition-transform duration-300 hover:scale-105"
+          class="flex bg-white rounded-lg overflow-hidden group transition-transform duration-300 hover:scale-105"
         >
           <!-- Section Image -->
           <div class="relative w-1/3 overflow-hidden">

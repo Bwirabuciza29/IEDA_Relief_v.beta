@@ -71,13 +71,13 @@
           <div
             v-for="(card, index) in cards"
             :key="index"
-            class="bg-white rounded-lg overflow-hidden"
+            class="bg-white rounded-lg overflow-hidden group"
           >
             <div class="relative">
               <img
                 :src="card.image"
                 alt="Card Image"
-                class="w-full h-44 object-cover rounded-t-lg transform transition-all duration-300 hover:z-10 hover:scale-110"
+                class="w-full h-44 object-cover rounded-t-lg transform transition-all duration-300 group-hover:scale-110 group-hover:z-10"
               />
               <span
                 class="absolute top-2 right-2 bg-white border border-custom-green text-black text-xs px-2 py-1 rounded-md"
@@ -91,10 +91,9 @@
               <p class="text-gray-600 mb-2">
                 {{ truncateText(card.description, 50) }}
               </p>
-
               <nuxt-link
                 :to="localPagePath(card.id)"
-                class="mt-4 inline-block text-custom-green text-xl font-medium overflow-hidden group relative"
+                class="mt-4 inline-block text-custom-green text-sm font-medium overflow-hidden relative"
               >
                 <span
                   class="relative z-10 group-hover:text-custom-green-dark duration-300 ease-in-out"
