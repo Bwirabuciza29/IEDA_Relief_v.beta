@@ -547,10 +547,10 @@ const countries = [
   {
     name: "Cameroun",
     flag: "https://flagcdn.com/cm.svg",
-    image: "https://via.placeholder.com/300x200?text=Cameroun",
+    image: "/img/camero.jpg",
     chief: {
       title: t("leader.title_2"),
-      image: "/img/david.jpg",
+      image: "/img/dav.jpg",
       name: "David KISUBA",
       gender: "Male",
       description:
