@@ -55,62 +55,92 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- Card 1 -->
-        <div class="bg-white flex flex-col items-start p-4 rounded-lg">
+        <div
+          class="group bg-white flex flex-col items-start p-4 rounded-lg hover:shadow-lg transition-shadow duration-300"
+        >
           <div class="flex items-center mb-4">
-            <img src="/img/lo.svg" alt="icon" class="w-10 h-10 mr-2" />
-            <h3 class="text-xl font-semibold">{{ t("about.card_1_title") }}</h3>
+            <img
+              src="/img/lo.svg"
+              alt="icon"
+              class="w-10 h-10 mr-2 group-hover:scale-110 transition-transform duration-300"
+            />
+            <h3
+              class="text-xl font-semibold group-hover:text-custom-green transition-colors duration-300"
+            >
+              {{ t("about.card_1_title") }}
+            </h3>
           </div>
-          <p class="text-gray-600 hover:underline">
+          <p class="text-gray-600 group-hover:underline">
             {{ t("about.card_1_desc") }}
           </p>
         </div>
 
         <!-- Card 2 -->
-        <div class="overflow-hidden rounded-lg">
+        <div class="group overflow-hidden rounded-lg">
           <img
             src="/img/c3.jpg"
             alt="Image 1"
-            class="w-full h-48 object-cover transition-all duration-300 hover:z-10 hover:scale-105"
+            class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </div>
 
         <!-- Card 3 -->
-        <div class="bg-white flex flex-col items-start p-4 rounded-lg">
+        <div
+          class="group bg-white flex flex-col items-start p-4 rounded-lg hover:shadow-lg transition-shadow duration-300"
+        >
           <div class="flex items-center mb-4">
-            <img src="/img/lol.svg" alt="Icon" class="w-10 h-10 mr-2" />
-            <h3 class="text-xl font-semibold">{{ t("about.card_2_title") }}</h3>
+            <img
+              src="/img/lol.svg"
+              alt="Icon"
+              class="w-10 h-10 mr-2 group-hover:scale-110 transition-transform duration-300"
+            />
+            <h3
+              class="text-xl font-semibold group-hover:text-custom-green transition-colors duration-300"
+            >
+              {{ t("about.card_2_title") }}
+            </h3>
           </div>
-          <p class="text-gray-600 hover:underline">
+          <p class="text-gray-600 group-hover:underline">
             {{ t("about.card_2_desc") }}
           </p>
         </div>
 
         <!-- Card 4 -->
-        <div class="overflow-hidden rounded-lg">
+        <div class="group overflow-hidden rounded-lg">
           <img
             src="/img/c4.jpg"
             alt="Image 2"
-            class="w-full h-48 object-cover transition-all duration-300 hover:z-10 hover:scale-105"
+            class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </div>
 
         <!-- Card 5 -->
-        <div class="bg-white flex flex-col items-start p-4 rounded-lg">
+        <div
+          class="group bg-white flex flex-col items-start p-4 rounded-lg hover:shadow-lg transition-shadow duration-300"
+        >
           <div class="flex items-center mb-4">
-            <img src="/img/lolo.svg" alt="Icon" class="w-10 h-10 mr-2" />
-            <h3 class="text-xl font-semibold">{{ t("about.card_3_title") }}</h3>
+            <img
+              src="/img/lolo.svg"
+              alt="Icon"
+              class="w-10 h-10 mr-2 group-hover:scale-110 transition-transform duration-300"
+            />
+            <h3
+              class="text-xl font-semibold group-hover:text-custom-green transition-colors duration-300"
+            >
+              {{ t("about.card_3_title") }}
+            </h3>
           </div>
-          <p class="text-gray-600 hover:underline">
+          <p class="text-gray-600 group-hover:underline">
             {{ t("about.card_3_desc") }}
           </p>
         </div>
 
         <!-- Card 6 -->
-        <div class="overflow-hidden rounded-lg">
+        <div class="group overflow-hidden rounded-lg">
           <img
             src="/img/c5.jpg"
             alt="Image 3"
-            class="w-full h-48 object-cover transition-all duration-300 hover:z-10 hover:scale-105"
+            class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </div>
       </div>
@@ -272,18 +302,13 @@
           {{ t("about.question_title_2") }}</span
         >
       </h2>
-      <!-- Description -->
-      <p class="text-center text-gray-600 mt-2"></p>
+
       <!-- FAQ Section -->
       <div class="mt-10 space-y-4 max-w-xl mx-auto">
-        <div
-          v-for="(faq, index) in faqs"
-          :key="index"
-          class="overflow-hidden shadow-lg"
-        >
+        <div v-for="(faq, index) in faqs" :key="index" class="overflow-hidden">
           <button
             @click="toggleFAQ(index)"
-            class="w-full text-left flex justify-between rounded-lg items-center px-4 py-4 bg-white hover:scale-105 transition-transform duration-300 ease-in-out"
+            class="w-full text-left flex justify-between rounded-lg items-center px-4 py-4 bg-white transition-transform duration-300 ease-in-out"
           >
             <span
               :class="{ 'text-custom-green font-medium': activeFAQ === index }"

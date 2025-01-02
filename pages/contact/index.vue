@@ -44,7 +44,7 @@
           <p class="text-gray-600">
             {{ t("contact.t4") }}
           </p>
-          <div class="space-y-4 p-4 bg-white rounded-lg shadow">
+          <div class="space-y-4 p-4 bg-white rounded-lg">
             <p class="flex items-center space-x-3">
               <span
                 class="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600"
