@@ -590,7 +590,7 @@ const countries = [
     image: "/img/niamey.jpg",
     chief: {
       title: t("leader.title_2"),
-      image: "/img/cisse.jpg",
+      image: "/img/cis.jpg",
       name: "Bakary CISSE",
       postnom: "Diop",
       nationality: "Nigérien",
