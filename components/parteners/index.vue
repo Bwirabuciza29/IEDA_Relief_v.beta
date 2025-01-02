@@ -1,6 +1,6 @@
 <template>
-  <div class="mj-container bg-white rounded-lg py-4">
-    <div class="text-center my-6">
+  <div class="mj-container">
+    <div class="bg-white rounded-lg py-4 text-center my-6">
       <p class="text-custom-green uppercase tracking-widest text-xs">
         {{ t1 }}
       </p>
@@ -8,112 +8,105 @@
         {{ t2 }} <span class="font-sri"> {{ t3 }}</span>
       </h1>
     </div>
-    <div class="flex justify-center space-x-4 mb-8">
-      <button
-        v-for="(tab, index) in tabs"
-        :key="index"
-        @click="activeTab = index"
-        :class="[
-          'px-4 py-3 font-medium rounded-lg transition-colors duration-300',
-          activeTab === index
-            ? 'bg-custom-green text-white'
-            : 'bg-gray-100 text-gray-700 hover:bg-gray-300',
-        ]"
-      >
-        {{ tab.title }}
-      </button>
-    </div>
-
-    <!-- Contenu dynamique -->
-    <div
-      v-for="(tab, index) in tabs"
-      :key="index"
-      v-show="activeTab === index"
-      class="flex flex-col md:flex-row items-center justify-center text-center md:text-left transition-opacity duration-500"
-      :class="activeTab === index ? 'opacity-100' : 'opacity-0 hidden'"
-    >
-      <!-- Texte au centre -->
-      <div class="md:w-1/2 mb-6">
-        <h2 class="text-5xl font-bold text-gray-800">{{ tab.title }}</h2>
-        <p class="text-gray-600 mt-4 text-justify">
-          {{ tab.description }}
-        </p>
-        <h2 class="text-xl font-semibold text-custom-green mb-4">
-          {{ tab.s_title }}
-        </h2>
-
-        <!-- Description -->
-        <p class="text-gray-600 mb-4">
-          {{ tab.s_desc }}
-        </p>
-
-        <!-- Liste des postes -->
-        <ul class="space-y-2 pl-5" v-show="activeTab === 1">
-          <li class="flex items-center">
-            <!-- Icône Heroicon -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-custom-green mr-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <a href="#" class="text-custom-green hover:underline">
-              {{ tab.desc_list_1 }}
-            </a>
-          </li>
-          <li class="flex items-center">
-            <!-- Icône Heroicon -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-custom-green mr-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <a href="#" class="text-custom-green hover:underline">
-              {{ tab.desc_list_2 }}
-            </a>
-          </li>
-        </ul>
+    <div class="bg-white rounded-lg p-4">
+      <div class="flex justify-center space-x-4 mb-8">
+        <button
+          v-for="(tab, index) in tabs"
+          :key="index"
+          @click="activeTab = index"
+          :class="[
+            'px-4 py-3 font-medium rounded-lg transition-colors duration-300',
+            activeTab === index
+              ? 'bg-custom-green text-white'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-300',
+          ]"
+        >
+          {{ tab.title }}
+        </button>
       </div>
 
-      <!-- Image à droite -->
-      <div class="md:w-1/2 flex justify-center relative">
-        <!-- Image principale -->
-        <div class="relative">
+      <div
+        v-for="(tab, index) in tabs"
+        :key="index"
+        v-show="activeTab === index"
+        class="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between text-center md:text-left transition-opacity duration-500"
+        :class="activeTab === index ? 'opacity-100' : 'opacity-0 hidden'"
+      >
+        <!-- Section texte (50%) -->
+        <div class="md:w-1/2 px-4 mb-8 md:mb-0">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-800">
+            {{ tab.title }}
+          </h2>
+          <p class="text-gray-600 mt-4 text-justify">
+            {{ tab.description }}
+          </p>
+          <h3 class="text-xl font-semibold text-custom-green mt-6">
+            {{ tab.s_title }}
+          </h3>
+          <p class="text-gray-600 mt-2">
+            {{ tab.s_desc }}
+          </p>
+
+          <!-- Liste des postes -->
+          <ul class="space-y-3 mt-4 pl-4" v-show="activeTab === 1">
+            <li class="flex items-center">
+              <!-- Icône -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-custom-green mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <a href="#" class="text-custom-green hover:underline">
+                {{ tab.desc_list_1 }}
+              </a>
+            </li>
+            <li class="flex items-center">
+              <!-- Icône -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-custom-green mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <a href="#" class="text-custom-green hover:underline">
+                {{ tab.desc_list_2 }}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Section image (100% de la partie droite) -->
+        <div class="md:w-1/2 px-4 flex justify-center items-center relative">
           <!-- Image principale -->
           <img
             :src="tab.image"
             alt="Image"
-            class="w-full max-w-sm rounded-lg shadow-md"
+            class="w-full h-auto rounded-lg shadow-md object-cover"
           />
-          <!-- Gradient en dessous -->
-          <div
-            class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-custom-green to-transparent rounded-b-lg pointer-events-none"
-          ></div>
+          <!-- Image superposée -->
+          <img
+            :src="imageSrc"
+            alt="Overlay"
+            class="absolute bottom-4 right-4 w-20 h-20 md:w-32 md:h-32 rounded-full shadow-lg"
+          />
         </div>
-
-        <!-- Image superposée -->
-        <img
-          :src="imageSrc"
-          alt="Overlay"
-          class="absolute -bottom-24 w-auto h-auto sm:w-auto sm:h-auto md:w-auto md:h-auto"
-        />
       </div>
     </div>
   </div>
