@@ -7,7 +7,7 @@
         <NuxtLink to="/">
           <img
             src="/img/logo.png"
-            alt="Maajabu Logo"
+            alt="Ieda Logo"
             class="h-12 sm:h-12 py-2 my-2 mr-4"
           />
         </NuxtLink>
@@ -20,17 +20,6 @@
       <!-- Menu Desktop -->
       <div class="flex-grow">
         <nav class="hidden justify-center space-x-6 font-semibold md:flex">
-          <!-- <NuxtLink
-            v-for="(item, index) in menuItems"
-            :key="index"
-            :to="localPath(item)"
-            class="duration-400 transform transition hover:scale-105 hover:text-green-400 hover:underline"
-            :class="{
-              'text-green-500 underline': isActiveLink(localPath(item)),
-            }"
-          >
-            {{ item }}
-          </NuxtLink> -->
           <NuxtLink
             v-for="(item, index) in menuItems"
             :key="index"
