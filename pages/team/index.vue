@@ -283,10 +283,10 @@
                 <span class="font-semibold">Gender:</span>
                 {{ countries[activeCountry].chief.gender }}
               </p>
-              <p class="text-sm text-gray-700">
+              <!-- <p class="text-sm text-gray-700">
                 <span class="font-semibold">Bio:</span>
                 {{ countries[activeCountry].chief.description }}
-              </p>
+              </p> -->
             </div>
           </div>
           <h2 class="text-lg font-bold text-center mb-4">
@@ -508,7 +508,7 @@ const countries = [
   {
     name: "Burkina Faso",
     flag: "https://flagcdn.com/bf.svg",
-    image: "https://via.placeholder.com/300x200?text=Burkina+Faso",
+    image: "/img/burk.jpg",
     chief: {
       title: t("leader.title_2"),
       image: "/img/bintu.jpg",
