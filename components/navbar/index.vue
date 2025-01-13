@@ -21,7 +21,7 @@
       <div class="flex-grow">
         <nav class="hidden justify-center space-x-6 font-semibold md:flex">
           <NuxtLink
-            v-for="(item, index) in menuItems"
+            v-for="(item, index) in menuItem"
             :key="index"
             :to="localPath(item)"
             class="relative group duration-400 transform transition hover:scale-105 hover:text-green-400"
@@ -34,6 +34,79 @@
               class="absolute left-0 bottom-0 h-[2px] w-0 bg-green-400 transition-all duration-500 group-hover:w-full"
             ></span>
           </NuxtLink>
+          <div class="relative group">
+            <!-- Bouton qui contrôle le menu -->
+            <button
+              @click="toggleDropdown"
+              class="flex items-center gap-2 font-semibold text-black hover:text-green-400 transition"
+            >
+              {{ t("footer.title") }}
+              <span
+                class="absolute left-0 bottom-0 h-[2px] w-0 bg-green-400 transition-all duration-500 group-hover:w-full"
+              ></span>
+              <!-- Icône Font Awesome dynamique -->
+              <i
+                class="fas transform transition-all duration-300 ease-in-out text-sm"
+                :class="{
+                  'fa-chevron-up': isDropdownOpen || isHovering,
+                  'fa-chevron-down': !(isDropdownOpen || isHovering),
+                  'rotate-180': isDropdownOpen || isHovering,
+                  'rotate-0': !(isDropdownOpen || isHovering),
+                }"
+              ></i>
+            </button>
+
+            <!-- Dropdown avec animation -->
+            <div
+              @mouseenter="isHovering = true"
+              @mouseleave="isHovering = false"
+              v-show="isDropdownOpen || isHovering"
+              class="absolute flex flex-col bg-white border border-green-200 mt-2 w-40 duration-400 transform transition hover:scale-105"
+              :class="{
+                'opacity-100 scale-100': isDropdownOpen || isHovering,
+                'opacity-0 scale-95': !(isDropdownOpen || isHovering),
+              }"
+            >
+              <!-- Lien "Work" -->
+              <NuxtLink
+                :to="localPath(t('menu.works'))"
+                class="px-4 py-2 hover:bg-green-100 hover:text-green-400"
+                :class="{
+                  'text-green-500': isActiveLink(localPath(t('menu.works'))),
+                }"
+                @click="closeDropdown"
+              >
+                {{ t("menu.works") }}
+              </NuxtLink>
+
+              <!-- Lien "News" -->
+              <NuxtLink
+                :to="localPath(t('menu.news'))"
+                class="px-4 py-2 hover:bg-green-100 hover:text-green-400"
+                :class="{
+                  'text-green-500': isActiveLink(localPath(t('menu.news'))),
+                }"
+                @click="closeDropdown"
+              >
+                {{ t("menu.news") }}
+              </NuxtLink>
+            </div>
+          </div>
+          <div class="relative">
+            <NuxtLink
+              :to="localPath(t('menu.contact'))"
+              @click="closeDropdown"
+              :class="{
+                'text-green-500': isActiveLink(localPath(t('menu.contact'))),
+              }"
+              class="group relative inline-block duration-400 transform transition hover:scale-105 hover:text-green-400"
+            >
+              {{ t("menu.contact") }}
+              <span
+                class="absolute left-0 bottom-0 h-0.5 w-0 bg-green-500 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </NuxtLink>
+          </div>
         </nav>
       </div>
 
@@ -120,8 +193,29 @@ const toggleMenu = () => {
 const closeMenu = () => {
   menuOpen.value = false;
 };
+// État pour gérer l'ouverture via clic
+const isDropdownOpen = ref(false);
 
+// État pour détecter le survol
+const isHovering = ref(false);
+
+// Fonction pour basculer l'état du dropdown via clic
+function toggleDropdown() {
+  isDropdownOpen.value = !isDropdownOpen.value;
+}
+
+// Fonction pour fermer le dropdown
+function closeDropdown() {
+  isDropdownOpen.value = false;
+}
 // Les éléments du menu
+const menuItem = computed(() => [
+  t("menu.home"),
+  t("menu.about"),
+  t("menu.pages"),
+  t("menu.team"),
+  t("menu.images"),
+]);
 const menuItems = computed(() => [
   t("menu.home"),
   t("menu.about"),
@@ -152,6 +246,8 @@ const localPath = (item) => {
       return `${prefix}/contact`;
     case t("menu.donation"):
       return `${prefix}/donation`;
+    case t("menu.news"):
+      return `${prefix}/news`;
 
     default:
       return `${prefix}/`;
