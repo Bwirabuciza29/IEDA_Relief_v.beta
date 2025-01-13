@@ -223,6 +223,7 @@ const menuItems = computed(() => [
   t("menu.pages"),
   t("menu.team"),
   t("menu.images"),
+  t("menu.news"),
   t("menu.contact"),
 ]);
 
