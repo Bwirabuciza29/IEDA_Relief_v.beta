@@ -1,41 +1,101 @@
 <template>
-  <div class="bg-gray-50 min-h-screen py-10">
-    <div class="container mx-auto px-4">
-      <div v-if="article" class="bg-white rounded-lg shadow-lg overflow-hidden">
-        <!-- Image principale -->
+  <div>
+    <div class="mj-container my-10 relative mt-24">
+      <!-- Image filigranne au coin supérieur à gauche -->
+      <div class="absolute -top-8 -left-36 w-36 h-36 hidden sm:block z-10">
         <img
-          :src="article.image"
-          alt="Image de l'article"
-          class="w-full h-64 object-cover"
+          src="/img/sha.png"
+          alt="Filigrane haut gauche"
+          class="w-full h-full object-contain opacity-20"
         />
-
-        <!-- Contenu de l'article -->
-        <div class="p-6">
-          <p class="text-sm text-gray-500 mb-2">{{ article.categorie }}</p>
-          <h1 class="text-3xl font-bold text-gray-800 mb-4">
-            {{ article.titre }}
-          </h1>
-          <p class="text-gray-600 text-sm mb-6">
-            Publié le <span class="font-semibold">{{ article.date }}</span>
-          </p>
-          <p class="text-gray-700 leading-relaxed">
-            {{ article.description }}
-          </p>
-        </div>
-
-        <!-- Bouton retour -->
-        <div class="p-6 border-t bg-gray-100 flex justify-end">
-          <button
-            @click="goBack"
-            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center"
-          >
-            <i class="fas fa-arrow-left mr-2"></i> Retour
-          </button>
-        </div>
       </div>
 
-      <div v-else class="text-center">
-        <p class="text-gray-500">Chargement de l'article...</p>
+      <!-- Contenu principal -->
+      <div class="bg-green-50 p-4">
+        <div class="mb-8 flex items-center justify-between space-x-4">
+          <div class="whitespace-nowrap aos-init aos-animate">
+            <h2
+              class="flex items-center justify-start text-xl font-bold text-bleu relative group"
+              @click="goBack"
+            >
+              <span class="relative hover:text-custom-green">Retour</span>
+              <span
+                class="absolute bottom-0 left-0 w-0 h-[2px] bg-custom-green transition-all group-hover:w-full"
+              ></span>
+            </h2>
+          </div>
+          <div class="relative mt-1 h-4 w-full">
+            <div
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
+            ></div>
+          </div>
+        </div>
+
+        <div v-if="article" class="overflow-hidden">
+          <!-- Image principale -->
+          <img
+            :src="article.image"
+            alt="Image de l'article"
+            class="w-full h-64 object-cover"
+          />
+
+          <!-- Contenu de l'article -->
+          <div class="p-6">
+            <p class="text-sm text-gray-500 mb-2">
+              {{ article.categorie }}
+            </p>
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">
+              {{ article.titre }}
+            </h1>
+            <p class="text-gray-600 text-sm mb-6">
+              Publié le
+              <span class="font-semibold">{{ article.date }}</span>
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+              {{ article.description }}
+            </p>
+          </div>
+
+          <!-- Bouton retour -->
+          <div class="p-6 border-t flex justify-end items-center space-x-4">
+            <p class="text-gray-600 text-sm">
+              Publié le
+              <span class="font-semibold">{{ article.date }}</span>
+            </p>
+
+            <div class="flex items-center space-x-1 group">
+              <span
+                class="text-custom-green font-bold relative overflow-hidden"
+              >
+                Partager
+                <span
+                  class="absolute bottom-0 left-0 w-full h-0.5 bg-custom-green transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100 origin-left"
+                ></span>
+              </span>
+              <img src="/img/an.gif" alt="Partager" class="w-10 h-10 -mt-3" />
+            </div>
+          </div>
+        </div>
+
+        <div v-else class="text-center">
+          <p class="text-gray-500">Chargement de l'article...</p>
+        </div>
+
+        <div class="relative mt-1 h-4 w-full">
+          <div
+            class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
+          ></div>
+        </div>
+      </div>
+      <!-- Contenu principal -->
+      <div class="absolute -bottom-8 -right-36 w-36 h-36 hidden sm:block">
+        <img
+          src="/img/sha.png"
+          alt="Filigrane bas droite"
+          class="w-full h-full object-contain opacity-20"
+        />
       </div>
     </div>
   </div>
