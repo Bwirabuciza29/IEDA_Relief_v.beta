@@ -42,19 +42,37 @@
           />
 
           <!-- Contenu de l'article -->
-          <div class="p-6">
+          <div class="flex flex-col bg-white my-4 p-6">
             <p class="text-sm text-gray-500 mb-2">
+              <span class="fas fa-tag text-green-500 mr-2"></span>
               {{ article.categorie }}
             </p>
             <h1 class="text-3xl font-bold text-gray-800 mb-4">
               {{ article.titre }}
             </h1>
-            <p class="text-gray-600 text-sm mb-6">
-              Publié le
-              <span class="font-semibold">{{ article.date }}</span>
-            </p>
-            <p class="text-gray-700 leading-relaxed">
+
+            <p class="text-gray-700 leading-relaxed text-justify">
               {{ article.description }}
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+              voluptatibus, pariatur eveniet voluptates ipsa nesciunt nisi
+              consectetur quam molestias rem totam illum enim quos. Quis unde
+              sequi alias non vero?Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Dolor voluptatibus, pariatur eveniet voluptates
+              ipsa nesciunt nisi consectetur quam molestias rem totam illum enim
+              quos. Quis unde sequi alias non vero?Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Dolor voluptatibus, pariatur eveniet
+              voluptates ipsa nesciunt nisi consectetur quam molestias rem totam
+              illum enim quos. Quis unde sequi alias non vero?Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Dolor voluptatibus,
+              pariatur eveniet voluptates ipsa nesciunt nisi consectetur quam
+              molestias rem totam illum enim quos. Quis unde sequi alias non
+              vero?Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Dolor voluptatibus, pariatur eveniet voluptates ipsa nesciunt nisi
+              consectetur quam molestias rem totam illum enim quos. Quis unde
+              sequi alias non vero?Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Dolor voluptatibus, pariatur eveniet voluptates
+              ipsa nesciunt nisi consectetur quam molestias rem totam illum enim
+              quos. Quis unde sequi alias non vero?
             </p>
           </div>
 
@@ -70,6 +88,8 @@
                 class="text-custom-green font-bold relative overflow-hidden"
               >
                 Partager
+                <!-- AddToAny BEGIN -->
+                <!-- AddToAny END -->
                 <span
                   class="absolute bottom-0 left-0 w-full h-0.5 bg-custom-green transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100 origin-left"
                 ></span>
