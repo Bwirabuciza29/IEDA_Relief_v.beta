@@ -1,7 +1,7 @@
 <template>
   <section class="bg-green-50">
     <div class="p-8 mt-16">
-      <div class="mj-container">
+      <div class="mj-container hidden sm:block">
         <!-- Début Actualités -->
         <transition-group
           name="fade"
@@ -157,11 +157,11 @@
     <!-- contenu du work -->
     <div class="mj-container my-10 relative">
       <!-- Image filigranne au coin supérieur à gauche -->
-      <div class="absolute -top-8 -left-24 w-28 h-28 hidden sm:block">
+      <div class="absolute -top-8 -left-48 w-48 h-48 hidden sm:block z-10">
         <img
-          src="/img/Titik-titik.png"
+          src="/img/sha.png"
           alt="Filigrane haut gauche"
-          class="w-full h-full object-contain opacity-50"
+          class="w-full h-full object-contain opacity-20"
         />
       </div>
 
@@ -342,12 +342,11 @@
         </div>
       </div>
       <!-- Contenu principal -->
-      <!-- Image filigranne au coin inférieur à droite -->
-      <div class="absolute -bottom-8 -right-24 w-28 h-28 hidden sm:block">
+      <div class="absolute -bottom-8 -right-48 w-48 h-48 hidden sm:block">
         <img
-          src="/img/Titik-titik.png"
+          src="/img/sha.png"
           alt="Filigrane bas droite"
-          class="w-full h-full object-contain opacity-50"
+          class="w-full h-full object-contain opacity-20"
         />
       </div>
     </div>
