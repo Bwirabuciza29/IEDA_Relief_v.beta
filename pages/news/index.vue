@@ -1,12 +1,12 @@
 <template>
   <section class="bg-green-50">
-    <div class="p-8 mt-20 z-10">
+    <div class="p-8 mt-16">
       <div class="mj-container">
         <!-- Début Actualités -->
         <transition-group
           name="fade"
           tag="div"
-          class="flex bg-custom-green text-white rounded-lg shadow-lg overflow-hidden h-80"
+          class="flex bg-custom-green text-white overflow-hidden h-80"
           v-for="article in currentArticles"
           :key="article.id"
         >
@@ -166,11 +166,180 @@
       </div>
 
       <!-- Contenu principal -->
-      <div class="bg-white py-10">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias
-        facere a ut, reiciendis recusandae, dolorum itaque sequi voluptatum
-        neque velit reprehenderit dicta ipsum quidem, rerum ratione
-        necessitatibus expedita! In, cupiditate!
+      <div class="bg-white p-4">
+        <div class="mb-8 flex items-center justify-between space-x-4">
+          <div class="whitespace-nowrap aos-init aos-animate">
+            <h2
+              class="flex items-center justify-start text-xl font-semibold text-bleu sm:text-2xl"
+            >
+              <span data-v-8f1205ab="">Nos Blogs</span>
+            </h2>
+          </div>
+          <div class="relative mt-1 h-4 w-full">
+            <div
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
+            ></div>
+          </div>
+        </div>
+        <div class="container mx-auto p-4">
+          <!-- Onglets pour les pays -->
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:justify-center lg:space-x-4 mb-6"
+          >
+            <div
+              v-for="(pays, index) in listeDesPays"
+              :key="`tab-${index}`"
+              @click="changerFiltre(pays)"
+              class="relative cursor-pointer px-4 py-2 text-sm font-semibold transition duration-300 text-center"
+              :class="[
+                filtrePays === pays
+                  ? 'text-green-600 font-bold bg-green-100'
+                  : 'text-gray-700 hover:text-green-600',
+              ]"
+            >
+              {{ pays }}
+              <span
+                v-if="filtrePays === pays"
+                class="absolute bottom-0 left-0 h-[2px] bg-green-600 transition-all duration-300"
+                :style="{ width: '100%' }"
+              ></span>
+              <span
+                v-else
+                class="absolute bottom-0 left-0 h-[2px] bg-transparent transition-all duration-300 group-hover:w-full"
+              ></span>
+            </div>
+          </div>
+
+          <!-- Articles affichés avec transition -->
+          <Transition name="slide" mode="out-in">
+            <div
+              key="filtrePays"
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
+              <div
+                v-for="(article, index) in articlesAffiches"
+                :key="`article-${index}`"
+                class="group border overflow-hidden bg-white hover:shadow-lg transition duration-300"
+              >
+                <!-- Image avec overlay -->
+                <div class="relative">
+                  <img
+                    :src="article.image"
+                    :alt="article.titre"
+                    class="w-full h-56 object-cover transform group-hover:scale-110 transition duration-300"
+                  />
+                  <!-- Catégorie sur l'image à droite -->
+                  <span
+                    class="absolute top-4 right-4 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full"
+                  >
+                    {{ article.categorie }}
+                  </span>
+                </div>
+
+                <!-- Contenu de la carte -->
+                <div class="p-4">
+                  <h2 class="text-lg font-bold text-gray-800 mb-2 truncate">
+                    {{ article.titre }}
+                  </h2>
+                  <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                    {{ article.description }}
+                  </p>
+                  <!-- Boutons en bas -->
+                  <div class="flex items-center justify-between">
+                    <!-- Bouton Lire Plus avec Soulignement animé -->
+                    <button
+                      @click="lirePlus(article.slug)"
+                      class="flex items-center text-custom-green font-semibold hover:text-custom-green transition duration-300 group"
+                    >
+                      <span class="relative">
+                        Lire plus
+                        <span
+                          class="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-green-400 to-green-600 transition-all duration-300 group-hover:w-full"
+                        ></span>
+                      </span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="ml-2 w-4 h-4 transform group-hover:rotate-45 transition duration-300"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m4.5 4.5 15 15m0 0V8.25m0 11.25H8.25"
+                        />
+                      </svg>
+                    </button>
+
+                    <!-- Date de l'article -->
+                    <span
+                      class="text-gray-500 text-sm flex items-center space-x-2 bg-gray-100 p-2 rounded-md"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-5 h-5"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                        />
+                      </svg>
+                      <span>{{ article.date }}</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Transition>
+
+          <!-- Pagination avec transitions -->
+          <div class="flex justify-center items-center mt-6 space-x-4">
+            <!-- Bouton Précédent -->
+            <div
+              @click="pagePrecedente"
+              :class="[
+                'flex items-center justify-center w-10 h-10 rounded-full cursor-pointer transition-all duration-300',
+                pageActuelle === 1
+                  ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                  : 'bg-green-600 text-white hover:bg-green-700',
+              ]"
+            >
+              <i class="fas fa-chevron-left"></i>
+            </div>
+
+            <!-- Indicateur de page -->
+            <span class="text-gray-700 font-semibold text-sm sm:text-base">
+              Page {{ pageActuelle }} / {{ nombreTotalPages }}
+            </span>
+
+            <!-- Bouton Suivant -->
+            <div
+              @click="pageSuivante"
+              :class="[
+                'flex items-center justify-center w-10 h-10 rounded-full cursor-pointer transition-all duration-300',
+                pageActuelle === nombreTotalPages
+                  ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                  : 'bg-green-600 text-white hover:bg-green-700',
+              ]"
+            >
+              <i class="fas fa-chevron-right"></i>
+            </div>
+          </div>
+        </div>
+        <div class="relative mt-1 h-4 w-full">
+          <div
+            class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
+          ></div>
+        </div>
       </div>
       <!-- Contenu principal -->
       <!-- Image filigranne au coin inférieur à droite -->
@@ -184,13 +353,21 @@
     </div>
     <hr class="mj-container" />
     <!-- Parteners -->
+    <div class="my-16">
+      <LogOurs />
+    </div>
+    <div>
+      <LogLogger />
+    </div>
+    <!-- Footer -->
+    <div class="mt-16">
+      <laster />
+    </div>
   </section>
 </template>
 
 <script setup>
-const { t, locale } = useI18n();
-import { ref, computed } from "vue";
-
+// Liste des articles
 const articles = ref([
   {
     id: 1,
@@ -200,65 +377,131 @@ const articles = ref([
     image: "/img/1.jpg",
     date: "2025-01-10",
     categorie: "Actualité",
+    pays: "DRC",
   },
   {
     id: 2,
     titre: "Deuxième Article",
-    slug: "Deuxième Article",
+    slug: "deuxieme-article",
     description: "Description pour le deuxième article.",
     image: "/img/2.jpg",
     date: "2025-01-09",
     categorie: "Tech",
+    pays: "Burkina Faso",
   },
   {
     id: 3,
     titre: "Troisième Article",
-    slug: "Troisième Article",
+    slug: "troisieme-article",
     description:
       "Un aperçu approfondi sur les dernières tendances en technologie.",
     image: "/img/3.jpg",
     date: "2025-01-12",
     categorie: "Tech",
+    pays: "Cameroon",
   },
   {
     id: 4,
     titre: "Quatrième Article",
-    slug: "Quatrième Article",
+    slug: "quatrieme-article",
     description:
       "Découvrez les impacts de l'intelligence artificielle sur notre quotidien.",
     image: "/img/4.jpg",
     date: "2025-01-14",
     categorie: "Innovation",
+    pays: "Niger",
   },
   {
     id: 5,
     titre: "Cinquième Article",
-    slug: "Cinquième Article",
+    slug: "cinquieme-article",
     description: "Les meilleures pratiques pour le développement web moderne.",
     image: "/img/5.jpg",
     date: "2025-01-15",
     categorie: "Web",
+    pays: "RCA",
   },
   {
     id: 6,
     titre: "Sixième Article",
-    slug: "Sixième Article",
+    slug: "sixieme-article",
     description: "Comment sécuriser vos données personnelles en ligne.",
     image: "/img/6.jpg",
     date: "2025-01-16",
     categorie: "Sécurité",
+    pays: "Mali",
   },
   {
     id: 7,
     titre: "Septième Article",
-    slug: "Septième Article",
+    slug: "septieme-article",
     description: "L'évolution des frameworks JavaScript en 2025.",
     image: "/img/7.jpg",
     date: "2025-01-17",
     categorie: "Tech",
+    pays: "DRC",
   },
 ]);
 
+// Liste des pays
+const listeDesPays = [
+  "All",
+  "DRC",
+  "Burkina Faso",
+  "Cameroon",
+  "Niger",
+  "RCA",
+  "Mali",
+];
+
+// Filtre pays avec vérification côté client
+const filtrePays = ref("All");
+onMounted(() => {
+  if (typeof localStorage !== "undefined") {
+    filtrePays.value = localStorage.getItem("filtrePays") || "All";
+  }
+});
+
+// Articles filtrés
+const articlesFiltres = computed(() => {
+  return filtrePays.value === "All"
+    ? articles.value
+    : articles.value.filter((article) => article.pays === filtrePays.value);
+});
+
+// Gestion de la pagination
+const pageActuelle = ref(1);
+const articlesParPage = 6;
+const nombreTotalPages = computed(() =>
+  Math.ceil(articlesFiltres.value.length / articlesParPage)
+);
+const articlesAffiches = computed(() => {
+  const debut = (pageActuelle.value - 1) * articlesParPage;
+  return articlesFiltres.value.slice(debut, debut + articlesParPage);
+});
+
+// Gestion du filtre
+const changerFiltre = (pays) => {
+  filtrePays.value = pays;
+  // Réinitialiser la pagination
+  pageActuelle.value = 1;
+  if (typeof localStorage !== "undefined") {
+    localStorage.setItem("filtrePays", pays);
+  }
+};
+
+// Gestion des pages
+const pageSuivante = () => {
+  if (pageActuelle.value < nombreTotalPages.value) pageActuelle.value++;
+};
+const pagePrecedente = () => {
+  if (pageActuelle.value > 1) pageActuelle.value--;
+};
+
+// Redirection vers l'article
+const lirePlus = (slug) => {
+  navigateTo(`/news/${slug}`);
+}; // POUR LE TITRE
 const currentPage = ref(1);
 const articlesPerPage = 1;
 
@@ -297,5 +540,13 @@ const readMore = (slug) => {
 .fade-leave-to {
   opacity: 0;
   transform: translateY(-10px);
+}
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.5s ease;
+}
+.slide-enter,
+.slide-leave-to {
+  transform: translateX(100%);
 }
 </style>
