@@ -157,7 +157,7 @@
     <!-- contenu du work -->
     <div class="mj-container my-10 relative">
       <!-- Image filigranne au coin supérieur à gauche -->
-      <div class="absolute -top-8 -left-48 w-48 h-48 hidden sm:block z-10">
+      <div class="absolute -top-8 -left-28 w-28 h-28 hidden sm:block z-10">
         <img
           src="/img/sha.png"
           alt="Filigrane haut gauche"
@@ -342,7 +342,7 @@
         </div>
       </div>
       <!-- Contenu principal -->
-      <div class="absolute -bottom-8 -right-48 w-48 h-48 hidden sm:block">
+      <div class="absolute -bottom-8 -right-28 w-28 h28 hidden sm:block">
         <img
           src="/img/sha.png"
           alt="Filigrane bas droite"

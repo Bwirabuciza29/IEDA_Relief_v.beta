@@ -1,4 +1,9 @@
 export default defineNuxtConfig({
+  // module options
+  socialShare: {
+    baseUrl: "https://ieda-relief-v-2-0.vercel.app/news",
+    // other optional module options
+  },
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
   css: ["~/assets/css/main.css", "~/assets/css/global.css"],
@@ -80,7 +85,11 @@ export default defineNuxtConfig({
   },
 
   // Pour la traduction
-  modules: ["@nuxtjs/i18n", "@nuxt/image"],
+  modules: [
+    "@nuxtjs/i18n",
+    "@nuxt/image",
+    "@stefanobartoletti/nuxt-social-share",
+  ],
 
   i18n: {
     lazy: true,

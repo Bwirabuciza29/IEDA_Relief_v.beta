@@ -2,7 +2,7 @@
   <div>
     <div class="mj-container my-10 relative mt-24">
       <!-- Image filigranne au coin supérieur à gauche -->
-      <div class="absolute -top-8 -left-36 w-36 h-36 hidden sm:block z-10">
+      <div class="absolute -top-8 -left-28 w-28 h-28 hidden sm:block z-10">
         <img
           src="/img/sha.png"
           alt="Filigrane haut gauche"
@@ -84,16 +84,80 @@
             </p>
 
             <div class="flex items-center space-x-1 group">
-              <span
-                class="text-custom-green font-bold relative overflow-hidden"
-              >
-                Partager
-                <!-- AddToAny BEGIN -->
-                <!-- AddToAny END -->
-                <span
-                  class="absolute bottom-0 left-0 w-full h-0.5 bg-custom-green transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100 origin-left"
-                ></span>
-              </span>
+              <div class="relative inline-block">
+                <!-- Bouton Partager -->
+                <button
+                  @click="toggleMenu"
+                  class="text-custom-green font-bold relative group"
+                >
+                  Partager
+                  <span
+                    class="absolute bottom-0 left-0 w-full h-0.5 bg-custom-green transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100 origin-left"
+                  ></span>
+                </button>
+
+                <!-- Menu de partage (au-dessus) -->
+                <div
+                  v-if="menuOpen"
+                  class="absolute bottom-full mb-2 w-auto border bg-green-50 rounded-lg z-10 transition-transform duration-300 ease-out"
+                  :class="
+                    menuOpen
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 translate-y-2'
+                  "
+                >
+                  <ul class="flex flex-col p-4 space-y-2">
+                    <li>
+                      <SocialShare
+                        :label="false"
+                        network="email"
+                        class="flex items-center space-x-2 text-custom-green hover:text-red-600 hover:rotate-45 transition-transform duration-200"
+                      >
+                      </SocialShare>
+                    </li>
+
+                    <li>
+                      <SocialShare
+                        :label="false"
+                        network="whatsapp"
+                        class="flex items-center space-x-2 text-custom-green hover:text-green-600 hover:rotate-45 transition-transform duration-200"
+                      >
+                      </SocialShare>
+                    </li>
+                    <li>
+                      <SocialShare
+                        :label="false"
+                        network="facebook"
+                        class="flex items-center space-x-2 text-custom-green hover:text-blue-600 hover:rotate-45 transition-transform duration-200"
+                      >
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                      </SocialShare>
+                    </li>
+                    <li>
+                      <SocialShare
+                        network="x"
+                        :label="false"
+                        class="flex items-center space-x-2 text-custom-green hover:text-gray-600 hover:rotate-45 transition-transform duration-200"
+                      >
+                        <i class="fab fa-x-twitter"></i>
+                        <span>X</span>
+                      </SocialShare>
+                    </li>
+                    <li>
+                      <SocialShare
+                        network="linkedin"
+                        :label="false"
+                        class="flex items-center space-x-2 text-custom-green hover:text-blue-700 hover:rotate-45 transition-transform duration-200"
+                      >
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                      </SocialShare>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
               <img src="/img/an.gif" alt="Partager" class="w-10 h-10 -mt-3" />
             </div>
           </div>
@@ -110,7 +174,7 @@
         </div>
       </div>
       <!-- Contenu principal -->
-      <div class="absolute -bottom-8 -right-36 w-36 h-36 hidden sm:block">
+      <div class="absolute -bottom-8 -right-28 w-28 h28 hidden sm:block">
         <img
           src="/img/sha.png"
           alt="Filigrane bas droite"
@@ -219,6 +283,11 @@ onMounted(() => {
 // Retour à la page précédente
 const goBack = () => {
   router.back();
+};
+const menuOpen = ref(false);
+
+const toggleMenu = () => {
+  menuOpen.value = !menuOpen.value;
 };
 </script>
 

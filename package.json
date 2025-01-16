@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.1.5",
+    "@stefanobartoletti/nuxt-social-share": "^1.2.1",
     "aos": "^2.3.4",
     "feather-icons": "^4.29.2",
     "gsap": "^3.12.5",
