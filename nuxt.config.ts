@@ -89,6 +89,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@nuxt/image",
     "@stefanobartoletti/nuxt-social-share",
+    "nuxt-directus",
   ],
 
   i18n: {
