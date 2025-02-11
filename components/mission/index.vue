@@ -43,12 +43,18 @@
         <p class="text-gray-600 mt-4 text-justify">
           {{ tab.description }}
         </p>
-        <NuxtLink :to="localPagePath('about')">
-          <button
-            class="mt-6 px-6 py-3 text-sm bg-custom-green text-white rounded-lg hover:bg-green-600 transition"
+        <NuxtLink
+          :to="localPagePath('about')"
+          class="mt-4 group relative inline-block overflow-hidden rounded-lg border-2 border-green-100 bg-custom-green px-4 py-4 text-sm font-semibold text-white sm:px-6 sm:py-3 sm:text-base"
+        >
+          <span
+            class="relative z-10 translate-x-full transform transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:text-green-700"
           >
             {{ t("mission.btn", "View More") }}
-          </button>
+          </span>
+          <div
+            class="absolute inset-0 h-full w-full translate-x-full transform bg-green-100 transition-transform duration-300 ease-in-out group-hover:translate-x-0"
+          ></div>
         </NuxtLink>
       </div>
 
