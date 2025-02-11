@@ -115,7 +115,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
 const { t, locale } = useI18n();
 const title_1 = ref(t("hero.title_1"));
 const title_2 = ref(t("hero.title_2"));
