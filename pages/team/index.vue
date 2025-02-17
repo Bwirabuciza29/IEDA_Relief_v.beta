@@ -488,24 +488,6 @@ const countries = [
     },
   },
   {
-    name: "Belgium",
-    flag: "https://flagcdn.com/be.svg",
-    image: "https://via.placeholder.com/300x200?text=Belgium",
-    chief: {
-      title: t("leader.title_2"),
-      image: "https://via.placeholder.com/150?text=Chef+Belgique",
-      name: "Jean Dupont",
-      gender: "Male",
-      description: "Expert en relations internationales et gestion de projet.",
-    },
-    details: {
-      address: "Rue des Hirondelles, 1 1000 Bruxelles / BELGIQUE",
-      tel: "+32(0) 497 15 92 98",
-      gsm: "+32(0) 439 40 59 99",
-      email: "brusselsoffice@iedarelief.org",
-    },
-  },
-  {
     name: "Burkina Faso",
     flag: "https://flagcdn.com/bf.svg",
     image: "/img/burk.jpg",
@@ -567,7 +549,7 @@ const countries = [
   {
     name: "DRC",
     flag: "https://flagcdn.com/cd.svg",
-    image: "https://via.placeholder.com/300x200?text=DR+Congo",
+    image: "/img/gogo.png",
     chief: {
       title: t("leader.title_2"),
       image: "/img/francois.jpg",
