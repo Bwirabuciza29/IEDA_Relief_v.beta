@@ -51,7 +51,12 @@
               >
                 <i class="fas fa-envelope"></i>
               </span>
-              <span>philma@iedarelief.org</span>
+              <a
+                href="mailto:info@iedarelief.org"
+                class="relative text-custom-green after:block after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-in-out hover:after:w-full"
+              >
+                info@iedarelief.org
+              </a>
             </p>
             <p class="flex items-center space-x-3">
               <span
@@ -59,8 +64,14 @@
               >
                 <i class="fas fa-phone-alt"></i>
               </span>
-              <span> +1 713-774-2529</span>
+              <a
+                href="tel:+17137742522"
+                class="relative text-custom-green after:block after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-in-out hover:after:w-full"
+              >
+                +1 713 774 2522
+              </a>
             </p>
+
             <p class="flex items-center space-x-3">
               <span
                 class="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600"

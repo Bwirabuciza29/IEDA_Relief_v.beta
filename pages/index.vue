@@ -99,6 +99,7 @@
     <div class="my-16" data-aos="zoom-in">
       <LogOurs />
     </div>
+
     <div class="my-16" data-aos="zoom-in">
       <PartenersSupport />
     </div>

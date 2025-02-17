@@ -43,14 +43,28 @@
     <!-- Fin Top Title -->
     <div class="mj-container my-16">
       <div class="my-8 p-4 bg-white rounded-lg md:p-6 lg:p-8">
+        <div class="relative mt-1 h-4 w-full">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
+          ></div>
+        </div>
         <h2
-          class="text-xl text-black font-bold text-center mb-4 sm:text-2xl md:text-3xl lg:text-4xl"
+          class="text-xl text-black font-bold text-center mb-4 mt-4 sm:text-2xl md:text-3xl lg:text-4xl"
         >
           <span> {{ t("about.ab_1") }} </span>
           <span class="text-custom-green">({{ t("about.ab_2") }}</span>
           <span class="text-custom-blue"> {{ t("about.ab_3") }})</span>
         </h2>
         <p class="text-justify">{{ t("about.ab_4") }}</p>
+        <div class="relative mt-1 h-4 w-full">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
+          ></div>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

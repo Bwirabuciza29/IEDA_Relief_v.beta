@@ -69,7 +69,7 @@
       </h1>
 
       <!-- img debut -->
-      <div class="mj-container my-4">
+      <div class="mj-container my-4 bg-white p-2">
         <!-- Liste des pays -->
         <div
           class="grid grid-cols-2 gap-4 md:flex md:justify-center md:space-x-4 mb-8 mt-8"
@@ -88,7 +88,13 @@
             <span class="font-medium">{{ country.name }}</span>
           </div>
         </div>
-
+        <div class="relative mt-1 mb-4 h-4 w-full">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
+          ></div>
+        </div>
         <!-- Loader -->
         <div v-show="isLoading" class="loader"></div>
         <div>
@@ -145,6 +151,13 @@
             </span>
             {{ t("dialogue.title_2") }}
           </div>
+        </div>
+        <div class="relative mt-1 mb-4 h-4 w-full">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
+          ></div>
         </div>
         <!-- Liste des images -->
       </div>

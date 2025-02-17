@@ -2,6 +2,13 @@
   <div class="mj-container bg-white rounded-lg py-4">
     <!-- Operational Footprint Section -->
     <section>
+      <div class="relative mt-1 mb-4 h-4 w-full">
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
+        ></div>
+      </div>
       <h2
         class="text-3xl font-bold text-gray-800 text-center border-b pb-2 mb-8"
       >
@@ -172,6 +179,13 @@
           <span>{{ client }}</span>
         </li>
       </ul>
+      <div class="relative mt-1 mb-4 h-4 w-full">
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
+        ></div>
+      </div>
     </section>
   </div>
 </template>
