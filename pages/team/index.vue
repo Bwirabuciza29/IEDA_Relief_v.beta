@@ -206,7 +206,11 @@
     <div class="mj-container my-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <!-- Liste des drapeaux -->
-        <div class="col-span-1 bg-white p-4 rounded-lg">
+        <div class="col-span-1 bg-white p-4 rounded-lg relative">
+          <div
+            class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-no-repeat bg-bottom bg-contain opacity-20"
+            style="background-image: url('/img/ref.jpg')"
+          ></div>
           <h2 class="text-lg font-bold text-center mb-4">
             {{ t("team.p_2") }}
           </h2>
