@@ -492,7 +492,7 @@ const countries = [
     flag: "https://flagcdn.com/bf.svg",
     image: "/img/burk.jpg",
     chief: {
-      title: t("leader.title_2"),
+      title: t("leader.title_4"),
       image: "/img/bintu.jpg",
       name: "Micka BINTU",
       gender: "Female",
@@ -531,7 +531,7 @@ const countries = [
     flag: "https://flagcdn.com/cm.svg",
     image: "/img/camero.jpg",
     chief: {
-      title: t("leader.title_2"),
+      title: t("leader.title_3"),
       image: "/img/dav.jpg",
       name: "David KISUBA",
       gender: "Male",
@@ -571,7 +571,7 @@ const countries = [
     flag: "https://flagcdn.com/ne.svg",
     image: "/img/niamey.jpg",
     chief: {
-      title: t("leader.title_2"),
+      title: t("leader.title_3"),
       image: "/img/cis.jpg",
       name: "Bakary CISSE",
       postnom: "Diop",
@@ -593,7 +593,7 @@ const countries = [
     flag: "https://flagcdn.com/ml.svg",
     image: "img/mali.jpg",
     chief: {
-      title: t("leader.title_2"),
+      title: t("leader.title_3"),
       image: "/img/audacieux.jpg",
       name: "Audacieux KITSA",
       gender: "Male",
