@@ -1,11 +1,11 @@
 <template>
   <section class="bg-green-50">
     <div class="relative bg-custom-green p-8 mx-4 rounded-lg mt-16">
-      <img
+      <!-- <img
         src="/img/Vectoria.png"
         alt="Decorative Vector"
         class="absolute top-0 left-64 h-full w-auto hidden sm:block z-10"
-      />
+      /> -->
       <div class="mj-container">
         <div class="relative">
           <div class="rounded-lg flex flex-col md:flex-row overflow-hidden">
