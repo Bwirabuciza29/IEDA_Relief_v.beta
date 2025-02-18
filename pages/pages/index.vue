@@ -134,7 +134,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
-const { t, locale } = useI18n();
+const { t, locale } = useI18n(); 
 
 // Filtres disponibles
 const filters = [

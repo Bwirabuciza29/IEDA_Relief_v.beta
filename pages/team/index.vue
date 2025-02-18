@@ -354,6 +354,7 @@
 </template>
 <script setup>
 const { t } = useI18n();
+
 // Les catégories
 const categories = [t("team.btn_1"), t("team.btn_2"), t("team.btn_3")];
 
@@ -507,7 +508,7 @@ const countries = [
     },
   },
   {
-    name: "C.A.R",
+    name: t("pays.rca"),
     flag: "https://flagcdn.com/cf.svg",
     image: "/img/r.jpg",
     chief: {
@@ -527,7 +528,7 @@ const countries = [
     },
   },
   {
-    name: "Cameroun",
+    name: t("pays.cam"),
     flag: "https://flagcdn.com/cm.svg",
     image: "/img/camero.jpg",
     chief: {
@@ -547,7 +548,7 @@ const countries = [
     },
   },
   {
-    name: "DRC",
+    name: t("pays.drc"),
     flag: "https://flagcdn.com/cd.svg",
     image: "/img/gogo.png",
     chief: {

@@ -343,5 +343,10 @@
   "map": {
     "title_1": "Dinámico en Tiempo Real",
     "title_2": "Mapa"
+  },
+  "pays": {
+    "cam": "Cameroon",
+    "rca": "Central African Republic",
+    "drc": "Democratic Republic of the Congo"
   }
 }

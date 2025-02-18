@@ -340,5 +340,10 @@
   "map": {
     "title_1": "实时动态",
     "title_2": "地图"
+  },
+  "pays": {
+    "cam": "Cameroon",
+    "rca": "Central African Republic",
+    "drc": "Democratic Republic of the Congo"
   }
 }

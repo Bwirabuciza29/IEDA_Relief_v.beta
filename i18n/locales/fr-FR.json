@@ -341,5 +341,10 @@
   "map": {
     "title_1": "Carte Dynamique en",
     "title_2": " Temps Réel"
+  },
+  "pays": {
+    "cam": "Cameroun",
+    "rca": "République centrafricaine",
+    "drc": "République démocratique du Congo"
   }
 }
