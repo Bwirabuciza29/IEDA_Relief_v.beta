@@ -4,11 +4,11 @@
       <div
         class="relative bg-[url('/img/r.jpg')] bg-cover bg-center bg-no-repeat py-8 mx-4 md:mx-8 lg:mx-16 rounded-lg mt-20 shadow-lg"
       >
-        <img
+        <!-- <img
           src="/img/Vectoria.png"
           alt="Decorative Vector"
           class="absolute top-0 left-40 h-full w-auto hidden sm:block z-10"
-        />
+        /> -->
         <div class="mj-container">
           <div class="relative">
             <div class="rounded-lg flex flex-col md:flex-row overflow-hidden">
@@ -29,7 +29,13 @@
           </div>
         </div>
       </div>
-      <div class="mj-container my-12">
+      <div class="mj-container my-12 bg-white p-4 rounded-lg">
+        <div class="relative mb-4 h-4 w-full">
+          <div
+            data-aos-anchor-placement="top-bottom"
+            class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
+          ></div>
+        </div>
         <!-- Détails en haut avec icône -->
         <div class="flex items-center space-x-4 text-gray-600 text-sm">
           <div class="relative group inline-block">
@@ -38,8 +44,7 @@
               to="/pages"
               class="relative inline-block bg-custom-green text-white px-3 py-1 rounded-full font-medium group transition duration-300"
             >
-              retour
-
+              {{ t("back.rtn") }}
               <!-- Animation de soulignement -->
             </nuxt-link>
           </div>
@@ -106,8 +111,15 @@
             </div>
           </div>
         </div>
+
         <!-- Contenu supplémentaire sous les images -->
         <div class="mt-12">
+          <div class="relative mb-4 h-4 w-full">
+            <div
+              data-aos-anchor-placement="top-bottom"
+              class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
+            ></div>
+          </div>
           <div class="justify mb-8">
             <p class="text-gray-700 leading-relaxed text-justify">
               {{ t("ope.desc") }}
@@ -257,7 +269,7 @@
         </div>
 
         <!-- Formulaire "Leave a Reply" -->
-        <div class="mt-8 flex justify-center">
+        <div class="mt-8 flex justify-center bg-green-50 p-2">
           <div class="w-full max-w-md">
             <!-- Réduit la largeur et centre le contenu -->
             <h2 class="text-4xl font-bold mb-4 text-center">

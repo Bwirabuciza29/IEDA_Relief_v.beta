@@ -347,5 +347,8 @@
     "cam": "Cameroon",
     "rca": "Central African Republic",
     "drc": "Democratic Republic of the Congo"
+  },
+  "back": {
+    "rtn": "Back"
   }
 }
