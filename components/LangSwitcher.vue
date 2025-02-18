@@ -95,7 +95,7 @@ const flags = {
   "fr-FR": "https://flagcdn.com/w20/fr.png",
   "es-ES": "https://flagcdn.com/w20/es.png",
   "ar-AR": "https://flagcdn.com/w20/sa.png",
-  "sw-CD": "https://flagcdn.com/w20/cd.png",
+  "sw-CD": "https://flagcdn.com/w20/tz.png",
   "pt-PT": "https://flagcdn.com/w20/pt.png",
   "zh-ZH": "https://flagcdn.com/w20/cn.png",
 };
