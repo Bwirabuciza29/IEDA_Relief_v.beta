@@ -206,14 +206,11 @@ const previous = [
   { name: "Haiti", code: "ht" },
   { name: "Philippines", code: "ph" },
   { name: "Nigeria", code: "ng" },
-  { name: "Sierra Leone", code: "sl" },
+  { name: "Ivory Coast", code: "ci" },
   { name: "Senegal", code: "sn" },
 ];
 
 const pendingRegistration = [
-  { name: "Ivory Coast", code: "ci" },
-  { name: "Liberia", code: "lr" },
-  { name: "Philippines", code: "ph" },
   { name: "Burundi", code: "bi" },
   { name: "Chad", code: "td" },
   { name: "Mozambique", code: "mz" },
