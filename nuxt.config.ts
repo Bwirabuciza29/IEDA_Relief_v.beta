@@ -91,20 +91,27 @@ export default defineNuxtConfig({
     "@stefanobartoletti/nuxt-social-share",
     "nuxt-directus",
   ],
+  runtimeConfig: {
+    public: {
+      directus: {
+        url: "https://admin.iedarelief.org",
+      },
+    },
+  },
 
   i18n: {
     lazy: true,
     langDir: "locales",
     strategy: "prefix_except_default",
     locales: [
-      { code: "en-UK", iso: "en-UK", name: "English (US)", file: "en-UK.json" },
-      { code: "fr-FR", iso: "fr-FR", name: "French", file: "fr-FR.json" },
+      { code: "en-UK", iso: "en-UK", name: "English (UK)", file: "en-UK.json" },
+      { code: "fr-FR", iso: "fr-FR", name: "français", file: "fr-FR.json" },
       { code: "es-ES", iso: "es-ES", name: "Español", file: "es-ES.json" },
-      { code: "ar-AR", iso: "ar-AR", name: "Arabic", file: "ar-AR.json" },
+      { code: "ar-AR", iso: "ar-AR", name: "Arabe", file: "ar-AR.json" },
       {
         code: "sw-CD",
         iso: "sw-CD",
-        name: "Swahili (Tanzania)",
+        name: "Swahili (Congo)",
         file: "sw-CD.json",
       },
       { code: "pt-PT", iso: "pt-PT", name: "Portugues", file: "pt-PT.json" },

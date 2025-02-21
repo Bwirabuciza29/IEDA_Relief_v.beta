@@ -40,8 +40,8 @@
         <div v-if="article" class="overflow-hidden">
           <!-- Image principale -->
           <img
-            :src="article.image"
-            alt="Image de l'article"
+            :src="`https://admin.iedarelief.org/assets/${article.coverImg}`"
+            :alt="article.titre"
             class="w-full h-64 object-cover"
           />
 
@@ -49,42 +49,25 @@
           <div class="flex flex-col bg-white my-4 p-6">
             <p class="text-sm text-gray-500 mb-2">
               <span class="fas fa-tag text-green-500 mr-2"></span>
-              {{ article.categorie }}
+              {{ article.categorie?.description }}
             </p>
             <h1 class="text-3xl font-bold text-gray-800 mb-4">
               {{ article.titre }}
             </h1>
 
-            <p class="text-gray-700 leading-relaxed text-justify">
-              {{ article.description }}
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-              voluptatibus, pariatur eveniet voluptates ipsa nesciunt nisi
-              consectetur quam molestias rem totam illum enim quos. Quis unde
-              sequi alias non vero?Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Dolor voluptatibus, pariatur eveniet voluptates
-              ipsa nesciunt nisi consectetur quam molestias rem totam illum enim
-              quos. Quis unde sequi alias non vero?Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Dolor voluptatibus, pariatur eveniet
-              voluptates ipsa nesciunt nisi consectetur quam molestias rem totam
-              illum enim quos. Quis unde sequi alias non vero?Lorem ipsum dolor
-              sit amet consectetur adipisicing elit. Dolor voluptatibus,
-              pariatur eveniet voluptates ipsa nesciunt nisi consectetur quam
-              molestias rem totam illum enim quos. Quis unde sequi alias non
-              vero?Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Dolor voluptatibus, pariatur eveniet voluptates ipsa nesciunt nisi
-              consectetur quam molestias rem totam illum enim quos. Quis unde
-              sequi alias non vero?Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Dolor voluptatibus, pariatur eveniet voluptates
-              ipsa nesciunt nisi consectetur quam molestias rem totam illum enim
-              quos. Quis unde sequi alias non vero?
-            </p>
+            <p
+              class="text-gray-700 leading-relaxed text-justify"
+              v-html="article.content"
+            ></p>
           </div>
 
           <!-- Bouton retour -->
           <div class="p-6 border-t flex justify-end items-center space-x-4">
             <p class="text-gray-600 text-sm">
               Publié le
-              <span class="font-semibold">{{ article.date }}</span>
+              <span class="font-semibold">{{
+                formatDateTime(article.date_created)
+              }}</span>
             </p>
 
             <div class="flex items-center space-x-1 group">
@@ -168,7 +151,7 @@
         </div>
 
         <div v-else class="text-center">
-          <p class="text-gray-500">Chargement de l'article...</p>
+          <p v-show="isLoading" class="text-gray-500 loader"></p>
         </div>
 
         <div class="relative mt-1 h-4 w-full">
@@ -188,114 +171,150 @@
     </div>
   </div>
 </template>
-
 <script setup>
 import { ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import { useRuntimeConfig } from "#app";
 
 const route = useRoute();
 const router = useRouter();
-
 const article = ref(null);
+const error = ref(null);
 
-const articles = ref([
-  {
-    id: 1,
-    titre: "Premier Article",
-    slug: "premier-article",
-    description: "Ceci est une brève description du premier article.",
-    image: "/img/1.jpg",
-    date: "2025-01-10",
-    categorie: "Actualité",
-    pays: "DRC",
-  },
-  {
-    id: 2,
-    titre: "Deuxième Article",
-    slug: "deuxieme-article",
-    description: "Description pour le deuxième article.",
-    image: "/img/2.jpg",
-    date: "2025-01-09",
-    categorie: "Tech",
-    pays: "Burkina Faso",
-  },
-  {
-    id: 3,
-    titre: "Troisième Article",
-    slug: "troisieme-article",
-    description:
-      "Un aperçu approfondi sur les dernières tendances en technologie.",
-    image: "/img/3.jpg",
-    date: "2025-01-12",
-    categorie: "Tech",
-    pays: "Cameroon",
-  },
-  {
-    id: 4,
-    titre: "Quatrième Article",
-    slug: "quatrieme-article",
-    description:
-      "Découvrez les impacts de l'intelligence artificielle sur notre quotidien.",
-    image: "/img/4.jpg",
-    date: "2025-01-14",
-    categorie: "Innovation",
-    pays: "Niger",
-  },
-  {
-    id: 5,
-    titre: "Cinquième Article",
-    slug: "cinquieme-article",
-    description: "Les meilleures pratiques pour le développement web moderne.",
-    image: "/img/5.jpg",
-    date: "2025-01-15",
-    categorie: "Web",
-    pays: "RCA",
-  },
-  {
-    id: 6,
-    titre: "Sixième Article",
-    slug: "sixieme-article",
-    description: "Comment sécuriser vos données personnelles en ligne.",
-    image: "/img/6.jpg",
-    date: "2025-01-16",
-    categorie: "Sécurité",
-    pays: "Mali",
-  },
-  {
-    id: 7,
-    titre: "Septième Article",
-    slug: "septieme-article",
-    description: "L'évolution des frameworks JavaScript en 2025.",
-    image: "/img/7.jpg",
-    date: "2025-01-17",
-    categorie: "Tech",
-    pays: "DRC",
-  },
-]);
+// Fonction pour récupérer un article par slug
+const fetchArticle = async () => {
+  try {
+    const slug = route.params.slug;
+    const config = useRuntimeConfig();
+    const directusUrl = config.public.directus.url;
 
-// Chargement de l'article à partir du slug
-onMounted(() => {
-  const slug = route.params.slug;
-  // Recherche par slug
-  article.value = articles.value.find((item) => item.slug === slug);
+    // Requête pour récupérer l'article avec son slug
+    const response = await fetch(
+      `${directusUrl}/items/article?filter[slug][_eq]=${slug}&fields=*,categorie.description,pays.designation`
+    );
 
-  if (!article.value) {
-    router.push("/news"); // Redirection si l'article n'existe pas
+    if (!response.ok) {
+      throw new Error("Erreur lors de la récupération de l'article.");
+    }
+
+    const data = await response.json();
+
+    if (data.data.length === 0) {
+      // Si aucun article trouvé, redirection vers la liste des articles
+      router.push("/news");
+    } else {
+      article.value = data.data[0];
+    }
+  } catch (err) {
+    error.value = err.message;
+    console.error(err);
   }
+};
+
+// Charger l'article au montage
+onMounted(() => {
+  fetchArticle();
 });
 
 // Retour à la page précédente
 const goBack = () => {
   router.back();
 };
-const menuOpen = ref(false);
 
+// Menu toggle (si nécessaire pour votre interface)
+const menuOpen = ref(false);
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value;
 };
+function formatDateTime(dateString) {
+  const date = new Date(dateString);
+  return new Intl.DateTimeFormat("fr-FR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(date);
+}
+const isLoading = ref(false);
+watch(
+  route,
+  () => {
+    isLoading.value = true;
+    setTimeout(() => {
+      isLoading.value = false;
+    }, 1000);
+  },
+  { immediate: true }
+);
 </script>
+
 
 <style>
 /* Font Awesome import */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+/* Loader Styles */
+.loader {
+  z-index: 99 !important;
+  width: 36px;
+  height: 36px;
+  display: block;
+  margin: 10px auto;
+  position: relative;
+  color: #f0efef;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  -webkit-animation: rotation 1s linear infinite;
+}
+
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  transform: scale(0.5) translate(0, 0);
+  background-color: #055fc5;
+  border-radius: 50%;
+  animation: animloader 1s infinite ease-in-out;
+  -webkit-transform: scale(0.5) translate(0, 0);
+  -moz-transform: scale(0.5) translate(0, 0);
+  -ms-transform: scale(0.5) translate(0, 0);
+  -o-transform: scale(0.5) translate(0, 0);
+}
+
+.loader::before {
+  background-color: #02ab4b;
+  transform: scale(0.5) translate(-36px, -36px);
+  -webkit-transform: scale(0.5) translate(-36px, -36px);
+  -moz-transform: scale(0.5) translate(-36px, -36px);
+  -ms-transform: scale(0.5) translate(-36px, -36px);
+  -o-transform: scale(0.5) translate(-36px, -36px);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes animloader {
+  50% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
 </style>
