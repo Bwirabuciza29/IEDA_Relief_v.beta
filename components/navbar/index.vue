@@ -212,8 +212,8 @@ function closeDropdown() {
 const menuItem = computed(() => [
   t("menu.home"),
   t("menu.about"),
-  t("menu.pages"),
   t("menu.news"),
+  t("menu.pages"),
 ]);
 const menuItems = computed(() => [
   t("menu.home"),
