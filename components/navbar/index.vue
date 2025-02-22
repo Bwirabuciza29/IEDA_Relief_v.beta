@@ -69,26 +69,26 @@
             >
               <!-- Lien "Work" -->
               <NuxtLink
-                :to="localPath(t('menu.works'))"
+                :to="localPath(t('menu.team'))"
                 class="px-4 py-2 hover:bg-green-100 hover:text-green-400"
                 :class="{
-                  'text-green-500': isActiveLink(localPath(t('menu.works'))),
+                  'text-green-500': isActiveLink(localPath(t('menu.team'))),
                 }"
                 @click="closeDropdown"
               >
-                {{ t("menu.works") }}
+                {{ t("menu.team") }}
               </NuxtLink>
 
               <!-- Lien "News" -->
               <NuxtLink
-                :to="localPath(t('menu.news'))"
+                :to="localPath(t('menu.images'))"
                 class="px-4 py-2 hover:bg-green-100 hover:text-green-400"
                 :class="{
-                  'text-green-500': isActiveLink(localPath(t('menu.news'))),
+                  'text-green-500': isActiveLink(localPath(t('menu.images'))),
                 }"
                 @click="closeDropdown"
               >
-                {{ t("menu.news") }}
+                {{ t("menu.images") }}
               </NuxtLink>
             </div>
           </div>
@@ -213,8 +213,7 @@ const menuItem = computed(() => [
   t("menu.home"),
   t("menu.about"),
   t("menu.pages"),
-  t("menu.team"),
-  t("menu.images"),
+  t("menu.news"),
 ]);
 const menuItems = computed(() => [
   t("menu.home"),
