@@ -219,7 +219,9 @@
               ></span>
             </div>
           </div>
-
+          <div v-if="loading" class="flex justify-center items-center py-10">
+            <div class="loader"></div>
+          </div>
           <!-- Articles affichés avec transition -->
           <Transition name="slide" mode="out-in">
             <div
@@ -308,6 +310,17 @@
               </div>
             </div>
           </Transition>
+          <div
+            v-if="!loading && articlesAffiches.length === 0"
+            class="text-center text-gray-500 py-10 font-semibold"
+          >
+            <img
+              src="/img/po.gif"
+              alt="Chargement"
+              class="mx-auto mb-4 w-24 h-24"
+            />
+            Aucun article disponible pour ce pays.
+          </div>
 
           <!-- Pagination avec transitions -->
           <div class="flex justify-center items-center mt-6 space-x-4">
@@ -383,6 +396,7 @@ const articles = ref([]);
 const paysList = ref([]);
 const categories = ref([]);
 const error = ref(null);
+const loading = ref(true);
 
 const filtrePays = ref("All");
 const pageActuelle = ref(1);
@@ -392,11 +406,11 @@ const currentPage = ref(1);
 
 // Fonction pour récupérer les options (pays et catégories)
 const fetchOptions = async () => {
+  loading.value = true;
   try {
     const config = useRuntimeConfig();
     const directusUrl = config.public.directus.url;
 
-    // Récupérer les articles avec leurs relations
     const articlesResponse = await fetch(
       `${directusUrl}/items/article?fields=*,categorie.description,pays.designation`
     );
@@ -405,14 +419,12 @@ const fetchOptions = async () => {
     const articlesData = await articlesResponse.json();
     articles.value = articlesData.data;
 
-    // Récupérer les pays
     const paysResponse = await fetch(`${directusUrl}/items/pays`);
     if (!paysResponse.ok)
       throw new Error("Erreur lors de la récupération des pays.");
     const paysData = await paysResponse.json();
     paysList.value = ["All", ...paysData.data.map((pays) => pays.designation)];
 
-    // Récupérer les catégories (optionnel)
     const categoriesResponse = await fetch(`${directusUrl}/items/categorie`);
     if (!categoriesResponse.ok)
       throw new Error("Erreur lors de la récupération des catégories.");
@@ -420,6 +432,8 @@ const fetchOptions = async () => {
     categories.value = categoriesData.data;
   } catch (err) {
     error.value = err.message;
+  } finally {
+    loading.value = false;
   }
 };
 
@@ -504,3 +518,71 @@ const formatDates = (date) => {
   return new Date(date).toLocaleDateString("fr-FR", options);
 };
 </script>
+<style>
+/* Font Awesome import */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+/* Loader Styles */
+.loader {
+  z-index: 99 !important;
+  width: 36px;
+  height: 36px;
+  display: block;
+  margin: 10px auto;
+  position: relative;
+  color: #f0efef;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  -webkit-animation: rotation 1s linear infinite;
+}
+
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  transform: scale(0.5) translate(0, 0);
+  background-color: #055fc5;
+  border-radius: 50%;
+  animation: animloader 1s infinite ease-in-out;
+  -webkit-transform: scale(0.5) translate(0, 0);
+  -moz-transform: scale(0.5) translate(0, 0);
+  -ms-transform: scale(0.5) translate(0, 0);
+  -o-transform: scale(0.5) translate(0, 0);
+}
+
+.loader::before {
+  background-color: #02ab4b;
+  transform: scale(0.5) translate(-36px, -36px);
+  -webkit-transform: scale(0.5) translate(-36px, -36px);
+  -moz-transform: scale(0.5) translate(-36px, -36px);
+  -ms-transform: scale(0.5) translate(-36px, -36px);
+  -o-transform: scale(0.5) translate(-36px, -36px);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes animloader {
+  50% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+</style>
