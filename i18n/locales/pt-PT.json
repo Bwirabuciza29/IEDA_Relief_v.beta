@@ -348,5 +348,14 @@
   },
   "back": {
     "rtn": "Voltar"
+  },
+  "news": {
+    "title": "Nossos Blogs",
+    "more": "Leia Mais",
+    "btn1": "Próximo",
+    "btn2": "Anterior",
+    "date": "Publicado em",
+    "rtn": "Voltar",
+    "prt": "Compartilhar"
   }
 }

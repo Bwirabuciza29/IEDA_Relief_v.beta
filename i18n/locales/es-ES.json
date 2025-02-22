@@ -351,5 +351,14 @@
   },
   "back": {
     "rtn": "Volver"
+  },
+  "news": {
+    "title": "Nuestros Blogs",
+    "more": "Leer Más",
+    "btn1": "Siguiente",
+    "btn2": "Anterior",
+    "date": "Publicado el",
+    "rtn": "Volver",
+    "prt": "Compartir"
   }
 }

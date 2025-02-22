@@ -350,5 +350,14 @@
   },
   "back": {
     "rtn": "Back"
+  },
+  "news": {
+    "title": "Our Blogs",
+    "more": "Read More",
+    "btn1": "Next",
+    "btn2": "Previous",
+    "date": "Published on",
+    "rtn": "Back",
+    "prt": "Share"
   }
 }

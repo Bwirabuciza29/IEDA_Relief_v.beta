@@ -18,14 +18,13 @@
               class="flex items-center justify-start text-xl font-bold text-bleu relative group cursor-pointer"
               @click="goBack"
             >
-              <span class="relative hover:text-custom-green">Retour</span>
+              <span class="relative hover:text-custom-green">
+                {{ t("news.rtn") }}</span
+              >
               <span
                 class="absolute bottom-0 left-0 w-0 h-[2px] bg-custom-green transition-all group-hover:w-full"
               ></span>
               <!-- Icône Font Awesome -->
-              <i
-                class="ml-2 fa fa-arrow-left transition-transform text-black duration-300 group-hover:rotate-180 hover:custom-green"
-              ></i>
             </h2>
           </div>
           <div class="relative mt-1 h-4 w-full">
@@ -64,7 +63,7 @@
           <!-- Bouton retour -->
           <div class="p-6 border-t flex justify-end items-center space-x-4">
             <p class="text-gray-600 text-sm">
-              Publié le
+              {{ t("news.date") }}
               <span class="font-semibold">{{
                 formatDateTime(article.date_created)
               }}</span>
@@ -77,7 +76,7 @@
                   @click="toggleMenu"
                   class="text-custom-green font-bold relative group"
                 >
-                  Partager
+                  {{ t("news.prt") }}
                   <span
                     class="absolute bottom-0 left-0 w-full h-0.5 bg-custom-green transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100 origin-left"
                   ></span>
@@ -175,7 +174,7 @@
 import { ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useRuntimeConfig } from "#app";
-
+const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
 const article = ref(null);

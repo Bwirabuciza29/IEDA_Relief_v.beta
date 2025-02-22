@@ -348,5 +348,14 @@
   },
   "back": {
     "rtn": "Rudi"
+  },
+  "news": {
+    "title": "Blogu Zetu",
+    "more": "Soma Zaidi",
+    "btn1": "Inayofuata",
+    "btn2": "Iliyotangulia",
+    "date": "Imechapishwa tarehe",
+    "rtn": "Rudi",
+    "prt": "Shiriki"
   }
 }

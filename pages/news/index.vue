@@ -55,8 +55,9 @@
                 data-aos="fade-up"
                 data-aos-anchor-placement="top-bottom"
               >
-                <span class="font-semibold"
-                  >Publié le {{ formatDate(article.date_created) }}</span
+                <span class="font-semibold">
+                  {{ t("news.date") }}
+                  {{ formatDate(article.date_created) }}</span
                 >
                 {{ article.resume }}
               </p>
@@ -67,7 +68,7 @@
                 @click="lirePlus(article.slug)"
               >
                 <span class="relative">
-                  Lire plus
+                  {{ t("news.more") }}
                   <span
                     class="absolute left-0 bottom-0 w-full h-0.5 bg-green-300 transition-all duration-300 group-hover:w-0"
                   ></span>
@@ -110,7 +111,7 @@
                       clip-rule="evenodd"
                     />
                   </svg>
-                  Précédent
+                  {{ t("news.btn2") }}
                 </button>
 
                 <div class="p-4 font-bold text-sm">
@@ -122,7 +123,7 @@
                   @click="nextPage"
                   class="p-4 font-bold text-sm hover:text-custom-green hover:bg-green-50 w-full text-center flex items-center justify-center"
                 >
-                  Suivant
+                  {{ t("news.btn1") }}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -178,7 +179,7 @@
             <h2
               class="flex items-center justify-start text-xl font-semibold text-bleu sm:text-2xl"
             >
-              <span data-v-8f1205ab="">Nos Blogs</span>
+              <span data-v-8f1205ab=""> {{ t("news.title") }}</span>
             </h2>
           </div>
           <div class="relative mt-1 h-4 w-full">
@@ -261,7 +262,7 @@
                       class="flex items-center text-custom-green font-semibold hover:text-custom-green transition duration-300 group"
                     >
                       <span class="relative">
-                        Lire plus
+                        {{ t("news.more") }}
                         <span
                           class="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-green-400 to-green-600 transition-all duration-300 group-hover:w-full"
                         ></span>
@@ -377,7 +378,7 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import { useRuntimeConfig, navigateTo } from "#app";
-
+const { t, locale } = useI18n();
 const articles = ref([]);
 const paysList = ref([]);
 const categories = ref([]);
