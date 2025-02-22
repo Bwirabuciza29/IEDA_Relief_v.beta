@@ -78,7 +78,7 @@
               >
                 <i class="fas fa-map-marker-alt"></i>
               </span>
-              <span>10103 Foundren Rd, Suite 435 Houston, Texas 77096</span>
+              <span>10103 Fondren Rd, Suite 435 Houston, Texas 77096</span>
             </p>
           </div>
         </div>
