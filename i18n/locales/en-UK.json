@@ -358,6 +358,7 @@
     "btn2": "Previous",
     "date": "Published on",
     "rtn": "Back",
-    "prt": "Share"
+    "prt": "Share",
+    "none": "No articles available for this country."
   }
 }

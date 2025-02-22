@@ -356,6 +356,7 @@
     "btn2": "Anterior",
     "date": "Publicado em",
     "rtn": "Voltar",
-    "prt": "Compartilhar"
+    "prt": "Compartilhar",
+    "none": "Nenhum artigo disponível para este país."
   }
 }

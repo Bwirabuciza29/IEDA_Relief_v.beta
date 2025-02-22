@@ -319,7 +319,7 @@
               alt="Chargement"
               class="mx-auto mb-4 w-24 h-24"
             />
-            Aucun article disponible pour ce pays.
+            {{ t("news.none") }}
           </div>
 
           <!-- Pagination avec transitions -->
