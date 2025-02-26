@@ -134,7 +134,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
-const { t, locale } = useI18n(); 
+const { t, locale } = useI18n();
 
 // Filtres disponibles
 const filters = [
@@ -187,7 +187,7 @@ const cards = [
   {
     id: 6,
     title: t("operation.c6_t"),
-    description: t("operation.c6_de"),
+    description: t("operation.c6_des"),
     image: "/img/6.jpg",
     progress: 30,
     category: "operations",

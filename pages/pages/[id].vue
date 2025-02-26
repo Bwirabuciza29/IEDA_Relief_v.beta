@@ -390,7 +390,7 @@ const cards = [
   {
     id: 6,
     title: t("operation.c6_t"),
-    description: t("operation.c6_de"),
+    description: t("operation.c6_des"),
     descriptions: t("operation.c6_des"),
     image: "/img/o8.png",
     image_2: "/img/p2.png",
