@@ -7,7 +7,8 @@
     "team": "Timu",
     "images": "Picha",
     "contact": "Mawasiliano",
-    "news": "habari"
+    "news": "habari",
+    "donation": "Mchango"
   },
   "hero": {
     "title_1": "Kusaidia",
@@ -195,7 +196,7 @@
     "c5_de": "Houston, IEDA Relief inatoa msaada wa kisheria wa hali ya juu na wa gharama nafuu kwa wateja kuhusu masuala ya uhamiaji na matatizo mengine ya kisheria. Inayoongozwa na mwakilishi aliyeidhinishwa na IEDA Relief kwa BIA, mpango huo unatoa huduma ndani na kupitia ushirikiano wa nje na wanasheria, kliniki za vyuo vikuu, na mashirika ya ndani. Katika programu zake za kimataifa, IEDA Relief inahamasisha haki za kisheria za wakazi waliokimbia makazi yao na jamii zinazowakaribisha na kuwezesha upatikanaji wa huduma za kisheria.",
     "c5_des": "Kwa mujibu wa dhamira yetu kama mshirika wa kibinadamu, IEDA Relief inahamasisha umma wa Marekani kuhusu hali ya wakimbizi, waliorejea nyumbani na watu waliokimbia makazi yao ndani ya nchi (IDPs) na inatetea haki za binadamu wote kupitia matukio ya kuongeza uelewa na mpango wa Mabalozi wa IEDA Relief kwenye vyuo vikuu.",
     "c6_t": "Maji, Usafi na Afya (WASH)",
-    "c6_de": "Huduma na miundombinu ya maji, usafi na afya (WASH) ni muhimu kwa afya na maisha ya watu, hasa kwa wakazi waliokimbia makazi yao na jamii zinazowakaribisha. Katika operesheni zake za kimataifa, programu za WASH za IEDA Relief zinahakikisha makundi haya yanapata maji safi, vyoo na vifaa vya kuosha.",
+    "c6_des": "Huduma na miundombinu ya maji, usafi na afya (WASH) ni muhimu kwa afya na maisha ya watu, hasa kwa wakazi waliokimbia makazi yao na jamii zinazowakaribisha. Katika operesheni zake za kimataifa, programu za WASH za IEDA Relief zinahakikisha makundi haya yanapata maji safi, vyoo na vifaa vya kuosha.",
     "c7_t": "Elimu na Mafunzo ya Ufundi",
     "c7_de": "Houston, IEDA Relief imeanzisha programu ya elimu ya watu wazima inayotoa masomo ya bure ya Kiingereza kama lugha ya pili (ESL) kwa wakimbizi, wanaotafuta hifadhi, wahamiaji wapya na watu wengine wenye uelewa mdogo wa Kiingereza. Nje ya nchi, IEDA Relief mara nyingi inaendesha programu zinazolenga kufundisha kusoma na kuandika na mafunzo ya ufundi kwa vijana na watu wazima ndani ya jamii zilizokimbia makazi yao na zinazowakaribisha.",
     "c8_t": "Majibu ya Dharura",
