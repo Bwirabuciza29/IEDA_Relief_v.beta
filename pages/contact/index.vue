@@ -85,40 +85,43 @@
 
         <!-- Formulaire -->
         <div class="w-full p-8 rounded-lg bg-green-200 bg-opacity-20">
-          <form class="space-y-4">
+          <form class="space-y-4" @submit.prevent="submitContact">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
+                v-model="nom"
                 type="text"
                 :placeholder="f1"
+                required
                 class="w-full px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
               />
               <input
+                v-model="postnom"
                 type="text"
                 :placeholder="f2"
+                required
                 class="w-full px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
               />
             </div>
             <input
+              v-model="email"
               type="email"
               :placeholder="f3"
+              required
               class="w-full px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
             />
             <input
-              type="tel"
+              v-model="number"
+              type="number"
               :placeholder="f4"
+              required
               class="w-full px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
             />
-            <select
-              class="w-full px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
-            >
-              <option>{{ t("contact.f5.t1") }}</option>
-              <option>{{ t("contact.f5.o1") }}</option>
-              <option>{{ t("contact.f5.o2") }}</option>
-              <option>{{ t("contact.f5.o3") }}</option>
-            </select>
+
             <textarea
+              v-model="message"
               rows="4"
               placeholder="Message"
+              required
               class="w-full px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
             ></textarea>
             <button
@@ -127,6 +130,13 @@
             >
               {{ t("contact.btn") }}
             </button>
+            <p v-if="successMessage" class="mt-4 text-custom-blue font-medium">
+              {{ successMessage }} 
+              <span class="text-custom-greens"> Admin ieda Relief</span>
+            </p>
+            <p v-if="errorMessage" class="mt-4 text-red-400 font-medium">
+              🫣 {{ errorMessage }}
+            </p>
           </form>
         </div>
       </div>
@@ -290,7 +300,58 @@ const f1 = ref(t("contact.f1"));
 const f2 = ref(t("contact.f2"));
 const f3 = ref(t("contact.f3"));
 const f4 = ref(t("contact.f4"));
+const nom = ref("");
+const postnom = ref("");
+const email = ref("");
+const number = ref("");
+const message = ref("");
+const successMessage = ref("");
+const errorMessage = ref("");
+const { createItems } = useDirectusItems();
 
+const submitContact = async () => {
+  successMessage.value = "";
+  errorMessage.value = "";
+
+  if (!validateEmail(email.value)) {
+    errorMessage.value = "Veuillez entrer une adresse email valide.";
+    return;
+  }
+
+  try {
+    const items = [
+      {
+        nom: nom.value,
+        postnom: postnom.value,
+        email: email.value,
+        number: number.value,
+        message: message.value,
+      },
+    ];
+    await createItems({ collection: "contact", items });
+    successMessage.value =
+      "Your message has been sent successfully. We will respond to you as soon as possible.";
+    // Réinitialise les champs
+    nom.value = "";
+    postnom.value = "";
+    email.value = "";
+    number.value = "";
+    message.value = "";
+  } catch (e) {
+    if (e?.data?.errors?.[0]?.extensions?.code === "RECORD_NOT_UNIQUE") {
+      errorMessage.value = "Sorry!! This email already exists in our contacts.";
+    } else {
+      errorMessage.value =
+        "An unexpected error has occurred. Please try again later.";
+      console.error("Erreur : ", e);
+    }
+  }
+};
+
+const validateEmail = (email) => {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+};
 // Data for FAQs
 const faqs = ref([
   {
