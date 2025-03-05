@@ -267,46 +267,6 @@
             </a>
           </div>
         </div>
-
-        <!-- Formulaire "Leave a Reply" -->
-        <div class="mt-8 flex justify-center bg-green-50 p-2">
-          <div class="w-full max-w-md">
-            <!-- Réduit la largeur et centre le contenu -->
-            <h2 class="text-4xl font-bold mb-4 text-center">
-              {{ t("operation.frm_title") }}
-            </h2>
-            <form class="space-y-2">
-              <!-- Champ Message -->
-              <textarea
-                :placeholder="frm_t"
-                class="w-full p-2 rounded-lg resize-none"
-                rows="5"
-              ></textarea>
-
-              <!-- Champs Nom et Email -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  :placeholder="frm_name"
-                  class="p-2 rounded-lg"
-                />
-                <input
-                  type="email"
-                  :placeholder="frm_email"
-                  class="p-2 rounded-lg"
-                />
-              </div>
-
-              <!-- Bouton Envoyer -->
-              <button
-                type="submit"
-                class="mt-4 px-4 py-2 w-full bg-green-500 text-white font-medium rounded-lg"
-              >
-                {{ t("operation.btner") }}
-              </button>
-            </form>
-          </div>
-        </div>
       </div>
     </div>
     <div v-else class="text-center">
