@@ -87,17 +87,17 @@ const submitSubscription = async () => {
       { name: name.value, last_name: last_name.value, email: email.value },
     ];
     await createItems({ collection: "subscription", items });
-    successMessage.value = "Vous êtes bien inscrit à la newsletter";
+    successMessage.value = "You are successfully subscribed to the newsletter";
     // Réinitialise les champs
     name.value = "";
     last_name.value = "";
     email.value = "";
   } catch (e) {
     if (e?.data?.errors?.[0]?.extensions?.code === "RECORD_NOT_UNIQUE") {
-      errorMessage.value = "Désolé!! Cet email existe déjà dans nos courriers.";
+      errorMessage.value = "Sorry!! This email already exists in our mails.";
     } else {
       errorMessage.value =
-        "Une erreur inattendue est survenue. Veuillez réessayer plus tard.";
+        "An unexpected error has occurred. Please try again later.";
       console.error("Erreur : ", e);
     }
   }
