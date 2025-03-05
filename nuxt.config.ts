@@ -94,8 +94,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       directus: {
-        // url: "https://admin.iedarelief.org",
-        url: "http://52.47.77.106:8055",
+        url: "https://admin.iedarelief.org",
       },
     },
   },

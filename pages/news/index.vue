@@ -150,7 +150,7 @@
                 {{ article.categorie?.description }}
               </div>
               <img
-                :src="`http://52.47.77.106:8055/assets/${article.coverImg}`"
+                :src="`https://admin.iedarelief.org/assets/${article.coverImg}`"
                 alt="Illustration de l'article"
                 class="w-full h-80 object-cover"
               />

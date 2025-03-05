@@ -39,7 +39,7 @@
         <div v-if="article" class="overflow-hidden">
           <!-- Image principale -->
           <img
-            :src="`http://52.47.77.106:8055/assets/${article.coverImg}`"
+            :src="`https://admin.iedarelief.org/assets/${article.coverImg}`"
             :alt="article.titre"
             class="w-full h-64 object-cover"
           />
