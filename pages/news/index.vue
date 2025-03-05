@@ -236,7 +236,7 @@
                 <!-- Image avec overlay -->
                 <div class="relative">
                   <img
-                    :src="`http://52.47.77.106:8055/assets/${article.coverImg}`"
+                    :src="`https://admin.iedarelief.org/assets/${article.coverImg}`"
                     :alt="article.titre"
                     class="w-full h-56 object-cover transform group-hover:scale-110 transition duration-300"
                   />
