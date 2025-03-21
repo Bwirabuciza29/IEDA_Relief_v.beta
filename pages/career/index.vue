@@ -4,17 +4,11 @@
     <div class="p-8 mt-16">
       <div class="mj-container hidden sm:block">
         <!-- Début Actualités -->
-        <transition-group
-          name="fade"
-          tag="div"
+        <div
           class="flex flex-col bg-custom-green text-white overflow-hidden h-80"
         >
           <!-- Boucle sur les articles -->
-          <div
-            v-for="article in currentArticles"
-            :key="article.id"
-            class="flex w-full"
-          >
+          <div class="flex w-full">
             <!-- Contenu texte -->
             <div class="p-6 w-2/3 flex flex-col">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
@@ -28,7 +22,7 @@
               <div
                 class="absolute top-2 right-2 bg-red-600 text-white text-xs font-semibold py-1 px-3 rounded"
               >
-                carrieres
+                {{ t("carriere.titles") }}
               </div>
               <img
                 src="/img/c5.jpg"
@@ -37,7 +31,7 @@
               />
             </div>
           </div>
-        </transition-group>
+        </div>
         <!-- Fin Actualités -->
       </div>
     </div>
@@ -60,7 +54,7 @@
             <h2
               class="flex items-center justify-start text-xl font-semibold text-bleu sm:text-2xl"
             >
-              <span data-v-8f1205ab=""> {{ t("news.title") }}</span>
+              <span data-v-8f1205ab="">{{ t("carriere.titles") }}</span>
             </h2>
           </div>
           <div class="relative mt-1 h-4 w-full">

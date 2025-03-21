@@ -179,7 +179,7 @@
             <h2
               class="flex items-center justify-start text-xl font-semibold text-bleu sm:text-2xl"
             >
-              <span data-v-8f1205ab=""> {{ t("news.title") }}</span>
+              <span data-v-8f1205ab="">{{ t("news.title") }}</span>
             </h2>
           </div>
           <div class="relative mt-1 h-4 w-full">

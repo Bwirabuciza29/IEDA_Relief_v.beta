@@ -360,5 +360,9 @@
     "rtn": "Back",
     "prt": "Share",
     "none": "No articles available for this country."
+  },
+  "carriere": {
+    "title": "Your career, your opportunities",
+    "titles": "Careers and job offers"
   }
 }

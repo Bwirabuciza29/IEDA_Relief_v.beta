@@ -363,5 +363,9 @@
     "rtn": "Volver",
     "prt": "Compartir",
     "none": "No hay artículos disponibles para este país."
+  },
+  "carriere": {
+    "title": "Tu carrera, tus oportunidades",
+    "titles": "Carreras y ofertas de empleo"
   }
 }

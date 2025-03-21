@@ -361,5 +361,9 @@
     "rtn": "Retour",
     "prt": "Partager",
     "none": "Aucun article disponible pour ce pays."
+  },
+  "carriere": {
+    "title": "Votre carrière, vos opportunités",
+    "titles": "Carrières et offres d'emploi"
   }
 }
