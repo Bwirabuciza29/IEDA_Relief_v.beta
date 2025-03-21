@@ -12,20 +12,17 @@
           <div
             class="w-full md:w-1/2 p-8 text-white flex flex-col justify-center relative z-20 md:pr-16"
           >
-            <h2 class="text-4xl font-bold mb-4">Ieda Relief</h2>
+            <h2 class="text-3xl font-bold mb-4">{{ t("carriere.title") }}</h2>
             <p class="mb-6 text-lg md:-mr-52 text-justify rounded-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-              accusamus optio minus doloribus reprehenderit mollitia delectus
-              voluptate. Error animi voluptate amet quos fugit voluptatum
-              deleniti, modi tempore voluptates aut nulla.
+              {{ t("carriere.carriere_description") }}
             </p>
-            <div class="flex space-x-4">
+            <!-- <div class="flex space-x-4">
               <button
                 class="bg-white text-custom-green font-semibold py-2 px-6 rounded shadow hover:bg-gray-200 transition"
               >
                 Nous contacter
               </button>
-            </div>
+            </div> -->
           </div>
 
           <!-- Image -->
