@@ -2,7 +2,7 @@
   <section class="bg-green-50">
     <!-- DEBUT LA PREMIERE SECTION -->
     <div class="p-8 mt-16">
-      <div class="mj-container hidden sm:block">
+      <div class="mj-container">
         <!-- Début Actualités -->
 
         <div
@@ -34,7 +34,7 @@
               class="absolute inset-0 bg-gradient-to-r from-custom-green to-transparent z-10"
             ></div>
             <img
-              src="/img/c5.jpg"
+              src="/img/career.jpg"
               alt="People reading books"
               class="w-full h-full object-cover"
             />
