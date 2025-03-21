@@ -4,7 +4,15 @@
       <h1 class="text-2xl font-bold">{{ carriere.titre }}</h1>
       <p><strong>Besoin :</strong> {{ carriere.besoin }} personnes</p>
       <p><strong>Lieu :</strong> {{ carriere.lieu }}</p>
-      <p><strong>Description :</strong> {{ carriere.description }}</p>
+      <p><strong>Type de contrat :</strong> {{ carriere.type_contrat }}</p>
+      <p>
+        <strong>Date de la Rédaction de l’offre :</strong>
+        {{ carriere.date_redaction }}
+      </p>
+      <p><strong>Date de clôture :</strong> {{ carriere.date_cloture }}</p>
+      <p>
+        <strong>Date de Prise de Service :</strong> {{ carriere.date_prise }}
+      </p>
 
       <!-- Bouton pour afficher le PDF -->
       <div v-if="carriere.pdf" class="mt-4">
