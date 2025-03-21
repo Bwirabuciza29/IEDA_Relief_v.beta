@@ -14,18 +14,19 @@
       <div class="bg-green-50 p-4">
         <div class="mb-8 flex items-center justify-between space-x-4">
           <div class="whitespace-nowrap aos-init aos-animate">
-            <h2
-              class="flex items-center justify-start text-xl font-bold text-bleu relative group cursor-pointer"
-              @click="goBack"
-            >
-              <span class="relative hover:text-custom-green">
-                {{ t("news.rtn") }}</span
+            <NuxtLink to="/career" class="group">
+              <h2
+                class="flex items-center justify-start text-xl font-bold text-bleu relative cursor-pointer"
               >
-              <span
-                class="absolute bottom-0 left-0 w-0 h-[2px] bg-custom-green transition-all group-hover:w-full"
-              ></span>
-              <!-- Icône Font Awesome -->
-            </h2>
+                <span class="relative hover:text-custom-green">
+                  {{ t("news.rtn") }}
+                </span>
+                <span
+                  class="absolute bottom-0 left-0 w-0 h-[2px] bg-custom-green transition-all group-hover:w-full"
+                ></span>
+                <!-- Icône Font Awesome -->
+              </h2>
+            </NuxtLink>
           </div>
           <div class="relative mt-1 h-4 w-full">
             <div
