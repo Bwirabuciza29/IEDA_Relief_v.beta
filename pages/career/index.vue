@@ -17,129 +17,10 @@
           >
             <!-- Contenu texte -->
             <div class="p-6 w-2/3 flex flex-col">
-              <div
-                class="text-sm font-semibold text-green-50 mb-4 flex items-center space-x-2"
-              >
-                <span class="underline underline-offset-4">{{
-                  article.categorie?.description
-                }}</span>
-                <span>|</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-4 w-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
-                  />
-                </svg>
-                <span>IEDA Relief</span>
-              </div>
-
-              <!-- Titre de l'article -->
-              <h2
-                class="text-2xl font-bold leading-tight mb-4"
-                data-aos="zoom-in"
-              >
-                {{ article.titre }}
-              </h2>
-
-              <!-- Métadonnées (lieu et date) -->
-              <p
-                class="text-sm mb-4"
-                data-aos="fade-up"
-                data-aos-anchor-placement="top-bottom"
-              >
-                <span class="font-semibold">
-                  {{ t("news.date") }}
-                  {{ formatDate(article.date_created) }}</span
-                >
-                {{ article.resume }}
-              </p>
-
-              <!-- Bouton "Lire plus" -->
-              <button
-                class="text-green-50 font-semibold text-sm flex items-center space-x-1 group"
-                @click="lirePlus(article.slug)"
-              >
-                <span class="relative">
-                  {{ t("news.more") }}
-                  <span
-                    class="absolute left-0 bottom-0 w-full h-0.5 bg-green-300 transition-all duration-300 group-hover:w-0"
-                  ></span>
-                </span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-4 w-4 transition-transform duration-300 group-hover:rotate-90"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m4.5 4.5 15 15m0 0V8.25m0 11.25H8.25"
-                  />
-                </svg>
-              </button>
-
-              <!-- Boutons de pagination en dessous du bouton "Lire plus" -->
-              <div
-                class="bg-white flex items-center justify-between mt-6 text-sm text-black w-full"
-                key="pagination"
-              >
-                <button
-                  :disabled="currentPage === 1"
-                  @click="prevPage"
-                  class="p-4 font-bold text-sm hover:text-custom-green hover:bg-green-50 w-full text-center flex items-center justify-center"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5 mr-2"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10 18a1 1 0 01-.707-.293l-7-7a1 1 0 010-1.414l7-7a1 1 0 111.414 1.414L4.414 10l6.293 6.293A1 1 0 0110 18z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                  {{ t("news.btn2") }}
-                </button>
-
-                <div class="p-4 font-bold text-sm">
-                  {{ currentPage }}/{{ totalPages }}
-                </div>
-
-                <button
-                  :disabled="currentPage === totalPages"
-                  @click="nextPage"
-                  class="p-4 font-bold text-sm hover:text-custom-green hover:bg-green-50 w-full text-center flex items-center justify-center"
-                >
-                  {{ t("news.btn1") }}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="h-5 w-5 ml-2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                    />
-                  </svg>
-                </button>
-              </div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              aliquam eligendi doloremque repellendus quidem expedita iusto
+              obcaecati architecto non reprehenderit, modi illo ut. Iure libero
+              incidunt cupiditate optio architecto vitae.
             </div>
 
             <!-- Image (droite) -->
@@ -147,10 +28,10 @@
               <div
                 class="absolute top-2 right-2 bg-red-600 text-white text-xs font-semibold py-1 px-3 rounded"
               >
-                {{ article.categorie?.description }}
+                carrieres
               </div>
               <img
-                :src="`https://admin.iedarelief.org/assets/${article.coverImg}`"
+                src="/img/c5.jpg"
                 alt="Illustration de l'article"
                 class="w-full h-80 object-cover"
               />
@@ -172,7 +53,7 @@
         />
       </div>
 
-      <!-- Contenu principal -->
+      <!-- Contenu principal des jobs postés -->
       <div class="bg-white p-4">
         <div class="mb-8 flex items-center justify-between space-x-4">
           <div class="whitespace-nowrap aos-init aos-animate">
@@ -191,170 +72,10 @@
           </div>
         </div>
         <div class="container mx-auto p-4">
-          <!-- Onglets pour les pays -->
-          <div
-            class="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:justify-center lg:space-x-4 mb-6"
-          >
-            <div
-              v-for="pays in paysList"
-              :key="pays"
-              :value="pays"
-              @click="changerFiltre(pays)"
-              class="relative cursor-pointer px-4 py-2 text-sm font-semibold transition duration-300 text-center"
-              :class="[
-                filtrePays === pays
-                  ? 'text-green-600 font-bold bg-green-100'
-                  : 'text-gray-700 hover:text-green-600',
-              ]"
-            >
-              {{ pays }}
-              <span
-                v-if="filtrePays === pays"
-                class="absolute bottom-0 left-0 h-[2px] bg-green-600 transition-all duration-300"
-                :style="{ width: '100%' }"
-              ></span>
-              <span
-                v-else
-                class="absolute bottom-0 left-0 h-[2px] bg-transparent transition-all duration-300 group-hover:w-full"
-              ></span>
-            </div>
-          </div>
-          <div v-if="loading" class="flex justify-center items-center py-10">
-            <div class="loader"></div>
-          </div>
-          <!-- Articles affichés avec transition -->
-          <Transition name="slide" mode="out-in">
-            <div
-              key="filtrePays"
-              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            >
-              <div
-                v-for="article in articlesAffiches"
-                :key="article.id"
-                class="group border overflow-hidden bg-white hover:shadow-lg transition duration-300"
-              >
-                <!-- Image avec overlay -->
-                <div class="relative">
-                  <img
-                    :src="`https://admin.iedarelief.org/assets/${article.coverImg}`"
-                    :alt="article.titre"
-                    class="w-full h-56 object-cover transform group-hover:scale-110 transition duration-300"
-                  />
-                  <!-- Catégorie sur l'image à droite -->
-                  <span
-                    class="absolute top-4 right-4 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full"
-                  >
-                    {{ article.categorie?.description }}
-                  </span>
-                </div>
-
-                <!-- Contenu de la carte -->
-                <div class="p-4">
-                  <h2 class="text-lg font-bold text-gray-800 mb-2 truncate">
-                    {{ article.titre }}
-                  </h2>
-                  <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                    {{ article.categorie?.description }}
-                  </p>
-                  <!-- Boutons en bas -->
-                  <div class="flex items-center justify-between">
-                    <!-- Bouton Lire Plus avec Soulignement animé -->
-                    <button
-                      @click="lirePlus(article.slug)"
-                      class="flex items-center text-custom-green font-semibold hover:text-custom-green transition duration-300 group"
-                    >
-                      <span class="relative">
-                        {{ t("news.more") }}
-                        <span
-                          class="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-green-400 to-green-600 transition-all duration-300 group-hover:w-full"
-                        ></span>
-                      </span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="ml-2 w-4 h-4 transform group-hover:rotate-45 transition duration-300"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="m4.5 4.5 15 15m0 0V8.25m0 11.25H8.25"
-                        />
-                      </svg>
-                    </button>
-
-                    <!-- Date de l'article -->
-                    <span
-                      class="text-gray-500 text-sm flex items-center space-x-2 bg-gray-100 p-2 rounded-md"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="w-5 h-5"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
-                        />
-                      </svg>
-                      <span>{{ formatDates(article.date_created) }}</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Transition>
-          <div
-            v-if="!loading && articlesAffiches.length === 0"
-            class="text-center text-gray-500 py-10 font-semibold"
-          >
-            <img
-              src="/img/po.gif"
-              alt="Chargement"
-              class="mx-auto mb-4 w-24 h-24"
-            />
-            {{ t("news.none") }}
-          </div>
-
-          <!-- Pagination avec transitions -->
-          <div class="flex justify-center items-center mt-6 space-x-4">
-            <!-- Bouton Précédent -->
-            <div
-              @click="pagePrecedente"
-              :class="[
-                'flex items-center justify-center w-10 h-10 rounded-full cursor-pointer transition-all duration-300',
-                pageActuelle === 1
-                  ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                  : 'bg-green-600 text-white hover:bg-green-700',
-              ]"
-            >
-              <i class="fas fa-chevron-left"></i>
-            </div>
-
-            <!-- Indicateur de page -->
-            <span class="text-gray-700 font-semibold text-sm sm:text-base">
-              Page {{ pageActuelle }} / {{ nombreTotalPages }}
-            </span>
-
-            <!-- Bouton Suivant -->
-            <div
-              @click="pageSuivante"
-              :class="[
-                'flex items-center justify-center w-10 h-10 rounded-full cursor-pointer transition-all duration-300',
-                pageActuelle === nombreTotalPages
-                  ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                  : 'bg-green-600 text-white hover:bg-green-700',
-              ]"
-            >
-              <i class="fas fa-chevron-right"></i>
-            </div>
-          </div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+          delectus minima rem veniam, eum dicta ullam et, debitis natus
+          laudantium provident rerum. Magnam, laborum. Iure ratione aspernatur
+          nostrum laudantium eveniet!
         </div>
         <div class="relative mt-1 h-4 w-full">
           <div
