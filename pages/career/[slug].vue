@@ -142,6 +142,18 @@
         />
       </div>
     </div>
+    <hr class="mj-container" />
+    <!-- Parteners -->
+    <div class="my-16">
+      <LogOurs />
+    </div>
+    <div>
+      <LogLogger />
+    </div>
+    <!-- Footer -->
+    <div class="mt-16">
+      <laster />
+    </div>
   </div>
 </template>
 
