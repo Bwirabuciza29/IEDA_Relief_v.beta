@@ -104,12 +104,12 @@
             <!-- Liste paginée des carrières -->
             <div
               v-if="!loading"
-              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4"
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
             >
               <div
                 v-for="carriere in carreersAffiches"
                 :key="carriere.id"
-                class="relative border border-custom-green rounded-lg p-6 bg-white transition-shadow hover:border-gray-600"
+                class="relative border border-custom-green rounded-lg p-4 bg-white transition-shadow hover:border-gray-600"
               >
                 <!-- Type Badge -->
                 <div
