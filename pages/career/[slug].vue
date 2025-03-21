@@ -38,25 +38,118 @@
         </div>
         <div>
           <div v-if="!loading && carriere" class="p-4">
-            <h1 class="text-2xl font-bold mb-4">{{ carriere.titre }}</h1>
-            <p class="mb-2">
-              <strong>Besoin :</strong> {{ carriere.besoin }} personnes
-            </p>
-            <p class="mb-2"><strong>Lieu :</strong> {{ carriere.lieu }}</p>
-            <p class="mb-2">
-              <strong>Type de contrat :</strong> {{ carriere.type_contrat }}
-            </p>
-            <p class="mb-2">
-              <strong>Date de la Rédaction de l’offre :</strong>
-              {{ carriere.date_redaction }}
-            </p>
-            <p class="mb-2">
-              <strong>Date de clôture :</strong> {{ carriere.date_cloture }}
-            </p>
-            <p class="mb-4">
-              <strong>Date de Prise de Service :</strong>
-              {{ carriere.date_prise }}
-            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <!-- Carte Titre -->
+              <div class="bg-blue-100 rounded-lg p-6 relative">
+                <div
+                  class="absolute top-4 right-4 text-blue-300 text-[6vw] md:text-6xl opacity-20"
+                >
+                  <i class="fas fa-heading"></i>
+                  <!-- Icône Font Awesome -->
+                </div>
+                <div class="text-2xl font-semibold text-gray-800">
+                  {{ carriere.titre }}
+                </div>
+              </div>
+
+              <!-- Carte Besoin -->
+              <div class="bg-green-100 rounded-lg p-6 relative">
+                <div
+                  class="absolute top-4 right-4 text-green-300 text-[6vw] md:text-6xl opacity-20"
+                >
+                  <i class="fas fa-users"></i>
+                  <!-- Icône Font Awesome -->
+                </div>
+                <div>
+                  <div class="text-lg text-gray-700">Besoin :</div>
+                  <div class="text-2xl font-bold text-gray-800">
+                    {{ carriere.besoin }} personnes
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carte Lieu -->
+              <div class="bg-yellow-100 rounded-lg p-6 relative">
+                <div
+                  class="absolute top-4 right-4 text-yellow-300 text-[6vw] md:text-6xl opacity-20"
+                >
+                  <i class="fas fa-map-marker-alt"></i>
+                  <!-- Icône Font Awesome -->
+                </div>
+                <div>
+                  <div class="text-lg text-gray-700">Lieu :</div>
+                  <div class="text-2xl font-bold text-gray-800">
+                    {{ carriere.lieu }}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carte Type de contrat -->
+              <div class="bg-pink-100 rounded-lg p-6 relative">
+                <div
+                  class="absolute top-4 right-4 text-pink-300 text-[6vw] md:text-6xl opacity-20"
+                >
+                  <i class="fas fa-file-signature"></i>
+                  <!-- Icône Font Awesome -->
+                </div>
+                <div>
+                  <div class="text-lg text-gray-700">Type de contrat :</div>
+                  <div class="text-2xl font-bold text-gray-800">
+                    {{ carriere.type_contrat }}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carte Date de rédaction -->
+              <div class="bg-purple-100 rounded-lg p-6 relative">
+                <div
+                  class="absolute top-4 right-4 text-purple-300 text-[6vw] md:text-6xl opacity-20"
+                >
+                  <i class="fas fa-calendar-alt"></i>
+                  <!-- Icône Font Awesome -->
+                </div>
+                <div>
+                  <div class="text-lg text-gray-700">Date de rédaction :</div>
+                  <div class="text-xl text-gray-800">
+                    {{ carriere.date_redaction }}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carte Date de clôture -->
+              <div class="bg-red-100 rounded-lg p-6 relative">
+                <div
+                  class="absolute top-4 right-4 text-red-300 text-[6vw] md:text-6xl opacity-20"
+                >
+                  <i class="fas fa-calendar-times"></i>
+                  <!-- Icône Font Awesome -->
+                </div>
+                <div>
+                  <div class="text-lg text-gray-700">Date de clôture :</div>
+                  <div class="text-xl text-gray-800">
+                    {{ carriere.date_cloture }}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carte Date de prise de service -->
+              <div class="bg-indigo-100 rounded-lg p-6 relative">
+                <div
+                  class="absolute top-4 right-4 text-indigo-300 text-[6vw] md:text-6xl opacity-20"
+                >
+                  <i class="fas fa-calendar-check"></i>
+                  <!-- Icône Font Awesome -->
+                </div>
+                <div>
+                  <div class="text-lg text-gray-700">
+                    Date de prise de service :
+                  </div>
+                  <div class="text-xl text-gray-800">
+                    {{ carriere.date_prise }}
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <!-- Div pour ouvrir la modale PDF -->
             <div
