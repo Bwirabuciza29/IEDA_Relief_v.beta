@@ -112,8 +112,22 @@
                 class="border rounded shadow p-4"
               >
                 <h2 class="font-bold">{{ carriere.titre }}</h2>
-                <p>Besoin: {{ carriere.besoin }}</p>
+                <p>Besoin: {{ carriere.besoin }} personne(s)</p>
                 <p>Lieu: {{ carriere.lieu }}</p>
+                <p>
+                  <strong>Type de contrat :</strong> {{ carriere.type_contrat }}
+                </p>
+                <p>
+                  <strong>Date de la Rédaction de l’offre :</strong>
+                  {{ carriere.date_redaction }}
+                </p>
+                <p>
+                  <strong>Date de clôture :</strong> {{ carriere.date_cloture }}
+                </p>
+                <p>
+                  <strong>Date de Prise de Service :</strong>
+                  {{ carriere.date_prise }}
+                </p>
                 <button
                   class="bg-blue-500 text-white p-2 rounded mt-2"
                   @click="afficherDetails(carriere.slug)"
@@ -122,22 +136,50 @@
                 </button>
               </div>
             </div>
-
+            <div
+              v-if="!loading && carreersAffiches.length === 0"
+              class="text-center text-gray-500 py-10 font-semibold"
+            >
+              <img
+                src="/img/po.gif"
+                alt="Chargement"
+                class="mx-auto mb-4 w-24 h-24"
+              />
+              {{ t("carriere.none") }}
+            </div>
             <!-- Pagination -->
-            <div class="flex justify-center mt-4">
-              <button
-                class="p-2 border rounded mr-2"
+            <!-- Pagination -->
+            <div class="flex justify-center items-center mt-6 space-x-4">
+              <!-- Bouton Précédent -->
+              <div
                 @click="pageActuelle > 1 && pageActuelle--"
+                :class="[
+                  'flex items-center justify-center w-10 h-10 rounded-full cursor-pointer transition-all duration-300',
+                  pageActuelle === 1
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-green-600 text-white hover:bg-green-700',
+                ]"
               >
-                Précédent
-              </button>
-              <span>Page {{ pageActuelle }} / {{ nombreTotalPages }}</span>
-              <button
-                class="p-2 border rounded ml-2"
+                <i class="fas fa-chevron-left"></i>
+              </div>
+
+              <!-- Indicateur de page -->
+              <span class="text-gray-700 font-semibold text-sm sm:text-base">
+                Page {{ pageActuelle }} / {{ nombreTotalPages }}
+              </span>
+
+              <!-- Bouton Suivant -->
+              <div
                 @click="pageActuelle < nombreTotalPages && pageActuelle++"
+                :class="[
+                  'flex items-center justify-center w-10 h-10 rounded-full cursor-pointer transition-all duration-300',
+                  pageActuelle === nombreTotalPages
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-green-600 text-white hover:bg-green-700',
+                ]"
               >
-                Suivant
-              </button>
+                <i class="fas fa-chevron-right"></i>
+              </div>
             </div>
           </div>
           <!-- fibn -->
