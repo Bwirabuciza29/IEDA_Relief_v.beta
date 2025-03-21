@@ -166,6 +166,7 @@
 import { ref, computed, onMounted } from "vue";
 import { useRuntimeConfig, navigateTo } from "#app";
 const { t, locale } = useI18n();
+// Déclaration des variables réactives
 const carreers = ref([]);
 const rubriques = ref([]);
 const filtreRubrique = ref("All");
@@ -188,7 +189,14 @@ const fetchData = async () => {
     if (!carreersResponse.ok)
       throw new Error("Erreur lors de la récupération des carrières.");
     const carreersData = await carreersResponse.json();
-    carreers.value = carreersData.data;
+
+    // Vérification et génération du slug si absent
+    carreers.value = carreersData.data.map((carriere) => ({
+      ...carriere,
+      slug: carriere.slug || carriere.titre.toLowerCase().replace(/\s+/g, "-"),
+    }));
+
+    console.log("Carrières récupérées :", carreers.value); // Debugging
 
     const rubriquesResponse = await fetch(`${directusUrl}/items/rubriques`);
     if (!rubriquesResponse.ok)
@@ -227,6 +235,11 @@ const carreersAffiches = computed(() => {
 
 // Redirection vers la page détail
 const afficherDetails = (slug) => {
+  console.log("Slug cliqué :", slug);
+  if (!slug) {
+    console.error("Erreur : le slug est indéfini !");
+    return;
+  }
   navigateTo(`/career/${slug}`);
 };
 </script>
