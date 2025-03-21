@@ -70,11 +70,67 @@
             ></div>
           </div>
         </div>
+        <!-- debut -->
         <div class="container mx-auto p-4">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
-          delectus minima rem veniam, eum dicta ullam et, debitis natus
-          laudantium provident rerum. Magnam, laborum. Iure ratione aspernatur
-          nostrum laudantium eveniet!
+          <div>
+            <!-- Filtre par rubrique -->
+            <div class="mb-4">
+              <label for="rubrique">Filtrer par rubrique:</label>
+              <select
+                id="rubrique"
+                v-model="filtreRubrique"
+                class="border rounded p-2"
+              >
+                <option
+                  v-for="rubrique in rubriques"
+                  :key="rubrique"
+                  :value="rubrique"
+                >
+                  {{ rubrique }}
+                </option>
+              </select>
+            </div>
+
+            <!-- Liste paginée des carrières -->
+            <div
+              v-if="!loading"
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+            >
+              <div
+                v-for="carriere in carreersAffiches"
+                :key="carriere.id"
+                class="border rounded shadow p-4"
+              >
+                <h2 class="font-bold">{{ carriere.titre }}</h2>
+                <p>Besoin: {{ carriere.besoin }}</p>
+                <p>Lieu: {{ carriere.lieu }}</p>
+                <button
+                  class="bg-blue-500 text-white p-2 rounded mt-2"
+                  @click="afficherDetails(carriere.slug)"
+                >
+                  Voir les détails
+                </button>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-4">
+              <button
+                class="p-2 border rounded mr-2"
+                @click="pageActuelle > 1 && pageActuelle--"
+              >
+                Précédent
+              </button>
+              <span>Page {{ pageActuelle }} / {{ nombreTotalPages }}</span>
+              <button
+                class="p-2 border rounded ml-2"
+                @click="pageActuelle < nombreTotalPages && pageActuelle++"
+              >
+                Suivant
+              </button>
+            </div>
+          </div>
+          <!-- fibn -->
         </div>
         <div class="relative mt-1 h-4 w-full">
           <div
@@ -106,50 +162,39 @@
     </div>
   </section>
 </template>
-
-
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import { useRuntimeConfig, navigateTo } from "#app";
 const { t, locale } = useI18n();
-const articles = ref([]);
-const paysList = ref([]);
-const categories = ref([]);
-const error = ref(null);
+const carreers = ref([]);
+const rubriques = ref([]);
+const filtreRubrique = ref("All");
 const loading = ref(true);
+const error = ref(null);
 
-const filtrePays = ref("All");
 const pageActuelle = ref(1);
-const articlesParPage = 6;
-const articlesPerPage = 1;
-const currentPage = ref(1);
+const itemsParPage = 6;
 
-// Fonction pour récupérer les options (pays et catégories)
-const fetchOptions = async () => {
+// Récupération des données depuis Directus
+const fetchData = async () => {
   loading.value = true;
   try {
     const config = useRuntimeConfig();
     const directusUrl = config.public.directus.url;
 
-    const articlesResponse = await fetch(
-      `${directusUrl}/items/article?fields=*,categorie.description,pays.designation`
+    const carreersResponse = await fetch(
+      `${directusUrl}/items/carriere?fields=*,type.designation`
     );
-    if (!articlesResponse.ok)
-      throw new Error("Erreur lors de la récupération des articles.");
-    const articlesData = await articlesResponse.json();
-    articles.value = articlesData.data;
+    if (!carreersResponse.ok)
+      throw new Error("Erreur lors de la récupération des carrières.");
+    const carreersData = await carreersResponse.json();
+    carreers.value = carreersData.data;
 
-    const paysResponse = await fetch(`${directusUrl}/items/pays`);
-    if (!paysResponse.ok)
-      throw new Error("Erreur lors de la récupération des pays.");
-    const paysData = await paysResponse.json();
-    paysList.value = ["All", ...paysData.data.map((pays) => pays.designation)];
-
-    const categoriesResponse = await fetch(`${directusUrl}/items/categorie`);
-    if (!categoriesResponse.ok)
-      throw new Error("Erreur lors de la récupération des catégories.");
-    const categoriesData = await categoriesResponse.json();
-    categories.value = categoriesData.data;
+    const rubriquesResponse = await fetch(`${directusUrl}/items/rubriques`);
+    if (!rubriquesResponse.ok)
+      throw new Error("Erreur lors de la récupération des rubriques.");
+    const rubriquesData = await rubriquesResponse.json();
+    rubriques.value = ["All", ...rubriquesData.data.map((r) => r.designation)];
   } catch (err) {
     error.value = err.message;
   } finally {
@@ -157,85 +202,32 @@ const fetchOptions = async () => {
   }
 };
 
-// Charger les données au montage du composant
+// Charger les données
 onMounted(() => {
-  fetchOptions();
+  fetchData();
 });
 
-// Articles filtrés par pays
-const articlesFiltres = computed(() => {
-  return filtrePays.value === "All"
-    ? articles.value
-    : articles.value.filter(
-        (article) => article.pays?.designation === filtrePays.value
+// Filtrage basé sur rubrique
+const carreersFiltres = computed(() => {
+  return filtreRubrique.value === "All"
+    ? carreers.value
+    : carreers.value.filter(
+        (carriere) => carriere.type?.designation === filtreRubrique.value
       );
 });
 
-// Gestion de la pagination
+// Pagination
 const nombreTotalPages = computed(() =>
-  Math.ceil(articlesFiltres.value.length / articlesParPage)
+  Math.ceil(carreersFiltres.value.length / itemsParPage)
 );
-const totalPages = computed(() =>
-  Math.ceil(articlesFiltres.value.length / articlesPerPage)
-);
-const articlesAffiches = computed(() => {
-  const debut = (pageActuelle.value - 1) * articlesParPage;
-  return articlesFiltres.value.slice(debut, debut + articlesParPage);
-});
-const currentArticles = computed(() => {
-  const start = (currentPage.value - 1) * articlesPerPage;
-  return articles.value.slice(start, start + articlesPerPage);
+const carreersAffiches = computed(() => {
+  const debut = (pageActuelle.value - 1) * itemsParPage;
+  return carreersFiltres.value.slice(debut, debut + itemsParPage);
 });
 
-// Gestion du filtre par pays
-const changerFiltre = (pays) => {
-  filtrePays.value = pays;
-  pageActuelle.value = 1;
-  if (typeof localStorage !== "undefined") {
-    localStorage.setItem("filtrePays", pays);
-  }
-};
-
-// Navigation entre les pages
-const pageSuivante = () => {
-  if (pageActuelle.value < nombreTotalPages.value) pageActuelle.value++;
-};
-const pagePrecedente = () => {
-  if (pageActuelle.value > 1) pageActuelle.value--;
-};
-const nextPage = () => {
-  if (currentPage.value < totalPages.value) currentPage.value++;
-};
-
-const prevPage = () => {
-  if (currentPage.value > 1) currentPage.value--;
-};
-// Redirection vers l'article
-const lirePlus = (slug) => {
-  navigateTo(`/news/${slug}`);
-};
-
-// Formater la date pour affichage
-const formatDate = (date) => {
-  const options = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  };
-  const localeDate = new Date(date).toLocaleDateString("fr-FR", options);
-  return localeDate.replace(", ", " à ");
-};
-// Formater la date pour affichage sans l'heure
-const formatDates = (date) => {
-  const options = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-  return new Date(date).toLocaleDateString("fr-FR", options);
+// Redirection vers la page détail
+const afficherDetails = (slug) => {
+  navigateTo(`/career/${slug}`);
 };
 </script>
 <style>
