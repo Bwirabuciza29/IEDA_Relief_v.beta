@@ -214,12 +214,14 @@ const menuItem = computed(() => [
   t("menu.about"),
   t("menu.news"),
   t("menu.pages"),
+  t("menu.career"),
 ]);
 const menuItems = computed(() => [
   t("menu.home"),
   t("menu.about"),
   t("menu.works"),
   t("menu.pages"),
+  t("menu.career"),
   t("menu.team"),
   t("menu.images"),
   t("menu.news"),
@@ -238,6 +240,8 @@ const localPath = (item) => {
       return `${prefix}/works`;
     case t("menu.pages"):
       return `${prefix}/pages`;
+    case t("menu.career"):
+      return `${prefix}/career`;
     case t("menu.team"):
       return `${prefix}/team`;
     case t("menu.images"):
