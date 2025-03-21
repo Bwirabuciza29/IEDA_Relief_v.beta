@@ -4,32 +4,40 @@
     <div class="p-8 mt-16">
       <div class="mj-container hidden sm:block">
         <!-- Début Actualités -->
-        <div
-          class="flex flex-col bg-custom-green text-white overflow-hidden h-80"
-        >
-          <!-- Boucle sur les articles -->
-          <div class="flex w-full">
-            <!-- Contenu texte -->
-            <div class="p-6 w-2/3 flex flex-col">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-              aliquam eligendi doloremque repellendus quidem expedita iusto
-              obcaecati architecto non reprehenderit, modi illo ut. Iure libero
-              incidunt cupiditate optio architecto vitae.
-            </div>
 
-            <!-- Image (droite) -->
-            <div class="relative w-1/3 h-full">
-              <div
-                class="absolute top-2 right-2 bg-red-600 text-white text-xs font-semibold py-1 px-3 rounded"
+        <div
+          class="relative flex flex-col md:flex-row bg-custom-green overflow-hidden"
+        >
+          <!-- Texte -->
+          <div
+            class="w-full md:w-1/2 p-8 text-white flex flex-col justify-center relative z-20 md:pr-16"
+          >
+            <h2 class="text-4xl font-bold mb-4">Ieda Relief</h2>
+            <p class="mb-6 text-lg md:-mr-52 text-justify rounded-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+              accusamus optio minus doloribus reprehenderit mollitia delectus
+              voluptate. Error animi voluptate amet quos fugit voluptatum
+              deleniti, modi tempore voluptates aut nulla.
+            </p>
+            <div class="flex space-x-4">
+              <button
+                class="bg-white text-custom-green font-semibold py-2 px-6 rounded shadow hover:bg-gray-200 transition"
               >
-                {{ t("carriere.titles") }}
-              </div>
-              <img
-                src="/img/c5.jpg"
-                alt="Illustration de l'article"
-                class="w-full h-80 object-cover"
-              />
+                Nous contacter
+              </button>
             </div>
+          </div>
+
+          <!-- Image -->
+          <div class="hidden md:block md:w-1/2 relative">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-custom-green to-transparent z-10"
+            ></div>
+            <img
+              src="/img/c5.jpg"
+              alt="People reading books"
+              class="w-full h-full object-cover"
+            />
           </div>
         </div>
         <!-- Fin Actualités -->
