@@ -104,38 +104,97 @@
             <!-- Liste paginée des carrières -->
             <div
               v-if="!loading"
-              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4"
             >
               <div
                 v-for="carriere in carreersAffiches"
                 :key="carriere.id"
-                class="border rounded shadow p-4"
+                class="relative border border-custom-green rounded-lg p-6 bg-white transition-shadow hover:border-gray-600"
               >
-                <h2 class="font-bold">{{ carriere.titre }}</h2>
-                <p>Besoin: {{ carriere.besoin }} personne(s)</p>
-                <p>Lieu: {{ carriere.lieu }}</p>
-                <p>
-                  <strong>Type de contrat :</strong> {{ carriere.type_contrat }}
-                </p>
-                <p>
-                  <strong>Date de la Rédaction de l’offre :</strong>
-                  {{ carriere.date_redaction }}
-                </p>
-                <p>
-                  <strong>Date de clôture :</strong> {{ carriere.date_cloture }}
-                </p>
-                <p>
-                  <strong>Date de Prise de Service :</strong>
-                  {{ carriere.date_prise }}
-                </p>
+                <!-- Type Badge -->
+                <div
+                  class="absolute top-2 right-2 text-xs sm:text-sm text-gray-500"
+                >
+                  <span
+                    class="flex bg-custom-green px-3 py-1 rounded-lg text-white items-center space-x-1"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-3 h-3 sm:w-4 sm:h-4"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z"
+                      />
+                    </svg>
+                    <span>{{ carriere.type.designation }}</span>
+                  </span>
+                </div>
+
+                <!-- Title -->
+                <h2
+                  class="text-lg sm:text-xl mt-4 font-bold text-gray-800 mb-4"
+                >
+                  {{ carriere.titre }}
+                </h2>
+
+                <!-- Details -->
+                <div class="text-xs sm:text-sm mb-4 text-gray-600 space-y-2">
+                  <p>
+                    <strong>Besoin :</strong> {{ carriere.besoin }} personne(s)
+                  </p>
+                  <p><strong>Lieu :</strong> {{ carriere.lieu }}</p>
+                  <p>
+                    <strong>Type de contrat :</strong>
+                    {{ carriere.type_contrat }}
+                  </p>
+                  <p>
+                    <strong>Date de rédaction :</strong>
+                    {{ formatDateTime(carriere.date_redaction) }}
+                  </p>
+                  <p>
+                    <strong>Date de clôture :</strong>
+                    {{ formatDateTime(carriere.date_cloture) }}
+                  </p>
+                  <p>
+                    <strong>Date de prise de service :</strong>
+                    {{ carriere.date_prise }}
+                  </p>
+                </div>
+
+                <!-- Voir plus button -->
+
                 <button
-                  class="bg-blue-500 text-white p-2 rounded mt-2"
+                  class="absolute bottom-2 right-2 flex items-center space-x-1 text-custom-green hover:text-custom-greens transition-colors group"
                   @click="afficherDetails(carriere.slug)"
                 >
-                  Voir les détails
+                  <span
+                    class="text-xs sm:text-sm font-medium relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-current after:transition-all after:duration-300 group-hover:after:w-full"
+                  >
+                    Voir plus
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    class="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m4.5 4.5 15 15m0 0V8.25m0 11.25H8.25"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>
+
             <div
               v-if="!loading && carreersAffiches.length === 0"
               class="text-center text-gray-500 py-10 font-semibold"
@@ -298,6 +357,15 @@ const afficherDetails = (slug) => {
     return;
   }
   navigateTo(`/career/${slug}`);
+};
+const formatDateTime = (date) => {
+  const optionsDate = { year: "numeric", month: "long", day: "numeric" };
+  const optionsTime = { hour: "2-digit", minute: "2-digit" };
+
+  const formattedDate = new Date(date).toLocaleDateString("fr-FR", optionsDate);
+  const formattedTime = new Date(date).toLocaleTimeString("fr-FR", optionsTime);
+
+  return `${formattedDate} à ${formattedTime}`;
 };
 </script>
 <style>
