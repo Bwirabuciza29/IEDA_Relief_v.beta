@@ -47,6 +47,7 @@
                   <i class="fas fa-heading"></i>
                   <!-- Icône Font Awesome -->
                 </div>
+                <div class="text-lg text-gray-700">Description du poste :</div>
                 <div class="text-2xl font-semibold text-gray-800">
                   {{ carriere.titre }}
                 </div>
