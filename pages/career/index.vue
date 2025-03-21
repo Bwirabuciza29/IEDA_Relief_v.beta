@@ -74,23 +74,33 @@
         <div class="container mx-auto p-4">
           <div>
             <!-- Filtre par rubrique -->
-            <div class="mb-4">
-              <label for="rubrique">Filtrer par rubrique:</label>
-              <select
-                id="rubrique"
-                v-model="filtreRubrique"
-                class="border rounded p-2"
+            <div
+              class="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:justify-center lg:space-x-4 mb-6"
+            >
+              <div
+                v-for="rubrique in rubriques"
+                :key="rubrique"
+                :value="rubrique"
+                @click="changerFiltre(rubrique)"
+                class="relative cursor-pointer px-4 py-2 text-sm font-semibold transition duration-300 text-center"
+                :class="[
+                  filtreRubrique === rubrique
+                    ? 'text-green-600 font-bold bg-green-100'
+                    : 'text-gray-700 hover:text-green-600',
+                ]"
               >
-                <option
-                  v-for="rubrique in rubriques"
-                  :key="rubrique"
-                  :value="rubrique"
-                >
-                  {{ rubrique }}
-                </option>
-              </select>
+                {{ rubrique }}
+                <span
+                  v-if="filtreRubrique === rubrique"
+                  class="absolute bottom-0 left-0 h-[2px] bg-green-600 transition-all duration-300"
+                  :style="{ width: '100%' }"
+                ></span>
+                <span
+                  v-else
+                  class="absolute bottom-0 left-0 h-[2px] bg-transparent transition-all duration-300 group-hover:w-full"
+                ></span>
+              </div>
             </div>
-
             <!-- Liste paginée des carrières -->
             <div
               v-if="!loading"
@@ -172,7 +182,6 @@ const rubriques = ref([]);
 const filtreRubrique = ref("All");
 const loading = ref(true);
 const error = ref(null);
-
 const pageActuelle = ref(1);
 const itemsParPage = 6;
 
@@ -196,7 +205,7 @@ const fetchData = async () => {
       slug: carriere.slug || carriere.titre.toLowerCase().replace(/\s+/g, "-"),
     }));
 
-    console.log("Carrières récupérées :", carreers.value); // Debugging
+    console.log("Carrières récupérées :", carreers.value);
 
     const rubriquesResponse = await fetch(`${directusUrl}/items/rubriques`);
     if (!rubriquesResponse.ok)
@@ -232,7 +241,13 @@ const carreersAffiches = computed(() => {
   const debut = (pageActuelle.value - 1) * itemsParPage;
   return carreersFiltres.value.slice(debut, debut + itemsParPage);
 });
-
+const changerFiltre = (rubrique) => {
+  filtreRubrique.value = rubrique;
+  pageActuelle.value = 1;
+  if (typeof localStorage !== "undefined") {
+    localStorage.setItem("filtreRubrique", rubrique);
+  }
+};
 // Redirection vers la page détail
 const afficherDetails = (slug) => {
   console.log("Slug cliqué :", slug);
