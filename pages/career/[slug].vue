@@ -14,16 +14,11 @@
         <strong>Date de Prise de Service :</strong> {{ carriere.date_prise }}
       </p>
 
-      <!-- Bouton pour afficher le PDF -->
+      <!-- Bouton pour ouvrir la modale PDF -->
       <div v-if="carriere.pdf" class="mt-4">
         <button class="bg-blue-500 text-white p-2 rounded" @click="ouvrirPdf">
           Voir le PDF
         </button>
-      </div>
-
-      <!-- Affichage du PDF en iframe si ouvert -->
-      <div v-if="pdfVisible" class="mt-4">
-        <iframe :src="pdfUrl" class="w-full h-[500px] border rounded"></iframe>
       </div>
     </div>
 
@@ -33,6 +28,46 @@
 
     <div v-else>
       <p>Carrière non trouvée.</p>
+    </div>
+
+    <!-- MODALE PDF -->
+    <div
+      v-if="pdfVisible"
+      class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center"
+    >
+      <div class="rounded-lg overflow-hidden w-full max-w-3xl relative">
+        <button
+          class="absolute top-2 right-2 text-gray-600 hover:text-red-500"
+          @click="fermerPdf"
+        ></button>
+        <div class="flex justify-center items-center w-full py-6">
+          <div
+            class="w-full max-w-5xl rounded-2xl shadow-xl overflow-hidden border border-gray-200"
+          >
+            <div
+              class="bg-gray-100 px-4 py-2 flex items-center justify-between border-b border-gray-300"
+            >
+              <h2 class="text-lg font-semibold text-custom-green">
+                Aperçu du document
+              </h2>
+              <button
+                @click="fermerPdf"
+                class="relative text-sm text-custom-green font-semibold overflow-hidden group"
+              >
+                Fermer
+                <span
+                  class="absolute left-0 bottom-0 h-0.5 bg-custom-green w-0 group-hover:w-full transition-all duration-300"
+                ></span>
+              </button>
+            </div>
+            <iframe
+              :src="`https://docs.google.com/gview?url=${pdfUrl}&embedded=true`"
+              class="w-full h-[80vh] bg-white"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -58,7 +93,6 @@ onMounted(async () => {
     if (data.data.length > 0) {
       carriere.value = data.data[0];
 
-      // Générer l'URL du fichier PDF si disponible
       if (carriere.value.pdf) {
         pdfUrl.value = `${directusUrl}/assets/${carriere.value.pdf.id}`;
       }
@@ -72,8 +106,23 @@ onMounted(async () => {
   }
 });
 
-// Fonction pour afficher le PDF
 const ouvrirPdf = () => {
   pdfVisible.value = true;
 };
+
+const fermerPdf = () => {
+  pdfVisible.value = false;
+};
 </script>
+
+<style scoped>
+/* Animation d'apparition de la modale */
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.3s ease;
+}
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
+</style>
