@@ -174,12 +174,8 @@
             </div>
           </div>
 
-          <div v-else-if="loading">
-            <p>Chargement...</p>
-          </div>
-
-          <div v-else>
-            <p>Carrière non trouvée.</p>
+          <div v-else class="text-center">
+            <p v-show="isLoading" class="text-gray-500 loader"></p>
           </div>
 
           <!-- MODALE PDF -->
@@ -255,7 +251,7 @@
 <script setup>
 import { useRoute, useRuntimeConfig } from "#app";
 const { t, locale } = useI18n();
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 
 const route = useRoute();
 const config = useRuntimeConfig();
@@ -263,7 +259,19 @@ const carriere = ref(null);
 const loading = ref(true);
 const pdfUrl = ref(null);
 const pdfVisible = ref(false);
-
+const isLoading = ref(false);
+watch(
+  route,
+  () => {
+    isLoading.value = true;
+    loading.value = true; // En début de chargement, mettre aussi loading à true
+    setTimeout(() => {
+      isLoading.value = false;
+      loading.value = false; // Fin du chargement
+    }, 1000);
+  },
+  { immediate: true }
+);
 onMounted(async () => {
   const directusUrl = config.public.directus.url;
   try {
@@ -297,7 +305,71 @@ const fermerPdf = () => {
 </script>
 
 <style scoped>
-/* Animation d'apparition de la modale */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+/* Loader Styles */
+.loader {
+  z-index: 99 !important;
+  width: 36px;
+  height: 36px;
+  display: block;
+  margin: 10px auto;
+  position: relative;
+  color: #f0efef;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  -webkit-animation: rotation 1s linear infinite;
+}
+
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  transform: scale(0.5) translate(0, 0);
+  background-color: #055fc5;
+  border-radius: 50%;
+  animation: animloader 1s infinite ease-in-out;
+  -webkit-transform: scale(0.5) translate(0, 0);
+  -moz-transform: scale(0.5) translate(0, 0);
+  -ms-transform: scale(0.5) translate(0, 0);
+  -o-transform: scale(0.5) translate(0, 0);
+}
+
+.loader::before {
+  background-color: #02ab4b;
+  transform: scale(0.5) translate(-36px, -36px);
+  -webkit-transform: scale(0.5) translate(-36px, -36px);
+  -moz-transform: scale(0.5) translate(-36px, -36px);
+  -ms-transform: scale(0.5) translate(-36px, -36px);
+  -o-transform: scale(0.5) translate(-36px, -36px);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes animloader {
+  50% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
 .modal-enter-active,
 .modal-leave-active {
   transition: opacity 0.3s ease;
