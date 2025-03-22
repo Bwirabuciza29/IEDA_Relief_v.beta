@@ -90,6 +90,16 @@
               >
                 {{ t("menu.images") }}
               </NuxtLink>
+              <NuxtLink
+                :to="localPath(t('menu.works'))"
+                class="px-4 py-2 hover:bg-green-100 hover:text-green-400"
+                :class="{
+                  'text-green-500': isActiveLink(localPath(t('menu.works'))),
+                }"
+                @click="closeDropdown"
+              >
+                {{ t("menu.works") }}
+              </NuxtLink>
             </div>
           </div>
           <div class="relative">
@@ -214,7 +224,6 @@ const menuItem = computed(() => [
   t("menu.about"),
   t("menu.news"),
   t("menu.pages"),
-  t("menu.works"),
   t("menu.career"),
 ]);
 const menuItems = computed(() => [
