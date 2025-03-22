@@ -166,11 +166,12 @@
               </div>
 
               <!-- Div pour postuler -->
-              <div
+              <a
+                href="mailto:jobsrdc@iedarelief.org"
                 class="bg-green-500 text-white p-2 rounded flex items-center cursor-pointer"
               >
                 <i class="fas fa-paper-plane mr-2"></i> Postuler maintenant
-              </div>
+              </a>
             </div>
           </div>
 
