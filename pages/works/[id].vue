@@ -29,7 +29,7 @@
                 <img
                   :src="card.image"
                   alt="About Us Section"
-                  class="w-full h-48 object-cover rounded-lg transition-all duration-300 hover:z-10 hover:scale-105"
+                  class="w-full h-48 object-cover rounded-lg transition-all duration-300"
                 />
               </div>
             </div>
