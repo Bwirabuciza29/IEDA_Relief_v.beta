@@ -157,18 +157,18 @@
               v-if="carriere.pdf"
               class="mt-4 flex flex-col sm:flex-row sm:items-center sm:space-x-4"
             >
-              <!-- Div pour ouvrir la modale PDF -->
+              <!-- Bouton pour ouvrir la modale PDF -->
               <div
-                class="bg-blue-500 text-white p-2 rounded flex items-center cursor-pointer mb-4 sm:mb-0"
+                class="bg-blue-500 text-white p-3 rounded flex items-center justify-center cursor-pointer mb-3 sm:mb-0 sm:w-auto w-full"
                 @click="ouvrirPdf"
               >
                 <i class="fas fa-file-pdf mr-2"></i> Voir le PDF
               </div>
 
-              <!-- Div pour postuler -->
+              <!-- Bouton pour postuler -->
               <a
                 href="mailto:jobsrdc@iedarelief.org"
-                class="bg-green-500 text-white p-2 rounded flex items-center cursor-pointer"
+                class="bg-green-500 text-white p-3 rounded flex items-center justify-center cursor-pointer w-full sm:w-auto"
               >
                 <i class="fas fa-paper-plane mr-2"></i> Postuler maintenant
               </a>
