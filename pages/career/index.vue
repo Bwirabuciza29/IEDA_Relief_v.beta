@@ -16,13 +16,6 @@
             <p class="mb-6 text-lg md:-mr-52 text-justify rounded-lg">
               {{ t("carriere.carriere_description") }}
             </p>
-            <!-- <div class="flex space-x-4">
-              <button
-                class="bg-white text-custom-green font-semibold py-2 px-6 rounded shadow hover:bg-gray-200 transition"
-              >
-                Nous contacter
-              </button>
-            </div> -->
           </div>
 
           <!-- Image -->
