@@ -320,11 +320,17 @@ onMounted(() => {
 
 // Filtrage basé sur rubrique
 const carreersFiltres = computed(() => {
-  return filtreRubrique.value === "All"
-    ? carreers.value
-    : carreers.value.filter(
-        (carriere) => carriere.type?.designation === filtreRubrique.value
-      );
+  const data =
+    filtreRubrique.value === "All"
+      ? carreers.value
+      : carreers.value.filter(
+          (carriere) => carriere.type?.designation === filtreRubrique.value
+        );
+
+  // Tri décroissant par date_created
+  return data.sort(
+    (a, b) => new Date(b.date_created) - new Date(a.date_created)
+  );
 });
 
 // Pagination
