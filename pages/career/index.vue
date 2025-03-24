@@ -95,8 +95,13 @@
               </div>
             </div>
             <!-- Liste paginée des carrières -->
+            <div v-if="loading" class="flex justify-center items-center py-20">
+              <div
+                class="animate-spin rounded-full h-14 w-14 border-t-4 border-b-4 border-custom-green"
+              ></div>
+            </div>
             <div
-              v-if="!loading"
+              v-else
               class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
             >
               <div
