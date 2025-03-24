@@ -458,13 +458,18 @@ const nombreTotalPages = computed(() =>
 const totalPages = computed(() =>
   Math.ceil(articlesFiltres.value.length / articlesPerPage)
 );
+const articlesTries = computed(() => {
+  return [...articlesFiltres.value].sort(
+    (a, b) => new Date(b.date_created) - new Date(a.date_created)
+  );
+});
 const articlesAffiches = computed(() => {
   const debut = (pageActuelle.value - 1) * articlesParPage;
-  return articlesFiltres.value.slice(debut, debut + articlesParPage);
+  return articlesTries.value.slice(debut, debut + articlesParPage);
 });
 const currentArticles = computed(() => {
   const start = (currentPage.value - 1) * articlesPerPage;
-  return articles.value.slice(start, start + articlesPerPage);
+  return articlesTries.value.slice(start, start + articlesPerPage);
 });
 
 // Gestion du filtre par pays
