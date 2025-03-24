@@ -1,7 +1,7 @@
 <template>
   <section class="bg-green-50">
     <!-- DEBUT LA PREMIERE SECTION -->
-    <div class="p-8 mt-16">
+    <div class="mt-24">
       <div class="mj-container">
         <!-- Début Actualités -->
 
@@ -10,7 +10,7 @@
         >
           <!-- Texte -->
           <div
-            class="w-full md:w-1/2 p-8 text-white flex flex-col justify-center relative z-20 md:pr-16"
+            class="w-full md:w-1/2 p-4 text-white flex flex-col justify-center relative z-20 md:pr-16"
           >
             <h2 class="text-3xl font-bold mb-4">{{ t("carriere.title") }}</h2>
             <p class="mb-6 text-lg md:-mr-52 text-justify rounded-lg">
