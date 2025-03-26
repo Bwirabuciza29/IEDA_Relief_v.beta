@@ -13,7 +13,7 @@
         <div
           class="w-full md:w-1/2 p-6 md:p-8 text-white flex flex-col justify-center relative z-20"
         >
-          <h1 class="text-4xl font-bold mb-2">{{ t("about.title_1") }}</h1>
+          <h1 class="text-4xl font-bold mb-2">{{ t("donation.btn_3") }}</h1>
           <nav class="text-sm text-black">
             <div class="inline-block bg-white p-3 rounded-lg">
               <a href="/" class="relative group font-semibold">
@@ -24,7 +24,7 @@
               </a>
               /
               <span class="text-bold text-custom-green">{{
-                t("about.title_1")
+                t("donation.btn_3")
               }}</span>
             </div>
           </nav>
@@ -38,15 +38,15 @@
           ></div>
           <!-- Image pleine largeur/hauteur -->
           <img
-            src="/img/cha.png"
+            src="/img/donat.jpg"
             alt="About Us Section"
-            class="w-full h-full object-cover"
+            class="w-full h-72 object-cover"
           />
         </div>
       </div>
     </div>
 
-    <div class="mj-container mt-24">
+    <div class="mj-container mt-20">
       <!-- Section principale -->
       <div class="flex flex-col lg:flex-row gap-10">
         <!-- Colonne gauche -->
@@ -271,8 +271,16 @@
         </div>
       </div>
     </div>
+
     <div class="my-16">
-      <log />
+      <LogOurs />
+    </div>
+    <div>
+      <LogLogger />
+    </div>
+    <!-- Footer Section -->
+    <div class="mt-16">
+      <laster />
     </div>
   </div>
 </template>

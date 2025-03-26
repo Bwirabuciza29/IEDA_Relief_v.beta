@@ -1,7 +1,7 @@
 <template>
   <div class="relative dropdown">
     <button
-      class="flex items-center bg-white text-custom-green px-4 py-2 rounded-lg border border-green-300 border-opacity-50 hover:bg-green-600 transition duration-200 ease-in-out"
+      class="flex items-center bg-white text-custom-green px-4 py-2 border border-green-300 border-opacity-50 hover:bg-green-600 transition duration-200 ease-in-out"
       @click="toggleDropdown"
     >
       <span class="mr-2">

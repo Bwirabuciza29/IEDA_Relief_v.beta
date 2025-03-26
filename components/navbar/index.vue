@@ -121,7 +121,15 @@
       </div>
 
       <!-- LangSwitcher à droite (visible sur desktop) -->
-      <LangSwitcher class="hidden md:block" />
+      <div class="flex items-center space-x-4">
+        <LangSwitcher class="hidden md:block" />
+        <NuxtLink
+          :to="localPagePath('donation')"
+          class="flex items-center bg-custom-green text-white px-4 py-1 border border-green-300 border-opacity-50 hover:bg-white hover:text-custom-green transition duration-200 ease-in-out"
+        >
+          {{ t("donation.btn_3") }}
+        </NuxtLink>
+      </div>
 
       <!-- Bouton Toggle Menu Mobile toujours visible -->
       <div class="flex items-center justify-between">
@@ -269,7 +277,10 @@ const localPath = (item) => {
       return `${prefix}/`;
   }
 };
-
+const localPagePath = (route) => {
+  const prefix = locale.value === "en-UK" ? "" : `/${locale.value}`;
+  return `${prefix}/${route}`;
+};
 // Vérification si le lien est actif
 const isActiveLink = (path) => route.path === path;
 const isLoading = ref(false);
