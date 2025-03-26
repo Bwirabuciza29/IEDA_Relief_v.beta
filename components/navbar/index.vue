@@ -1,8 +1,10 @@
 <template>
   <div
-    class="fixed left-0 right-0 top-0 z-50 flex w-full items-center justify-cente text-black bg-white"
+    class="fixed left-0 right-0 top-0 z-50 flex w-full items-center justify-cente text-black"
   >
-    <header class="mj-container z-50 flex w-full items-center justify-between">
+    <header
+      class="mj-container z-50 flex w-full items-center justify-between bg-white"
+    >
       <div class="relative flex items-center">
         <NuxtLink to="/">
           <img

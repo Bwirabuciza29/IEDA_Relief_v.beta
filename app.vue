@@ -3,12 +3,12 @@
     <NuxtLayout>
       <NuxtLoadingIndicator />
       <NuxtRouteAnnouncer />
-      <div class="po-wrapper bg-black text-white">
+      <div class="po-wrapper text-white">
         <Navbar />
       </div>
       <div>
         <transition name="page" mode="out-in">
-          <div>
+          <div class="bg-green-50">
             <NuxtPage />
           </div>
         </transition>

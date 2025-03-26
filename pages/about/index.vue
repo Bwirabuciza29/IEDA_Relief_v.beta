@@ -49,7 +49,7 @@
 
     <!-- Fin Top Title -->
     <div class="mj-container my-16">
-      <div class="my-8 p-4 bg-white rounded-lg md:p-6 lg:p-8">
+      <div class="my-8 p-4 bg-white md:p-6 lg:p-8">
         <div class="relative mt-1 h-4 w-full">
           <div
             data-aos="fade-up"
@@ -77,7 +77,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- Card 1 -->
         <div
-          class="group bg-white flex flex-col items-start p-4 rounded-lg hover:shadow-lg transition-shadow duration-300"
+          class="group bg-white flex flex-col items-start p-4 hover:shadow-lg transition-shadow duration-300"
         >
           <div class="flex items-center mb-4">
             <img
@@ -97,7 +97,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="group overflow-hidden rounded-lg">
+        <div class="group overflow-hidden">
           <img
             src="/img/c3.jpg"
             alt="Image 1"
@@ -107,7 +107,7 @@
 
         <!-- Card 3 -->
         <div
-          class="group bg-white flex flex-col items-start p-4 rounded-lg hover:shadow-lg transition-shadow duration-300"
+          class="group bg-white flex flex-col items-start p-4 hover:shadow-lg transition-shadow duration-300"
         >
           <div class="flex items-center mb-4">
             <img
@@ -127,7 +127,7 @@
         </div>
 
         <!-- Card 4 -->
-        <div class="group overflow-hidden rounded-lg">
+        <div class="group overflow-hidden">
           <img
             src="/img/c4.jpg"
             alt="Image 2"
@@ -137,7 +137,7 @@
 
         <!-- Card 5 -->
         <div
-          class="group bg-white flex flex-col items-start p-4 rounded-lg hover:shadow-lg transition-shadow duration-300"
+          class="group bg-white flex flex-col items-start p-4 hover:shadow-lg transition-shadow duration-300"
         >
           <div class="flex items-center mb-4">
             <img
@@ -157,7 +157,7 @@
         </div>
 
         <!-- Card 6 -->
-        <div class="group overflow-hidden rounded-lg">
+        <div class="group overflow-hidden">
           <img
             src="/img/c5.jpg"
             alt="Image 3"
@@ -264,7 +264,7 @@
           <img
             :src="member.image"
             :alt="member.alt"
-            class="rounded-lg shadow-md w-56 transition-all duration-300 hover:z-10 hover:scale-105"
+            class="w-56 transition-all duration-300 hover:z-10 hover:scale-105"
           />
           <h3 class="mt-4 text-lg font-medium">{{ member.title }}</h3>
           <p class="text-sm text-gray-600">{{ member.role }}</p>
@@ -272,9 +272,7 @@
       </div>
     </div>
     <div class="mj-container my-16">
-      <div
-        class="relative bg-gray-50 h-64 rounded-lg overflow-hidden p-6 shadow-lg"
-      >
+      <div class="relative bg-gray-50 h-64 overflow-hidden p-4">
         <!-- Filigrane haut gauche -->
         <div class="absolute top-0 left-0 opacity-50">
           <img
