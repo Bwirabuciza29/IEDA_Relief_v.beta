@@ -91,7 +91,7 @@
               {{ t("about.card_1_title") }}
             </h3>
           </div>
-          <p class="text-gray-600 group-hover:underline">
+          <p class="text-gray-600">
             {{ t("about.card_1_desc") }}
           </p>
         </div>
@@ -121,7 +121,7 @@
               {{ t("about.card_2_title") }}
             </h3>
           </div>
-          <p class="text-gray-600 group-hover:underline">
+          <p class="text-gray-600">
             {{ t("about.card_2_desc") }}
           </p>
         </div>
@@ -151,7 +151,7 @@
               {{ t("about.card_3_title") }}
             </h3>
           </div>
-          <p class="text-gray-600 group-hover:underline">
+          <p class="text-gray-600">
             {{ t("about.card_3_desc") }}
           </p>
         </div>
@@ -168,9 +168,7 @@
     </div>
     <div class="mj-container my-16">
       <!-- Vidéo avec plyr -->
-      <div
-        class="w-full mx-auto overflow-hidden rounded-lg shadow-lg bg-custom-green"
-      >
+      <div class="w-full mx-auto overflow-hidden rounded-lg bg-custom-green">
         <!-- Header -->
         <div
           class="top-0 z-20 w-full bg-custom-green bg-opacity-70 px-4 py-2 backdrop-blur-lg"
