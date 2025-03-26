@@ -1,45 +1,52 @@
 <template>
   <section class="bg-green-50">
     <!--  Top Title -->
-    <div class="relative bg-custom-green p-8 mx-4 rounded-lg mt-20">
-      <!-- Image vectorielle (positionnée au-dessus du conteneur) -->
-      <img
-        src="/img/Vectoria.png"
-        alt="Decorative Vector"
-        class="absolute top-0 left-64 h-full w-auto z-10 hidden sm:block"
-      />
-      <div class="mj-container">
-        <div class="relative">
-          <div class="rounded-lg flex flex-col md:flex-row overflow-hidden">
-            <!-- Texte (à gauche sur grand écran) -->
-            <div class="flex-1 p-6 md:p-8">
-              <h1 class="text-4xl text-white font-bold mb-2">
-                {{ t("about.title_1") }}
-              </h1>
-              <nav class="text-sm text-black">
-                <div class="inline-block bg-white p-3 rounded-lg">
-                  <a href="/" class="hover:underline font-semibold">{{
-                    t("about.title_2")
-                  }}</a>
-                  /
-                  <span>{{ t("about.title_1") }}</span>
-                </div>
-              </nav>
+    <div class="mj-container bg-green-50 mt-20">
+      <div
+        class="relative flex flex-col md:flex-row bg-custom-green overflow-hidden"
+      >
+        <img
+          src="/img/Vectoria.png"
+          alt="Decorative Vector"
+          class="absolute top-0 left-64 h-full w-auto hidden sm:block z-20"
+        />
+        <!-- Texte -->
+        <div
+          class="w-full md:w-1/2 p-6 md:p-8 text-white flex flex-col justify-center relative z-20"
+        >
+          <h1 class="text-4xl font-bold mb-2">{{ t("about.title_1") }}</h1>
+          <nav class="text-sm text-black">
+            <div class="inline-block bg-white p-3 rounded-lg">
+              <a href="/" class="relative group font-semibold">
+                {{ t("about.title_2") }}
+                <span
+                  class="absolute bottom-0 left-0 w-full h-0.5 bg-custom-green scale-x-0 group-hover:scale-x-100 transition-all duration-300 origin-left"
+                ></span>
+              </a>
+              /
+              <span class="text-bold text-custom-green">{{
+                t("about.title_1")
+              }}</span>
             </div>
-
-            <!-- Image (à droite sur grand écran) -->
-            <div class="flex-1 hidden md:flex">
-              <img
-                src="/img/cha.png"
-                alt="About Us Section"
-                class="w-full h-full object-cover rounded-lg transition-all duration-300 hover:scale-105"
-              />
-            </div>
-          </div>
+          </nav>
         </div>
-        <!-- contenu de l'about -->
+
+        <!-- Image -->
+        <div class="hidden md:block md:w-1/2 relative">
+          <!-- Dégradé à gauche -->
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-custom-green to-transparent z-10"
+          ></div>
+          <!-- Image pleine largeur/hauteur -->
+          <img
+            src="/img/cha.png"
+            alt="About Us Section"
+            class="w-full h-full object-cover"
+          />
+        </div>
       </div>
     </div>
+
     <!-- Fin Top Title -->
     <div class="mj-container my-16">
       <div class="my-8 p-4 bg-white rounded-lg md:p-6 lg:p-8">
