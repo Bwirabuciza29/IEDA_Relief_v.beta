@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed left-0 right-0 top-0 z-50 flex w-full items-center justify-cente text-black"
+    class="fixed left-0 right-0 top-0 z-50 flex w-full items-center justify-cente text-black bg-white"
   >
     <header
       class="mj-container z-50 flex w-full items-center justify-between bg-white"
