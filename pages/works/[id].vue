@@ -598,18 +598,21 @@
       </div>
       <div class="mj-container mb-8">
         <div
-          class="bg-white mt-4 flex flex-col md:flex-row p-6 rounded-lg space-y-6 md:space-y-0 md:space-x-8"
+          class="bg-white mt-4 flex flex-col md:flex-row rounded-lg space-y-6 md:space-y-0 md:space-x-8"
         >
           <!-- Section Gauche -->
-          <div class="flex-1">
-            <div class="relative">
-              <!-- Début video -->
+          <div>
+            <!-- Début video -->
+            <div
+              class="bg-black flex flex-col md:flex-row items-center rounded-xl md:items-start gap-4 w-full"
+            >
+              <!-- Video Section -->
               <div
-                class="w-full h-full overflow-hidden rounded-lg shadow-lg bg-custom-green"
+                class="w-full md:w-1/2 mx-auto overflow-hidden bg-custom-green rounded-l-xl"
               >
                 <!-- Header -->
                 <div
-                  class="z-20 w-full bg-custom-green bg-opacity-70 px-4 py-2 backdrop-blur-lg"
+                  class="top-0 z-20 w-full bg-custom-green bg-opacity-70 px-4 py-2 backdrop-blur-lg"
                 >
                   <div class="-m-2 flex flex-wrap items-center justify-between">
                     <!-- Circles -->
@@ -643,7 +646,7 @@
                   </div>
                 </div>
 
-                <!-- Video Section -->
+                <!-- Video -->
                 <div class="relative">
                   <div
                     ref="youtube"
@@ -654,18 +657,74 @@
                   ></div>
                 </div>
               </div>
+
+              <!-- Text Section -->
+              <div class="w-full md:w-1/2 p-4">
+                <h2 class="text-lg font-bold text-gray-100">
+                  IEDA Relief from {{ card.title }}
+                </h2>
+                <p class="text-gray-400 text-sm pt-8 text-justify">
+                  {{ t("about.ab_4") }}
+                </p>
+
+                <!-- Footer avec la ligne séparatrice -->
+                <div class="pt-4">
+                  <hr />
+                  <div
+                    class="flex items-center justify-between space-x-4 mt-20"
+                  >
+                    <!-- Date avec icône -->
+                    <div class="flex items-center text-gray-400">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-5 h-5"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008H12v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"
+                        />
+                      </svg>
+                      <span class="ml-2">Le 30 Oct. 2017</span>
+                    </div>
+
+                    <!-- Titre et Avatar -->
+                    <div class="flex items-center space-x-2">
+                      <span class="text-gray-400">IEDA Relief</span>
+                      <img
+                        src="/img/loieda.jpg"
+                        alt="Avatar"
+                        class="w-8 h-8 rounded-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
             <!-- Fin video -->
             <!-- Description principale -->
 
             <!-- Section Volunteer -->
-            <div class="mt-6">
+            <div class="mt-6 p-4">
               <h2 class="text-xl font-bold text-gray-800 mb-2">
                 Volunteer with Us
               </h2>
-              <p class="text-gray-600 mb-4">
-                Egestas pretium aenean pharetra magna ac placerat. Nisi lacus
-                sed viverra tellus.
+              <p class="text-gray-600 mb-4 text-justify">
+                Join IEDA Relief, a humanitarian organization dedicated to
+                providing assistance and support to vulnerable communities
+                around the world. As a volunteer, you'll have the opportunity to
+                make a meaningful impact by contributing to relief efforts,
+                supporting projects focused on education, health, and emergency
+                aid, and empowering individuals in need. Whether you’re offering
+                your time, skills, or resources, your efforts will help improve
+                lives and foster positive change in the communities we serve.
+                Together, we can create a brighter future for those who need it
+                most.
               </p>
               <NuxtLink
                 to="/works"
@@ -678,7 +737,7 @@
 
             <!-- Social Icons -->
             <div
-              class="flex flex-col sm:flex-row justify-between items-center flex-wrap gap-4 mt-6"
+              class="flex flex-col p-4 sm:flex-row justify-between items-center flex-wrap gap-4 mt-6"
             >
               <!-- Tags -->
               <div
