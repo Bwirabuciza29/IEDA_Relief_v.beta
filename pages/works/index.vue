@@ -83,13 +83,13 @@
           <div
             v-for="(card, index) in cards"
             :key="index"
-            class="bg-white rounded-lg overflow-hidden group"
+            class="bg-white overflow-hidden group"
           >
             <div class="relative">
               <img
                 :src="card.image"
                 alt="Card Image"
-                class="w-full h-44 object-cover rounded-t-lg transform transition-all duration-300 group-hover:scale-110 group-hover:z-10"
+                class="w-full h-44 object-cover transform transition-all duration-300 group-hover:scale-110 group-hover:z-10"
               />
               <span
                 class="absolute top-2 right-2 bg-white border border-custom-green text-black text-xs px-2 py-1 rounded-md"

@@ -1,31 +1,48 @@
 <template>
   <section class="bg-green-50">
     <div v-if="card">
-      <div
-        class="relative bg-[url('/img/r.jpg')] bg-cover bg-center bg-no-repeat py-8 mx-4 md:mx-8 lg:mx-16 rounded-lg mt-20 shadow-lg"
-      >
-        <!-- <img
-          src="/img/Vectoria.png"
-          alt="Decorative Vector"
-          class="absolute top-0 left-40 h-full w-auto hidden sm:block z-10"
-        /> -->
-        <div class="mj-container">
-          <div class="relative">
-            <div class="rounded-lg flex flex-col md:flex-row overflow-hidden">
-              <div class="flex-1 p-6 md:p-8">
-                <h1 class="text-4xl text-white font-bold mb-2">
+      <div class="mj-container bg-green-50 mt-20">
+        <div
+          class="relative flex flex-col md:flex-row bg-custom-green overflow-hidden"
+        >
+          <img
+            src="/img/Vectoria.png"
+            alt="Decorative Vector"
+            class="absolute top-0 left-64 h-full w-auto hidden sm:block z-20"
+          />
+          <!-- Texte -->
+          <div
+            class="w-full md:w-1/2 p-6 md:p-8 text-white flex flex-col justify-center relative z-20"
+          >
+            <h1 class="text-4xl font-bold mb-2">{{ t("operation.title") }}</h1>
+            <nav class="text-sm text-black">
+              <div class="inline-block bg-white p-3 rounded-lg">
+                <a href="/" class="relative group font-semibold">
                   {{ t("operation.title") }}
-                </h1>
-                <nav class="text-sm text-black">
-                  <div class="inline-block bg-white p-3 rounded-lg">
-                    <a href="/" class="hover:underline font-semibold">
-                      {{ t("operation.title") }}/
-                    </a>
-                    <span>{{ t("operation.title") }}</span>
-                  </div>
-                </nav>
+                  <span
+                    class="absolute bottom-0 left-0 w-full h-0.5 bg-custom-green scale-x-0 group-hover:scale-x-100 transition-all duration-300 origin-left"
+                  ></span>
+                </a>
+                /
+                <span class="text-bold text-custom-green">{{
+                  card.title
+                }}</span>
               </div>
-            </div>
+            </nav>
+          </div>
+
+          <!-- Image -->
+          <div class="hidden md:block md:w-1/2 relative">
+            <!-- Dégradé à gauche -->
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-custom-green to-transparent z-10"
+            ></div>
+            <!-- Image pleine largeur/hauteur -->
+            <img
+              src="/img/r.jpg"
+              alt="About Us Section"
+              class="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>
@@ -42,7 +59,7 @@
             <!-- Texte principal -->
             <nuxt-link
               to="/pages"
-              class="relative inline-block bg-custom-green text-white px-3 py-1 rounded-full font-medium group transition duration-300"
+              class="relative inline-block bg-custom-green text-white px-3 py-1 font-medium group transition duration-300"
             >
               {{ t("back.rtn") }}
               <!-- Animation de soulignement -->
