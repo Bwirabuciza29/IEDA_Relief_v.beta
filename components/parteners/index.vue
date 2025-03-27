@@ -8,14 +8,14 @@
         {{ t2 }} <span class="font-sri"> {{ t3 }}</span>
       </h1>
     </div>
-    <div class="bg-white rounded-lg p-4">
+    <div class="bg-white p-4">
       <div class="flex justify-center space-x-4 mb-8">
         <button
           v-for="(tab, index) in tabs"
           :key="index"
           @click="activeTab = index"
           :class="[
-            'px-4 py-3 font-medium rounded-lg transition-colors duration-300',
+            'px-4 py-3 font-medium  transition-colors duration-300',
             activeTab === index
               ? 'bg-custom-green text-white'
               : 'bg-gray-100 text-gray-700 hover:bg-gray-300',

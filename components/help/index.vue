@@ -23,17 +23,9 @@
           <img
             src="/img/mum.jpg"
             alt="Main Image"
-            class="rounded-lg object-cover w-full sm:w-46 h-46 transition-all duration-300 hover:z-10 hover:scale-110"
-          />
-
-          <!-- Deuxième image -->
-          <img
-            src="/img/bf.jpg"
-            alt="Overlay Image"
-            class="absolute bottom-4 -right-16 w-40 h-40 rounded-lg transition-all duration-300 hover:z-10 hover:scale-110 hidden sm:block"
+            class="rounded-lg object-cover w-full sm:w-46 h-46 transition-all duration-300 hover:z-10"
           />
         </div>
-
         <!-- Texte -->
         <div>
           <p class="text-lg text-center text-white">

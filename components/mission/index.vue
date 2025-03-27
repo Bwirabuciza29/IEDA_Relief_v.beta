@@ -7,7 +7,7 @@
         :key="index"
         @click="activeTab = index"
         :class="[
-          'px-4 py-3 font-medium rounded-lg transition-colors duration-300',
+          'px-4 py-3 font-medium  transition-colors duration-300',
           activeTab === index
             ? 'bg-custom-green text-white'
             : 'bg-gray-200 text-gray-700 hover:bg-gray-300',
@@ -45,7 +45,7 @@
         </p>
         <NuxtLink
           :to="localPagePath('about')"
-          class="mt-4 group relative inline-block overflow-hidden rounded-lg border-2 border-green-100 bg-custom-green px-4 py-4 text-sm font-semibold text-white sm:px-6 sm:py-3 sm:text-base"
+          class="mt-4 group relative inline-block overflow-hidden border-2 border-green-100 bg-custom-green px-4 py-4 text-sm font-semibold text-white sm:px-6 sm:py-3 sm:text-base"
         >
           <span
             class="relative z-10 translate-x-full transform transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:text-green-700"
