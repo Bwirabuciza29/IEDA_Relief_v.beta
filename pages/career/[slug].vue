@@ -47,7 +47,7 @@
                   <i class="fas fa-heading"></i>
                   <!-- Icône Font Awesome -->
                 </div>
-                <div class="text-lg text-gray-700">Description du poste :</div>
+                <div class="text-lg text-gray-700">{{ t("mode.title") }} :</div>
                 <div class="text-2xl font-semibold text-gray-800">
                   {{ carriere.titre }}
                 </div>
@@ -62,7 +62,9 @@
                   <!-- Icône Font Awesome -->
                 </div>
                 <div>
-                  <div class="text-lg text-gray-700">Besoin :</div>
+                  <div class="text-lg text-gray-700">
+                    {{ t("mode.besoin") }} :
+                  </div>
                   <div class="text-2xl font-bold text-gray-800">
                     {{ carriere.besoin }} personnes
                   </div>
@@ -78,7 +80,9 @@
                   <!-- Icône Font Awesome -->
                 </div>
                 <div>
-                  <div class="text-lg text-gray-700">Lieu :</div>
+                  <div class="text-lg text-gray-700">
+                    {{ t("mode.lieu") }} :
+                  </div>
                   <div class="text-2xl font-bold text-gray-800">
                     {{ carriere.lieu }}
                   </div>
@@ -94,7 +98,9 @@
                   <!-- Icône Font Awesome -->
                 </div>
                 <div>
-                  <div class="text-lg text-gray-700">Type de contrat :</div>
+                  <div class="text-lg text-gray-700">
+                    {{ t("mode.TypeContrat") }} :
+                  </div>
                   <div class="text-2xl font-bold text-gray-800">
                     {{ carriere.type_contrat }}
                   </div>
@@ -110,7 +116,9 @@
                   <!-- Icône Font Awesome -->
                 </div>
                 <div>
-                  <div class="text-lg text-gray-700">Date de rédaction :</div>
+                  <div class="text-lg text-gray-700">
+                    {{ t("mode.dateR") }} :
+                  </div>
                   <div class="text-xl text-gray-800">
                     {{ carriere.date_redaction }}
                   </div>
@@ -126,7 +134,9 @@
                   <!-- Icône Font Awesome -->
                 </div>
                 <div>
-                  <div class="text-lg text-gray-700">Date de clôture :</div>
+                  <div class="text-lg text-gray-700">
+                    {{ t("mode.dateC") }} :
+                  </div>
                   <div class="text-xl text-gray-800">
                     {{ carriere.date_cloture }}
                   </div>
@@ -143,7 +153,7 @@
                 </div>
                 <div>
                   <div class="text-lg text-gray-700">
-                    Date de prise de service :
+                    {{ t("mode.dateP") }} :
                   </div>
                   <div class="text-xl text-gray-800">
                     {{ carriere.date_prise }}
@@ -162,7 +172,7 @@
                 class="bg-blue-500 text-white p-3 rounded flex items-center justify-center cursor-pointer mb-3 sm:mb-0 sm:w-auto w-full"
                 @click="ouvrirPdf"
               >
-                <i class="fas fa-file-pdf mr-2"></i> Voir le PDF
+                <i class="fas fa-file-pdf mr-2"></i> {{ t("mode.btn1") }}
               </div>
 
               <!-- Bouton pour postuler -->
@@ -170,7 +180,7 @@
                 href="mailto:jobsrdc@iedarelief.org"
                 class="bg-green-500 text-white p-3 rounded flex items-center justify-center cursor-pointer w-full sm:w-auto"
               >
-                <i class="fas fa-paper-plane mr-2"></i> Postuler maintenant
+                <i class="fas fa-paper-plane mr-2"></i> {{ t("mode.btn2") }}
               </a>
             </div>
           </div>
@@ -197,13 +207,13 @@
                     class="bg-gray-100 px-4 py-2 flex items-center justify-between border-b border-gray-300"
                   >
                     <h2 class="text-lg font-semibold text-custom-green">
-                      Aperçu du document
+                      {{ t("mode.doc") }}
                     </h2>
                     <button
                       @click="fermerPdf"
                       class="relative text-sm text-custom-green font-semibold overflow-hidden group"
                     >
-                      Fermer
+                      {{ t("mode.click") }}
                       <span
                         class="absolute left-0 bottom-0 h-0.5 bg-custom-green w-0 group-hover:w-full transition-all duration-300"
                       ></span>

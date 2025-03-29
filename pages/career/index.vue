@@ -174,7 +174,7 @@
                   <span
                     class="text-xs sm:text-sm font-medium relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-current after:transition-all after:duration-300 group-hover:after:w-full"
                   >
-                    Voir plus
+                    {{ t("mode.btn3") }}
                   </span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

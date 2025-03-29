@@ -366,5 +366,19 @@
     "titles": "Kazi na nafasi za ajira",
     "carriere_description": "Kuza uwezo wako ndani ya shirika la kimataifa lililo na dhamira. Katika IEDA Relief, tunakupa mazingira ya kusisimua ambapo kazi yako ina maana kubwa. Pamoja, tunajenga suluhisho endelevu kwa jamii zilizo hatarini. Kila nafasi ni fursa ya kuchangia athari chanya kwenye uwanja. Jiunge na timu yenye shauku na tumia ujuzi wako kuhudumia ubinadamu.",
     "none": "Hakuna ofa kwa sasa... tafadhali angalia sehemu zingine."
+  },
+  "mode": {
+    "title": "Maelezo ya Kazi",
+    "besoin": "Hitaji",
+    "lieu": "Mahali",
+    "TypeContrat": "Aina ya Mkataba",
+    "dateR": "Tarehe ya Kuandikwa",
+    "dateC": "Tarehe ya Kufungwa",
+    "dateP": "Tarehe ya Kuanza",
+    "btn1": "Tazama PDF",
+    "btn2": "Omba Sasa",
+    "btn3": "Tazama Zaidi",
+    "doc": "Muhtasari wa Hati",
+    "click": "Funga"
   }
 }

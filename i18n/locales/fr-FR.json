@@ -367,5 +367,19 @@
     "titles": "Carrières et offres d'emploi",
     "carriere_description": "  Développez votre potentiel au sein d’une organisation internationale engagée. Chez IEDA Relief, nous vous offrons un environnement stimulant où votre carrière prend tout son sens. Ensemble, nous construisons des solutions durables pour les communautés vulnérables. Chaque opportunité est une chance de contribuer à un impact positif sur le terrain. Rejoignez une équipe passionnée et mettez vos compétences au service de l’humanité.",
     "none": "Pas d'offres pour l'instant....veuillez consulter d'autres rubriques"
+  },
+  "mode": {
+    "title": "Description du poste",
+    "besoin": "Besoin",
+    "lieu": "Lieu",
+    "TypeContrat": "Type de contrat",
+    "dateR": "Date de rédaction",
+    "dateC": "Date de clôture",
+    "dateP": "Date de prise de service",
+    "btn1": "Voir PDF",
+    "btn2": "Postuler Maintenant",
+    "btn3": "Voir Plus",
+    "doc": "Aperçu du document",
+    "click": "Fermer"
   }
 }
