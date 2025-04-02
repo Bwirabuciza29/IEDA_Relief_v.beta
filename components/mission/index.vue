@@ -7,7 +7,7 @@
         :key="index"
         @click="activeTab = index"
         :class="[
-          'px-4 py-3 font-medium  transition-colors duration-300',
+          'px-8 py-3 font-medium  transition-colors duration-300',
           activeTab === index
             ? 'bg-custom-green text-white'
             : 'bg-gray-200 text-gray-700 hover:bg-gray-300',
@@ -34,7 +34,7 @@
       v-for="(tab, index) in tabs"
       :key="index"
       v-show="activeTab === index"
-      class="flex flex-col md:flex-row items-center justify-center text-center md:text-left transition-opacity duration-500"
+      class="flex flex-col gap-4 md:flex-row items-center justify-center text-center md:text-left transition-opacity duration-500"
       :class="activeTab === index ? 'opacity-100' : 'opacity-0 hidden'"
     >
       <!-- Texte au centre -->
@@ -66,7 +66,7 @@
           <img
             :src="tab.image"
             alt="Image"
-            class="w-full max-w-sm rounded-lg shadow-md"
+            class="w-full h-[350px] max-h-[200px] md:max-h-[300px] lg:max-h-[355px] object-cover rounded-lg"
           />
           <!-- Gradient en dessous -->
           <div
