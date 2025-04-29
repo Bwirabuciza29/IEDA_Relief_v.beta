@@ -462,21 +462,6 @@
           {{ t("about.support_title_2") }}</span
         >
       </h2>
-      <div class="hidden md:grid grid-cols-3 mt-8">
-        <div
-          v-for="(member, index) in teamMembers"
-          :key="index"
-          class="flex flex-col items-center text-center"
-        >
-          <img
-            :src="member.image"
-            :alt="member.alt"
-            class="w-56 transition-all rounded-lg duration-300 hover:z-10 hover:scale-105"
-          />
-          <h3 class="mt-4 text-lg font-medium">{{ member.title }}</h3>
-          <p class="text-sm text-gray-600">{{ member.role }}</p>
-        </div>
-      </div>
     </div>
     <div class="mj-container my-16">
       <div class="relative bg-gray-50 h-64 overflow-hidden p-4">
@@ -593,26 +578,6 @@ import { ref, onMounted } from "vue";
 const video = ref(null);
 const { t } = useI18n();
 
-const teamMembers = [
-  {
-    image: "/img/s.png",
-    alt: t("about.support_desc_1"),
-    title: "Germaine",
-    role: t("about.support_desc_1"),
-  },
-  {
-    image: "/img/s.jpg",
-    alt: t("about.support_desc_2"),
-    title: "Richard",
-    role: t("about.support_desc_2"),
-  },
-  {
-    image: "/img/ss.jpg",
-    alt: t("about.support_desc_3"),
-    title: "Ghislain",
-    role: t("about.support_desc_3"),
-  },
-];
 // Data for FAQs
 const faqs = ref([
   {
