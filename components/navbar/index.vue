@@ -195,9 +195,6 @@
         </div>
         <!-- Bouton Toggle Menu Mobile toujours visible -->
         <div class="flex items-center">
-          <!-- LangSwitcher aligné à gauche -->
-          <!-- <LangSwitchers class="block lg:hidden ml-8" /> -->
-          <!-- Bouton de menu avec marge à gauche -->
           <button
             @click="toggleMenu"
             class="fixed right-4 top-6 z-50 text-green-500 md:hidden p-2 -mt-4 bg-green-100"
