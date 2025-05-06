@@ -1,6 +1,6 @@
 <template>
-  <section class="bg-green-50 relative">
-    <div class="mj-container bg-green-50 mt-20">
+  <section class="bg-green-50 relative mt-24">
+    <div class="mj-container bg-green-50 mt-16 p-8">
       <div
         class="relative flex flex-col md:flex-row bg-custom-green overflow-hidden"
       >
@@ -42,10 +42,10 @@
     </div>
 
     <!-- contenu de l'equipe -->
-    <div class="mj-container my-4">
+    <div class="mj-container">
       <div class="py-8 px-4">
         <!-- Titre Principal -->
-        <div class="text-center my-6">
+        <div class="text-center">
           <p class="text-custom-green uppercase tracking-widest text-xs">
             {{ t("img.title_1") }}
           </p>
@@ -57,10 +57,10 @@
       </div>
     </div>
     <!-- gallerie ici -->
-    <div class="mj-container -mt-10">
-      <h1 class="text-4xl font-bold text-center mb-6">
+    <div class="mj-container">
+      <!-- <h1 class="text-4xl font-bold text-center mb-6">
         {{ t("img.title_3") }}
-      </h1>
+      </h1> -->
 
       <!-- img debut -->
       <div class="mj-container my-4 bg-white p-2">

@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-green-50">
+  <section class="bg-green-50 mt-24">
     <!-- DEBUT LA PREMIERE SECTION -->
     <div class="p-8 mt-16">
       <div class="mj-container hidden sm:block">

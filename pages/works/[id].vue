@@ -1,7 +1,7 @@
 <template>
-  <section class="bg-green-50">
+  <section class="bg-green-50 mt-24">
     <div v-if="card">
-      <div class="mj-container bg-green-50 mt-20">
+      <div class="mj-container bg-green-50 mt-16 p-8">
         <div
           class="relative flex flex-col md:flex-row bg-custom-green overflow-hidden"
         >

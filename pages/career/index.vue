@@ -1,7 +1,7 @@
 <template>
-  <section class="bg-green-50">
+  <section class="bg-green-50 mt-24">
     <!-- DEBUT LA PREMIERE SECTION -->
-    <div class="mt-24">
+    <div class="mt-16 p-8">
       <div class="mj-container">
         <!-- Début Actualités -->
 

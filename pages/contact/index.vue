@@ -1,6 +1,6 @@
 <template>
-  <section class="bg-green-50">
-    <div class="mj-container bg-green-50 mt-20">
+  <section class="bg-green-50 mt-24">
+    <div class="mj-container bg-green-50 mt-16 p-8">
       <div
         class="relative flex flex-col md:flex-row bg-custom-green overflow-hidden"
       >
