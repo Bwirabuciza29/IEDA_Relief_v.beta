@@ -44,16 +44,58 @@
           class="hidden md:flex items-center justify-between border-b px-4 py-2 text-sm font-medium"
         >
           <!-- Antenne -->
-          <div class="flex items-center text-gray-700 space-x-2">
+          <div
+            class="relative flex items-center text-gray-700 space-x-2"
+            ref="dropdownRef"
+          >
             <span class="text-custom-green">
               <i class="fas fa-map-marker-alt"></i>
             </span>
-            <span>Mission</span>
-            <span class="text-gray-400"
-              ><i class="fa-solid fa-arrow-right text-xs text-gray-500"></i
-            ></span>
-            <span class="text-custom-green">Toutes</span>
-            <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+            <span> {{ t("list.title") }}</span>
+            <span class="text-gray-400">
+              <i class="fa-solid fa-arrow-right text-xs text-gray-500"></i>
+            </span>
+
+            <!-- Bouton toggle -->
+            <button
+              @click="toggleDropdowns"
+              class="text-custom-green cursor-pointer flex items-center space-x-1"
+            >
+              <span>{{ filtrePays }}</span>
+              <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+            </button>
+
+            <!-- Dropdown animé -->
+            <transition
+              name="fade-slide"
+              enter-active-class="transition duration-200 ease-out"
+              leave-active-class="transition duration-150 ease-in"
+              enter-from-class="opacity-0 translate-y-2"
+              enter-to-class="opacity-100 translate-y-0"
+              leave-from-class="opacity-100 translate-y-0"
+              leave-to-class="opacity-0 translate-y-2"
+            >
+              <ul
+                v-if="dropdownOpen"
+                class="absolute top-full left-0 mt-2 w-40 bg-white border rounded shadow-md z-10"
+              >
+                <li
+                  v-for="pays in paysList"
+                  :key="pays"
+                  @click="selectPays(pays)"
+                  :class="[
+                    'px-4 py-2 cursor-pointer hover:bg-gray-100',
+                    filtrePays === pays
+                      ? 'bg-green-600 text-white font-semibold'
+                      : 'text-gray-700',
+                  ]"
+                >
+                  {{ pays }}
+                </li>
+              </ul>
+            </transition>
+
+            <!-- Loading -->
             <div
               v-show="isLoading"
               class="loader absolute inset-0 z-0 flex items-center justify-center"
@@ -267,9 +309,57 @@
   </div>
 </template>
 <script setup>
+import { ref, onMounted } from "vue";
+import { useRuntimeConfig } from "#app";
 const { t, locale } = useI18n();
 const route = useRoute();
 const menuOpen = ref(false);
+
+const paysList = ref([]);
+const filtrePays = ref("All");
+const dropdownOpen = ref(false);
+const dropdownRef = ref(null);
+// DEBUT  FILTRE DES PAYS
+const fetchPays = async () => {
+  try {
+    isLoading.value = true;
+    const config = useRuntimeConfig();
+    const directusUrl = config.public.directus.url;
+    const response = await fetch(`${directusUrl}/items/pays`);
+    if (!response.ok)
+      throw new Error("Erreur lors de la récupération des pays.");
+    const data = await response.json();
+    paysList.value = ["All", ...data.data.map((p) => p.designation)];
+  } catch (err) {
+    console.error(err);
+  } finally {
+    isLoading.value = false;
+  }
+};
+const toggleDropdowns = () => {
+  dropdownOpen.value = !dropdownOpen.value;
+};
+
+const selectPays = (pays) => {
+  filtrePays.value = pays;
+  dropdownOpen.value = false;
+  console.log("Pays sélectionné :", pays);
+};
+
+// Fermer si clic à l’extérieur
+const handleClickOutside = (event) => {
+  if (dropdownRef.value && !dropdownRef.value.contains(event.target)) {
+    dropdownOpen.value = false;
+  }
+};
+
+// Fonction pour changer le filtre actif
+const changerFiltre = (pays) => {
+  filtrePays.value = pays;
+  // Ici, tu peux aussi émettre un event ou faire autre chose
+  console.log("Filtre appliqué :", pays);
+};
+// FIN POUR LE FILTRE DES PAYS
 
 // Méthode pour basculer l'état du menu
 const toggleMenu = () => {
@@ -363,6 +453,14 @@ watch(
   },
   { immediate: true }
 );
+onMounted(() => {
+  fetchPays();
+  document.addEventListener("click", handleClickOutside);
+});
+
+onBeforeUnmount(() => {
+  document.removeEventListener("click", handleClickOutside);
+});
 </script>
 <style scoped>
 /* Loader Styles */

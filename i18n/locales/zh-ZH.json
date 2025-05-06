@@ -11,6 +11,10 @@
     "news": "新闻",
     "donation": "捐赠"
   },
+  "list": {
+    "title": "使命",
+    "all": "全部"
+  },
   "hero": {
     "title_1": "帮助",
     "title_2": "社区",

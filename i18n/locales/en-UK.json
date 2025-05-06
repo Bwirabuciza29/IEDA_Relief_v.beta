@@ -11,6 +11,10 @@
     "donation": "Donation",
     "news": "News"
   },
+  "list": {
+    "title": "Mission",
+    "all": "All"
+  },
   "hero": {
     "title_1": "Helping",
     "title_2": "communities",
