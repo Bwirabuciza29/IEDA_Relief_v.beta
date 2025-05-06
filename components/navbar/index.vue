@@ -17,8 +17,10 @@
           <span class="text-custom-green">
             <i class="fas fa-map-marker-alt"></i>
           </span>
-          <span>Antenne</span>
-          <span class="text-gray-400">→</span>
+          <span>Mission</span>
+          <span class="text-gray-400"
+            ><i class="fa-solid fa-arrow-right text-xs text-gray-500"></i
+          ></span>
           <span class="text-custom-green">Toutes</span>
           <i class="fas fa-chevron-down text-xs text-gray-500"></i>
           <div
@@ -46,8 +48,10 @@
             <span class="text-custom-green">
               <i class="fas fa-map-marker-alt"></i>
             </span>
-            <span>Antenne</span>
-            <span class="text-gray-400">→</span>
+            <span>Mission</span>
+            <span class="text-gray-400"
+              ><i class="fa-solid fa-arrow-right text-xs text-gray-500"></i
+            ></span>
             <span class="text-custom-green">Toutes</span>
             <i class="fas fa-chevron-down text-xs text-gray-500"></i>
             <div
@@ -90,7 +94,7 @@
               v-for="(item, index) in menuItem"
               :key="index"
               :to="localPath(item)"
-              class="relative group text-custom-blue duration-400 transform transition hover:scale-105 hover:text-green-400"
+              class="relative group text-gray-500 duration-400 transform transition hover:scale-105 hover:text-green-400"
               :class="{
                 'text-green-500': isActiveLink(localPath(item)),
               }"
@@ -104,7 +108,7 @@
               <!-- Bouton qui contrôle le menu -->
               <button
                 @click="toggleDropdown"
-                class="flex items-center gap-2 font-semibold text-custom-blue hover:text-green-400 transition"
+                class="flex items-center gap-2 font-semibold text-gray-500 hover:text-green-400 transition"
               >
                 {{ t("footer.title") }}
                 <span
@@ -127,7 +131,7 @@
                 @mouseenter="isHovering = true"
                 @mouseleave="isHovering = false"
                 v-show="isDropdownOpen || isHovering"
-                class="absolute text-custom-blue flex flex-col bg-white border border-green-200 mt-2 w-40 duration-400 transform transition hover:scale-105"
+                class="absolute text-gray-500 flex flex-col bg-white border border-green-200 mt-2 w-40 duration-400 transform transition hover:scale-105"
                 :class="{
                   'opacity-100 scale-100': isDropdownOpen || isHovering,
                   'opacity-0 scale-95': !(isDropdownOpen || isHovering),
@@ -168,7 +172,7 @@
                 </NuxtLink>
               </div>
             </div>
-            <div class="relative text-custom-blue">
+            <div class="relative text-gray-500">
               <NuxtLink
                 :to="localPath(t('menu.contact'))"
                 @click="closeDropdown"
