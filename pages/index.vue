@@ -86,7 +86,7 @@
       🇨🇩 Contenu spécifique pour la RDC
     </div>
     <!-- Fin Page d'accueil -->
-    <div class="my-16" data-aos="fade-up">
+    <div class="my-16 bg-white p-4 border-t border-b border-custom-green">
       <log />
     </div>
     <div class="my-16" data-aos="fade-up">
