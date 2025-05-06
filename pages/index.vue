@@ -82,8 +82,8 @@
     </div>
 
     <!-- Si c'est DRC -->
-    <div v-else-if="selectedPays === 'DRC'" class="mt-44 p-4 bg-green-100">
-      🇨🇩 Contenu spécifique pour la RDC
+    <div v-else-if="selectedPays === 'DRC'">
+      <congo />
     </div>
     <!-- Fin Page d'accueil -->
     <div class="my-16 bg-white p-4 border-t border-b border-custom-green">
