@@ -1,210 +1,270 @@
 <template>
   <div
-    class="fixed left-0 right-0 top-0 z-50 flex w-full items-center justify-cente text-black bg-white"
+    class="w-full fixed top-0 left-0 z-50 bg-green-50 border-b border-gray-200"
   >
-    <header
-      class="mj-container z-50 flex w-full items-center justify-between bg-white"
-    >
-      <div class="relative flex items-center">
-        <NuxtLink to="/">
-          <img
-            src="/img/logo.png"
-            alt="Ieda Logo"
-            class="h-12 sm:h-12 py-2 my-2 mr-4"
-          />
-        </NuxtLink>
-        <div
-          v-show="isLoading"
-          class="loader absolute inset-0 z-0 flex items-center justify-center bg-white"
-        ></div>
+    <div class="flex mj-container">
+      <!-- Logo à gauche -->
+      <div
+        class="flex items-center px-2 py-2 shrink-0 border border-custom-green"
+      >
+        <img src="/img/ie.png" alt="Ieda Relief" class="h-24" />
       </div>
+      <nav
+        class="md:hidden px-4 py-3 text-sm font-medium flex flex-col space-y-3 sm:flex-row sm:items-center sm:justify-between sm:space-y-0"
+      >
+        <!-- Antenne -->
+        <div class="flex items-center flex-wrap text-gray-700 gap-1 sm:gap-2">
+          <span class="text-custom-green">
+            <i class="fas fa-map-marker-alt"></i>
+          </span>
+          <span>Antenne</span>
+          <span class="text-gray-400">→</span>
+          <span class="text-custom-green">Toutes</span>
+          <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+          <div
+            v-show="isLoading"
+            class="loader absolute inset-0 z-0 flex items-center justify-center"
+          ></div>
+        </div>
 
-      <!-- Menu Desktop -->
-      <div class="flex-grow">
-        <nav class="hidden justify-center space-x-6 font-semibold md:flex">
-          <NuxtLink
-            v-for="(item, index) in menuItem"
-            :key="index"
-            :to="localPath(item)"
-            class="relative group duration-400 transform transition hover:scale-105 hover:text-green-400"
-            :class="{
-              'text-green-500': isActiveLink(localPath(item)),
-            }"
-          >
-            {{ item }}
-            <span
-              class="absolute left-0 bottom-0 h-[2px] w-0 bg-green-400 transition-all duration-500 group-hover:w-full"
-            ></span>
-          </NuxtLink>
-          <div class="relative group">
-            <!-- Bouton qui contrôle le menu -->
-            <button
-              @click="toggleDropdown"
-              class="flex items-center gap-2 font-semibold text-black hover:text-green-400 transition"
+        <!-- Langue + Contacts -->
+        <div
+          class="flex justify-end sm:justify-start items-center w-full space-x-3"
+        >
+          <LangSwitcher class="w-full" />
+        </div>
+      </nav>
+
+      <!-- Contenu nav à droite -->
+      <div class="flex flex-col flex-1 justify-between w-full">
+        <!-- Ligne du haut -->
+        <nav
+          class="hidden md:flex items-center justify-between border-b px-4 py-2 text-sm font-medium"
+        >
+          <!-- Antenne -->
+          <div class="flex items-center text-gray-700 space-x-2">
+            <span class="text-custom-green">
+              <i class="fas fa-map-marker-alt"></i>
+            </span>
+            <span>Antenne</span>
+            <span class="text-gray-400">→</span>
+            <span class="text-custom-green">Toutes</span>
+            <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+            <div
+              v-show="isLoading"
+              class="loader absolute inset-0 z-0 flex items-center justify-center"
+            ></div>
+          </div>
+
+          <!-- Langue + Contacts -->
+          <div class="flex items-center space-x-3">
+            <LangSwitcher class="hidden md:block" />
+            <div class="bg-white border border-green-200 p-1.5">
+              <a
+                href="#"
+                class="flex items-center space-x-2 text-custom-green hover:text-blue-800 font-medium"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+                  />
+                </svg>
+                <span>Contacts</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="flex items-center justify-between px-4 py-2">
+          <nav class="hidden items-start ml-4 space-x-6 font-semibold md:flex">
+            <NuxtLink
+              v-for="(item, index) in menuItem"
+              :key="index"
+              :to="localPath(item)"
+              class="relative group text-custom-blue duration-400 transform transition hover:scale-105 hover:text-green-400"
+              :class="{
+                'text-green-500': isActiveLink(localPath(item)),
+              }"
             >
-              {{ t("footer.title") }}
+              {{ item }}
               <span
                 class="absolute left-0 bottom-0 h-[2px] w-0 bg-green-400 transition-all duration-500 group-hover:w-full"
               ></span>
-              <!-- Icône Font Awesome dynamique -->
-              <i
-                class="fas transform transition-all duration-300 ease-in-out text-sm"
-                :class="{
-                  'fa-chevron-up': isDropdownOpen || isHovering,
-                  'fa-chevron-down': !(isDropdownOpen || isHovering),
-                  'rotate-180': isDropdownOpen || isHovering,
-                  'rotate-0': !(isDropdownOpen || isHovering),
-                }"
-              ></i>
-            </button>
+            </NuxtLink>
+            <div class="relative group">
+              <!-- Bouton qui contrôle le menu -->
+              <button
+                @click="toggleDropdown"
+                class="flex items-center gap-2 font-semibold text-custom-blue hover:text-green-400 transition"
+              >
+                {{ t("footer.title") }}
+                <span
+                  class="absolute left-0 bottom-0 h-[2px] w-0 bg-green-400 transition-all duration-500 group-hover:w-full"
+                ></span>
+                <!-- Icône Font Awesome dynamique -->
+                <i
+                  class="fas transform transition-all duration-300 ease-in-out text-sm"
+                  :class="{
+                    'fa-chevron-up': isDropdownOpen || isHovering,
+                    'fa-chevron-down': !(isDropdownOpen || isHovering),
+                    'rotate-180': isDropdownOpen || isHovering,
+                    'rotate-0': !(isDropdownOpen || isHovering),
+                  }"
+                ></i>
+              </button>
 
-            <!-- Dropdown avec animation -->
-            <div
-              @mouseenter="isHovering = true"
-              @mouseleave="isHovering = false"
-              v-show="isDropdownOpen || isHovering"
-              class="absolute flex flex-col bg-white border border-green-200 mt-2 w-40 duration-400 transform transition hover:scale-105"
-              :class="{
-                'opacity-100 scale-100': isDropdownOpen || isHovering,
-                'opacity-0 scale-95': !(isDropdownOpen || isHovering),
-              }"
-            >
-              <!-- Lien "Work" -->
-              <NuxtLink
-                :to="localPath(t('menu.team'))"
-                class="px-4 py-2 hover:bg-green-100 hover:text-green-400"
+              <!-- Dropdown avec animation -->
+              <div
+                @mouseenter="isHovering = true"
+                @mouseleave="isHovering = false"
+                v-show="isDropdownOpen || isHovering"
+                class="absolute text-custom-blue flex flex-col bg-white border border-green-200 mt-2 w-40 duration-400 transform transition hover:scale-105"
                 :class="{
-                  'text-green-500': isActiveLink(localPath(t('menu.team'))),
+                  'opacity-100 scale-100': isDropdownOpen || isHovering,
+                  'opacity-0 scale-95': !(isDropdownOpen || isHovering),
                 }"
-                @click="closeDropdown"
               >
-                {{ t("menu.team") }}
-              </NuxtLink>
+                <!-- Lien "Work" -->
+                <NuxtLink
+                  :to="localPath(t('menu.team'))"
+                  class="px-4 py-2 hover:bg-green-100 hover:text-green-400"
+                  :class="{
+                    'text-green-500': isActiveLink(localPath(t('menu.team'))),
+                  }"
+                  @click="closeDropdown"
+                >
+                  {{ t("menu.team") }}
+                </NuxtLink>
 
-              <!-- Lien "News" -->
+                <!-- Lien "News" -->
+                <NuxtLink
+                  :to="localPath(t('menu.images'))"
+                  class="px-4 py-2 hover:bg-green-100 hover:text-green-400"
+                  :class="{
+                    'text-green-500': isActiveLink(localPath(t('menu.images'))),
+                  }"
+                  @click="closeDropdown"
+                >
+                  {{ t("menu.images") }}
+                </NuxtLink>
+                <NuxtLink
+                  :to="localPath(t('menu.works'))"
+                  class="px-4 py-2 hover:bg-green-100 hover:text-green-400"
+                  :class="{
+                    'text-green-500': isActiveLink(localPath(t('menu.works'))),
+                  }"
+                  @click="closeDropdown"
+                >
+                  {{ t("menu.works") }}
+                </NuxtLink>
+              </div>
+            </div>
+            <div class="relative text-custom-blue">
               <NuxtLink
-                :to="localPath(t('menu.images'))"
-                class="px-4 py-2 hover:bg-green-100 hover:text-green-400"
-                :class="{
-                  'text-green-500': isActiveLink(localPath(t('menu.images'))),
-                }"
+                :to="localPath(t('menu.contact'))"
                 @click="closeDropdown"
-              >
-                {{ t("menu.images") }}
-              </NuxtLink>
-              <NuxtLink
-                :to="localPath(t('menu.works'))"
-                class="px-4 py-2 hover:bg-green-100 hover:text-green-400"
                 :class="{
-                  'text-green-500': isActiveLink(localPath(t('menu.works'))),
+                  'text-green-500': isActiveLink(localPath(t('menu.contact'))),
                 }"
-                @click="closeDropdown"
+                class="group relative inline-block duration-400 transform transition hover:scale-105 hover:text-green-400"
               >
-                {{ t("menu.works") }}
+                {{ t("menu.contact") }}
+                <span
+                  class="absolute left-0 bottom-0 h-0.5 w-0 bg-green-500 transition-all duration-300 group-hover:w-full"
+                ></span>
               </NuxtLink>
             </div>
-          </div>
-          <div class="relative">
+          </nav>
+          <div class="flex items-center space-x-4">
             <NuxtLink
-              :to="localPath(t('menu.contact'))"
-              @click="closeDropdown"
-              :class="{
-                'text-green-500': isActiveLink(localPath(t('menu.contact'))),
-              }"
-              class="group relative inline-block duration-400 transform transition hover:scale-105 hover:text-green-400"
+              :to="localPagePath('donation')"
+              class="hidden md:block items-center bg-custom-green text-white px-4 py-1 border border-green-300 border-opacity-50 hover:bg-white hover:text-custom-green transition duration-200 ease-in-out"
             >
-              {{ t("menu.contact") }}
-              <span
-                class="absolute left-0 bottom-0 h-0.5 w-0 bg-green-500 transition-all duration-300 group-hover:w-full"
-              ></span>
+              {{ t("donation.btn_3") }}
             </NuxtLink>
           </div>
-        </nav>
-      </div>
-
-      <!-- LangSwitcher à droite (visible sur desktop) -->
-      <div class="flex items-center space-x-4">
-        <LangSwitcher class="hidden md:block" />
-        <NuxtLink
-          :to="localPagePath('donation')"
-          class="hidden md:block items-center bg-custom-green text-white px-4 py-1 border border-green-300 border-opacity-50 hover:bg-white hover:text-custom-green transition duration-200 ease-in-out"
-        >
-          {{ t("donation.btn_3") }}
-        </NuxtLink>
-      </div>
-
-      <!-- Bouton Toggle Menu Mobile toujours visible -->
-      <div class="flex items-center">
-        <!-- LangSwitcher aligné à gauche -->
-        <LangSwitchers class="block lg:hidden ml-8" />
-        <!-- Bouton de menu avec marge à gauche -->
-        <button
-          @click="toggleMenu"
-          class="fixed right-4 top-6 z-50 text-green-500 md:hidden p-2 -mt-4 bg-green-100"
-        >
-          <!-- SVG pour le bouton du menu -->
-          <svg
-            v-if="!menuOpen"
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8"
-            viewBox="0 0 20 20"
-            fill="currentColor"
+        </div>
+        <!-- Bouton Toggle Menu Mobile toujours visible -->
+        <div class="flex items-center">
+          <!-- LangSwitcher aligné à gauche -->
+          <!-- <LangSwitchers class="block lg:hidden ml-8" /> -->
+          <!-- Bouton de menu avec marge à gauche -->
+          <button
+            @click="toggleMenu"
+            class="fixed right-4 top-6 z-50 text-green-500 md:hidden p-2 -mt-4 bg-green-100"
           >
-            <path
-              fill-rule="evenodd"
-              d="M3 5h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 110 2H3a1 1 0 110-2zm0 4h14a1 1 0 110 2H3a1 1 0 110-2z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          <svg
-            v-else
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
+            <!-- SVG pour le bouton du menu -->
+            <svg
+              v-if="!menuOpen"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 110 2H3a1 1 0 110-2zm0 4h14a1 1 0 110 2H3a1 1 0 110-2z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <svg
+              v-else
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
 
-      <!-- Menu Mobile -->
-      <transition name="fade">
-        <nav
-          v-if="menuOpen"
-          class="fixed h-auto inset-0 z-40 m-4 flex flex-grow flex-col items-center space-y-6 rounded-lg border border-gray-300 bg-gradient-to-b from-white via-white/70 to-white/40 p-8 backdrop-blur-md transition-transform duration-300 ease-out"
-        >
-          <NuxtLink
-            v-for="(item, index) in menuItems"
-            :key="index"
-            :to="localPath(item)"
-            @click="closeMenu"
-            class="font-semibold text-green-400 hover:text-green-400 hover:underline text-2xl
+        <!-- Menu Mobile -->
+        <transition name="fade">
+          <nav
+            v-if="menuOpen"
+            class="fixed h-auto inset-0 z-40 m-4 flex flex-grow flex-col items-center space-y-6 rounded-lg border border-gray-300 bg-gradient-to-b from-white via-white/70 to-white/40 p-8 backdrop-blur-md transition-transform duration-300 ease-out"
+          >
+            <NuxtLink
+              v-for="(item, index) in menuItems"
+              :key="index"
+              :to="localPath(item)"
+              @click="closeMenu"
+              class="font-semibold text-green-400 hover:text-green-400 hover:underline text-2xl
   transition-opacity duration-300 opacity-0 animate-fadeIn delay-{{
     index * 100
   }}"
-            :class="{
-              'text-green-500 underline': isActiveLink(localPath(item)),
-            }"
-          >
-            {{ item }}
-          </NuxtLink>
-          <NuxtLink
-            :to="localPagePath('donation')"
-            class="flex items-center bg-custom-green text-white px-4 py-1 border border-green-300 border-opacity-50 hover:bg-white hover:text-custom-green transition duration-200 ease-in-out"
-          >
-            {{ t("donation.btn_3") }}
-          </NuxtLink>
-        </nav>
-      </transition>
-    </header>
+              :class="{
+                'text-green-500 underline': isActiveLink(localPath(item)),
+              }"
+            >
+              {{ item }}
+            </NuxtLink>
+            <NuxtLink
+              :to="localPagePath('donation')"
+              class="flex items-center bg-custom-green text-white px-4 py-1 border border-green-300 border-opacity-50 hover:bg-white hover:text-custom-green transition duration-200 ease-in-out"
+            >
+              {{ t("donation.btn_3") }}
+            </NuxtLink>
+          </nav>
+        </transition>
+      </div>
+    </div>
   </div>
 </template>
-
 <script setup>
 const { t, locale } = useI18n();
 const route = useRoute();
