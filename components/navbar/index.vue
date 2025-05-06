@@ -27,10 +27,10 @@
 
           <!-- Bouton toggle -->
           <button
-            @click="toggleDropdowns"
+            @click="toggleDropdown"
             class="text-custom-green cursor-pointer flex items-center space-x-1"
           >
-            <span>{{ filtrePays }}</span>
+            <span>{{ selectedPays }}</span>
             <i class="fas fa-chevron-down text-xs text-gray-500"></i>
           </button>
 
@@ -49,17 +49,13 @@
               class="absolute top-full left-0 mt-2 w-40 bg-white border rounded shadow-md z-10"
             >
               <li
-                v-for="pays in paysList"
-                :key="pays"
-                @click="selectPays(pays)"
-                :class="[
-                  'px-4 py-2 cursor-pointer hover:bg-gray-100',
-                  filtrePays === pays
-                    ? 'bg-green-600 text-white font-semibold'
-                    : 'text-gray-700',
-                ]"
+                v-for="p in paysList"
+                :key="p"
+                @click="selectPays(p)"
+                class="cursor-pointer px-4 py-2 hover:bg-gray-100"
+                :class="selectedPays === p ? 'bg-green-500 text-white' : ''"
               >
-                {{ pays }}
+                {{ p }}
               </li>
             </ul>
           </transition>
@@ -100,10 +96,10 @@
 
             <!-- Bouton toggle -->
             <button
-              @click="toggleDropdowns"
+              @click="toggleDropdown"
               class="text-custom-green cursor-pointer flex items-center space-x-1"
             >
-              <span>{{ filtrePays }}</span>
+              <span>{{ selectedPays }}</span>
               <i class="fas fa-chevron-down text-xs text-gray-500"></i>
             </button>
 
@@ -122,17 +118,13 @@
                 class="absolute top-full left-0 mt-2 w-40 bg-white border rounded shadow-md z-10"
               >
                 <li
-                  v-for="pays in paysList"
-                  :key="pays"
-                  @click="selectPays(pays)"
-                  :class="[
-                    'px-4 py-2 cursor-pointer hover:bg-gray-100',
-                    filtrePays === pays
-                      ? 'bg-green-600 text-white font-semibold'
-                      : 'text-gray-700',
-                  ]"
+                  v-for="p in paysList"
+                  :key="p"
+                  @click="selectPays(p)"
+                  class="cursor-pointer px-4 py-2 hover:bg-gray-100"
+                  :class="selectedPays === p ? 'bg-green-500 text-white' : ''"
                 >
-                  {{ pays }}
+                  {{ p }}
                 </li>
               </ul>
             </transition>
@@ -191,7 +183,7 @@
             <div class="relative group">
               <!-- Bouton qui contrôle le menu -->
               <button
-                @click="toggleDropdown"
+                @click="toggleDropdowns"
                 class="flex items-center gap-2 font-semibold text-gray-500 hover:text-green-400 transition"
               >
                 {{ t("footer.title") }}
@@ -352,57 +344,25 @@
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
-import { useRuntimeConfig } from "#app";
+import { usePaysStore } from "/stores/usePaysStore.js";
+import { storeToRefs } from "pinia";
 const { t, locale } = useI18n();
 const route = useRoute();
 const menuOpen = ref(false);
 
-const paysList = ref([]);
 const filtrePays = ref("All");
-const dropdownOpen = ref(false);
 const dropdownRef = ref(null);
 // DEBUT  FILTRE DES PAYS
-const fetchPays = async () => {
-  try {
-    isLoading.value = true;
-    const config = useRuntimeConfig();
-    const directusUrl = config.public.directus.url;
-    const response = await fetch(`${directusUrl}/items/pays`);
-    if (!response.ok)
-      throw new Error("Erreur lors de la récupération des pays.");
-    const data = await response.json();
-    paysList.value = ["All", ...data.data.map((p) => p.designation)];
-  } catch (err) {
-    console.error(err);
-  } finally {
-    isLoading.value = false;
-  }
-};
-const toggleDropdowns = () => {
-  dropdownOpen.value = !dropdownOpen.value;
-};
+const paysStore = usePaysStore();
+const { paysList, selectedPays, dropdownOpen } = storeToRefs(paysStore);
+const { fetchPays, selectPays, toggleDropdown } = paysStore;
+// FIN POUR LE FILTRE DES PAYS
 
-const selectPays = (pays) => {
-  filtrePays.value = pays;
-  dropdownOpen.value = false;
-  console.log("Pays sélectionné :", pays);
-};
-
-// Fermer si clic à l’extérieur
 const handleClickOutside = (event) => {
   if (dropdownRef.value && !dropdownRef.value.contains(event.target)) {
     dropdownOpen.value = false;
   }
 };
-
-// Fonction pour changer le filtre actif
-const changerFiltre = (pays) => {
-  filtrePays.value = pays;
-  // Ici, tu peux aussi émettre un event ou faire autre chose
-  console.log("Filtre appliqué :", pays);
-};
-// FIN POUR LE FILTRE DES PAYS
-
 // Méthode pour basculer l'état du menu
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value;
@@ -419,7 +379,7 @@ const isDropdownOpen = ref(false);
 const isHovering = ref(false);
 
 // Fonction pour basculer l'état du dropdown via clic
-function toggleDropdown() {
+function toggleDropdowns() {
   isDropdownOpen.value = !isDropdownOpen.value;
 }
 
@@ -496,12 +456,8 @@ watch(
   { immediate: true }
 );
 onMounted(() => {
-  fetchPays();
+  paysStore.fetchPays();
   document.addEventListener("click", handleClickOutside);
-});
-
-onBeforeUnmount(() => {
-  document.removeEventListener("click", handleClickOutside);
 });
 </script>
 <style scoped>

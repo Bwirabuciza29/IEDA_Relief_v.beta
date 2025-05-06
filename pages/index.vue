@@ -1,12 +1,10 @@
 <template>
   <div class="bg-green-50">
-    <div class="mj-container relative mt-20">
-      <!-- Contenu principal -->
+    <div v-if="selectedPays === 'All'" class="mj-container relative mt-20">
       <div class="relative z-10">
         <div
           class="flex flex-col md:flex-row items-center md:justify-between py-10"
         >
-          <!-- Section de gauche -->
           <div class="md:w-1/2 space-y-6 text-center md:text-left">
             <h1 class="text-4xl md:text-5xl font-semibold">
               {{ title_1 }}
@@ -32,7 +30,6 @@
             </NuxtLink>
           </div>
 
-          <!-- Section de droite -->
           <div
             class="md:w-1/2 flex flex-wrap md:justify-end gap-4 mt-10 md:mt-0 relative"
           >
@@ -53,8 +50,6 @@
                 class="hidden md:block mx-2 absolute top-[20%] right-[-40px] w-20 h-20 md:w-28 md:h-28 shadow-md transform rounded-lg transition-all duration-300 hover:z-10 hover:scale-110"
               />
             </div>
-
-            <!-- Carte en bas (superposée) -->
             <div
               class="bg-custom-green py-6 rounded-md flex items-center justify-center w-2/4 md:w-2/2 absolute -bottom-16 left-44 transform -translate-x-1/2 md:translate-x-0 transition hover:scale-105 mobile:bottom-8 mobile:left-1/2 mobile:transform mobile:-translate-x-1/2"
             >
@@ -70,8 +65,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Image de filigrane -->
       <img
         src="/img/Vector_1.png"
         alt="Filigrane"
@@ -82,6 +75,15 @@
         alt="Filigrane"
         class="absolute left-0 -bottom-48 transform -translate-x-1/2 opacity-50 pointer-events-none w-64 sm:w-96 md:w-[25rem] lg:w-[35rem] h-[20rem] sm:h-[25rem] md:h-[30rem] lg:h-[35rem] z-0"
       />
+    </div>
+    <!-- Si c'est USA -->
+    <div v-else-if="selectedPays === 'USA'" class="mt-44 p-4 bg-blue-100">
+      🇺🇸 Contenu spécifique pour les USA
+    </div>
+
+    <!-- Si c'est DRC -->
+    <div v-else-if="selectedPays === 'DRC'" class="mt-44 p-4 bg-green-100">
+      🇨🇩 Contenu spécifique pour la RDC
     </div>
     <!-- Fin Page d'accueil -->
     <div class="my-16" data-aos="fade-up">
@@ -117,6 +119,12 @@
 
 <script setup>
 const { t, locale } = useI18n();
+import { usePaysStore } from "/stores/usePaysStore.js";
+import { storeToRefs } from "pinia";
+const paysStore = usePaysStore();
+const { selectedPays, paysList, isLoading, dropdownOpen } =
+  storeToRefs(paysStore);
+const { fetchPays, selectPays, toggleDropdown } = paysStore;
 const title_1 = ref(t("hero.title_1"));
 const title_2 = ref(t("hero.title_2"));
 const title_3 = ref(t("hero.title_3"));
@@ -149,4 +157,7 @@ const localPagePath = (route) => {
   const prefix = locale.value === "en-UK" ? "" : `/${locale.value}`;
   return `${prefix}/${route}`;
 };
+onMounted(() => {
+  fetchPays();
+});
 </script>
