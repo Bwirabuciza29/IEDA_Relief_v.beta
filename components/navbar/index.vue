@@ -13,16 +13,58 @@
         class="md:hidden px-4 py-3 text-sm font-medium flex flex-col space-y-3 sm:flex-row sm:items-center sm:justify-between sm:space-y-0"
       >
         <!-- Antenne -->
-        <div class="flex items-center flex-wrap text-gray-700 gap-1 sm:gap-2">
+        <div
+          class="relative flex items-center text-gray-700 space-x-2"
+          ref="dropdownRef"
+        >
           <span class="text-custom-green">
             <i class="fas fa-map-marker-alt"></i>
           </span>
-          <span>Mission</span>
-          <span class="text-gray-400"
-            ><i class="fa-solid fa-arrow-right text-xs text-gray-500"></i
-          ></span>
-          <span class="text-custom-green">Toutes</span>
-          <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+          <span> {{ t("list.title") }}</span>
+          <span class="text-gray-400">
+            <i class="fa-solid fa-arrow-right text-xs text-gray-500"></i>
+          </span>
+
+          <!-- Bouton toggle -->
+          <button
+            @click="toggleDropdowns"
+            class="text-custom-green cursor-pointer flex items-center space-x-1"
+          >
+            <span>{{ filtrePays }}</span>
+            <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+          </button>
+
+          <!-- Dropdown animé -->
+          <transition
+            name="fade-slide"
+            enter-active-class="transition duration-200 ease-out"
+            leave-active-class="transition duration-150 ease-in"
+            enter-from-class="opacity-0 translate-y-2"
+            enter-to-class="opacity-100 translate-y-0"
+            leave-from-class="opacity-100 translate-y-0"
+            leave-to-class="opacity-0 translate-y-2"
+          >
+            <ul
+              v-if="dropdownOpen"
+              class="absolute top-full left-0 mt-2 w-40 bg-white border rounded shadow-md z-10"
+            >
+              <li
+                v-for="pays in paysList"
+                :key="pays"
+                @click="selectPays(pays)"
+                :class="[
+                  'px-4 py-2 cursor-pointer hover:bg-gray-100',
+                  filtrePays === pays
+                    ? 'bg-green-600 text-white font-semibold'
+                    : 'text-gray-700',
+                ]"
+              >
+                {{ pays }}
+              </li>
+            </ul>
+          </transition>
+
+          <!-- Loading -->
           <div
             v-show="isLoading"
             class="loader absolute inset-0 z-0 flex items-center justify-center"
@@ -107,8 +149,8 @@
             <LangSwitcher class="hidden md:block" />
             <div class="bg-white border border-green-200 p-1.5">
               <a
-                href="#"
-                class="flex items-center space-x-2 text-custom-green hover:text-blue-800 font-medium"
+                href="tel:+17137742522"
+                class="flex items-center space-x-2 text-custom-green font-medium"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
