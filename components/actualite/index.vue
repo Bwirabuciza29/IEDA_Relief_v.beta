@@ -27,7 +27,7 @@
             >
               <a
                 href="#"
-                class="text-xs bg-primary_1 text-white px-5 py-2 uppercase hover:bg-white transition ease-in-out duration-500"
+                class="text-xs bg-custom-green text-white px-5 py-2 uppercase hover:bg-white transition ease-in-out duration-500"
               >
                 {{ item.category }}
               </a>
@@ -68,27 +68,27 @@
             <div class="flex items-center py-8">
               <a
                 href="#"
-                class="h-10 w-10 bg-primary_1 hover:bg-secondary_2 font-semibold text-white text-sm flex items-center justify-center"
+                class="h-10 w-10 bg-custom-green hover:bg-secondary_2 font-semibold text-white text-sm flex items-center justify-center"
                 >1
               </a>
               <a
                 href="#"
-                class="h-10 w-10 font-semibold text-gray-800 hover:bg-primary_1 hover:text-white text-sm flex items-center justify-center"
+                class="h-10 w-10 font-semibold text-gray-800 hover:bg-custom-green hover:text-white text-sm flex items-center justify-center"
                 >2
               </a>
               <a
                 href="#"
-                class="h-10 w-10 font-semibold text-gray-800 hover:bg-primary_1 hover:text-white text-sm flex items-center justify-center"
+                class="h-10 w-10 font-semibold text-gray-800 hover:bg-custom-green hover:text-white text-sm flex items-center justify-center"
                 >3
               </a>
               <a
                 href="#"
-                class="h-10 w-10 font-semibold text-gray-800 hover:bg-primary_1 hover:text-white text-sm flex items-center justify-center"
+                class="h-10 w-10 font-semibold text-gray-800 hover:bg-custom-green hover:text-white text-sm flex items-center justify-center"
                 >4
               </a>
               <a
                 href="#"
-                class="h-10 w-10 font-semibold text-gray-800 hover:bg-primary_1 hover:text-white text-sm flex items-center justify-center"
+                class="h-10 w-10 font-semibold text-gray-800 hover:bg-custom-green hover:text-white text-sm flex items-center justify-center"
               >
                 Next
               </a>
@@ -100,11 +100,6 @@
   </div>
 </template>
 <script setup>
-import { ref, onMounted, watch } from "vue";
-import { Splide, SplideSlide } from "@splidejs/vue-splide";
-import "@splidejs/vue-splide/css";
-import { useI18n } from "vue-i18n";
-
 const articles = [
   {
     image: "/img/papa.jpg",
