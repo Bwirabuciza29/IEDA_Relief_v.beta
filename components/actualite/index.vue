@@ -1,9 +1,6 @@
 <template>
   <div class="mj-container bg-white">
-    <div
-      class="relative w-full bg-center bg-cover flex items-center"
-      style="background-image: url('/img/bg.jpg'); background-attachment: fixed"
-    >
+    <div class="relative w-full bg-center bg-cover flex items-center">
       <div class="us-container my-4">
         <div class="relative mt-1 h-4 w-full">
           <div
