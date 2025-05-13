@@ -400,7 +400,7 @@ const loading = ref(true);
 
 const filtrePays = ref("All");
 const pageActuelle = ref(1);
-const articlesParPage = 6;
+const articlesParPage = 9;
 const articlesPerPage = 1;
 const currentPage = ref(1);
 
