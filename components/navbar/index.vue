@@ -13,7 +13,7 @@
         class="md:hidden px-4 py-3 text-sm font-medium flex flex-col space-y-3 sm:flex-row sm:items-center sm:justify-between sm:space-y-0"
       >
         <!-- Antenne -->
-        <div
+        <!-- <div
           class="relative flex items-center text-gray-700 space-x-2"
           ref="dropdownRef"
         >
@@ -25,7 +25,6 @@
             <i class="fa-solid fa-arrow-right text-xs text-gray-500"></i>
           </span>
 
-          <!-- Bouton toggle -->
           <button
             @click="toggleDropdown"
             class="text-custom-green cursor-pointer flex items-center space-x-1"
@@ -34,7 +33,6 @@
             <i class="fas fa-chevron-down text-xs text-gray-500"></i>
           </button>
 
-          <!-- Dropdown animé -->
           <transition
             name="fade-slide"
             enter-active-class="transition duration-200 ease-out"
@@ -60,19 +58,14 @@
             </ul>
           </transition>
 
-          <!-- Loading -->
+   
           <div
             v-show="isLoading"
             class="loader absolute inset-0 z-0 flex items-center justify-center"
           ></div>
-        </div>
+        </div> -->
 
         <!-- Langue + Contacts -->
-        <div
-          class="flex justify-end sm:justify-start items-center w-full space-x-3"
-        >
-          <LangSwitcher class="w-full" />
-        </div>
       </nav>
 
       <!-- Contenu nav à droite -->
@@ -94,7 +87,6 @@
               <i class="fa-solid fa-arrow-right text-xs text-gray-500"></i>
             </span>
 
-            <!-- Bouton toggle -->
             <button
               @click="toggleDropdown"
               class="text-custom-green cursor-pointer flex items-center space-x-1"
@@ -103,7 +95,6 @@
               <i class="fas fa-chevron-down text-xs text-gray-500"></i>
             </button>
 
-            <!-- Dropdown animé -->
             <transition
               name="fade-slide"
               enter-active-class="transition duration-200 ease-out"
@@ -274,6 +265,7 @@
           </div>
         </div>
         <!-- Bouton Toggle Menu Mobile toujours visible -->
+
         <div class="flex items-center">
           <button
             @click="toggleMenu"
@@ -307,6 +299,7 @@
               />
             </svg>
           </button>
+          <LangSwitcher class="w-full relative -mt-40 -right-10" />
         </div>
 
         <!-- Menu Mobile -->
