@@ -12,7 +12,9 @@
         </div>
         <div class="flex items-center justify-center mt-8">
           <div class="text-center">
-            <h1 class="text-4xl font-bold">{{ t("menu.news") }}</h1>
+            <h1 class="text-4xl font-bold">
+              <span class="font-sri"> {{ t("menu.news") }} </span>
+            </h1>
             <div class="w-1/2 h-1 bg-primary_1 mx-auto mt-2"></div>
           </div>
         </div>
