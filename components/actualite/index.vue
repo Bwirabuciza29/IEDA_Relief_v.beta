@@ -75,6 +75,9 @@
             </div>
           </div>
         </div>
+        <div v-if="loading" class="flex justify-center items-center py-10">
+          <div class="loader"></div>
+        </div>
         <div>
           <div class="flex justify-end">
             <div class="flex items-center py-8">
