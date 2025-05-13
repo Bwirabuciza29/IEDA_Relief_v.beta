@@ -12,6 +12,8 @@
   "dependencies": {
     "@heroicons/vue": "^2.1.5",
     "@lottiefiles/dotlottie-vue": "^0.5.8",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "@splidejs/vue-splide": "^0.6.12",
     "@stefanobartoletti/nuxt-social-share": "^1.2.1",
     "aos": "^2.3.4",
     "feather-icons": "^4.29.2",

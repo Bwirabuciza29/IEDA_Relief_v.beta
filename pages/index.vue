@@ -89,9 +89,13 @@
     <div class="my-16 bg-white p-4 border-t border-b border-custom-green">
       <log />
     </div>
-    <div class="my-16" data-aos="fade-up">
+    <div class="mt-16" data-aos="fade-up">
       <mission />
     </div>
+    <div>
+      <actualite />
+    </div>
+
     <div class="my-16" data-aos="fade-up">
       <help />
     </div>
