@@ -4,11 +4,12 @@
   >
     <div class="flex mj-container">
       <!-- Logo à gauche -->
-      <div
+      <nuxtLink
+        to="/"
         class="flex items-center px-2 py-2 shrink-0 border border-custom-green"
       >
         <img src="/img/ie.png" alt="Ieda Relief" class="h-24" />
-      </div>
+      </nuxtLink>
       <nav
         class="md:hidden px-4 py-3 text-sm font-medium flex flex-col space-y-3 sm:flex-row sm:items-center sm:justify-between sm:space-y-0"
       >
