@@ -20,6 +20,7 @@
     "gsap": "^3.12.5",
     "imagekitio-vue": "^3.1.0",
     "leaflet": "^1.9.4",
+    "marked": "^15.0.12",
     "nuxt": "^3.14.159",
     "nuxt-directus": "^5.7.0",
     "particles.js": "^2.0.0",

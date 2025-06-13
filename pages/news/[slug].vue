@@ -53,11 +53,10 @@
             <h1 class="text-3xl font-bold text-gray-800 mb-4">
               {{ article.titre }}
             </h1>
-
-            <p
-              class="text-gray-700 leading-relaxed text-justify"
-              v-html="article.content"
-            ></p>
+            <div
+              class="prose prose-lg max-w-none text-gray-800"
+              v-html="htmlContent"
+            ></div>
           </div>
 
           <!-- Bouton retour -->
@@ -171,14 +170,19 @@
   </div>
 </template>
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useRuntimeConfig } from "#app";
+import { marked } from "marked";
 const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
 const article = ref(null);
 const error = ref(null);
+
+const htmlContent = computed(() =>
+  article.value?.content ? marked.parse(article.value.content) : ""
+);
 
 // Fonction pour récupérer un article par slug
 const fetchArticle = async () => {
