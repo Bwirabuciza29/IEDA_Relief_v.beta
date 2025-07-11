@@ -45,8 +45,8 @@
     </div>
 
     <!-- Nouvelle div chevauchante -->
-    <div class="-mt-24 sm:-mt-20 md:-mt-28 relative z-20 px-6">
-      <div class="mj-container bg-white p-4 text-center">
+    <div class="mj-container -mt-24 sm:-mt-20 md:-mt-28 relative z-20 px-6 ">
+      <div class=" bg-white p-4 text-center">
         <h2 class="text-2xl sm:text-xl font-bold text-gray-800">
           Pourquoi nous choisir ?
         </h2>
