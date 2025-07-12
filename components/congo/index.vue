@@ -1,196 +1,41 @@
 <template>
   <div>
-    <!-- Section principale -->
-    <div
-      class="relative w-full h-[80vh] flex items-center justify-left text-left"
-    >
-      <div
-        class="absolute inset-0 bg-cover bg-center shadow-7xl"
-        style="
-          background-image: url('/img/burkina.jpg');
-          background-attachment: fixed;
-        "
-      >
-        <div
-          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60"
-        ></div>
-      </div>
-
-      <!-- Contenu principal -->
-      <div class="relative z-10 mj-container space-y-2 text-white px-6 items-start">
-        <div class="bg-custom-green/20 p-2 text-lg font-semibold border-b-2 inline-block">
-          Mission
-        </div>
-        <div class="text-4xl font-bold sm:text-6xl">
-         <span class="text-custom-green">ieda Relief</span> Burkina Faso
-        </div>
-        <p class="mt-4 text-gray-300 ">
-           Helping communities to become Self-sufficient
-        </p>
-
-        <!-- Boutons -->
-        <div class="mt-6 flex flex-wrap  gap-4">
-          <button
-            class="px-6 py-3 bg-custom-green hover:bg-blue-700  text-white text-sm"
-          >
-            Donate now
-          </button>
-        
-        </div>
-      </div>
-    </div>
-
- <div class="mj-container px-6  -mt-24 sm:-mt-20 md:-mt-28 relative z-20">
-       <div
-          class="relative border-t-4 border-white  flex flex-col md:flex-row bg-custom-green overflow-hidden"
-        >
-          <img
-            src="/img/Vectoria.png"
-            alt="Decorative Vector"
-            class="absolute top-0 left-64 h-full w-auto hidden sm:block z-20"
-          />
-          <!-- Texte -->
-        <div class="w-full md:w-1/2 p-4 md:p-6 text-white flex flex-col justify-center relative z-20 space-y-2">
-  <!-- Titre principal -->
-<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white">
-  Burkina Faso
-</h1>
-
-
-  <!-- Sous-titre -->
-  <p class="text-lg text-white italic">
-    "Burkina Faso" means "Land of Honest Men"
-  </p>
-
-  <!-- Description générale -->
-  <div class="bg-white/10 p-4   backdrop-blur-sm">
-    <p class="text-sm text-white leading-relaxed">
-      Since the Mali crisis in 2012, WFP signed a tripartite accord with UNHCR and IEDA Relief to ensure monthly food distribution to over <strong>33,000 Mali refugees</strong> living in and outside camps. The food rations include <strong>rice, CSB, oil, salt, and cereals</strong>.
-    </p>
-  </div>
-
-  <!-- Détails logistiques -->
-  <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
-    <!-- Tonnes distribué -->
-  <div class="bg-white/10 p-4 space-y-2 items-start gap-4">
-  <!-- Icône email -->
-  <div class="flex items-start gap-3">
-    <div class="bg-white/20 p-1 rounded-full">
-     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859M12 3v8.25m0 0-3-3m3 3 3-3" />
-</svg>
-
-    </div>
-    <div>
-   <a href="mailto:burkinafasooffice@iedarelief.org" target="_blank" class="text-white underline-animate">
-  burkinafasooffice@iedarelief.org
-</a>
-
-
-    </div>
-  </div>
-
-  <!-- Icône téléphone -->
-  <div class="flex items-start gap-3">
-    <div class="bg-white/20 p-1 rounded-full">
-   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0 6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z" />
-</svg>
-
-
-    </div>
-    <div>
-      <a href="tel:+22625374622" target="_blank" class="text-white underline-animate">
-  +226 25374622
-</a>
-
-    </div>
-  </div>
-
-  <!-- Icône localisation -->
-  <div class="flex items-start gap-3">
-    <div class="bg-white/20 p-1 rounded-full">
- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-</svg>
-
-
-
-    </div>
-    <div>
-      <p class="text-white">
-        05 BP 6402 Ouaga 05, Boulevard Muammar Kadhafi,<br />
-        secteur 53, Section PLot 17, Parcelle No 6 Ouaga2000 Ouagadougou
-      </p>
-    </div>
-  </div>
-</div>
-
-  
-  </div>
-   </div>
-
-
-          <!-- Image -->
-          <div class="hidden md:block md:w-1/2 relative">
-            <!-- Dégradé à gauche -->
-            <div
-              class="absolute inset-0 bg-gradient-to-r from-custom-green to-transparent z-10"
-            ></div>
-            <!-- Image pleine largeur/hauteur -->
-            <img
-              src="/flags/burks.jpg"
-              alt="About Us Section"
-              class="w-full h-full object-cover "
-            />
-          </div>
-        </div>
-    </div>
-    <!-- Nouvelle div chevauchante -->
+  <hero
+    background="/img/burkina.jpg"
+    subtitle="Mission"
+    titleHighlight="ieda Relief"
+    title="Burkina Faso"
+    description="Helping communities to become Self-sufficient"
+    buttonText="Donate now"
+    buttonColor="bg-custom-green hover:bg-blue-700"
+  />
+  <alls
+    title="Burkina Faso"
+    subtitle="Burkina Faso means 'Land of Honest Men'"
+    description="Since the Mali crisis in 2012, WFP signed a tripartite accord with UNHCR and IEDA Relief to ensure monthly food distribution to over 33,000 Mali refugees living in and outside camps. The food rations include rice, CSB, oil, salt, and cereals."
+    email="burkinafasooffice@iedarelief.org"
+    phone="+22625374622"
+    address="05 BP 6402 Ouaga 05, Boulevard Muammar Kadhafi,
+secteur 53, Section PLot 17, Parcelle No 6 Ouaga2000 Ouagadougou"
+    rightImage="/flags/burks.jpg"
+    vectorImage="/img/Vectoria.png"
+    bgColor="bg-custom-green"
+  />
+ 
+<volunteer
+    title="Join our Mission"
+    imageSrc="/img/d.jpg"
+    imageAlt="Volunteer helping"
+    badge="IEDA Relief"
+    cardTitle="Helping communities to become Self-sufficient..."
+    cardText="Helping others and making a difference in the world is what will help to make the world a better place by improving people's lives. One person at a time, one day at a time, and one project at a time, you can make a difference that will leave a lasting impact on the world."
+    buttonText="Donate now"
+    accentColor="custom-green"
+    cardBgColor="custom-blue"
+  />
    <div>
- <div class="py-12 px-4 sm:px-6 lg:px-8">
-  <div class="mj-container">
-    <!-- Titre -->
-    <div class="border-l-4 border-custom-green pl-4 mb-6">
-      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Volunteer with Us</h2>
-    </div>
-
-    <!-- Wrapper image + card -->
-    <div class="relative flex flex-col md:flex-row">
-      <!-- Image : 100% mobile, 70% desktop -->
-      <div class="w-full md:w-[70%]">
-        <img src="/img/d.jpg" alt="Teacher in Nigeria" class="w-full h-auto object-cover border-b-4 border-custom-green">
-      </div>
-
-      <!-- Espace vide pour le card sur desktop uniquement -->
-      <div class="hidden md:block md:w-[30%]"></div>
-
-      <!-- Card positionnée sur l'image en desktop, en bloc normal sur mobile -->
-      <div
-        class="relative md:absolute md:-right-16 md:top-1/2 md:transform md:-translate-y-1/2 md:translate-x-[-15%] md:w-[50%] z-10 mt-6 md:mt-0">
-        <div class="bg-custom-blue/80 text-white p-6 sm:p-8">
-          <p class="text-sm uppercase mb-2">IEDA Relief</p>
-          <h3 class="text-xl sm:text-2xl font-bold mb-4 leading-snug">
-            Helping communities to become Self-sufficient...
-          </h3>
-          <p class="text-base mb-6">
-            Helping others and making a difference in the world is what will help to make the world a better place by improving people's lives. One person at a time, one day at a time, and one project at a time, you can make a difference that will leave a lasting impact on the world.
-          </p>
-          <div class="py-2 px-4 bg-custom-green inline-block font-bold transition-colors">
-            Donate now
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
    </div>
   </div>
 </template>
 <script setup>
-const { t, locale } = useI18n();
 </script>
