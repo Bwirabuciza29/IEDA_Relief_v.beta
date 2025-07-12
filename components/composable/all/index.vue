@@ -1,46 +1,5 @@
 <template>
-  <div>
-    <!-- Section principale -->
-    <div
-      class="relative w-full h-[80vh] flex items-center justify-left text-left"
-    >
-      <div
-        class="absolute inset-0 bg-cover bg-center shadow-7xl"
-        style="
-          background-image: url('/img/burkina.jpg');
-          background-attachment: fixed;
-        "
-      >
-        <div
-          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60"
-        ></div>
-      </div>
-
-      <!-- Contenu principal -->
-      <div class="relative z-10 mj-container space-y-2 text-white px-6 items-start">
-        <div class="bg-custom-green/20 p-2 text-lg font-semibold border-b-2 inline-block">
-          Mission
-        </div>
-        <div class="text-4xl font-bold sm:text-6xl">
-         <span class="text-custom-green">ieda Relief</span> Burkina Faso
-        </div>
-        <p class="mt-4 text-gray-300 ">
-           Helping communities to become Self-sufficient
-        </p>
-
-        <!-- Boutons -->
-        <div class="mt-6 flex flex-wrap  gap-4">
-          <button
-            class="px-6 py-3 bg-custom-green hover:bg-blue-700  text-white text-sm"
-          >
-            Donate now
-          </button>
-        
-        </div>
-      </div>
-    </div>
-
- <div class="mj-container px-6  -mt-24 sm:-mt-20 md:-mt-28 relative z-20">
+     <div class="mj-container px-6  -mt-24 sm:-mt-20 md:-mt-28 relative z-20">
        <div
           class="relative border-t-4 border-white  flex flex-col md:flex-row bg-custom-green overflow-hidden"
         >
@@ -147,50 +106,4 @@
           </div>
         </div>
     </div>
-    <!-- Nouvelle div chevauchante -->
-   <div>
- <div class="py-12 px-4 sm:px-6 lg:px-8">
-  <div class="mj-container">
-    <!-- Titre -->
-    <div class="border-l-4 border-custom-green pl-4 mb-6">
-      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Volunteer with Us</h2>
-    </div>
-
-    <!-- Wrapper image + card -->
-    <div class="relative flex flex-col md:flex-row">
-      <!-- Image : 100% mobile, 70% desktop -->
-      <div class="w-full md:w-[70%]">
-        <img src="/img/d.jpg" alt="Teacher in Nigeria" class="w-full h-auto object-cover border-b-4 border-custom-green">
-      </div>
-
-      <!-- Espace vide pour le card sur desktop uniquement -->
-      <div class="hidden md:block md:w-[30%]"></div>
-
-      <!-- Card positionnée sur l'image en desktop, en bloc normal sur mobile -->
-      <div
-        class="relative md:absolute md:-right-16 md:top-1/2 md:transform md:-translate-y-1/2 md:translate-x-[-15%] md:w-[50%] z-10 mt-6 md:mt-0">
-        <div class="bg-custom-blue/80 text-white p-6 sm:p-8">
-          <p class="text-sm uppercase mb-2">IEDA Relief</p>
-          <h3 class="text-xl sm:text-2xl font-bold mb-4 leading-snug">
-            Helping communities to become Self-sufficient...
-          </h3>
-          <p class="text-base mb-6">
-            Helping others and making a difference in the world is what will help to make the world a better place by improving people's lives. One person at a time, one day at a time, and one project at a time, you can make a difference that will leave a lasting impact on the world.
-          </p>
-          <div class="py-2 px-4 bg-custom-green inline-block font-bold transition-colors">
-            Donate now
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-   </div>
-  </div>
 </template>
-<script setup>
-const { t, locale } = useI18n();
-</script>

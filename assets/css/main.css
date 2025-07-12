@@ -62,3 +62,23 @@ html::-webkit-scrollbar-thumb {
   justify-content: center;
   align-items: center;
 }
+.underline-animate {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .underline-animate::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: white;
+    transition: width 0.4s ease-out;
+  }
+
+  .underline-animate:hover::after {
+    width: 100%;
+  }
