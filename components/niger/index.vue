@@ -1,30 +1,29 @@
 <template>
   <div>
   <hero
-    background="/flags/coq.jpg"
+    background="/flags/nienfant.jpg"
     subtitle="Mission"
     titleHighlight="ieda Relief"
-    title="DR Congo"
+    title="Niger"
     description="Helping communities to become Self-sufficient"
     buttonText="Donate now"
     buttonColor="bg-custom-green hover:bg-blue-700"
   />
   <alls
-    title="DR Congo"
-    subtitle="Burkina Faso means 'Land of Honest Men'"
-    description="Since the Mali crisis in 2012, WFP signed a tripartite accord with UNHCR and IEDA Relief to ensure monthly food distribution to over 33,000 Mali refugees living in and outside camps. The food rations include rice, CSB, oil, salt, and cereals."
-    email="burkinafasooffice@iedarelief.org"
-    phone="+22625374622"
-    address="05 BP 6402 Ouaga 05, Boulevard Muammar Kadhafi,
-secteur 53, Section PLot 17, Parcelle No 6 Ouaga2000 Ouagadougou"
-    rightImage="/flags/congo.jpg"
+    title="Niger"
+    subtitle="Niger's mission"
+    description="In response to the humanitarian crisis in the Diffa region, IEDA Relief is implementing, in partnership with WFP, a project called «Monitoring by third party of the operations of WFP in Diffa”"
+    email="nigermission@iedarelief.org"
+    phone="+227 89 97 04 60"
+    address="Quartier Bobiel vers école Galaxy plus premier virage à gauche après le siège National de ADN FUSHA, Commune I,Ville de Niamey"
+    rightImage="/flags/niger.jpg"
     vectorImage="/img/Vectoria.png"
     bgColor="bg-custom-green"
   />
  
 <volunteer
     title="Join our Mission"
-    imageSrc="/flags/v.jpg"
+    imageSrc="/flags/nn.jpg"
     imageAlt="Volunteer helping"
     badge="IEDA Relief"
     cardTitle="Helping communities to become Self-sufficient..."

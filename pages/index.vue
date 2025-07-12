@@ -106,26 +106,30 @@
     </div>
     </div>
     <div v-else-if="selectedPays === 'USA'" class=" relative mt-20">
-         <congo />
+         <usa />
     </div>
     <div
       v-else-if="selectedPays === 'Burkina Faso'"
       class=" relative mt-20"
-    >
-          <congo />
+    >    <burkina />
     </div>
     <div v-else-if="selectedPays === 'CAR'" class=" relative mt-20">
-         <congo />
+         <car />
     </div>
     <div
       v-else-if="selectedPays === 'Niger'"
       class=" relative mt-20"
-    ><congo />
+    ><niger />
     </div>
     <div
       v-else-if="selectedPays === 'Mali'"
       class=" relative mt-20"
-    > <congo />
+    > <mali />
+    </div>
+      <div
+      v-else-if="selectedPays === 'Cameroun'"
+      class=" relative mt-20"
+    > <cameroun />
     </div>
     <div v-else-if="selectedPays === 'DRC'" class="relative mt-20">
      <congo />
