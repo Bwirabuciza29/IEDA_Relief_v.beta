@@ -36,6 +36,7 @@
   />
    <div>
    </div>
+   <Act :pays="'Niger'" />
   </div>
 </template>
 <script setup>

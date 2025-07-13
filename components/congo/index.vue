@@ -37,6 +37,7 @@ secteur 53, Section PLot 17, Parcelle No 6 Ouaga2000 Ouagadougou"
   />
    <div>
    </div>
+   <Act :pays="'DRC'" />
   </div>
 </template>
 <script setup>
