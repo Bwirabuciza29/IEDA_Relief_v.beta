@@ -11,8 +11,8 @@
   />
   <alls
     title="USA"
-    subtitle="Burkina Faso means 'Land of Honest Men'"
-    description="Since the Mali crisis in 2012, WFP signed a tripartite accord with UNHCR and IEDA Relief to ensure monthly food distribution to over 33,000 Mali refugees living in and outside camps. The food rations include rice, CSB, oil, salt, and cereals."
+    subtitle="Creating a stable environment using sustainable solutions"
+    description="IEDARelief's headquarters in Houston is an operational and strategic center: it manages legal and linguistic assistance for vulnerable populations in the United States, while piloting international development projects"
     email="philma@iedarelief.org"
     phone="+1 713-774-2522/ +1 713-774-2529"
     address="10103 Foundren Rd, Suite 435 Houston, Texas 77096"
