@@ -38,13 +38,13 @@
    </div>
    <actualite />
    
-   <div class="mj-container my-4 bg-white py-4">
+   <div class=" my-4 bg-white py-4">
       <div class="relative  h-4 w-full">
           <div
             class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
           ></div>
         </div>
-      <div class="pt-2 pb-8 px-4">
+      <div class="pt-2 pb-8 px-4 mj-container">
         <!-- Titre Principal -->
         <div class="text-center my-6">
           <p class="text-custom-green uppercase tracking-widest text-xs">
