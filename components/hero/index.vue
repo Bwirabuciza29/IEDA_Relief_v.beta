@@ -24,7 +24,7 @@
       <div class="mt-6 flex flex-wrap gap-4">
       <NuxtLink
               :to="localPagePath('donation')"
-              class="group relative inline-block w-full sm:w-auto overflow-hidden  bg-custom-green px-6 py-4 text-sm font-semibold text-white sm:px-6 sm:py-3 sm:text-base"
+              class="group relative  w-full text-center sm:w-auto overflow-hidden  bg-custom-green px-6 py-4 text-sm font-semibold text-white sm:px-6 sm:py-3 sm:text-base"
             >
               <span
                 class="relative z-10 translate-x-full transform transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:text-green-700"

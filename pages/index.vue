@@ -106,7 +106,7 @@
     </div>
     </div>
     <div v-else-if="selectedPays === 'USA'" class=" relative mt-20">
-         <usa />
+         <usa  />
     </div>
     <div
       v-else-if="selectedPays === 'Burkina Faso'"
