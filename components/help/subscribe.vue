@@ -1,6 +1,7 @@
 <template>
-  <section class="relative bg-custom-blue p-8 mx-4 rounded-lg bg-left">
-    <HelpParticles />
+  <section class="relative bg-custom-blue p-8 mx-4 ">
+    <HelpParticle  container-id="home-bg"
+      :config="customConfig" />
     <div class="mj-container text-center relative z-10">
       <div class="w-full text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
@@ -23,7 +24,7 @@
               id="name"
               type="text"
               :placeholder="frm_1"
-              class="w-full p-2 text-sm border border-custom-blue rounded-lg focus:ring-2 focus:ring-custom-blue"
+              class="w-full p-3 text-sm border border-custom-blue  focus:ring-2 focus:ring-custom-blue"
               required
             />
             <input
@@ -31,7 +32,7 @@
               id="last_name"
               type="text"
               :placeholder="frm_2"
-              class="w-full p-2 text-sm border border-custom-blue rounded-lg focus:ring-2 focus:ring-custom-blue mt-3 md:mt-0"
+              class="w-full p-3 text-sm border border-custom-blue  focus:ring-2 focus:ring-custom-blue mt-3 md:mt-0"
               required
             />
           </div>
@@ -42,11 +43,11 @@
               id="email"
               type="email"
               :placeholder="frm_3"
-              class="w-full p-2 text-sm border border-custom-blue rounded-lg focus:ring-2 focus:ring-custom-blue"
+              class="w-full p-3 text-sm border border-custom-blue  focus:ring-2 focus:ring-custom-blue"
               required
             />
             <button
-              class="w-full bg-blue-600 text-white py-2 px-4 text-sm border border-blue-300 rounded-lg hover:bg-blue-700 transition"
+              class="w-full bg-blue-600 text-white py-3 px-4 text-sm border border-blue-300 hover:bg-blue-700 transition"
             >
               {{ btn }}
             </button>
@@ -115,14 +116,29 @@ const frm_1 = ref(t("subscribe.frm_1"));
 const frm_2 = ref(t("subscribe.frm_2"));
 const frm_3 = ref(t("subscribe.frm_3"));
 const btn = ref(t("subscribe.btn"));
-</script>
-
-<style scoped>
-.bg-left {
-  background-image: url("/img/vg.png");
-  background-position: left center;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-blend-mode: overlay;
+const customConfig = {
+  particles: {
+    number: { value: 50, density: { enable: true, value_area: 700 } },
+    color: { value: "#00ffcc" },
+    shape: { type: "triangle" },
+    opacity: { value: 0.6 },
+    size: { value: 3, random: true },
+    line_linked: {
+      enable: false,
+    },
+    move: {
+      enable: true,
+      speed: 3,
+    },
+  },
+  interactivity: {
+    events: {
+      onhover: { enable: true, mode: "grab" },
+    },
+    modes: {
+      grab: { distance: 140, line_linked: { opacity: 1 } },
+    },
+  },
+  retina_detect: true,
 }
-</style>
+</script>

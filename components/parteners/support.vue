@@ -15,7 +15,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- Card 1 -->
       <div
-        class="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden max-w-lg mx-auto"
+        class="flex flex-col md:flex-row bg-white  overflow-hidden max-w-lg mx-auto"
       >
         <div class="w-full md:w-1/2 h-40 md:h-auto">
           <img
@@ -27,13 +27,13 @@
         <div class="p-4 w-full md:w-1/2 flex flex-col justify-center">
           <img src="/img/Quote.png" alt="Icon" class="w-6 mb-3" />
           <h3 class="text-base font-semibold mb-1">{{ title_1 }}</h3>
-          <p class="text-sm text-gray-600 hover:underline">{{ desc_1 }}</p>
+          <p class="text-sm text-gray-600 ">{{ desc_1 }}</p>
         </div>
       </div>
 
       <!-- Card 2 -->
       <div
-        class="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden max-w-lg mx-auto"
+        class="flex flex-col md:flex-row bg-white overflow-hidden max-w-lg mx-auto"
       >
         <div class="w-full md:w-1/2 h-40 md:h-auto">
           <img
@@ -45,7 +45,7 @@
         <div class="p-4 w-full md:w-1/2 flex flex-col justify-center">
           <img src="/img/Quote.png" alt="Icon" class="w-6 mb-3" />
           <h3 class="text-base font-semibold mb-1">{{ title_2 }}</h3>
-          <p class="text-sm text-gray-600 hover:underline">{{ desc_2 }}</p>
+          <p class="text-sm text-gray-600 ">{{ desc_2 }}</p>
         </div>
       </div>
     </div>

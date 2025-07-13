@@ -14,13 +14,13 @@
       <div class="relative w-full max-w-xs mx-auto sm:w-full sm:h-auto">
         <div
           :class="firstCardColor"
-          class="absolute -bottom-8 -right-10 w-full h-full rounded-lg shadow-lg z-0 transition-colors duration-1000"
+          class="absolute -bottom-8 -right-10 w-full h-full  shadow-lg z-0 transition-colors duration-1000"
         ></div>
         <!-- Image -->
         <img
           src="/img/filles.png"
           alt="Image principale"
-          class="absolute inset-0 w-full h-full rounded-lg shadow-md object-cover z-10 transform transition-transform duration-300 hover:scale-105"
+          class="absolute inset-0 w-full h-full shadow-md object-cover z-10 transform transition-transform duration-300 hover:scale-105"
         />
       </div>
 
@@ -54,13 +54,13 @@
         <!-- Carte derrière l'image -->
         <div
           :class="firstCardColors"
-          class="absolute -top-8 -right-10 w-full h-full rounded-lg shadow-lg z-0 transition-colors duration-1000"
+          class="absolute -top-8 -right-10 w-full h-full  shadow-lg z-0 transition-colors duration-1000"
         ></div>
         <!-- Image -->
         <img
           src="/img/t2.jpg"
           alt="Deuxième image"
-          class="absolute inset-0 w-full h-full rounded-lg shadow-md object-cover z-10 transform transition-transform duration-300 hover:scale-105"
+          class="absolute inset-0 w-full h-full shadow-md object-cover z-10 transform transition-transform duration-300 hover:scale-105"
         />
       </div>
     </div>

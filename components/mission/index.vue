@@ -1,13 +1,13 @@
 <template>
-  <div class="relative mj-container mx-auto px-4 py-8">
+  <div class="relative mj-container  px-4 py-8">
     <!-- Boutons alignés horizontalement -->
-    <div class="flex justify-center space-x-4 mb-8">
+    <div class="flex justify-center space-x-2 mb-8 mx-auto">
       <button
         v-for="(tab, index) in tabs"
         :key="index"
         @click="activeTab = index"
         :class="[
-          'px-8 py-3 font-medium  transition-colors duration-300',
+          'px-8  py-3 font-medium  transition-colors duration-300',
           activeTab === index
             ? 'bg-custom-green text-white'
             : 'bg-gray-200 text-gray-700 hover:bg-gray-300',

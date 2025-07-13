@@ -98,7 +98,7 @@
           <img
             :src="tab.image"
             alt="Image"
-            class="w-full h-auto rounded-lg shadow-md object-cover"
+            class="w-full h-auto shadow-md object-cover border-r-4 border-custom-green"
           />
           <!-- Image superposée -->
           <img
