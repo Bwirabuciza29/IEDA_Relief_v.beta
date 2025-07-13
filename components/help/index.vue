@@ -4,8 +4,8 @@
     <!-- Titre -->
     <div class="mj-container relative z-10">
       <h2 class="text-3xl text-white md:text-4xl font-bold text-left mb-8">
-        {{ title_1 }}
-        <span class="font-sri text-green-100"> {{ title_2 }}</span>
+       {{ t('help.title_1') }}
+        <span class="font-sri text-green-100"> {{ t('help.title_2') }}</span>
       </h2>
       <!-- Watermark -->
       <img
@@ -21,15 +21,15 @@
         <div class="relative">
           <!-- Première image -->
           <img
-            src="/img/mum.jpg"
+            src="/flags/hight.jpg"
             alt="Main Image"
-            class="object-cover w-full sm:w-46 h-46 transition-all duration-300 z-10 border-l-4 border-custom-blue"
+            class="object-cover w-full sm:w-46 h-46 transition-all duration-300 z-10 border-l-4 border-yellow-500"
           />
         </div>
         <!-- Texte -->
         <div>
           <p class="text-lg text-center text-white">
-            {{ desc }}
+          {{ t('help.desc') }}
           </p>
           <!-- Carte arrondie en bas à droite -->
           <div class="relative">
@@ -53,10 +53,10 @@
               alt="Food Assistance Icon"
               class="w-4 h-4"
             />
-            <h3 class="font-semibold text-xs">{{ card_1 }}</h3>
+            <h3 class="font-semibold text-xs"> {{ t('help.card_1') }}</h3>
           </div>
           <p class="hover:underline text-xs">
-            {{ desc_1 }}
+           {{ t('help.desc') }}
           </p>
 
           <div
@@ -67,10 +67,10 @@
               alt="Education Support Icon"
               class="w-4 h-4"
             />
-            <h3 class="font-semibold text-xs">{{ card_2 }}</h3>
+            <h3 class="font-semibold text-xs">{{ t('help.card_2') }}</h3>
           </div>
           <p class="hover:underline text-xs">
-            {{ desc_2 }}
+            {{ t('help.desc_2') }}
           </p>
 
           <div
@@ -81,10 +81,10 @@
               alt="Environmental Conservation Icon"
               class="w-4 h-4"
             />
-            <h3 class="font-semibold text-xs">{{ card_3 }}</h3>
+            <h3 class="font-semibold text-xs">{{ t('help.card_3') }}</h3>
           </div>
           <p class="hover:underline text-xs">
-            {{ desc_3 }}
+         {{ t('help.desc_3') }}
           </p>
         </div>
       </div>
@@ -93,13 +93,4 @@
 </template>
 <script setup>
 const { t } = useI18n();
-const title_1 = ref(t("help.title_1"));
-const title_2 = ref(t("help.title_2"));
-const desc = ref(t("help.desc"));
-const card_1 = ref(t("help.card_1"));
-const card_2 = ref(t("help.card_2"));
-const card_3 = ref(t("help.card_3"));
-const desc_1 = ref(t("help.desc_1"));
-const desc_2 = ref(t("help.desc_2"));
-const desc_3 = ref(t("help.desc_3"));
 </script>
