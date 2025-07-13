@@ -9,11 +9,11 @@
       </p>
 
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 "
       >
         <!-- Carte 1 -->
         <div
-          class="bg-white rounded-lg p-4 flex flex-col items-center text-center"
+          class="bg-custom-green/10 rounded-lg p-4 flex flex-col items-center text-center "
         >
           <i class="fas fa-history text-blue-500 text-3xl mb-4"></i>
           <p class="font-medium text-xs mb-2">
@@ -22,7 +22,7 @@
         </div>
         <!-- Carte 2 -->
         <div
-          class="bg-white rounded-lg p-4 flex flex-col items-center text-center"
+          class="bg-custom-green/10 rounded-lg p-4 flex flex-col items-center text-center"
         >
           <i class="fas fa-file-alt text-green-500 text-3xl mb-4"></i>
           <h3 class="font-semibold text-xs mb-2">{{ t("all.fr_2") }}</h3>
@@ -32,7 +32,7 @@
         </div>
         <!-- Carte 3 -->
         <div
-          class="bg-white rounded-lg p-4 flex flex-col items-center text-center"
+          class="bg-custom-green/10 rounded-lg p-4 flex flex-col items-center text-center"
         >
           <i class="fas fa-globe-americas text-yellow-500 text-3xl mb-4"></i>
           <h3 class="font-semibold text-xs mb-2">
@@ -44,7 +44,7 @@
         </div>
         <!-- Carte 4 -->
         <div
-          class="bg-white rounded-lg p-4 flex flex-col items-center text-center"
+          class="bg-custom-green/10 rounded-lg p-4 flex flex-col items-center text-center"
         >
           <i class="fas fa-file-contract text-indigo-500 text-3xl mb-4"></i>
           <h3 class="font-semibold text-xs mb-2">
@@ -56,7 +56,7 @@
         </div>
         <!-- Carte 5 -->
         <div
-          class="bg-white rounded-lg p-4 flex flex-col items-center text-center"
+          class="bg-custom-green/10 rounded-lg p-4 flex flex-col items-center text-center"
         >
           <i class="fas fa-file-invoice text-red-500 text-3xl mb-4"></i>
           <h3 class="font-semibold text-xs mb-2">{{ t("all.fr_5") }}</h3>
@@ -66,7 +66,7 @@
         </div>
         <!-- Carte 6 -->
         <div
-          class="bg-white rounded-lg p-4 flex flex-col items-center text-center"
+          class="bg-custom-green/10 rounded-lg p-4 flex flex-col items-center text-center"
         >
           <i class="fas fa-archive text-purple-500 text-3xl mb-4"></i>
           <h3 class="font-semibold text-xs mb-2">
@@ -78,7 +78,7 @@
         </div>
         <!-- Carte 7 -->
         <div
-          class="bg-white rounded-lg p-4 flex flex-col items-center text-center"
+          class="bg-custom-green/10 rounded-lg p-4 flex flex-col items-center text-center"
         >
           <i class="fas fa-hand-holding-heart text-teal-500 text-3xl mb-4"></i>
           <h3 class="font-semibold text-xs mb-2">

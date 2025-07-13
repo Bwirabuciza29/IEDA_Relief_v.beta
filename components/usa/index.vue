@@ -36,9 +36,7 @@
   />
    <div>
    </div>
-   <actualite />
-   
-   <div class=" my-4 bg-white py-4">
+<div class="my-4 py-4 bg-cover bg-center bg-no-repeat" style="background-image: url('/img/bg/m.png'); ">
       <div class="relative  h-4 w-full">
           <div
             class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
@@ -87,11 +85,9 @@
             :key="index"
             class="relative group bg-white rounded-lg overflow-hidden hover:bg-custom-green transition"
           >
-            <!-- Effet de Hover -->
             <div
               class="absolute inset-0 bg-custom-green hover:border-white opacity-0 group-hover:opacity-90 transition"
             ></div>
-
             <!-- Contenu des cartes -->
             <div class="relative p-4 text-center group-hover:text-white z-10">
               <img
@@ -201,6 +197,8 @@
           ></div>
         </div>
     </div>
+   <actualite />
+   
   </div>
 </template>
 <script setup>

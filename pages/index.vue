@@ -5,7 +5,7 @@
   class="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-white/70 transition-opacity duration-300"
 >
 <div class="text-center">
-  <img src="/img/ie.png" alt="Chargement" class="w-auto h-24 animate-bounce mb-4 mx-auto bg-white p-2  border-t border-b border-custom-green" />
+  <img src="/img/bg/lol.png" alt="Chargement" class="w-auto h-24 animate-bounce mb-4 mx-auto bg-white p-2  border-t border-b border-custom-green" />
   <p class="font-semibold text-custom-green">Chargement en cours...</p>
 </div>
 </div>
