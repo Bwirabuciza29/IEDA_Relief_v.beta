@@ -1,7 +1,7 @@
 <template>
   <div>
   <hero
-    background="/flags/nienfant.jpg"
+    background="/flags/malila.jpg"
     subtitle="Mission"
     titleHighlight="ieda Relief"
     title="Niger"
