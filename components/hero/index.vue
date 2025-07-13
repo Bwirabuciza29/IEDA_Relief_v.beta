@@ -5,7 +5,8 @@
       class="absolute inset-0 bg-cover bg-center shadow-7xl"
       :style="`background-image: url('${background}'); background-attachment: fixed;`"
     >
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-30"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
     </div>
 
     <!-- Contenu principal -->

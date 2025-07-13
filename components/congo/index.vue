@@ -1,7 +1,7 @@
 <template>
   <div>
   <hero
-    background="/flags/coq.jpg"
+    background="/flags/p2.jpg"
     subtitle="Mission"
     titleHighlight="ieda Relief"
     title="DR Congo"
@@ -26,7 +26,7 @@ secteur 53, Section PLot 17, Parcelle No 6 Ouaga2000 Ouagadougou"
     </div>
 <volunteer
     title="Join our Mission"
-    imageSrc="/flags/v.jpg"
+    imageSrc="/flags/bru.webp"
     imageAlt="Volunteer helping"
     badge="IEDA Relief"
     cardTitle="Helping communities to become Self-sufficient..."

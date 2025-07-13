@@ -135,11 +135,11 @@
      <congo />
     </div>
 
-    <div class="my-16" data-aos="zoom-in">
+    <div class="my-16">
       <LogOurs />
     </div>
 
-    <div class="my-16" data-aos="zoom-in">
+    <div class="my-16">
       <PartenersSupport />
     </div>
     <div class="my-16">

@@ -189,7 +189,7 @@ const loading = ref(true);
 const error = ref(null);
 
 const pageActuelle = ref(1);
-const articlesParPage = 3;
+const articlesParPage = 9;
 
 const fetchArticles = async () => {
   loading.value = true;
