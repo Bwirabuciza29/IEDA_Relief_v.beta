@@ -1,24 +1,25 @@
 <template>
   <div>
-    <div class="relative mj-container px-4 sm:px-6 lg:px-8">
+    <div class="relative mj-container ">
       <!-- Grid layout -->
       <div
         class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 border-gray-300"
       >
         <!-- Logo and Website -->
-        <div class="flex flex-col items-start space-y-2">
-          <img
-            src="/img/logo.png"
-            alt="IEDA Relief Logo"
-            class="w-24 sm:w-32"
-          />
-          <p class="text-xs sm:text-sm text-gray-500">www.iedarelief.org</p>
-        </div>
+      <div class="max-w-sm mx-auto bg-white border border-custom-green border-dashed p-4 flex flex-col items-start ">
+  <img
+    src="/img/ie.png"
+    alt="IEDA Relief Logo"
+    class="w-40 sm:w-56"
+  />
+ 
+</div>
+
 
         <!-- Menu 1 -->
         <div>
-          <h4 class="font-semibold text-gray-700 mb-2">{{ title }}</h4>
-          <ul class="space-y-1">
+          <h4 class="font-semibold font-sri text-custom-green text-xl border-l-2 border-custom-blue pl-2 mb-2">{{ title }}</h4>
+          <ul class="space-y-4">
             <li>
               <nuxtLink
                 to="/"
@@ -79,8 +80,8 @@
 
         <!-- Section suivante -->
         <div>
-          <h4 class="font-semibold text-gray-700 mb-2">{{ title }}</h4>
-          <ul class="space-y-1">
+          <h4 class="font-semibold text-custom-green font-sri text-xl border-l-2 border-custom-blue pl-2 mb-2">{{ title }}</h4>
+          <ul class="space-y-4">
             <li>
               <nuxtLink
                 to="/"
@@ -142,40 +143,21 @@
         <!-- Social and Contact -->
         <div>
           <div class="space-y-2">
-            <h4 class="font-semibold text-black">{{ t("logger.of") }}</h4>
-            <p class="text-xs sm:text-sm text-gray-600">
+            <h4 class="font-semibold font-sri text-black">{{ t("logger.of") }}</h4>
+            <p class=" text-gray-600">
               {{ desc_1 }}
             </p>
-            <p class="text-xs sm:text-sm text-gray-600">
+            <p class=" text-gray-600">
               {{ desc_2 }}
             </p>
-            <p class="text-xs sm:text-sm text-gray-600">
+            <p class="tex text-gray-600">
               {{ desc_3 }}
             </p>
           </div>
-          <div class="mt-4">
-            <input
-              type="email"
-              :placeholder="mail"
-              class="border-gray-300 border-b p-2 mb-4 w-full text-xs sm:text-sm"
-            />
-          </div>
+         
         </div>
       </div>
-      <div
-        class="absolute inset-0 flex justify-center items-center z-0 -left-72"
-      >
-        <span
-          class="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold text-gray-500 opacity-10"
-        >
-          IEDA
-        </span>
-        <span
-          class="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold text-gray-500 opacity-10 ml-4"
-        >
-          Relief
-        </span>
-      </div>
+     
       <hr class="my-4" />
       <div
         class="grid grid-cols-1 sm:justify-items-center sm:grid-cols-3 gap-4 py-4"

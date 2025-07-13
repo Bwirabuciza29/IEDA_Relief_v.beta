@@ -34,7 +34,7 @@
     accentColor="custom-green"
     cardBgColor="custom-blue"
   />
-  <div class="bg-white">
+  <div class="bg-white relative">
     <div class="mj-container py-12 border-t-4 border-b-4 border-dashed border-custom-green">
        <div class="border-l-4 border-custom-green pl-4 mb-6" >
         <h2 class="text-2xl sm:text-4xl font-sri font-bold text-gray-900">
@@ -125,7 +125,22 @@
           Long-term goal: improve distribution quality and data consistency.
         </div>
       </div>
+        <div
+        class="absolute bottom-0  flex justify-center items-center z-50 "
+      >
+        <span
+          class="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold text-gray-500 opacity-10"
+        >
+          IEDA
+        </span>
+        <span
+          class="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold text-gray-500 opacity-10 ml-4"
+        >
+          Relief
+        </span>
+      </div>
     </div>
+   
   </div>
    <Act :pays="'Niger'" />
   </div>

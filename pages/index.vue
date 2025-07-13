@@ -148,7 +148,7 @@
     <div class="my-16">
       <HelpSubscribe />
     </div>
-    <div class="mt-16">
+    <div class="mt-16 bg-gray-50 pt-8 border-t border-custom-green border-dashed">
       <laster />
     </div>
   </div>
