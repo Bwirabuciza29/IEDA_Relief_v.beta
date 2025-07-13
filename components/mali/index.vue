@@ -7,7 +7,7 @@
     title="Mali"
     description="Helping communities to become Self-sufficient"
     buttonText="Donate now"
-    buttonColor="bg-custom-green hover:bg-blue-700"
+    buttonColor="bg-custom-green"
   />
   <alls
     title="Mali"

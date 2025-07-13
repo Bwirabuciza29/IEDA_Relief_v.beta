@@ -21,17 +21,30 @@
       </p>
 
       <div class="mt-6 flex flex-wrap gap-4">
-        <button
-          :class="`px-6 py-3 ${buttonColor} text-white text-sm`"
-        >
-          {{ buttonText }}
-        </button>
+      <NuxtLink
+              :to="localPagePath('donation')"
+              class="group relative inline-block w-full sm:w-auto overflow-hidden  bg-custom-green px-6 py-4 text-sm font-semibold text-white sm:px-6 sm:py-3 sm:text-base"
+            >
+              <span
+                class="relative z-10 translate-x-full transform transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:text-green-700"
+              >
+               Donation
+              </span>
+              <div
+                class="absolute inset-0 h-full w-full translate-x-full transform bg-green-100 transition-transform duration-300 ease-in-out group-hover:translate-x-0"
+              ></div>
+              </NuxtLink>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+const { t, locale } = useI18n();
+const localPagePath = (route) => {
+  const prefix = locale.value === "en-UK" ? "" : `/${locale.value}`;
+  return `${prefix}/${route}`;
+};
 defineProps({
   background: {
     type: String,
