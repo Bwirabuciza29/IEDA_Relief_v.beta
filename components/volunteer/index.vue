@@ -3,7 +3,7 @@
     <div class="mj-container">
       <!-- Titre -->
       <div class="border-l-4 pl-4 mb-6" :class="`border-${accentColor}`">
-        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">
+        <h2 class="text-2xl sm:text-4xl font-sri font-bold text-gray-900">
           {{ title }}
         </h2>
       </div>
@@ -28,8 +28,8 @@
           class="relative md:absolute md:-right-16 md:top-1/2 md:transform md:-translate-y-1/2 md:translate-x-[-15%] md:w-[50%] z-10 mt-6 md:mt-0"
         >
           <div :class="`bg-custom-blue/80 text-white p-6 sm:p-8`">
-            <p class="text-sm uppercase mb-2">{{ badge }}</p>
-            <h3 class="text-xl sm:text-2xl font-bold mb-4 leading-snug">
+            <p class="text-sm uppercase border-l-4 border-custom-green pl-2 mb-2">{{ badge }}</p>
+            <h3 class="text-xl sm:text-2xl font-sri font-bold mb-4 leading-snug">
               {{ cardTitle }}
             </h3>
             <p class="text-base mb-6">

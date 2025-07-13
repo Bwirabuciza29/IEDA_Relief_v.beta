@@ -20,7 +20,9 @@
     vectorImage="/img/Vectoria.png"
     bgColor="bg-custom-green"
   />
- 
+  <div class="mt-16 bg-white p-4 border-t border-b border-custom-green">
+      <log />
+    </div>
 <volunteer
     title="Join our Mission"
     imageSrc="/flags/nn.jpg"
