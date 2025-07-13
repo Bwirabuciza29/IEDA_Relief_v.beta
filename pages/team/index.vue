@@ -410,7 +410,7 @@ const board = [
   {
     name: "Dulacha WARIO",
     role: t("team.lead_5"),
-    image: "/img/avatar6.jpg",
+    image: "/img/photo.png",
     social: {
       linkedin: "https://linkedin.com/in/johndoe",
       twitter: "https://twitter.com/johndoe",
@@ -420,7 +420,7 @@ const board = [
   {
     name: "Stanis WEMBONYAMA",
     role: t("team.lead_6"),
-    image: "/img/avatar5.jpg",
+    image: "/img/photo.png",
     social: {
       linkedin: "https://linkedin.com/in/emmarussel",
       twitter: "https://twitter.com/emmarussel",
@@ -430,7 +430,7 @@ const board = [
   {
     name: "Alain MAHESHE",
     role: t("team.lead_7"),
-    image: "/img/avatar3.jpg",
+    image: "/img/photo.png",
     social: {
       linkedin: "https://linkedin.com/in/alexberil",
       twitter: "https://twitter.com/alexberil",
@@ -450,7 +450,7 @@ const board = [
   {
     name: "Hassan KHATER",
     role: t("team.lead_9"),
-    image: "/img/avatar9.jpg",
+    image: "/img/photo.png",
     social: {
       linkedin: "https://linkedin.com/in/shafinaadjani",
       twitter: "https://twitter.com/shafinaadjani",
@@ -460,7 +460,7 @@ const board = [
   {
     name: "Kelly BROOME",
     role: t("team.lead_10"),
-    image: "/img/avatar2.jpg",
+    image: "/img/photo.png",
     social: {
       linkedin: "https://linkedin.com/in/shafinaadjani",
       twitter: "https://twitter.com/shafinaadjani",

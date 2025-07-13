@@ -36,8 +36,292 @@
   />
    <div>
    </div>
-   <Act :pays="'USA'" />
+   <actualite />
+   
+   <div class="mj-container my-4 bg-white py-4">
+      <div class="relative  h-4 w-full">
+          <div
+            class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
+          ></div>
+        </div>
+      <div class="pt-2 pb-8 px-4">
+        <!-- Titre Principal -->
+        <div class="text-center my-6">
+          <p class="text-custom-green uppercase tracking-widest text-xs">
+            {{ t("team.title_1") }}
+          </p>
+          <h1 class="text-3xl font-semibold">
+            {{ t("team.title_2") }}
+            <span class="font-sri"> {{ t("team.title_3") }}</span>
+          </h1>
+        </div>
+
+        <!-- Navigation des catégories -->
+        <div
+          class="flex justify-center space-x-4 mb-8 flex-wrap md:flex-nowrap"
+        >
+          <button
+            v-for="(category, index) in categories"
+            :key="index"
+            :class="[
+              'px-4 py-2 text-lg font-medium border-b-2',
+              activeCategory === category
+                ? 'border-custom-green text-custom-green'
+                : 'border-transparent text-gray-600 hover:text-gray-800',
+              // Taille et espacement adaptatifs
+              'sm:text-base sm:px-3 sm:py-1 md:text-lg md:px-4 md:py-2',
+            ]"
+            @click="setActiveCategory(category)"
+          >
+            {{ category }}
+          </button>
+        </div>
+
+        <!-- Section : Management -->
+        <div
+          v-show="activeCategory === t('team.btn_1')"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          <div
+            v-for="(member, index) in team"
+            :key="index"
+            class="relative group bg-white rounded-lg overflow-hidden hover:bg-custom-green transition"
+          >
+            <!-- Effet de Hover -->
+            <div
+              class="absolute inset-0 bg-custom-green hover:border-white opacity-0 group-hover:opacity-90 transition"
+            ></div>
+
+            <!-- Contenu des cartes -->
+            <div class="relative p-4 text-center group-hover:text-white z-10">
+              <img
+                :src="member.image"
+                :alt="member.name"
+                class="w-16 h-16 mx-auto rounded-full mb-4 border-2 border-custom-green hover:border-white"
+              />
+              <h2 class="text-lg font-semibold">{{ member.name }}</h2>
+              <p class="text-sm">{{ member.role }}</p>
+
+              <!-- Icônes -->
+              <!-- Icônes -->
+              <div class="flex justify-center space-x-2 mt-4">
+                <a
+                  :href="member.social.linkedin"
+                  target="_blank"
+                  class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center text-custom-green hover:bg-white hover:text-custom-green transition"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                  :href="member.social.twitter"
+                  target="_blank"
+                  class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center text-custom-green hover:bg-white hover:text-custom-green transition"
+                >
+                  <i class="fab fa-x-twitter"></i>
+                </a>
+                <a
+                  :href="member.social.facebook"
+                  target="_blank"
+                  class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center text-custom-green hover:bg-white hover:text-custom-green transition"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section : Board of Direction -->
+        <div
+          v-show="activeCategory === t('team.btn_2')"
+          class="text-center text-gray-600"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div
+              v-for="(member, index) in board"
+              :key="index"
+              class="relative group bg-white rounded-lg overflow-hidden hover:bg-custom-green transition"
+            >
+              <!-- Effet de Hover -->
+              <div
+                class="absolute inset-0 bg-custom-green opacity-0 group-hover:opacity-90 transition"
+              ></div>
+
+              <!-- Contenu des cartes -->
+              <div class="relative p-4 text-center group-hover:text-white z-10">
+                <img
+                  :src="member.image"
+                  :alt="member.name"
+                  class="w-16 h-16 mx-auto rounded-full mb-4 border-2 border-custom-green hover:borger-white"
+                />
+                <h2 class="text-lg font-semibold">{{ member.name }}</h2>
+                <p class="text-sm">{{ member.role }}</p>
+
+                <!-- Icônes -->
+                <!-- Icônes -->
+                <div class="flex justify-center space-x-2 mt-4">
+                  <a
+                    :href="member.social.linkedin"
+                    target="_blank"
+                    class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center text-custom-green hover:bg-white hover:text-custom-green transition"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                  <a
+                    :href="member.social.twitter"
+                    target="_blank"
+                    class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center text-custom-green hover:bg-white hover:text-custom-green transition"
+                  >
+                    <i class="fab fa-x-twitter"></i>
+                  </a>
+                  <a
+                    :href="member.social.facebook"
+                    target="_blank"
+                    class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center text-custom-green hover:bg-white hover:text-custom-green transition"
+                  >
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section : Financial Repport -->
+        <div
+          v-show="activeCategory === t('team.btn_3')"
+          class="text-center text-gray-600"
+        >
+          <all />
+        </div>
+      </div>
+        <div class="relative mb-2 h-4 w-full">
+          <div
+            class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
+          ></div>
+        </div>
+    </div>
   </div>
 </template>
 <script setup>
+const { t } = useI18n();
+
+// Les catégories
+const categories = [t("team.btn_1"), t("team.btn_2"), t("team.btn_3")];
+
+// Catégorie active
+const activeCategory = ref(t("team.btn_1"));
+const team = [
+  {
+    name: "Phil MAANULWA",
+    role: t("team.lead_1"),
+    image: "/img/coach.jpg",
+    social: {
+      linkedin: "https://linkedin.com/in/johndoe",
+      twitter: "https://twitter.com/johndoe",
+      facebook: "https://facebook.com/johndoe",
+    },
+  },
+  {
+    name: "Valentin TAPSOPA",
+    role: t("team.lead_4"),
+    image: "/img/valantin.jpg",
+    social: {
+      linkedin: "https://linkedin.com/in/shafinaadjani",
+      twitter: "https://twitter.com/shafinaadjani",
+      facebook: "https://facebook.com/shafinaadjani",
+    },
+  },
+  {
+    name: "Christine ANGELANI",
+    role: t("team.lead_2"),
+    image: "/img/christine.jpg",
+    social: {
+      linkedin: "https://linkedin.com/in/emmarussel",
+      twitter: "https://twitter.com/emmarussel",
+      facebook: "https://facebook.com/emmarussel",
+    },
+  },
+  {
+    name: "Timothy MUKULE",
+    role: t("team.lead_3"),
+    image: "/img/tim.jpg",
+    social: {
+      linkedin: "https://linkedin.com/in/alexberil",
+      twitter: "https://twitter.com/alexberil",
+      facebook: "https://facebook.com/alexberil",
+    },
+  },
+];
+const board = [
+  {
+    name: "Dulacha WARIO",
+    role: t("team.lead_5"),
+    image: "/img/photo.png",
+    social: {
+      linkedin: "https://linkedin.com/in/johndoe",
+      twitter: "https://twitter.com/johndoe",
+      facebook: "https://facebook.com/johndoe",
+    },
+  },
+  {
+    name: "Stanis WEMBONYAMA",
+    role: t("team.lead_6"),
+    image: "/img/photo.png",
+    social: {
+      linkedin: "https://linkedin.com/in/emmarussel",
+      twitter: "https://twitter.com/emmarussel",
+      facebook: "https://facebook.com/emmarussel",
+    },
+  },
+  {
+    name: "Alain MAHESHE",
+    role: t("team.lead_7"),
+    image: "/img/photo.png",
+    social: {
+      linkedin: "https://linkedin.com/in/alexberil",
+      twitter: "https://twitter.com/alexberil",
+      facebook: "https://facebook.com/alexberil",
+    },
+  },
+  {
+    name: "Phil MAANULWA",
+    role: t("team.lead_8"),
+    image: "/img/coach.jpg",
+    social: {
+      linkedin: "https://linkedin.com/in/shafinaadjani",
+      twitter: "https://twitter.com/shafinaadjani",
+      facebook: "https://facebook.com/shafinaadjani",
+    },
+  },
+  {
+    name: "Hassan KHATER",
+    role: t("team.lead_9"),
+    image: "/img/photo.png",
+    social: {
+      linkedin: "https://linkedin.com/in/shafinaadjani",
+      twitter: "https://twitter.com/shafinaadjani",
+      facebook: "https://facebook.com/shafinaadjani",
+    },
+  },
+  {
+    name: "Kelly BROOME",
+    role: t("team.lead_10"),
+    image: "/img/photo.png",
+    social: {
+      linkedin: "https://linkedin.com/in/shafinaadjani",
+      twitter: "https://twitter.com/shafinaadjani",
+      facebook: "https://facebook.com/shafinaadjani",
+    },
+  },
+];
+
+// Fonction pour changer de catégorie
+const setActiveCategory = (category) => {
+  activeCategory.value = category;
+};
+
+
+
 </script>
+
