@@ -14,7 +14,7 @@
         {{ subtitle }}
       </div>
       <div class="text-4xl font-bold sm:text-6xl">
-        <span class="text-custom-green">{{ titleHighlight }}</span> {{ title }}
+        <span class="text-custom-green font-sri">{{ titleHighlight }}</span> {{ title }}
       </div>
       <p class="mt-4 text-gray-300">
         {{ description }}

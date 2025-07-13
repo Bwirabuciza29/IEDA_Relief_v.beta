@@ -12,11 +12,10 @@
   <alls
     title="Mali"
     subtitle="Burkina Faso means 'Land of Honest Men'"
-    description="Since the Mali crisis in 2012, WFP signed a tripartite accord with UNHCR and IEDA Relief to ensure monthly food distribution to over 33,000 Mali refugees living in and outside camps. The food rations include rice, CSB, oil, salt, and cereals."
-    email="burkinafasooffice@iedarelief.org"
-    phone="+22625374622"
-    address="05 BP 6402 Ouaga 05, Boulevard Muammar Kadhafi,
-secteur 53, Section PLot 17, Parcelle No 6 Ouaga2000 Ouagadougou"
+    description="IEDA Relief has been partnering with WFP in Northern Mali since 2014 to mitigate the harmful effects of the conflict on vulnerable populations regarding Emergency Food Security and Livelihood. The section below presents an overview of projects implemented by IEDA Relief"
+    email="malioffice@iedarelief.org"
+    phone="+223 74613901"
+    address="BP 3113 Bamako, Hamdallay, ACI 2000, 5eme Arrondissement Bamako"
     rightImage="/flags/mal.jpg"
     vectorImage="/img/Vectoria.png"
     bgColor="bg-custom-green"
@@ -33,9 +32,82 @@ secteur 53, Section PLot 17, Parcelle No 6 Ouaga2000 Ouagadougou"
     accentColor="custom-green"
     cardBgColor="custom-blue"
   />
-   <div>
+<div
+  class="relative bg-cover bg-center h-[1100px] md:h-[700px] w-full"
+  style="background-image: url('/flags/hello.jpg'); background-attachment: fixed;"
+>
+  <!-- Overlay noir -->
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+  <!-- Contenu texte au-dessus -->
+  <div class="absolute inset-0 text-white px-4 ">
+   <div class="mj-container my-8">
+    
+       <div class="border-l-4 pl-4 mb-6 border-custom-green">
+        <h2 class="text-2xl sm:text-4xl font-bold text-hite">
+            Activities in the Regions of Kidal and Timbuktu
+        </h2>
+      </div>
+
+    <!-- Kidal -->
+    <h3 class="text-xl md:text-2xl font-semibold text-center text-custom-green font-sri mb-4">In the Region of Kidal</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      <activity
+        v-for="(activity, index) in kidalActivities"
+        :key="'kidal-' + index"
+        v-bind="activity"
+      />
+    </div>
+
+    <!-- Timbuktu -->
+    <h3 class="text-xl md:text-2xl font-semibold text-center text-custom-green font-sri mb-4">In the Region of Timbuktu</h3>
+    <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
+      <activity
+        v-for="(activity, index) in timbuktuActivities"
+        :key="'timbuktu-' + index"
+        v-bind="activity"
+      />
+    </div>
    </div>
+  </div>
+</div>
+ 
   </div>
 </template>
 <script setup>
+
+const kidalActivities = [
+  {
+    icon: 'fa-solid fa-box',
+    borderColor: 'border-l-custom-green',
+    title: 'General Food Distribution – Kidal',
+    description:
+      '550 tons of cereal, oil, beans, and salt were distributed to 2,209 households (11,910 people) in 2016; similar results expected by end of 2017.',
+  },
+  {
+    icon: 'fa-solid fa-baby',
+     borderColor: 'border-l-custom-green',
+    title: 'Blanket Feeding – Kidal',
+    description:
+      '5,340 children and 2,225 pregnant/lactating women are benefiting from the program in 2017.',
+  },
+    {
+    icon: 'fa-solid fa-heartbeat',
+    borderColor: 'border-l-custom-green',
+    title: 'Treatment of Moderate Acute Malnutrition – Kidal',
+    description:
+      '1,500 children and 1,112 PLW are the 2017 caseload in our supplementary feeding program.',
+  },
+]
+
+const timbuktuActivities = [
+ 
+  {
+    icon: 'fa-solid fa-eye',
+    borderColor: 'border-l-custom-green',
+    title: 'Third-party Monitoring – Timbuktu',
+    description:
+      'Monitoring 54 projects by 11 Implementing Partners for activities like GFD, School Feeding, SFP, Blanket Feeding, etc.',
+  },
+]
 </script>
