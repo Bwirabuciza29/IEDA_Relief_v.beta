@@ -73,7 +73,7 @@
    </div>
   </div>
 </div>
- 
+  <Act :pays="'Mali'" />
   </div>
 </template>
 <script setup>
