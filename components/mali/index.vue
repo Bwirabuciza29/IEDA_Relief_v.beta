@@ -11,7 +11,7 @@
   />
   <alls
     title="Mali"
-    subtitle="Burkina Faso means 'Land of Honest Men'"
+    subtitle="ieda Relief Mali's Mission'"
     description="IEDA Relief has been partnering with WFP in Northern Mali since 2014 to mitigate the harmful effects of the conflict on vulnerable populations regarding Emergency Food Security and Livelihood. The section below presents an overview of projects implemented by IEDA Relief"
     email="malioffice@iedarelief.org"
     phone="+223 74613901"
@@ -74,6 +74,9 @@
   </div>
 </div>
   <Act :pays="'Mali'" />
+    <div class="my-16" data-aos="fade-up">
+      <parteners />
+    </div>
   </div>
 </template>
 <script setup>
