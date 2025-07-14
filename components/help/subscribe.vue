@@ -1,7 +1,6 @@
 <template>
-  <section class="relative bg-custom-blue p-8 mx-4 ">
-    <HelpParticle  container-id="home-bg"
-      :config="customConfig" />
+  <section class="relative bg-custom-blue p-8 mx-4">
+    <HelpParticle container-id="home-bg" :config="customConfig" />
     <div class="mj-container text-center relative z-10">
       <div class="w-full text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
@@ -24,7 +23,7 @@
               id="name"
               type="text"
               :placeholder="frm_1"
-              class="w-full p-3 text-sm border border-custom-blue  focus:ring-2 focus:ring-custom-blue"
+              class="w-full p-3 text-sm border border-custom-blue focus:ring-2 focus:ring-custom-blue"
               required
             />
             <input
@@ -32,7 +31,7 @@
               id="last_name"
               type="text"
               :placeholder="frm_2"
-              class="w-full p-3 text-sm border border-custom-blue  focus:ring-2 focus:ring-custom-blue mt-3 md:mt-0"
+              class="w-full p-3 text-sm border border-custom-blue focus:ring-2 focus:ring-custom-blue mt-3 md:mt-0"
               required
             />
           </div>
@@ -43,7 +42,7 @@
               id="email"
               type="email"
               :placeholder="frm_3"
-              class="w-full p-3 text-sm border border-custom-blue  focus:ring-2 focus:ring-custom-blue"
+              class="w-full p-3 text-sm border border-custom-blue focus:ring-2 focus:ring-custom-blue"
               required
             />
             <button
@@ -84,9 +83,7 @@ const submitSubscription = async () => {
   }
 
   try {
-    const items = [
-      { name: name.value, last_name: last_name.value, email: email.value },
-    ];
+    const items = [{ name: name.value, last_name: last_name.value, email: email.value }];
     await createItems({ collection: "subscription", items });
     successMessage.value = "You are successfully subscribed to the newsletter";
     // Réinitialise les champs
@@ -97,8 +94,7 @@ const submitSubscription = async () => {
     if (e?.data?.errors?.[0]?.extensions?.code === "RECORD_NOT_UNIQUE") {
       errorMessage.value = "Sorry!! This email already exists in our mails.";
     } else {
-      errorMessage.value =
-        "An unexpected error has occurred. Please try again later.";
+      errorMessage.value = "An unexpected error has occurred. Please try again later.";
       console.error("Erreur : ", e);
     }
   }
@@ -140,5 +136,5 @@ const customConfig = {
     },
   },
   retina_detect: true,
-}
+};
 </script>

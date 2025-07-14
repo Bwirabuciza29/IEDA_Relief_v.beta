@@ -5,12 +5,12 @@
 </template>
 
 <script setup>
-import { onMounted, defineProps } from 'vue'
+import { onMounted, defineProps } from "vue";
 
 const props = defineProps({
   containerId: {
     type: String,
-    default: 'particles-container',
+    default: "particles-container",
   },
   config: {
     type: Object,
@@ -52,13 +52,13 @@ const props = defineProps({
       retina_detect: true,
     }),
   },
-})
+});
 
 onMounted(() => {
-  if (typeof window !== 'undefined' && window.particlesJS) {
-    window.particlesJS(props.containerId, props.config)
+  if (typeof window !== "undefined" && window.particlesJS) {
+    window.particlesJS(props.containerId, props.config);
   }
-})
+});
 </script>
 
 <style scoped>

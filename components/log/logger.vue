@@ -9,9 +9,7 @@
           class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full bg-[url(/img/line.jpg)] bg-repeat opacity-50 aos-init aos-animate"
         ></div>
       </div>
-      <h2
-        class="text-3xl font-bold text-gray-800 text-center border-b pb-2 mb-8"
-      >
+      <h2 class="text-3xl font-bold text-gray-800 text-center border-b pb-2 mb-8">
         {{ t("logger.title_2") }}
         <span class="text-green-500 font-sri">{{ t("logger.title_1") }}</span>
       </h2>
@@ -102,9 +100,7 @@
 
     <!-- Sectors & Services Section -->
     <section class="my-8">
-      <h2
-        class="text-3xl font-bold text-gray-800 text-center border-b pb-2 mb-8"
-      >
+      <h2 class="text-3xl font-bold text-gray-800 text-center border-b pb-2 mb-8">
         {{ t("logger.title_3") }} &
         <span class="text-green-500 font-sri"> {{ t("logger.title_5") }}</span>
       </h2>
@@ -151,9 +147,7 @@
               :key="service"
               class="flex items-center space-x-2"
             >
-              <span class="text-yellow-500"
-                ><i class="fas fa-graduation-cap"></i
-              ></span>
+              <span class="text-yellow-500"><i class="fas fa-graduation-cap"></i></span>
               <span>{{ service }}</span>
             </li>
           </ul>
@@ -163,9 +157,7 @@
 
     <!-- Clients & Donors Section -->
     <section>
-      <h2
-        class="text-3xl font-bold text-gray-800 text-center border-b pb-2 mb-8"
-      >
+      <h2 class="text-3xl font-bold text-gray-800 text-center border-b pb-2 mb-8">
         {{ t("logger.title_4") }} &
         <span class="text-green-500 font-sri"> {{ t("logger.title_5") }}</span>
       </h2>
@@ -229,21 +221,11 @@ const communityServices = [
   t("logger.c4"),
 ];
 
-const healthServices = [
-  t("logger.h1"),
-  t("logger.h2"),
-  t("logger.h3"),
-  t("logger.h4"),
-];
+const healthServices = [t("logger.h1"), t("logger.h2"), t("logger.h3"), t("logger.h4")];
 
 const educationServices = [t("logger.e1"), t("logger.e2")];
 
-const clientsAndDonors = [
-  t("logger.d1"),
-  t("logger.d2"),
-  t("logger.d3"),
-  t("logger.d4"),
-];
+const clientsAndDonors = [t("logger.d1"), t("logger.d2"), t("logger.d3"), t("logger.d4")];
 
 const getFlag = (code) => `https://flagcdn.com/w40/${code}.png`;
 </script>

@@ -48,9 +48,7 @@
                 ></path>
               </g>
             </svg>
-            <a href="#" class="text-2xl font-bold inline-block"
-              >{{ t("menu.act") }}
-            </a>
+            <a href="#" class="text-2xl font-bold inline-block">{{ t("menu.act") }} </a>
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10 mt-4">
@@ -131,9 +129,7 @@
               </div>
 
               <!-- Indicateur de page -->
-              <span
-                class="text-gray-700 font-semibold text-sm sm:text-base mx-4"
-              >
+              <span class="text-gray-700 font-semibold text-sm sm:text-base mx-4">
                 Page {{ pageActuelle }} / {{ nombreTotalPages }}
               </span>
 
@@ -194,8 +190,7 @@ const fetchOptions = async () => {
     articles.value = articlesData.data;
 
     const paysResponse = await fetch(`${directusUrl}/items/pays`);
-    if (!paysResponse.ok)
-      throw new Error("Erreur lors de la récupération des pays.");
+    if (!paysResponse.ok) throw new Error("Erreur lors de la récupération des pays.");
     const paysData = await paysResponse.json();
     paysList.value = ["All", ...paysData.data.map((pays) => pays.designation)];
 
@@ -220,9 +215,7 @@ onMounted(() => {
 const articlesFiltres = computed(() => {
   return filtrePays.value === "All"
     ? articles.value
-    : articles.value.filter(
-        (article) => article.pays?.designation === filtrePays.value
-      );
+    : articles.value.filter((article) => article.pays?.designation === filtrePays.value);
 });
 
 // Gestion de la pagination

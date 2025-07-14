@@ -5,8 +5,10 @@
       class="absolute inset-0 bg-cover bg-center shadow-7xl"
       :style="`background-image: url('${background}'); background-attachment: fixed;`"
     >
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-30"></div>
-        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-30"
+      ></div>
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
     </div>
 
     <!-- Contenu principal -->
@@ -22,19 +24,19 @@
       </p>
 
       <div class="mt-6 flex flex-wrap gap-4">
-      <NuxtLink
-              :to="localPagePath('donation')"
-              class="group relative  w-full text-center sm:w-auto overflow-hidden  bg-custom-green px-6 py-4 text-sm font-semibold text-white sm:px-6 sm:py-3 sm:text-base"
-            >
-              <span
-                class="relative z-10 translate-x-full transform transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:text-green-700"
-              >
-               Donation
-              </span>
-              <div
-                class="absolute inset-0 h-full w-full translate-x-full transform bg-green-100 transition-transform duration-300 ease-in-out group-hover:translate-x-0"
-              ></div>
-              </NuxtLink>
+        <NuxtLink
+          :to="localPagePath('donation')"
+          class="group relative w-full text-center sm:w-auto overflow-hidden bg-custom-green px-6 py-4 text-sm font-semibold text-white sm:px-6 sm:py-3 sm:text-base"
+        >
+          <span
+            class="relative z-10 translate-x-full transform transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:text-green-700"
+          >
+            Donation
+          </span>
+          <div
+            class="absolute inset-0 h-full w-full translate-x-full transform bg-green-100 transition-transform duration-300 ease-in-out group-hover:translate-x-0"
+          ></div>
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -49,31 +51,31 @@ const localPagePath = (route) => {
 defineProps({
   background: {
     type: String,
-    default: '/img/burkina.jpg'
+    default: "/img/burkina.jpg",
   },
   titleHighlight: {
     type: String,
-    default: 'ieda Relief'
+    default: "ieda Relief",
   },
   title: {
     type: String,
-    default: 'Burkina Faso'
+    default: "Burkina Faso",
   },
   subtitle: {
     type: String,
-    default: 'Mission'
+    default: "Mission",
   },
   description: {
     type: String,
-    default: 'Helping communities to become Self-sufficient'
+    default: "Helping communities to become Self-sufficient",
   },
   buttonText: {
     type: String,
-    default: 'Donate now'
+    default: "Donate now",
   },
   buttonColor: {
     type: String,
-    default: 'bg-custom-green hover:bg-custom-green/20'
-  }
-})
+    default: "bg-custom-green hover:bg-custom-green/20",
+  },
+});
 </script>

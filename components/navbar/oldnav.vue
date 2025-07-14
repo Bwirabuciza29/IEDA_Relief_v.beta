@@ -2,16 +2,10 @@
   <div
     class="fixed left-0 right-0 top-0 z-50 flex w-full items-center justify-cente text-black bg-white"
   >
-    <header
-      class="mj-container z-50 flex w-full items-center justify-between bg-white"
-    >
+    <header class="mj-container z-50 flex w-full items-center justify-between bg-white">
       <div class="relative flex items-center">
         <NuxtLink to="/">
-          <img
-            src="/img/logo.png"
-            alt="Ieda Logo"
-            class="h-12 sm:h-12 py-2 my-2 mr-4"
-          />
+          <img src="/img/logo.png" alt="Ieda Logo" class="h-12 sm:h-12 py-2 my-2 mr-4" />
         </NuxtLink>
         <div
           v-show="isLoading"

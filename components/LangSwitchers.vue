@@ -25,9 +25,7 @@
           class="w-4 h-4 rounded-full mr-2"
           :alt="locale.value + ' Flag'"
         />
-        <span class="text-sm">{{
-          locale.value ? locale.value.toUpperCase() : ""
-        }}</span>
+        <span class="text-sm">{{ locale.value ? locale.value.toUpperCase() : "" }}</span>
       </span>
       <svg
         class="ml-2 w-4 h-4 transform transition-transform duration-200"

@@ -48,9 +48,7 @@
                 ></path>
               </g>
             </svg>
-            <a href="#" class="text-2xl font-bold inline-block"
-              >{{ t("menu.act") }}
-            </a>
+            <a href="#" class="text-2xl font-bold inline-block">{{ t("menu.act") }} </a>
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10 mt-4">
@@ -112,17 +110,23 @@
             </div>
           </div>
         </div>
-     <div
-  v-if="!loading && articlesAffiches.length === 0"
-  class="flex flex-col items-center justify-center py-10 text-center"
->
-  <DotLottieVue style="height: 200px; width: 200px" autoplay loop src="https://lottie.host/c5f8fe4c-d80e-47a8-96f1-ee1863caee95/EDV41EeA2m.lottie" />
-  <p class="text-gray-600 text-lg">
-   Aucune actualité disponible pour  <span class="font-semibold text-custom-green">{{ props.pays }}</span> pour le moment.
-  Nos équipes travaillent activement à la mise à jour des informations.
-  Merci de revenir plus tard ou de consulter d'autres sections du site.
-  </p>
-</div>
+        <div
+          v-if="!loading && articlesAffiches.length === 0"
+          class="flex flex-col items-center justify-center py-10 text-center"
+        >
+          <DotLottieVue
+            style="height: 200px; width: 200px"
+            autoplay
+            loop
+            src="https://lottie.host/c5f8fe4c-d80e-47a8-96f1-ee1863caee95/EDV41EeA2m.lottie"
+          />
+          <p class="text-gray-600 text-lg">
+            Aucune actualité disponible pour
+            <span class="font-semibold text-custom-green">{{ props.pays }}</span> pour le
+            moment. Nos équipes travaillent activement à la mise à jour des informations.
+            Merci de revenir plus tard ou de consulter d'autres sections du site.
+          </p>
+        </div>
         <div>
           <div class="flex justify-end">
             <div class="flex items-center py-8">
@@ -139,9 +143,7 @@
               </div>
 
               <!-- Indicateur de page -->
-              <span
-                class="text-gray-700 font-semibold text-sm sm:text-base mx-4"
-              >
+              <span class="text-gray-700 font-semibold text-sm sm:text-base mx-4">
                 Page {{ pageActuelle }} / {{ nombreTotalPages }}
               </span>
 
@@ -172,7 +174,7 @@
 </template>
 <script setup>
 import { ref, computed, onMounted, watch } from "vue";
-import { DotLottieVue } from '@lottiefiles/dotlottie-vue'
+import { DotLottieVue } from "@lottiefiles/dotlottie-vue";
 import { useRuntimeConfig, navigateTo } from "#app";
 import { useI18n } from "vue-i18n";
 

@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="w-full fixed top-0 left-0 z-50 bg-green-50 border-b border-gray-200"
-  >
+  <div class="w-full fixed top-0 left-0 z-50 bg-green-50 border-b border-gray-200">
     <div class="flex mj-container">
       <!-- Logo à gauche -->
       <nuxtLink
@@ -14,63 +12,59 @@
         class="md:hidden px-4 py-3 text-sm font-medium flex flex-col space-y-3 sm:flex-row sm:items-center sm:justify-between sm:space-y-0"
       >
         <!-- Antenne -->
-       
-          <div
-            v-show="isLoading"
-            class="loader absolute inset-0 z-0 flex items-center justify-center"
-          ></div>
+
+        <div
+          v-show="isLoading"
+          class="loader absolute inset-0 z-0 flex items-center justify-center"
+        ></div>
 
         <!-- Langue + Contacts -->
-        <div
-          class="flex justify-end sm:justify-start items-center w-full "
-        >
+        <div class="flex justify-end sm:justify-start items-center w-full">
           <!-- <LangSwitcher class="w-full ml-4" /> -->
-<ul class="space-y-2">
-  <li>
-   
-        <div class="relative " ref="dropdownRef" >
-     <button
-  @click.stop.prevent="toggleDropdown"
-  class="flex items-center space-x-1 px-2 py-2 bg-custom-green text-white transition duration-200"
->
-        <span>{{ selectedPays }}</span>
-        <i class="fas fa-chevron-down text-xs"></i>
-      </button>
+          <ul class="space-y-2">
+            <li>
+              <div class="relative" ref="dropdownRef">
+                <button
+                  @click.stop.prevent="toggleDropdown"
+                  class="flex items-center space-x-1 px-2 py-2 bg-custom-green text-white transition duration-200"
+                >
+                  <span>{{ selectedPays }}</span>
+                  <i class="fas fa-chevron-down text-xs"></i>
+                </button>
 
-      <!-- Dropdown animé -->
-      <transition
-        name="fade-slide"
-        enter-active-class="transition duration-200 ease-out"
-        leave-active-class="transition duration-150 ease-in"
-        enter-from-class="opacity-0 translate-y-2"
-        enter-to-class="opacity-100 translate-y-0"
-        leave-from-class="opacity-100 translate-y-0"
-        leave-to-class="opacity-0 translate-y-2"
-      >
-    <ul
-    v-if="dropdownOpen"
-    class="absolute z-50 top-full left-0 mt-2 w-40 bg-white text-custom-green border rounded shadow-md"
-  >
-
-          <li
-            v-for="p in paysList"
-            :key="p"
-            @click="selectPays(p)"
-            class="cursor-pointer px-4 py-2 hover:bg-gray-100"
-            :class="selectedPays === p ? 'bg-custom-green text-white' : ''"
-          >
-            {{ p }}
-          </li>
-        </ul>
-      </transition>
-    </div>
-  </li>
-  <li>
-    <div>
-      <LangSwitcher class="w-full" />
-    </div>
-  </li>
-</ul>
+                <!-- Dropdown animé -->
+                <transition
+                  name="fade-slide"
+                  enter-active-class="transition duration-200 ease-out"
+                  leave-active-class="transition duration-150 ease-in"
+                  enter-from-class="opacity-0 translate-y-2"
+                  enter-to-class="opacity-100 translate-y-0"
+                  leave-from-class="opacity-100 translate-y-0"
+                  leave-to-class="opacity-0 translate-y-2"
+                >
+                  <ul
+                    v-if="dropdownOpen"
+                    class="absolute z-50 top-full left-0 mt-2 w-40 bg-white text-custom-green border rounded shadow-md"
+                  >
+                    <li
+                      v-for="p in paysList"
+                      :key="p"
+                      @click="selectPays(p)"
+                      class="cursor-pointer px-4 py-2 hover:bg-gray-100"
+                      :class="selectedPays === p ? 'bg-custom-green text-white' : ''"
+                    >
+                      {{ p }}
+                    </li>
+                  </ul>
+                </transition>
+              </div>
+            </li>
+            <li>
+              <div>
+                <LangSwitcher class="w-full" />
+              </div>
+            </li>
+          </ul>
         </div>
       </nav>
 
@@ -94,42 +88,41 @@
             </span>
 
             <!-- Bouton toggle -->
-          <div class="relative inline-block" ref="dropdownRef">
-
-          <button
-            @click.stop="toggleDropdown"
-            class="text-custom-green cursor-pointer flex items-center space-x-1"
-          >
-            <span>{{ selectedPays }}</span>
-            <i class="fas fa-chevron-down text-xs text-gray-500"></i>
-          </button>
-
-          <!-- Dropdown animé -->
-          <transition
-            name="fade-slide"
-            enter-active-class="transition duration-200 ease-out"
-            leave-active-class="transition duration-150 ease-in"
-            enter-from-class="opacity-0 translate-y-2"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 translate-y-2"
-          >
-            <ul
-              v-if="dropdownOpen"
-              class="absolute top-full left-0 mt-2 w-40 bg-white border rounded shadow-md z-50"
-            >
-              <li
-                v-for="p in paysList"
-                :key="p"
-                @click="selectPays(p)"
-                class="cursor-pointer px-4 py-2 hover:bg-gray-100"
-                :class="selectedPays === p ? 'bg-green-500 text-white' : ''"
+            <div class="relative inline-block" ref="dropdownRef">
+              <button
+                @click.stop="toggleDropdown"
+                class="text-custom-green cursor-pointer flex items-center space-x-1"
               >
-                {{ p }}
-              </li>
-            </ul>
-          </transition>
-</div>
+                <span>{{ selectedPays }}</span>
+                <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+              </button>
+
+              <!-- Dropdown animé -->
+              <transition
+                name="fade-slide"
+                enter-active-class="transition duration-200 ease-out"
+                leave-active-class="transition duration-150 ease-in"
+                enter-from-class="opacity-0 translate-y-2"
+                enter-to-class="opacity-100 translate-y-0"
+                leave-from-class="opacity-100 translate-y-0"
+                leave-to-class="opacity-0 translate-y-2"
+              >
+                <ul
+                  v-if="dropdownOpen"
+                  class="absolute top-full left-0 mt-2 w-40 bg-white border rounded shadow-md z-50"
+                >
+                  <li
+                    v-for="p in paysList"
+                    :key="p"
+                    @click="selectPays(p)"
+                    class="cursor-pointer px-4 py-2 hover:bg-gray-100"
+                    :class="selectedPays === p ? 'bg-green-500 text-white' : ''"
+                  >
+                    {{ p }}
+                  </li>
+                </ul>
+              </transition>
+            </div>
 
             <!-- Loading -->
             <div
@@ -141,10 +134,10 @@
           <!-- Langue + Contacts -->
           <div class="flex items-center space-x-3">
             <LangSwitcher class="hidden md:block" />
-            <div class="relative flex items-center space-x-2 text-gray-700" ref="dropdownRef">
- 
-   
-  </div>
+            <div
+              class="relative flex items-center space-x-2 text-gray-700"
+              ref="dropdownRef"
+            ></div>
             <div class="bg-white border border-green-200 p-1.5">
               <a
                 href="tel:+17137742522"
@@ -171,9 +164,7 @@
         </nav>
 
         <div class="flex items-center justify-between px-4 py-2">
-          
           <nav class="hidden items-start ml-4 space-x-6 font-semibold md:flex">
-            
             <NuxtLink
               v-for="(item, index) in menuItem"
               :key="index"
@@ -346,7 +337,6 @@
             </NuxtLink>
           </nav>
         </transition>
-
       </div>
     </div>
   </div>
@@ -393,8 +383,6 @@ const isHovering = ref(false);
 function toggleDropdowns() {
   isDropdownOpen.value = !isDropdownOpen.value;
 }
-
-
 
 // Fonction pour fermer le dropdown
 function closeDropdown() {

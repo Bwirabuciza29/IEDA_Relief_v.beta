@@ -14,7 +14,7 @@
       <div class="relative w-full max-w-xs mx-auto sm:w-full sm:h-auto">
         <div
           :class="firstCardColor"
-          class="absolute -bottom-8 -right-10 w-full h-full  shadow-lg z-0 transition-colors duration-1000"
+          class="absolute -bottom-8 -right-10 w-full h-full shadow-lg z-0 transition-colors duration-1000"
         ></div>
         <!-- Image -->
         <img
@@ -54,7 +54,7 @@
         <!-- Carte derrière l'image -->
         <div
           :class="firstCardColors"
-          class="absolute -top-8 -right-10 w-full h-full  shadow-lg z-0 transition-colors duration-1000"
+          class="absolute -top-8 -right-10 w-full h-full shadow-lg z-0 transition-colors duration-1000"
         ></div>
         <!-- Image -->
         <img
@@ -80,17 +80,13 @@ const firstCardColors = ref("bg-custom-green");
 onMounted(() => {
   setInterval(() => {
     firstCardColor.value =
-      firstCardColor.value === "bg-yellow-300"
-        ? "bg-blue-300"
-        : "bg-yellow-300";
+      firstCardColor.value === "bg-yellow-300" ? "bg-blue-300" : "bg-yellow-300";
   }, 2000);
 });
 onMounted(() => {
   setInterval(() => {
     firstCardColors.value =
-      firstCardColors.value === "bg-custom-green"
-        ? "bg-custom-blue"
-        : "bg-yellow-100";
+      firstCardColors.value === "bg-custom-green" ? "bg-custom-blue" : "bg-yellow-100";
   }, 2000);
 });
 </script>

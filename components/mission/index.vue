@@ -1,5 +1,5 @@
 <template>
-  <div class="relative mj-container  px-4 py-8">
+  <div class="relative mj-container px-4 py-8">
     <!-- Boutons alignés horizontalement -->
     <div class="flex justify-center space-x-2 mb-8 mx-auto">
       <button
@@ -152,9 +152,7 @@
           </div>
 
           <h3 class="text-lg font-medium text-gray-800">{{ card.title }}</h3>
-          <p
-            class="text-sm text-gray-600 mt-2 hover:underline hover:text-green-400"
-          >
+          <p class="text-sm text-gray-600 mt-2 hover:underline hover:text-green-400">
             {{ card.description }}
           </p>
         </div>

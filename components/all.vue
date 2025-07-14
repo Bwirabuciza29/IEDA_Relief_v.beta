@@ -8,12 +8,10 @@
         {{ t("team.txt_2") }}
       </p>
 
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 "
-      >
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
         <!-- Carte 1 -->
         <div
-          class="bg-custom-green/10 rounded-lg p-4 flex flex-col items-center text-center "
+          class="bg-custom-green/10 rounded-lg p-4 flex flex-col items-center text-center"
         >
           <i class="fas fa-history text-blue-500 text-3xl mb-4"></i>
           <p class="font-medium text-xs mb-2">
