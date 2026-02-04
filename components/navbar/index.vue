@@ -448,7 +448,9 @@ const localPagePath = (route) => {
   return `${prefix}/${route}`;
 };
 
-const isActiveLink = (path) => route.path === path;
+const isActiveLink = (path) => {
+  return route.path === path || route.fullPath === path;
+};
 
 /* -----------------------------------
    LOADER ROUTE
