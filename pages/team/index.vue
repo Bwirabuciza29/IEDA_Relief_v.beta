@@ -199,7 +199,7 @@
     <div class="mj-container my-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <!-- Liste des drapeaux -->
-        <div class="col-span-1 bg-white p-4 rounded-lg relative">
+        <div class="col-span-1 bg-white p-4 relative">
           <div
             class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-no-repeat bg-bottom bg-contain opacity-20 hidden md:block"
             style="background-image: url('/img/ref.jpg')"
@@ -214,7 +214,7 @@
               :key="index"
               @click="selectCountry(index)"
               :class="[
-                'flex items-center space-x-2 p-2 rounded-lg cursor-pointer',
+                'flex items-center space-x-2 p-2  cursor-pointer',
                 activeCountry === index
                   ? 'bg-custom-green text-white'
                   : 'hover:bg-gray-200',
@@ -235,22 +235,21 @@
         </div>
 
         <!-- Détails du pays -->
-        <div
-          class="col-span-2 bg-white p-6 rounded-lg flex flex-col items-start space-y-4"
-        >
+        <div class="col-span-2 bg-white p-6 flex flex-col items-start space-y-4">
           <!-- Nom du pays -->
           <h2 class="text-2xl font-bold mb-4">
             {{ countries[activeCountry].name }}
           </h2>
 
           <!-- Image du pays -->
-          <div class="w-full mb-4 border-b-4 pb-4">
+          <div class="w-full mb-4 border-b-4 pb-4 overflow-hidden">
             <img
               :src="countries[activeCountry].image"
               alt="Image du pays"
-              class="w-full h-auto object-cover rounded-lg"
+              class="w-full h-56 sm:h-64 md:h-72 lg:h-80 object-cover transition-transform duration-500 ease-in-out hover:scale-105"
             />
           </div>
+
           <h2 class="text-lg font-bold text-center mb-4">
             {{ countries[activeCountry].chief.title }}
           </h2>
