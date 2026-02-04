@@ -537,7 +537,7 @@ const countries = [
   {
     name: t("pays.drc"),
     flag: "https://flagcdn.com/cd.svg",
-    image: "/img/gogo.png",
+    image: "/img/goma.jpeg",
     chief: {
       title: t("leader.title_2"),
       image: "/img/francois.jpg",
