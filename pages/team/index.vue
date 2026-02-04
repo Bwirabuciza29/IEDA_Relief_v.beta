@@ -1,9 +1,7 @@
 <template>
   <section class="bg-green-50 relative mt-24">
     <div class="mj-container bg-green-50 mt-16 p-8">
-      <div
-        class="relative flex flex-col md:flex-row bg-custom-green overflow-hidden"
-      >
+      <div class="relative flex flex-col md:flex-row bg-custom-green overflow-hidden">
         <img
           src="/img/Vectoria.png"
           alt="Decorative Vector"
@@ -23,9 +21,7 @@
                 ></span>
               </a>
               /
-              <span class="text-bold text-custom-green">{{
-                t("team.title_1")
-              }}</span>
+              <span class="text-bold text-custom-green">{{ t("team.title_1") }}</span>
             </div>
           </nav>
         </div>
@@ -63,9 +59,7 @@
         </div>
 
         <!-- Navigation des catégories -->
-        <div
-          class="flex justify-center space-x-4 mb-8 flex-wrap md:flex-nowrap"
-        >
+        <div class="flex justify-center space-x-4 mb-8 flex-wrap md:flex-nowrap">
           <button
             v-for="(category, index) in categories"
             :key="index"
@@ -214,7 +208,7 @@
           <h2 class="text-lg font-bold text-center mb-4">
             {{ t("team.p_2") }}
           </h2>
-          <ul class="space-y-2">
+          <ul class="space-y-2 relative z-20">
             <li
               v-for="(country, index) in countries"
               :key="index"
@@ -226,11 +220,7 @@
                   : 'hover:bg-gray-200',
               ]"
             >
-              <img
-                :src="country.flag"
-                :alt="country.name"
-                class="w-8 h-8 rounded-full"
-              />
+              <img :src="country.flag" :alt="country.name" class="w-8 h-8 rounded-full" />
               <a
                 :class="[
                   'text-sm font-medium',
@@ -287,10 +277,6 @@
                 <span class="font-semibold">Gender:</span>
                 {{ countries[activeCountry].chief.gender }}
               </p>
-              <!-- <p class="text-sm text-gray-700">
-                <span class="font-semibold">Bio:</span>
-                {{ countries[activeCountry].chief.description }}
-              </p> -->
             </div>
           </div>
           <h2 class="text-lg font-bold text-center mb-4">
@@ -520,8 +506,7 @@ const countries = [
       image: "/img/francois.jpg",
       name: "François DE PAUL",
       gender: "Male",
-      description:
-        "Experte en gestion humanitaire et opérations sur le terrain.",
+      description: "Experte en gestion humanitaire et opérations sur le terrain.",
     },
     details: {
       address:
@@ -540,8 +525,7 @@ const countries = [
       image: "/img/dav.jpg",
       name: "David KISUBA",
       gender: "Male",
-      description:
-        "Coordinateur de programmes avec expertise en santé publique.",
+      description: "Coordinateur de programmes avec expertise en santé publique.",
     },
     details: {
       address:
@@ -560,8 +544,7 @@ const countries = [
       image: "/img/francois.jpg",
       name: "François OMENDE",
       gender: "Male",
-      description:
-        "Responsable humanitaire avec une expertise en gestion des crises.",
+      description: "Responsable humanitaire avec une expertise en gestion des crises.",
     },
     details: {
       address:
@@ -609,6 +592,25 @@ const countries = [
       tel: "+223 74613901",
       gsm: "+223 74613901",
       email: "malioffice@iedarelief.org",
+    },
+  },
+  {
+    name: "Tchad",
+    flag: "https://flagcdn.com/td.svg",
+    image: "/img/tc.jpeg",
+    chief: {
+      title: t("leader.title_3"),
+      image: "/img/esp.jpeg",
+      name: "Espoir MULISI",
+      gender: "Male",
+      description: "Spécialiste en développement communautaire.",
+    },
+    details: {
+      address:
+        "République du Tchad,  N’Djamena, Quartier Chagoua, Rue 5713, porte 0265 près de l’hôtel la Persévérance,  axe CA7",
+      tel: "+235 63016686",
+      gsm: "+235 63096523",
+      email: "Tchadmission@iedarelief.org",
     },
   },
 ];
