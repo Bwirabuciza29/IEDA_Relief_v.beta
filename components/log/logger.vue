@@ -26,7 +26,7 @@
               <img
                 :src="getFlag(country.code)"
                 :alt="`${country.name} flag`"
-                class="w-6 h-6 rounded"
+                class="w-6 h-6"
               />
 
               <!-- Texte avec animation et NuxtLink -->
@@ -55,7 +55,7 @@
               <img
                 :src="getFlag(country.code)"
                 :alt="`${country.name} flag`"
-                class="w-6 h-6 rounded"
+                class="w-6 h-6"
               />
               <span>{{ country.name }}</span>
             </li>
@@ -72,7 +72,7 @@
               <img
                 :src="getFlag(country.code)"
                 :alt="`${country.name} flag`"
-                class="w-6 h-6 rounded"
+                class="w-6 h-6"
               />
               <span>{{ country.name }}</span>
             </li>
@@ -89,7 +89,7 @@
               <img
                 :src="getFlag(country.code)"
                 :alt="`${country.name} flag`"
-                class="w-6 h-6 rounded"
+                class="w-6 h-6"
               />
               <span>{{ country.name }}</span>
             </li>
@@ -192,6 +192,7 @@ const current = [
   { name: "DRC", code: "cd" },
   { name: "Mali", code: "ml" },
   { name: "Niger", code: "ne" },
+  { name: "Tchad", code: "td" },
 ];
 
 const previous = [
