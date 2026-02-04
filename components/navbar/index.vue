@@ -342,53 +342,56 @@
   </div>
 </template>
 <script setup>
-import { ref, onMounted } from "vue";
-import { usePaysStore } from "/stores/usePaysStore.js";
-import { storeToRefs } from "pinia";
+import { ref, onMounted, watch, computed } from "vue";
 const { t, locale } = useI18n();
 const route = useRoute();
+
+const { paysList, selectedPays, dropdownOpen, toggleDropdown, selectPays } = usePays();
+/* -----------------------------------
+   MENU MOBILE
+----------------------------------- */
+
 const menuOpen = ref(false);
 
-const filtrePays = ref("All");
+const toggleMenu = () => {
+  menuOpen.value = !menuOpen.value;
+};
+
+const closeMenu = () => {
+  menuOpen.value = false;
+};
+
+/* -----------------------------------
+   CLICK OUTSIDE DROPDOWN
+----------------------------------- */
+
 const dropdownRef = ref(null);
-// DEBUT  FILTRE DES PAYS
-const paysStore = usePaysStore();
-const { paysList, selectedPays, dropdownOpen } = storeToRefs(paysStore);
-const { fetchPays, selectPays, toggleDropdown } = paysStore;
-// FIN POUR LE FILTRE DES PAYS
 
 const handleClickOutside = (event) => {
-  console.log("clicked:", event.target);
   if (dropdownRef.value && !dropdownRef.value.contains(event.target)) {
     dropdownOpen.value = false;
   }
 };
 
-// Méthode pour basculer l'état du menu
-const toggleMenu = () => {
-  menuOpen.value = !menuOpen.value;
-};
+/* -----------------------------------
+   MENU FOOTER DROPDOWN
+----------------------------------- */
 
-// Fonction pour fermer le menu
-const closeMenu = () => {
-  menuOpen.value = false;
-};
-// État pour gérer l'ouverture via clic
 const isDropdownOpen = ref(false);
-
-// État pour détecter le survol
 const isHovering = ref(false);
 
-// Fonction pour basculer l'état du dropdown via clic
-function toggleDropdowns() {
+const toggleDropdowns = () => {
   isDropdownOpen.value = !isDropdownOpen.value;
-}
+};
 
-// Fonction pour fermer le dropdown
-function closeDropdown() {
+const closeDropdown = () => {
   isDropdownOpen.value = false;
-}
-// Les éléments du menu
+};
+
+/* -----------------------------------
+   MENU ITEMS
+----------------------------------- */
+
 const menuItem = computed(() => [
   t("menu.home"),
   t("menu.about"),
@@ -396,6 +399,7 @@ const menuItem = computed(() => [
   t("menu.pages"),
   t("menu.career"),
 ]);
+
 const menuItems = computed(() => [
   t("menu.home"),
   t("menu.about"),
@@ -408,9 +412,13 @@ const menuItems = computed(() => [
   t("menu.contact"),
 ]);
 
-// Fonction de gestion des liens avec la langue actuelle
+/* -----------------------------------
+   ROUTING MULTI LANGUE
+----------------------------------- */
+
 const localPath = (item) => {
   const prefix = locale.value === "en-UK" ? "" : `/${locale.value}`;
+
   switch (item) {
     case t("menu.home"):
       return `${prefix}/`;
@@ -422,45 +430,52 @@ const localPath = (item) => {
       return `${prefix}/pages`;
     case t("menu.career"):
       return `${prefix}/career`;
-    case t("menu.works"):
-      return `${prefix}/works`;
     case t("menu.team"):
       return `${prefix}/team`;
     case t("menu.images"):
       return `${prefix}/images`;
     case t("menu.contact"):
       return `${prefix}/contact`;
-    case t("menu.donation"):
-      return `${prefix}/donation`;
     case t("menu.news"):
       return `${prefix}/news`;
-
     default:
       return `${prefix}/`;
   }
 };
+
 const localPagePath = (route) => {
   const prefix = locale.value === "en-UK" ? "" : `/${locale.value}`;
   return `${prefix}/${route}`;
 };
-// Vérification si le lien est actif
+
 const isActiveLink = (path) => route.path === path;
+
+/* -----------------------------------
+   LOADER ROUTE
+----------------------------------- */
+
 const isLoading = ref(false);
+
 watch(
   route,
   () => {
     isLoading.value = true;
     setTimeout(() => {
       isLoading.value = false;
-    }, 1000);
+    }, 800);
   },
   { immediate: true }
 );
+
+/* -----------------------------------
+   INIT
+----------------------------------- */
+
 onMounted(() => {
-  paysStore.fetchPays();
   document.addEventListener("click", handleClickOutside);
 });
 </script>
+
 <style scoped>
 /* Loader Styles */
 .loader {

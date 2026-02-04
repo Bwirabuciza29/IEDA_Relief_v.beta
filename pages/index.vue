@@ -143,12 +143,29 @@
 </template>
 
 <script setup>
+import { ref, watch, onMounted, nextTick } from "vue";
 const { t, locale } = useI18n();
-import { usePaysStore } from "/stores/usePaysStore.js";
-import { storeToRefs } from "pinia";
-const paysStore = usePaysStore();
-const { selectedPays, paysList, isLoading, dropdownOpen } = storeToRefs(paysStore);
-const { fetchPays, selectPays, toggleDropdown } = paysStore;
+
+const { selectedPays } = usePays();
+
+/* ----------------------------------
+   🌍 Loader pays
+---------------------------------- */
+
+const isLoadingPays = ref(false);
+
+watch(selectedPays, async () => {
+  isLoadingPays.value = true;
+  await nextTick();
+  setTimeout(() => {
+    isLoadingPays.value = false;
+  }, 800);
+});
+
+/* ----------------------------------
+   🌍 Textes i18n
+---------------------------------- */
+
 const title_1 = ref(t("hero.title_1"));
 const title_2 = ref(t("hero.title_2"));
 const title_3 = ref(t("hero.title_3"));
@@ -158,41 +175,34 @@ const btn = ref(t("hero.btn"));
 const card_desc = ref(t("hero.card_desc"));
 const card_letter = ref(t("hero.card_letter"));
 
-// Valeur initiale du compteur
-const animatedCardNum = ref(0);
+/* ----------------------------------
+   🔢 Compteur animé
+---------------------------------- */
 
-// Valeur cible du compteur
+const animatedCardNum = ref(0);
 const targetCardNum = 2.2;
 
-// Animation du compteur
 onMounted(() => {
   let currentValue = 0;
+
   const interval = setInterval(() => {
     currentValue += 0.01;
+
     if (currentValue >= targetCardNum) {
       clearInterval(interval);
       currentValue = targetCardNum;
     }
+
     animatedCardNum.value = currentValue.toFixed(2);
   }, 50);
 });
-// Fonction pour générer un chemin localisé
+
+/* ----------------------------------
+   🔗 Routing multilangue
+---------------------------------- */
+
 const localPagePath = (route) => {
   const prefix = locale.value === "en-UK" ? "" : `/${locale.value}`;
   return `${prefix}/${route}`;
 };
-const isLoadingPays = ref(false);
-
-// Watch pour détecter les changements de pays
-watch(selectedPays, async () => {
-  isLoadingPays.value = true;
-  await nextTick(); // attendre le DOM si besoin
-  setTimeout(() => {
-    isLoadingPays.value = false;
-  }, 800);
-});
-
-onMounted(() => {
-  fetchPays();
-});
 </script>
