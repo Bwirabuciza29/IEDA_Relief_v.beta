@@ -11,12 +11,11 @@
     />
     <alls
       title="DR Congo"
-      subtitle="Burkina Faso means 'Land of Honest Men'"
-      description="Since the Mali crisis in 2012, WFP signed a tripartite accord with UNHCR and IEDA Relief to ensure monthly food distribution to over 33,000 Mali refugees living in and outside camps. The food rations include rice, CSB, oil, salt, and cereals."
-      email="burkinafasooffice@iedarelief.org"
-      phone="+22625374622"
-      address="05 BP 6402 Ouaga 05, Boulevard Muammar Kadhafi,
-secteur 53, Section PLot 17, Parcelle No 6 Ouaga2000 Ouagadougou"
+      subtitle="Democratic Republic of the Congo"
+      description="Depuis 2008, nous avons travaillé dans 12 pays avec un investissement de $80M sur 260 projets en assistant les personnes durant leur transition vers le développement à long terme. Notre effectif de plus de 1.100 employés met l’accent sur les groupes marginalisés à savoir les personnes déplacées internes et les réfugiés. Nous avons facilité et fourni les composantes clés d’assistance et couplé des activités en développement des capacités communautaires pour créer une voix locale, une appropriation des compétences techniques, afin d’accroitre leur viabilité à long terme. "
+      email="drcmission@iedarelief.org"
+      phone="+243827648797"
+      address="Quartier Basoko/GB, Avenue O.U.A, N°17, Commune de Ngaliema - Kinshasa, RDC"
       rightImage="/flags/congo.jpg"
       vectorImage="/img/Vectoria.png"
       bgColor="bg-custom-green"

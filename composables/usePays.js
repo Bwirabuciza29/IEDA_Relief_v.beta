@@ -3,12 +3,13 @@ import { ref, watch } from "vue";
 const paysList = ref([
   "All",
   "USA",
+  "DRC",
   "Burkina Faso",
   "CAR",
   "Niger",
   "Mali",
   "Cameroun",
-  "DRC",
+  "Tchad",
 ]);
 
 const selectedPays = ref("All");

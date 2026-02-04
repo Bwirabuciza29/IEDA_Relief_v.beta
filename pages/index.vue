@@ -119,6 +119,7 @@
     <div v-else-if="selectedPays === 'Niger'" class="relative mt-20"><niger /></div>
     <div v-else-if="selectedPays === 'Mali'" class="relative mt-20"><mali /></div>
     <div v-else-if="selectedPays === 'Cameroun'" class="relative mt-20"><cameroun /></div>
+    <div v-else-if="selectedPays === 'Tchad'" class="relative mt-20"><tchad /></div>
     <div v-else-if="selectedPays === 'DRC'" class="relative mt-20">
       <congo />
     </div>
